@@ -1,0 +1,7 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make.exe: Entering directory 'c:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp'
+ 
+make.exe: *** No targets specified and no makefile found.  Stop.
+
+make.exe: Leaving directory 'c:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp'
+ 
