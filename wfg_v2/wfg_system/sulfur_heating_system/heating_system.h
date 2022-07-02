@@ -1,5 +1,6 @@
 // Online C++ compiler to run C++ program online
 #include <iostream>
+#include <list>
 namespace sulfur_heating_system
 {
     /*********** classes *************/

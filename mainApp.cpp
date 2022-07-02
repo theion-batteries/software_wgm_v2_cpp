@@ -1,9 +1,8 @@
-#include "wfg_v2/wfg_system/sulfur_heating_system/heating_system.h"
+#include "wfg_v2/wfg_system/sulfur_heating_system/process_manager.h"
 int main() {
     // Write C++ code here
-    client user;
-    user.run_heating_system();
-    user.close_heating_system();
-
+    user app_user;
+    app_user.run_app();
+    app_user.stop_app();
     return 0;
 }
