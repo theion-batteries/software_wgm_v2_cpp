@@ -1,4 +1,5 @@
 
+#pragma once
 #include "heating_system.h"
 namespace wgm_processes
 {
@@ -46,12 +47,12 @@ namespace wgm_processes
     class process_management : public Iprocesses_managment
     {
     private:
-        Iheating_process* h_proc;
+        
         std::list<Iprocesses_managment*> processesList;
     public:
         process_management() {
             std::cout << "creating process manager" << std::endl;
-            h_proc = new heating_process();
+            Iheating_process* h_proc = new heating_process();
             processesList.push_back(h_proc);
             std::cout << "added heating process to process list" << std::endl;
         }
@@ -92,7 +93,7 @@ namespace wgm_processes
         {
             if (process != nullptr)
             {
-                h_proc->start_process();
+                process->start_process();
             }
             else std::cout << "empty list" << std::endl;
         }
@@ -105,7 +106,7 @@ namespace wgm_processes
         {
             if (process != nullptr)
             {
-                h_proc->stop_process();
+                process->stop_process();
             }
             else std::cout << "empty list" << std::endl;
         }
