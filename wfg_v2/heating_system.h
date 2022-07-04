@@ -54,7 +54,7 @@ namespace sulfur_heating_system
     }
     virtual ~Itemperature_sensor()
     {
-      std::cout << "deleting sensor" << std::endl;
+      std::cout << "deleting temp sensor" << std::endl;
     }
     virtual void get_current_value() = 0;
   };
@@ -65,7 +65,7 @@ namespace sulfur_heating_system
   };
   void temperature_sensor::get_current_value()
   {
-    std::cout << "reading value sensor" << std::endl;
+    std::cout << "reading value temp sensor" << std::endl;
   }
   /*********** heating controller *************/
   class Isulfur_heating_controller
@@ -95,15 +95,16 @@ namespace sulfur_heating_system
       tempe_sensor = new temperature_sensor();
       heater = new Heater();
     }
-    void getSensorReading();
-    virtual void turn_off_heating();
-    virtual void turn_on_heating();
-    virtual void controll_heating();
     virtual ~sulfur_heating_controller()
     {
       delete heater;
       delete tempe_sensor;
     }
+    void getSensorReading();
+    virtual void turn_off_heating();
+    virtual void turn_on_heating();
+    virtual void controll_heating();
+
   };
 
   void sulfur_heating_controller::getSensorReading()
