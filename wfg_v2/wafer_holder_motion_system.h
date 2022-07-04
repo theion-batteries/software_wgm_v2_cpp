@@ -74,7 +74,7 @@ namespace wafer_holder_motion_system
     double distance_sensor::read_values()
     {
         std::cout << "reading value distance sensor" << std::endl;
-        return;
+        return 30;
     }
     /****** wafer motion controller ******/
     // interface    
@@ -147,20 +147,21 @@ namespace wafer_holder_motion_system
     }
     void wafer_motion_controller::insert_wafer_in_ml()
     {
-
+        std::cout << "start sinking" << std::endl;
         // to start process distance must be set before
-        if (distance_to_surface_contact != NULL)
+        if (distance_to_surface_contact != 0)
         {
-            while (get_current_value != distance_to_surface_contact)
+            while (get_current_value() != distance_to_surface_contact)
             {
-                if (get_current_value == distance_to_slow_down)
+                if (get_current_value() == distance_to_slow_down)
                 {
                     slow_down();
                 }
                 move_down();
+
             }
         }
-        else std::cout << "please set distance" << std::endl;
+        else std::cout << "error: please set distance to surface contact with ml" << std::endl;
     }
     void wafer_motion_controller::extract_wafer_from_ml()
     {

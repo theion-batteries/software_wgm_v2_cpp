@@ -12,6 +12,7 @@
 #include <vector>
 #include "heating_system.h"
 #include "cnt_alignment_system.h"
+#include "wafer_holder_motion_system.h"
 
 namespace wgm_processes
 {
@@ -80,6 +81,46 @@ namespace wgm_processes
     {
         heating_sys->turn_off_heating();
     }
+    /******************* interface wafer insertion process***************/
+    class Isinking_process : public Iprocesses_managment
+    {
+    public:
+        Isinking_process()
+        {
+            std::cout << "creating sinking process " << std::endl;
+        }
+        virtual ~Isinking_process()
+        {
+        }
+        virtual void start_process() = 0;
+        virtual void stop_process() = 0;
+    };
+    /**************** implementation wafer insertion process ************/
+    class sinking_process : public Isinking_process
+    {
+    private:
+        wafer_holder_motion_system::Iwafer_motion_controller* sinking_sys;
+    public:
+        sinking_process() {
+            sinking_sys = new wafer_holder_motion_system::wafer_motion_controller();
+        }
+        virtual ~sinking_process()
+        {
+            std::cout << "deleting sinking process " << std::endl;
+            delete sinking_sys;
+        }
+        virtual void start_process();
+        virtual void stop_process();
+    };
+    void sinking_process::start_process()
+    {
+        sinking_sys->set_distance_to_surface_contact(30);
+        sinking_sys->insert_wafer_in_ml();
+    }
+    void sinking_process::stop_process()
+    {
+
+    }
     /****************** interface cnt alignment *******************/
     class Ialigning_process : public Iprocesses_managment
     {
@@ -94,7 +135,6 @@ namespace wgm_processes
         virtual void start_process() = 0;
         virtual void stop_process() = 0;
     };
-
     /******************* implementation cnt alignment ***************/
     class aligning_process : public Ialigning_process
     {
@@ -104,13 +144,13 @@ namespace wgm_processes
         aligning_process() {
             aligning_sys = new cnt_alignment_system::cnt_aligning_controller();
         }
-        virtual void start_process();
-        virtual void stop_process();
         virtual ~aligning_process()
         {
             std::cout << "deleting aligning process " << std::endl;
             delete aligning_sys;
         }
+        virtual void start_process();
+        virtual void stop_process();
     };
     void aligning_process::start_process()
     {
@@ -120,6 +160,7 @@ namespace wgm_processes
     {
         aligning_sys->stop_aligning();
     }
+
 
 
 
@@ -143,20 +184,23 @@ namespace wgm_processes
     public:
         process_management() {
             std::cout << "creating process manager" << std::endl;
-            /***** add new process *******/
+            /***** add new processes *******/
             /***** add heating process ***/
-            Iheating_process* h_proc = new heating_process();
-            processesvector.push_back(h_proc);
+            Iheating_process* heating_proc = new heating_process();
+            processesvector.push_back(heating_proc);
             std::cout << "added heating process to process vector" << std::endl;
-            /***** add aligning process ***/
-            Ialigning_process* a_proc = new aligning_process();
-            processesvector.push_back(a_proc);
-            std::cout << "added aligning process to process vector" << std::endl;
             /***** add insertion process ***/
+            Isinking_process* insertion_proc = new sinking_process();
+            processesvector.push_back(insertion_proc);
+            std::cout << "added wafer insertion process to process vector" << std::endl;            
+           /***** add aligning process ***/
+            Ialigning_process* aligning_proc = new aligning_process();
+            processesvector.push_back(aligning_proc);
+            std::cout << "added aligning process to process vector" << std::endl;
+            
 
-        
-        
-        
+
+
         }
         // clean up destruction
         virtual ~process_management() {
