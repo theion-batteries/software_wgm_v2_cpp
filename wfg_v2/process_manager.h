@@ -13,7 +13,7 @@
 #include "heating_system.h"
 #include "cnt_alignment_system.h"
 #include "wafer_holder_motion_system.h"
-
+#include "wafer_cooling_system.h"
 namespace wgm_processes
 {
     /************* interface process management **********/
@@ -121,7 +121,7 @@ namespace wgm_processes
     {
 
     }
-    /****************** interface cnt alignment *******************/
+    /****************** interface cnt alignment process*******************/
     class Ialigning_process : public Iprocesses_managment
     {
     public:
@@ -135,7 +135,7 @@ namespace wgm_processes
         virtual void start_process() = 0;
         virtual void stop_process() = 0;
     };
-    /******************* implementation cnt alignment ***************/
+    /******************* implementation cnt alignment process ***************/
     class aligning_process : public Ialigning_process
     {
     private:
@@ -159,6 +159,84 @@ namespace wgm_processes
     void aligning_process::stop_process()
     {
         aligning_sys->stop_aligning();
+    }
+    /****************** interface cooling process *******************/
+    class Icooling_process : public Iprocesses_managment
+    {
+    public:
+        Icooling_process()
+        {
+            std::cout << "creating cooling process " << std::endl;
+        }
+        virtual ~Icooling_process()
+        {
+        }
+        virtual void start_process() = 0;
+        virtual void stop_process() = 0;
+    };
+    /******************* implementation cooling process ***************/
+    class cooling_process : public Icooling_process
+    {
+    private:
+        wafer_cooling_system::Icooling_controller* cooling_sys;
+    public:
+        cooling_process() {
+            cooling_sys = new wafer_cooling_system::cooling_controller();
+        }
+        virtual ~cooling_process()
+        {
+            std::cout << "deleting cooling process " << std::endl;
+            delete cooling_sys;
+        }
+        virtual void start_process();
+        virtual void stop_process();
+    };
+    void cooling_process::start_process()
+    {
+        cooling_sys->start_cooling();
+    }
+    void cooling_process::stop_process()
+    {
+        cooling_sys->stop_cooling();
+    }
+    /******************* interface wafer extraction process***************/
+    class Iextracting_process : public Iprocesses_managment
+    {
+    public:
+        Iextracting_process()
+        {
+            std::cout << "creating extracting process " << std::endl;
+        }
+        virtual ~Iextracting_process()
+        {
+        }
+        virtual void start_process() = 0;
+        virtual void stop_process() = 0;
+    };
+    /**************** implementation wafer extraction process ************/
+    class extracting_process : public Iextracting_process
+    {
+    private:
+        wafer_holder_motion_system::Iwafer_motion_controller* extracting_sys;
+    public:
+        extracting_process() {
+            extracting_sys = new wafer_holder_motion_system::wafer_motion_controller();
+        }
+        virtual ~extracting_process()
+        {
+            std::cout << "deleting extracting process " << std::endl;
+            delete extracting_sys;
+        }
+        virtual void start_process();
+        virtual void stop_process();
+    };
+    void extracting_process::start_process()
+    {
+        extracting_sys->extract_wafer_from_ml();
+    }
+    void extracting_process::stop_process()
+    {
+
     }
 
 
@@ -197,7 +275,14 @@ namespace wgm_processes
             Ialigning_process* aligning_proc = new aligning_process();
             processesvector.push_back(aligning_proc);
             std::cout << "added aligning process to process vector" << std::endl;
-            
+            /***** add cooling process ***/
+            Icooling_process* cooling_proc = new cooling_process();
+            processesvector.push_back(cooling_proc);
+            std::cout << "added cooling process to process vector" << std::endl;
+            /***** add insertion process ***/
+            Iextracting_process* extraction_proc = new extracting_process();
+            processesvector.push_back(extraction_proc);
+            std::cout << "added wafer extracting process to process vector" << std::endl;               
 
 
 
