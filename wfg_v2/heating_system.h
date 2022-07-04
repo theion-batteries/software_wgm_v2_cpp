@@ -1,6 +1,5 @@
 #pragma once
 #include <iostream>
-#include <list>
 namespace sulfur_heating_system
 {
     /*********** classes *************/

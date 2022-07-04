@@ -1,6 +1,8 @@
 
 #pragma once
 #include "heating_system.h"
+#include <vector>
+
 namespace wgm_processes
 {
     class Iprocesses_managment
@@ -48,17 +50,17 @@ namespace wgm_processes
     {
     private:
         
-        std::list<Iprocesses_managment*> processesList;
+        std::vector<Iprocesses_managment*> processesvector;
     public:
         process_management() {
             std::cout << "creating process manager" << std::endl;
             Iheating_process* h_proc = new heating_process();
-            processesList.push_back(h_proc);
-            std::cout << "added heating process to process list" << std::endl;
+            processesvector.push_back(h_proc);
+            std::cout << "added heating process to process vector" << std::endl;
         }
         virtual ~process_management() {
             std::cout << "deleting process manager" << std::endl;
-            for (auto process : processesList)
+            for (auto process : processesvector)
             {
                 if (process != nullptr)
                 {
@@ -89,26 +91,26 @@ namespace wgm_processes
     void process_management::start_all()
     {
         std::cout << "executing all processes" << std::endl;
-        for (auto process : processesList)
+        for (auto process : processesvector)
         {
             if (process != nullptr)
             {
                 process->start_process();
             }
-            else std::cout << "empty list" << std::endl;
+            else std::cout << "empty vector" << std::endl;
         }
     }
     void process_management::stop_all()
     {      
         std::cout << "stopping all processes" << std::endl;
  
-        for (auto process : processesList)
+        for (auto process : processesvector)
         {
             if (process != nullptr)
             {
                 process->stop_process();
             }
-            else std::cout << "empty list" << std::endl;
+            else std::cout << "empty vector" << std::endl;
         }
     }
     void process_management::add_process()
