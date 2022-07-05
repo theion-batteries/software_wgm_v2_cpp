@@ -14,6 +14,7 @@
 #include "cnt_alignment_system.h"
 #include "wafer_holder_motion_system.h"
 #include "wafer_cooling_system.h"
+#include "wgm_monitoring.h"
 namespace wgm_processes
 {
     /************* interface process management **********/
