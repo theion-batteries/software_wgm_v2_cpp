@@ -79,6 +79,10 @@ namespace cnt_alignment_system
     public:
         virtual void start_hv() = 0;
         virtual void stop_hv() = 0;
+        virtual double get_input_voltage()=0;
+        virtual double get_output_voltage()=0;
+        virtual double get_input_current()=0;
+        virtual double get_output_current()=0;
     Ihv_controller() 
     {
       std::cout << "creating hv controller" << std::endl;
@@ -94,7 +98,19 @@ namespace cnt_alignment_system
         protected:
         virtual void start_hv();
         virtual void stop_hv();
+        virtual double get_input_voltage();
+        virtual double get_output_voltage();
+        virtual double get_input_current();
+        virtual double get_output_current();
+
+        private:
+          double input_voltage;
+          double output_voltage;
+          double input_current;
+          double output_current;
+        
     };
+
     void hv_controller::start_hv()
     {
       std::cout << "starting hv controller" << std::endl;
@@ -102,6 +118,23 @@ namespace cnt_alignment_system
     void hv_controller::stop_hv()
     {
       std::cout << "stopping hv controller" << std::endl;
+    }
+    // external system calls
+    double hv_controller::get_input_voltage()
+    {
+        return input_voltage;
+    }
+    double hv_controller::get_input_current()
+    {
+        return input_current;
+    }
+    double hv_controller::get_output_voltage()
+    {
+        return output_current;
+    }
+    double hv_controller::get_output_current()
+    {
+        return output_voltage;
     }
     /*********** cnt controller ************/
     class Icnt_aligning_controller
@@ -115,8 +148,11 @@ namespace cnt_alignment_system
     {
       std::cout << "deleting cnt_aligning_controller" << std::endl;
     }
-        virtual void start_aligning() = 0;
-        virtual void stop_aligning() = 0;
+      virtual void start_aligning() = 0;
+      virtual void stop_aligning() = 0;
+      virtual cnt_aligning_controller::voltage get_voltage_struct() = 0;
+      virtual cnt_aligning_controller::current get_current_struct() = 0;
+
     };
     //implement
     class cnt_aligning_controller: public Icnt_aligning_controller
@@ -138,10 +174,24 @@ namespace cnt_alignment_system
         delete cnt_motion_controller;
         delete hv_controll;
         }
+        public:
+        struct voltage
+        {
+          double Vin; //voltage
+          double Vout;
+        };
+        struct current
+        {
+          double Cin; //current
+          double Cout; 
+        };
         protected:
+        voltage V;
+        current C;
         virtual void start_aligning();
         virtual void stop_aligning();
-
+      virtual cnt_aligning_controller::voltage get_voltage_struct();
+      virtual cnt_aligning_controller::current get_current_struct();
 
     };
     void cnt_aligning_controller::start_aligning()
@@ -156,6 +206,18 @@ namespace cnt_alignment_system
         cnt_dispenser->stop_vibrating();  
         cnt_motion_controller->move_back_to_reference();
         hv_controll->stop_hv();
+    }
+    cnt_aligning_controller::voltage cnt_aligning_controller::get_voltage_struct()
+    {
+        V.Vin= hv_controll->get_input_voltage();
+        V.Vout= hv_controll->get_output_voltage();
+        return V;
+    }
+    cnt_aligning_controller::current cnt_aligning_controller::get_current_struct()
+    {
+        C.Cin= hv_controll->get_input_voltage();
+        C.Cout= hv_controll->get_output_voltage();
+        return C;
     }
 }
 
