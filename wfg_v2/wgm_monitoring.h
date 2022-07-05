@@ -248,7 +248,7 @@ namespace wgm_monitoring
     }
     virtual ~current_monitor()
     {
-      std::cout << "deleting voltage monitor" << std::endl;
+      std::cout << "deleting current monitor" << std::endl;
       delete param_current;
     }
   protected:
@@ -263,7 +263,7 @@ namespace wgm_monitoring
   {
     std::cout << "process current monitoring started " << std::endl;
     auto Current_data = param_current->get_current_struct();
-    std::cout << "input voltage:  " << Current_data.Cin << "output voltage: " << Current_data.Cout << std::endl;
+    std::cout << "input current:  " << Current_data.Cin << "output current: " << Current_data.Cout << std::endl;
   }
   void current_monitor::stop_monitoring()
   {

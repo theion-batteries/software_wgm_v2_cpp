@@ -136,6 +136,18 @@ namespace cnt_alignment_system
     {
         return output_voltage;
     }
+    /*********** voltage struct *************/
+            struct voltage
+        {
+          double Vin; //voltage
+          double Vout;
+        };
+    /********** current struct ****************/
+        struct current
+        {
+          double Cin; //current
+          double Cout; 
+        };
     /*********** cnt controller ************/
     class Icnt_aligning_controller
     {
@@ -150,9 +162,8 @@ namespace cnt_alignment_system
     }
       virtual void start_aligning() = 0;
       virtual void stop_aligning() = 0;
-      virtual cnt_aligning_controller::voltage get_voltage_struct() = 0;
-      virtual cnt_aligning_controller::current get_current_struct() = 0;
-
+      virtual voltage get_voltage_struct() = 0;
+      virtual current get_current_struct() = 0;
     };
     //implement
     class cnt_aligning_controller: public Icnt_aligning_controller
@@ -175,25 +186,17 @@ namespace cnt_alignment_system
         delete hv_controll;
         }
         public:
-        struct voltage
-        {
-          double Vin; //voltage
-          double Vout;
-        };
-        struct current
-        {
-          double Cin; //current
-          double Cout; 
-        };
+
         protected:
         voltage V;
         current C;
         virtual void start_aligning();
         virtual void stop_aligning();
-      virtual cnt_aligning_controller::voltage get_voltage_struct();
-      virtual cnt_aligning_controller::current get_current_struct();
+      virtual voltage get_voltage_struct();
+      virtual current get_current_struct();
 
     };
+    // methods implmenetation
     void cnt_aligning_controller::start_aligning()
     {
         hv_controll->start_hv();
@@ -207,13 +210,13 @@ namespace cnt_alignment_system
         cnt_motion_controller->move_back_to_reference();
         hv_controll->stop_hv();
     }
-    cnt_aligning_controller::voltage cnt_aligning_controller::get_voltage_struct()
+    voltage cnt_aligning_controller::get_voltage_struct()
     {
         V.Vin= hv_controll->get_input_voltage();
         V.Vout= hv_controll->get_output_voltage();
         return V;
     }
-    cnt_aligning_controller::current cnt_aligning_controller::get_current_struct()
+    current cnt_aligning_controller::get_current_struct()
     {
         C.Cin= hv_controll->get_input_voltage();
         C.Cout= hv_controll->get_output_voltage();

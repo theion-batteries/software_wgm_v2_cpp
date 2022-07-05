@@ -311,11 +311,7 @@ namespace wgm_processes
             /***** add insertion process ***/
             Iextracting_process* extraction_proc = new extracting_process();
             processesvector.push_back(extraction_proc);
-            std::cout << "added wafer extracting process to process vector" << std::endl;               
-            /***** add temperature monitor ***/
-            wgm_monitoring::Imonitor_management* temp_mon = new wgm_monitoring::heat_monitor();
-            processes_monitor->add_to_monitor_list(temp_mon);
-            std::cout << "added temperatur to monitor list" << std::endl;     
+            std::cout << "added wafer extracting process to process vector" << std::endl;              
 
 
         }

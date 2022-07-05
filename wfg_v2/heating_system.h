@@ -62,10 +62,12 @@ namespace sulfur_heating_system
   class temperature_sensor : public Itemperature_sensor {
   protected:
     virtual double get_current_value();
+    double current_val;
   };
   double temperature_sensor::get_current_value()
   {
     std::cout << "reading value temp sensor" << std::endl;
+    return current_val;
   }
   /*********** heating controller *************/
   class Isulfur_heating_controller
