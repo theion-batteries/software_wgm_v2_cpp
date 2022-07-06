@@ -61,7 +61,7 @@ namespace wgm_monitoring
   /************* implementation time monitor************/
   class time_monitor : public Itime_monitor
     /**
-     * @brief monitor time for cnt dispenser
+     * @brief process time monitor. track the duration
      *
      */
   {
@@ -69,15 +69,11 @@ namespace wgm_monitoring
     time_monitor() {
 
     }
-
     virtual ~time_monitor()
     {
       std::cout << "deleting heating process " << std::endl;
     }
   protected:
-    // pointer to required process for time monitoring
-
-
     std::chrono::time_point<std::chrono::steady_clock> start;
     std::chrono::time_point<std::chrono::steady_clock> end;
   protected:
@@ -118,13 +114,13 @@ namespace wgm_monitoring
   private:
     wafer_holder_motion_system::Iwafer_motion_controller* param_distance;
   public:
-    distance_monitor() {
-      param_distance = new wafer_holder_motion_system::wafer_motion_controller();
+    distance_monitor(wafer_holder_motion_system::Iwafer_motion_controller* ptr_to_system) {
+      param_distance = ptr_to_system;
     }
     virtual ~distance_monitor()
     {
       std::cout << "deleting sinking process " << std::endl;
-      delete param_distance;
+      //delete param_distance;
     }
   protected:
     virtual void start_monitoring();
@@ -159,13 +155,13 @@ namespace wgm_monitoring
   private:
     sulfur_heating_system::Isulfur_heating_controller* param_temp;
   public:
-    heat_monitor() {
-      param_temp = new sulfur_heating_system::sulfur_heating_controller();
+    heat_monitor(sulfur_heating_system::Isulfur_heating_controller* ptr_to_system) {
+      param_temp = ptr_to_system;
     }
     virtual ~heat_monitor()
     {
       std::cout << "deleting temperature monitor " << std::endl;
-      delete param_temp;
+      //delete param_temp;
     }
   protected:
     virtual void start_monitoring();
@@ -203,13 +199,13 @@ namespace wgm_monitoring
     virtual void start_monitoring();
     virtual void stop_monitoring();
   public:
-    voltage_monitor() {
-      param_voltage = new cnt_alignment_system::cnt_aligning_controller();
+    voltage_monitor(cnt_alignment_system::Icnt_aligning_controller* ptr_to_system) {
+      param_voltage = ptr_to_system;
     }
     virtual ~voltage_monitor()
     {
       std::cout << "deleting voltage monitor" << std::endl;
-      delete param_voltage;
+      //delete param_voltage;
     }
   };
 
@@ -229,7 +225,7 @@ namespace wgm_monitoring
   public:
     Icurrent_monitor()
     {
-      std::cout << "creating currnt monitor " << std::endl;
+      std::cout << "creating current monitor " << std::endl;
     }
     virtual ~Icurrent_monitor()
     {
@@ -240,17 +236,17 @@ namespace wgm_monitoring
   /****************** implementation voltage monitor *****************/
   class current_monitor : public Icurrent_monitor
   {
+  private:
+    cnt_alignment_system::Icnt_aligning_controller* param_current;
   public:
-    current_monitor() {
-      param_current = new cnt_alignment_system::cnt_aligning_controller();
+    current_monitor(cnt_alignment_system::Icnt_aligning_controller* ptr_to_system) {
+      param_current = ptr_to_system;
     }
     virtual ~current_monitor()
     {
       std::cout << "deleting current monitor" << std::endl;
-      delete param_current;
+      //delete param_current;
     }
-  protected:
-    cnt_alignment_system::Icnt_aligning_controller* param_current;
 
   protected:
     virtual void start_monitoring();
