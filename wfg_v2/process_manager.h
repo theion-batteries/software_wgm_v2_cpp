@@ -242,14 +242,6 @@ namespace wgm_processes
     }
 
 
-
-
-
-
-
-
-
-
     /******************** implementation process management ************/
     /**
      * @brief implementation process managemnt
@@ -276,44 +268,42 @@ namespace wgm_processes
             /***** add temperature monitor ***/
             wgm_monitoring::Imonitor_management* temp_mon = new wgm_monitoring::heat_monitor();
             processes_monitor->add_to_monitor_list(temp_mon);
-            std::cout << "added temperatur to monitor list" << std::endl;            
-            
+            std::cout << "added temperatur to monitor list" << std::endl;
+
             /***** add insertion process ***/
             Isinking_process* insertion_proc = new sinking_process();
             processesvector.push_back(insertion_proc);
-            std::cout << "added wafer insertion process to process vector" << std::endl; 
+            std::cout << "added wafer insertion process to process vector" << std::endl;
             /***** add distance monitor ***/
             wgm_monitoring::Imonitor_management* dist_mon = new wgm_monitoring::distance_monitor();
             processes_monitor->add_to_monitor_list(dist_mon);
-            std::cout << "added distance to monitor list" << std::endl;     
+            std::cout << "added distance to monitor list" << std::endl;
 
-           /***** add aligning process ***/
+            /***** add aligning process ***/
             Ialigning_process* aligning_proc = new aligning_process();
             processesvector.push_back(aligning_proc);
             std::cout << "added aligning process to process vector" << std::endl;
             /***** add time monitor ***/
             wgm_monitoring::Imonitor_management* time_mon = new wgm_monitoring::time_monitor();
             processes_monitor->add_to_monitor_list(time_mon);
-            std::cout << "added time to monitor list" << std::endl;     
+            std::cout << "added time to monitor list" << std::endl;
             /***** add voltage monitor ***/
             wgm_monitoring::Imonitor_management* volt_mon = new wgm_monitoring::voltage_monitor();
             processes_monitor->add_to_monitor_list(volt_mon);
-            std::cout << "added voltage to monitor list" << std::endl;  
+            std::cout << "added voltage to monitor list" << std::endl;
             /***** add current monitor ***/
             wgm_monitoring::Imonitor_management* curr_mon = new wgm_monitoring::current_monitor();
             processes_monitor->add_to_monitor_list(curr_mon);
-            std::cout << "added current to monitor list" << std::endl;  
+            std::cout << "added current to monitor list" << std::endl;
             /***** add cooling process ***/
             Icooling_process* cooling_proc = new cooling_process();
             processesvector.push_back(cooling_proc);
-            std::cout << "added cooling process to process vector" << std::endl;    
+            std::cout << "added cooling process to process vector" << std::endl;
 
             /***** add insertion process ***/
             Iextracting_process* extraction_proc = new extracting_process();
             processesvector.push_back(extraction_proc);
-            std::cout << "added wafer extracting process to process vector" << std::endl;              
-
-
+            std::cout << "added wafer extracting process to process vector" << std::endl;
         }
         // clean up destruction
         virtual ~process_management() {

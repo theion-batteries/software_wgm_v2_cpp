@@ -27,14 +27,12 @@ namespace wgm_monitoring
   class Imonitor_management
   {
   public:
-    Imonitor_management() {
-    }
+    Imonitor_management() {}
     virtual void start_monitoring() = 0;
     virtual void stop_monitoring() = 0;
-    virtual void add_to_monitor_list(Imonitor_management* param_monitor);
-    virtual void delete_last_from_monitor_list();
-    virtual ~Imonitor_management() {
-    }
+    virtual void add_to_monitor_list(Imonitor_management* param_monitor){};
+    virtual void delete_last_from_monitor_list(){};
+    virtual ~Imonitor_management() {}
   };
   /************* monitor interface and implementation**********/
   /**
