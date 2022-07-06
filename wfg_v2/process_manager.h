@@ -29,6 +29,8 @@ namespace wgm_processes
         }
         virtual void start_process() = 0;
         virtual void stop_process() = 0;
+        virtual void add_process_to_scheduler(Iprocesses_managment* process){};
+        virtual void delete_last_process_from_scheduler(){};
         virtual void stop_all() {};
         virtual void start_all() {};
         virtual ~Iprocesses_managment() {
@@ -315,27 +317,27 @@ namespace wgm_processes
             /***** add heating process ***/
             Iheating_process* heating_proc = new heating_process();
             processesvector.push_back(heating_proc);
-            std::cout << "added heating process to process  scheduler" << std::endl;
+            std::cout << "added heating process to process scheduler" << std::endl;
 
             /***** add insertion process ***/
             Isinking_process* insertion_proc = new sinking_process();
             processesvector.push_back(insertion_proc);
-            std::cout << "added wafer insertion process to process  scheduler" << std::endl;
+            std::cout << "added wafer insertion process to process scheduler" << std::endl;
 
             /***** add aligning process ***/
             Ialigning_process* aligning_proc = new aligning_process();
             processesvector.push_back(aligning_proc);
-            std::cout << "added aligning process to process  scheduler" << std::endl;
+            std::cout << "added aligning process to process scheduler" << std::endl;
 
             /***** add cooling process ***/
             Icooling_process* cooling_proc = new cooling_process();
             processesvector.push_back(cooling_proc);
-            std::cout << "added cooling process to process  scheduler" << std::endl;
+            std::cout << "added cooling process to process scheduler" << std::endl;
 
             /***** add insertion process ***/
             Iextracting_process* extraction_proc = new extracting_process();
             processesvector.push_back(extraction_proc);
-            std::cout << "added wafer extracting process to process  scheduler" << std::endl;
+            std::cout << "added wafer extracting process to process scheduler" << std::endl;
         }
         // clean up destruction
         virtual ~process_management() {
@@ -358,8 +360,8 @@ namespace wgm_processes
         virtual void stop_process();
         virtual void start_all();
         virtual void stop_all();
-        virtual void add_process();
-        virtual void delete_process();
+        virtual void add_process_to_scheduler(Iprocesses_managment* process);
+        virtual void delete_last_process_from_scheduler();
     };
     void process_management::start_process()
     {
@@ -394,12 +396,14 @@ namespace wgm_processes
             else std::cout << "empty process scheduler" << std::endl;
         }
     }
-    void process_management::add_process()
+    void process_management::add_process_to_scheduler(Iprocesses_managment* process)
     {
+      processesvector.push_back(process);
 
     }
-    void process_management::delete_process()
+    void process_management::delete_last_process_from_scheduler()
     {
+      processesvector.pop_back();
 
     }
 
