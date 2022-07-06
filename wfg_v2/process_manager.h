@@ -305,11 +305,11 @@ namespace wgm_processes
     {
     private:
         std::vector<Iprocesses_managment*> processesvector;
-        wgm_monitoring::Imonitor_management* processes_monitor;
+        //wgm_monitoring::Imonitor_management* processes_monitor;
     public:
         process_management() {
             std::cout << "creating process manager" << std::endl;
-            processes_monitor = new wgm_monitoring::monitor_managment();
+            //processes_monitor = new wgm_monitoring::monitor_managment();
             /********************* add new processes *************************/
 
             /***** add heating process ***/
