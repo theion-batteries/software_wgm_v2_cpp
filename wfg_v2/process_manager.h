@@ -70,6 +70,7 @@ namespace wgm_processes
         wgm_monitoring::Itime_monitor* process_timer;
         wgm_monitoring::Iheat_monitor* process_temp_monitor;
         wgm_feedbacks::proc_feedback heating_feedback;
+        std::string process_name = "heating process";
     public:
         heating_process() {
             heating_sys = new sulfur_heating_system::sulfur_heating_controller();
@@ -89,6 +90,7 @@ namespace wgm_processes
     };
     void heating_process::start_process()
     {   
+        std::cout << "execute "<<process_name << std::endl; 
         // start timer
         process_timer->start_monitoring();
         // start system
@@ -104,6 +106,7 @@ namespace wgm_processes
     }
     void heating_process::stop_process()
     {
+        std::cout << "finish "<<process_name << std::endl; 
         heating_sys->turn_off_heating();
         process_temp_monitor->stop_monitoring();
 
@@ -130,6 +133,8 @@ namespace wgm_processes
         wgm_monitoring::Itime_monitor* process_timer;
         wafer_holder_motion_system::Iwafer_motion_controller* sinking_sys;
         wgm_monitoring::Idistance_monitor* process_dist_monitor;
+        std::string process_name = "sinking process";
+
     public:
         sinking_process() {
             sinking_sys = new wafer_holder_motion_system::wafer_motion_controller();
@@ -148,6 +153,7 @@ namespace wgm_processes
     };
     void sinking_process::start_process()
     {
+        std::cout << "execute "<<process_name << std::endl; 
         process_timer->start_monitoring();
         sinking_sys->set_distance_to_surface_contact(30);
         sinking_sys->insert_wafer_in_ml();
@@ -157,6 +163,7 @@ namespace wgm_processes
     }
     void sinking_process::stop_process()
     {
+        std::cout << "finish "<<process_name << std::endl; 
         process_dist_monitor->stop_monitoring();
     }
     /****************** interface cnt alignment process*******************/
@@ -182,6 +189,8 @@ namespace wgm_processes
         wgm_monitoring::Ivoltage_monitor* process_volt_monitor;
         wgm_monitoring::Icurrent_monitor* process_curr_monitor;
         cnt_alignment_system::Icnt_aligning_controller* aligning_sys;
+        std::string process_name = "aligning process";
+
     public:
         aligning_process() {
             aligning_sys = new cnt_alignment_system::cnt_aligning_controller();
@@ -202,6 +211,7 @@ namespace wgm_processes
     };
     void aligning_process::start_process()
     {
+        std::cout << "execute "<<process_name << std::endl; 
         process_timer->start_monitoring();
         aligning_sys->start_aligning();
         align_feedback.report_success();
@@ -211,6 +221,7 @@ namespace wgm_processes
     }
     void aligning_process::stop_process()
     {
+        std::cout << "finish "<<process_name << std::endl; 
         aligning_sys->stop_aligning();
         process_curr_monitor->stop_monitoring();
         process_volt_monitor->stop_monitoring();
@@ -236,6 +247,8 @@ namespace wgm_processes
         wgm_feedbacks::proc_feedback cooling_feedback;
         wgm_monitoring::Itime_monitor* process_timer;    
         wafer_cooling_system::Icooling_controller* cooling_sys;
+        std::string process_name = "cooling process";
+
     public:
         cooling_process() {
             cooling_sys = new wafer_cooling_system::cooling_controller();
@@ -252,6 +265,7 @@ namespace wgm_processes
     };
     void cooling_process::start_process()
     {
+        std::cout << "execute "<<process_name << std::endl; 
         process_timer->start_monitoring();
         cooling_sys->start_cooling();
         cooling_feedback.report_success();
@@ -259,7 +273,9 @@ namespace wgm_processes
     }
     void cooling_process::stop_process()
     {
+        std::cout << "finish "<<process_name << std::endl; 
         cooling_sys->stop_cooling();
+
     }
     /******************* interface wafer extraction process***************/
     class Iextracting_process : public Iprocesses_managment
@@ -282,6 +298,8 @@ namespace wgm_processes
         wgm_feedbacks::proc_feedback extracting_feedback;
         wgm_monitoring::Itime_monitor* process_timer;    
         wafer_holder_motion_system::Iwafer_motion_controller* extracting_sys;
+        std::string process_name = "extracting process";
+
     public:
         extracting_process() {
             extracting_sys = new wafer_holder_motion_system::wafer_motion_controller();
@@ -296,9 +314,11 @@ namespace wgm_processes
         }
         virtual void start_process();
         virtual void stop_process();
+                void print_process_name();
     };
     void extracting_process::start_process()
     {
+        std::cout << "execute "<<process_name << std::endl; 
         process_timer->start_monitoring();
         extracting_sys->extract_wafer_from_ml();
         extracting_feedback.report_success();
@@ -306,7 +326,7 @@ namespace wgm_processes
     }
     void extracting_process::stop_process()
     {
-
+        std::cout << "finish "<<process_name << std::endl; 
     }
 
 
@@ -394,7 +414,7 @@ namespace wgm_processes
                if (wgm_feedbacks::proc_feedback::proc_feedback_value == wgm_feedbacks::enum_proc_feedback::proc_success) continue;
                break;
             }
-            else std::cout << "empty process scheduler" << std::endl; break;
+            else std::cout << "empty process scheduler" << std::endl;
         }
     }
     void process_management::stop_all()
@@ -407,7 +427,7 @@ namespace wgm_processes
             {
                 process->stop_process();
             }
-            else std::cout << "empty process scheduler" << std::endl; break;
+            else std::cout << "empty process scheduler" << std::endl;
         }
     }
     void process_management::add_process_to_scheduler(Iprocesses_managment* process)
