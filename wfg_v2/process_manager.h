@@ -15,7 +15,8 @@
 #include "wafer_holder_motion_system.h"
 #include "wafer_cooling_system.h"
 #include "wgm_monitoring.h"
-#include "feedback_management.h"
+#include "feedback_management.cpp"
+
 namespace wgm_processes
 {
     /************* interface process management **********/
@@ -203,7 +204,7 @@ namespace wgm_processes
     {
         process_timer->start_monitoring();
         aligning_sys->start_aligning();
-        align_feedback.report_error();
+        align_feedback.report_success();
         process_timer->stop_monitoring();
         process_curr_monitor->start_monitoring();
         process_volt_monitor->start_monitoring();
@@ -232,6 +233,7 @@ namespace wgm_processes
     class cooling_process : public Icooling_process
     {
     private:
+        wgm_feedbacks::proc_feedback cooling_feedback;
         wgm_monitoring::Itime_monitor* process_timer;    
         wafer_cooling_system::Icooling_controller* cooling_sys;
     public:
@@ -252,6 +254,7 @@ namespace wgm_processes
     {
         process_timer->start_monitoring();
         cooling_sys->start_cooling();
+        cooling_feedback.report_success();
         process_timer->stop_monitoring();
     }
     void cooling_process::stop_process()
@@ -276,6 +279,7 @@ namespace wgm_processes
     class extracting_process : public Iextracting_process
     {
     private:
+        wgm_feedbacks::proc_feedback extracting_feedback;
         wgm_monitoring::Itime_monitor* process_timer;    
         wafer_holder_motion_system::Iwafer_motion_controller* extracting_sys;
     public:
@@ -297,6 +301,7 @@ namespace wgm_processes
     {
         process_timer->start_monitoring();
         extracting_sys->extract_wafer_from_ml();
+        extracting_feedback.report_success();
         process_timer->stop_monitoring();
     }
     void extracting_process::stop_process()
@@ -316,7 +321,6 @@ namespace wgm_processes
     {
     private:
         std::vector<Iprocesses_managment*> processesvector;
-        wgm_feedbacks::proc_feedback proc_manager_feedback;
     public:
         process_management() {
             std::cout << "creating process manager" << std::endl;
@@ -387,7 +391,7 @@ namespace wgm_processes
             if (process != nullptr)
             {
                process->start_process();
-               if (proc_manager_feedback.proc_feedback_value == wgm_feedbacks::enum_proc_feedback::proc_success) continue;
+               if (wgm_feedbacks::proc_feedback::proc_feedback_value == wgm_feedbacks::enum_proc_feedback::proc_success) continue;
                break;
             }
             else std::cout << "empty process scheduler" << std::endl; break;
