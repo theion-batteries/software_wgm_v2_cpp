@@ -15,6 +15,7 @@
 #include "wafer_holder_motion_system.h"
 #include "wafer_cooling_system.h"
 #include "wgm_monitoring.h"
+#include "feedback_management.h"
 namespace wgm_processes
 {
     /************* interface process management **********/
@@ -63,10 +64,12 @@ namespace wgm_processes
     /************* implementation heating process ************/
     class heating_process : public Iheating_process
     {
-    public:
+    private:
         sulfur_heating_system::Isulfur_heating_controller* heating_sys;
         wgm_monitoring::Itime_monitor* process_timer;
         wgm_monitoring::Iheat_monitor* process_temp_monitor;
+        wgm_feedbacks::proc_feedback heating_feedback;
+    public:
         heating_process() {
             heating_sys = new sulfur_heating_system::sulfur_heating_controller();
             process_timer = new wgm_monitoring::time_monitor();
@@ -89,6 +92,8 @@ namespace wgm_processes
         process_timer->start_monitoring();
         // start system
         heating_sys->turn_on_heating();
+        // report feedback
+        heating_feedback.report_success();
         // stop timer
         process_timer->stop_monitoring();
         // start temp monitor
@@ -120,6 +125,7 @@ namespace wgm_processes
     class sinking_process : public Isinking_process
     {
     private:
+        wgm_feedbacks::proc_feedback sinking_feedback;
         wgm_monitoring::Itime_monitor* process_timer;
         wafer_holder_motion_system::Iwafer_motion_controller* sinking_sys;
         wgm_monitoring::Idistance_monitor* process_dist_monitor;
@@ -144,6 +150,7 @@ namespace wgm_processes
         process_timer->start_monitoring();
         sinking_sys->set_distance_to_surface_contact(30);
         sinking_sys->insert_wafer_in_ml();
+        sinking_feedback.report_success();
         process_timer->stop_monitoring();
         process_dist_monitor->start_monitoring();
     }
@@ -169,6 +176,7 @@ namespace wgm_processes
     class aligning_process : public Ialigning_process
     {
     private:
+        wgm_feedbacks::proc_feedback align_feedback;
         wgm_monitoring::Itime_monitor* process_timer;
         wgm_monitoring::Ivoltage_monitor* process_volt_monitor;
         wgm_monitoring::Icurrent_monitor* process_curr_monitor;
@@ -195,6 +203,7 @@ namespace wgm_processes
     {
         process_timer->start_monitoring();
         aligning_sys->start_aligning();
+        align_feedback.report_error();
         process_timer->stop_monitoring();
         process_curr_monitor->start_monitoring();
         process_volt_monitor->start_monitoring();
@@ -307,13 +316,12 @@ namespace wgm_processes
     {
     private:
         std::vector<Iprocesses_managment*> processesvector;
-        //wgm_monitoring::Imonitor_management* processes_monitor;
+        wgm_feedbacks::proc_feedback proc_manager_feedback;
     public:
         process_management() {
             std::cout << "creating process manager" << std::endl;
             //processes_monitor = new wgm_monitoring::monitor_managment();
             /********************* add new processes *************************/
-
             /***** add heating process ***/
             Iheating_process* heating_proc = new heating_process();
             processesvector.push_back(heating_proc);
@@ -378,9 +386,11 @@ namespace wgm_processes
         {
             if (process != nullptr)
             {
-                process->start_process();
+               process->start_process();
+               if (proc_manager_feedback.proc_feedback_value == wgm_feedbacks::enum_proc_feedback::proc_success) continue;
+               break;
             }
-            else std::cout << "empty process scheduler" << std::endl;
+            else std::cout << "empty process scheduler" << std::endl; break;
         }
     }
     void process_management::stop_all()
@@ -393,7 +403,7 @@ namespace wgm_processes
             {
                 process->stop_process();
             }
-            else std::cout << "empty process scheduler" << std::endl;
+            else std::cout << "empty process scheduler" << std::endl; break;
         }
     }
     void process_management::add_process_to_scheduler(Iprocesses_managment* process)

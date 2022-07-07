@@ -33,18 +33,37 @@ namespace wgm_feedbacks
     class proc_feedback
     {
         public:
-            void report_success ();
-            void report_error ();
+            bool report_success ();
+            bool report_error ();
+            static enum_proc_feedback proc_feedback_value;
     };
-    void proc_feedback::report_success ()
+    bool proc_feedback::report_success ()
     {
-                        
+        std::cout << "process reported success" << std::endl;           
+        proc_feedback_value = enum_proc_feedback::proc_success;  
+        return true;
     }
-    void proc_feedback::report_error ()
+    bool proc_feedback::report_error ()
     {
-                        
+        std::cout << "process reported error" << std::endl;            
+        proc_feedback_value = enum_proc_feedback::proc_error;    
+        return false;  
     }
     /**************** system feedback ***************/
+    class sw_communication
+    {
+        public:
+        template<typename T> void emit (T cmd);
+        template<typename T> void parse (T data);
+    };
+    template<typename T> void sw_communication::emit (T cmd)
+    {
+                        
+    }
+    template<typename T> void sw_communication::parse (T data)
+    {
+                   
+    }
     class sys_feedback
     {
         private:
@@ -61,27 +80,24 @@ namespace wgm_feedbacks
     {
             sw_com_handler.emit(enum_sys_feedback::sys_success);            
     }
-    /************* software communication ***********/
-    class sw_communication
-    {
-        
-        public:
-        template<typename T> void emit (T cmd);
-        template<typename T> void parse (T data);
-    };
-    template<typename T> void sw_communication::emit (T cmd)
-    {
-                        
-    }
-    template<typename T> void sw_communication::parse (T data)
-    {
-                        
-    }
-    class internal_comuunication
-    {
-    };  
+    /*************software communication***********/
+
 /*********** hardware specific implementation *************/
     /************** hardware feedback ************/
+    class hw_communication
+    {
+        public:
+            template<typename T> void emit (T response);
+            template<typename T> void parse (T data);
+    };
+      template<typename T> void hw_communication::emit (T response)
+    {
+              
+    }
+      template<typename T> void parse (T data)
+    {
+
+    }
     class hw_feedback
     {
         private:
@@ -102,15 +118,7 @@ namespace wgm_feedbacks
             hw_com_handler.emit(enum_hw_feedback::hw_error);            
     }
     /************ hardware communication *****/
-    class hw_communication
-    {
-        public:
-            template<typename T> void emit (T response);
-    };
-      template<typename T> void hw_communication::emit (T response)
-    {
-                        
-    }
+
 }
 
 

@@ -7,7 +7,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Wed Jul 06 10:29:54 2022
+# Make data base, printed on Thu Jul 07 13:18:33 2022
 
 # Variables
 
@@ -73,7 +73,7 @@ CVGENICAM_REGISTRY = C:\ProgramData\STEMMER IMAGING\Common Vision Blox\GenICam\x
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-e8d5050d-52b5-48c9-bc2b-6975fcff431b-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-558b98f8-86b6-46b9-ac1e-862e9ceea0b3-sock
 # environment
 VSCODE_CWD = C:\Users\SamiDhiab\AppData\Local\Programs\Microsoft VS Code
 # environment
@@ -101,7 +101,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_4652_ULNBLKUDMRHXQOBD
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_17956_PLGXXSNVWUEKVSKJ
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -171,7 +171,8 @@ OS = Windows_NT
 # environment
 VSCODE_IPC_HOOK = \\.\pipe\66617ee1df8269f425333cb861d18dbe-1.68.1-main-sock
 # environment
-PYTHONPATH = C:\Users\SamiDhiab\Theion_Repos;C:\Users\SamiDhiab\Theion_Repos\IR_Thermal_Camera\test\Medium_Imports_Tutorial\utils;C:\Users\SamiDhiab\Theion_Repos\soft_temperature_control_module\lib;
+PYTHONPATH = C:\Users\SamiDhiab\Theion_Repos;C:\Users\SamiDhiab\Th 
+eion_Repos\IR_Thermal_Camera\test\Medium_Imports_Tutorial\utils;C:\Users\SamiDhiab\Theion_Repos\soft_temperature_control_module\lib;
 # environment
 HOMEPATH = \Users\SamiDhiab
 # environment
@@ -214,8 +215,7 @@ SESSIONNAME = Console
 PROCESSOR_REVISION = 6001
 # environment
 CVBDATA = C:\ProgramData\STEMMER IMAGING\Common Vision Blox\
-# d 
-efault
+# default
 .RECIPEPREFIX := 
 # environment
 LANG = C
@@ -224,7 +224,7 @@ PROCESSOR_LEVEL = 23
 # environment
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
-VSCODE_PID = 4652
+VSCODE_PID = 17956
 # environment
 USERDOMAIN_ROAMINGPROFILE = AzureAD
 # variable set hash-table stats:
@@ -237,12 +237,12 @@ USERDOMAIN_ROAMINGPROFILE = AzureAD
 # Directories
 
 # : could not be stat'd.
-# C:\WINDOWS\System32\WindowsPowerShell\v1.0\ (key C:/WINDOWS/System32/WindowsP 
-owerShell/v1.0/, mtime 1640088842): 34 files, no impossibilities.
+# C:\WINDOWS\System32\WindowsPowerShell\v1.0\ (key C:/WINDOWS/System32/WindowsPowerShell/v1.0/, mtime 1640088842): 34 files, no impossibilities.
 # C:\Users\SamiDhiab\AppData\Roaming\npm (key C:/Users/SamiDhiab/AppData/Roaming/npm, mtime 1632490459): 2 files, no impossibilities.
-# . (key c:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp, mtime 1657034645): 7 files, no impossibilities.
+# . (key c:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp, mtime 1657192674): 11 files, no impossibilities.
 # C:\Users\SamiDhiab\.platformio\penv\Scripts\ (key C:/Users/SamiDhiab/.platformio/penv/Scripts/, mtime 1656008720): 25 files, no impossibilities.
-# C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\ (key C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/, mtime 1636023288): 7 files, no impossibilities.
+# C:\Program Files\Microsoft SQL Server\Client SDK\O 
+DBC\170\Tools\Binn\ (key C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/, mtime 1636023288): 7 files, no impossibilities.
 # C:\Program Files (x86)\Common Files\Oracle\Java\javapath (key C:/Program Files (x86)/Common Files/Oracle/Java/javapath, mtime 1652174015): 5 files, no impossibilities.
 # C:\Program Files\STEMMER IMAGING\Common Vision Blox\ (key C:/Program Files/STEMMER IMAGING/Common Vision Blox/, mtime 1634050659): 73 files, no impossibilities.
 # C: could not be stat'd.
@@ -254,12 +254,12 @@ owerShell/v1.0/, mtime 1640088842): 34 files, no impossibilities.
 # C:\Program Files\CMake\bin (key C:/Program Files/CMake/bin, mtime 1637523212): 7 files, no impossibilities.
 # C:\WINDOWS (key C:/WINDOWS, mtime 1655714052): 134 files, no impossibilities.
 # C:\Program Files\JetBrains\PyCharm Community Edition 2021.2.2\bin (key C:/Program Files/JetBrains/PyCharm Community Edition 2021.2.2/bin, mtime 1634660577): 28 files, no impossibilities.
-# C:\Users\SamiDhiab\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/SamiDhiab/AppData/Local/Progr 
-ams/Microsoft VS Code/bin, mtime 1655326419): 4 files, no impossibilities.
+# C:\Users\SamiDhiab\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/SamiDhiab/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1655326419): 4 files, no impossibilities.
 # C:\ProgramData\chocolatey\bin (key C:/ProgramData/chocolatey/bin, mtime 1633200592): 41 files, no impossibilities.
 # C:\Users\SamiDhiab\.dotnet\tools: could not be stat'd.
 # C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\bin (key C:/Program Files/Eclipse Foundation/jdk-8.0.302.8-hotspot/bin, mtime 1637168167): 53 files, no impossibilities.
-# C:\Program Files\Microsoft SQL Server\130\Tools\Binn\ (key C:/Program Files/Microsoft SQL Server/130/Tools/Binn/, mtime 1636023284): 4 files, no impossibilities.
+# C:\Program Files\Microsoft SQL Server\130\Tools\Binn\ (key C:/Program Files/M 
+icrosoft SQL Server/130/Tools/Binn/, mtime 1636023284): 4 files, no impossibilities.
 # C:\WINDOWS\System32\Wbem (key C:/WINDOWS/System32/Wbem, mtime 1655501878): 175 files, no impossibilities.
 # C:\Program Files\doxygen\bin (key C:/Program Files/doxygen/bin, mtime 1652958329): 7 files, no impossibilities.
 # C:\Program Files\nodejs\ (key C:/Program Files/nodejs/, mtime 1632490465): 11 files, no impossibilities.
@@ -270,7 +270,7 @@ ams/Microsoft VS Code/bin, mtime 1655326419): 4 files, no impossibilities.
 # C:\Users\SamiDhiab\AppData\Local\Programs\Python\Python39\Scripts\ (key C:/Users/SamiDhiab/AppData/Local/Programs/Python/Python39/Scripts/, mtime 1647271958): 78 files, no impossibilities.
 # C:\Program Files\PuTTY\ (key C:/Program Files/PuTTY/, mtime 1629711085): 12 files, no impossibilities.
 
-# 4611 files, no impossibilities in 31 directories.
+# 4615 files, no impossibilities in 31 directories.
 
 # Implicit Rules
 
@@ -309,7 +309,10 @@ makefile:
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
-#  File has not been updated.
+#   
+make.exe: *** No rule to make target 'all'.  Stop.
+
+File has not been updated.
 
 # Not a target:
 GNUmakefile:
@@ -326,17 +329,14 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 9 (7) / strings = 4488 / storage = 68346 B / avg = 15 B
-# current buf: size = 8174 B / used = 3042 B / count = 234 / avg = 13 B
-# other used: total = 6017 
-make.exe: *** No rule to make target 'all'.  Stop.
+# strcache buffers: 9 (8) / strings = 4492 / storage = 68445 B / avg = 15 B
+# current buf: size = 8174 B / used = 3116 B / count = 237 / avg = 13 B
+# other used: total = 60271 B / count = 4255 / avg = 14 B
+# other free: total = 63 B / max = 14 B / min = 2 B / avg = 7 B
 
-2 B / count = 4254 / avg = 14 B
-# other free: total = 88 B / max = 25 B / min = 2 B / avg = 11 B
-
-# strcache performance: lookups = 4649 / hit rate = 3%
+# strcache performance: lookups = 4653 / hit rate = 3%
 # hash-table stats:
-# Load=4488/8192=55%, Rehash=0, Collisions=2183/4649=47%
-# Finished Make data base on Wed Jul 06 10:29:54 2022
+# Load=4492/8192=55%, Rehash=0, Collisions=2184/4653=47%
+# Finished Make data base on Thu Jul 07 13:18:33 2022
 
  
