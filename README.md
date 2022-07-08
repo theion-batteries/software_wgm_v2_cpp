@@ -1,2 +1,2 @@
 # software_wgm_v2_cpp
-contains the wafer growing machine v2 class diagram and the implementation.
+contains the wafer growing machine v2 [source code](/wfg_v2/) and [documentation](/doc.pdf)
