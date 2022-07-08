@@ -35,6 +35,10 @@ namespace wgm_processes
         virtual void delete_last_process_from_scheduler(){};
         virtual void stop_all() {};
         virtual void start_all() {};
+        virtual std::string get_name() =0 ;
+        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback()=0;
+
+
         virtual ~Iprocesses_managment() {
         }
     };
@@ -61,6 +65,8 @@ namespace wgm_processes
         }
         virtual void start_process() = 0;
         virtual void stop_process() = 0;
+        virtual std::string get_name() =0 ;
+        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback()=0;
     };
     /************* implementation heating process ************/
     class heating_process : public Iheating_process
@@ -69,7 +75,7 @@ namespace wgm_processes
         sulfur_heating_system::Isulfur_heating_controller* heating_sys;
         wgm_monitoring::Itime_monitor* process_timer;
         wgm_monitoring::Iheat_monitor* process_temp_monitor;
-        wgm_feedbacks::proc_feedback heating_feedback;
+        wgm_feedbacks::sys_feedback process_feedback;
         std::string process_name = "heating process";
     public:
         heating_process() {
@@ -87,6 +93,8 @@ namespace wgm_processes
         }
         virtual void start_process();
         virtual void stop_process();
+        virtual std::string get_name();
+        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback(){return process_feedback.get_feedback();}
     };
     void heating_process::start_process()
     {   
@@ -96,7 +104,7 @@ namespace wgm_processes
         // start system
         heating_sys->turn_on_heating();
         // report feedback
-        heating_feedback.report_success();
+        process_feedback.report_feedback();
         // stop timer
         process_timer->stop_monitoring();
         // start temp monitor
@@ -124,12 +132,14 @@ namespace wgm_processes
         }
         virtual void start_process() = 0;
         virtual void stop_process() = 0;
+        virtual std::string get_name() =0 ;
+        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback()=0;
     };
     /**************** implementation wafer insertion process ************/
     class sinking_process : public Isinking_process
     {
     private:
-        wgm_feedbacks::proc_feedback sinking_feedback;
+        wgm_feedbacks::sys_feedback process_feedback;
         wgm_monitoring::Itime_monitor* process_timer;
         wafer_holder_motion_system::Iwafer_motion_controller* sinking_sys;
         wgm_monitoring::Idistance_monitor* process_dist_monitor;
@@ -150,6 +160,8 @@ namespace wgm_processes
         }
         virtual void start_process();
         virtual void stop_process();
+        virtual std::string get_name();
+        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback(){return process_feedback.get_feedback();}
     };
     void sinking_process::start_process()
     {
@@ -157,7 +169,7 @@ namespace wgm_processes
         process_timer->start_monitoring();
         sinking_sys->set_distance_to_surface_contact(30);
         sinking_sys->insert_wafer_in_ml();
-        sinking_feedback.report_success();
+        process_feedback.report_feedback();
         process_timer->stop_monitoring();
         process_dist_monitor->start_monitoring();
     }
@@ -179,12 +191,14 @@ namespace wgm_processes
         }
         virtual void start_process() = 0;
         virtual void stop_process() = 0;
+        virtual std::string get_name() =0 ;
+        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback()=0;
     };
     /******************* implementation cnt alignment process ***************/
     class aligning_process : public Ialigning_process
     {
     private:
-        wgm_feedbacks::proc_feedback align_feedback;
+        wgm_feedbacks::sys_feedback process_feedback;
         wgm_monitoring::Itime_monitor* process_timer;
         wgm_monitoring::Ivoltage_monitor* process_volt_monitor;
         wgm_monitoring::Icurrent_monitor* process_curr_monitor;
@@ -208,13 +222,15 @@ namespace wgm_processes
         }
         virtual void start_process();
         virtual void stop_process();
+        virtual std::string get_name();
+        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback(){return process_feedback.get_feedback();}
     };
     void aligning_process::start_process()
     {
         std::cout << "execute "<<process_name << std::endl; 
         process_timer->start_monitoring();
         aligning_sys->start_aligning();
-        align_feedback.report_success();
+        process_feedback.report_feedback();
         process_timer->stop_monitoring();
         process_curr_monitor->start_monitoring();
         process_volt_monitor->start_monitoring();
@@ -239,12 +255,14 @@ namespace wgm_processes
         }
         virtual void start_process() = 0;
         virtual void stop_process() = 0;
+        virtual std::string get_name() =0 ;
+        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback()=0;
     };
     /******************* implementation cooling process ***************/
     class cooling_process : public Icooling_process
     {
     private:
-        wgm_feedbacks::proc_feedback cooling_feedback;
+        wgm_feedbacks::sys_feedback process_feedback;
         wgm_monitoring::Itime_monitor* process_timer;    
         wafer_cooling_system::Icooling_controller* cooling_sys;
         std::string process_name = "cooling process";
@@ -262,13 +280,15 @@ namespace wgm_processes
         }
         virtual void start_process();
         virtual void stop_process();
+        virtual std::string get_name();
+        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback(){return process_feedback.get_feedback();}
     };
     void cooling_process::start_process()
     {
         std::cout << "execute "<<process_name << std::endl; 
         process_timer->start_monitoring();
         cooling_sys->start_cooling();
-        cooling_feedback.report_success();
+        process_feedback.report_feedback();
         process_timer->stop_monitoring();
     }
     void cooling_process::stop_process()
@@ -290,12 +310,14 @@ namespace wgm_processes
         }
         virtual void start_process() = 0;
         virtual void stop_process() = 0;
+        virtual std::string get_name() =0 ;
+        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback()=0;
     };
     /**************** implementation wafer extraction process ************/
     class extracting_process : public Iextracting_process
     {
     private:
-        wgm_feedbacks::proc_feedback extracting_feedback;
+        wgm_feedbacks::sys_feedback process_feedback;
         wgm_monitoring::Itime_monitor* process_timer;    
         wafer_holder_motion_system::Iwafer_motion_controller* extracting_sys;
         std::string process_name = "extracting process";
@@ -314,14 +336,15 @@ namespace wgm_processes
         }
         virtual void start_process();
         virtual void stop_process();
-                void print_process_name();
+        virtual std::string get_name();
+        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback(){return process_feedback.get_feedback();}
     };
     void extracting_process::start_process()
     {
         std::cout << "execute "<<process_name << std::endl; 
         process_timer->start_monitoring();
         extracting_sys->extract_wafer_from_ml();
-        extracting_feedback.report_success();
+        process_feedback.report_feedback();
         process_timer->stop_monitoring();
     }
     void extracting_process::stop_process()
@@ -394,6 +417,9 @@ namespace wgm_processes
         virtual void stop_all();
         virtual void add_process_to_scheduler(Iprocesses_managment* process);
         virtual void delete_last_process_from_scheduler();
+        virtual std::string get_name(){};
+        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback(){};
+
     };
     void process_management::start_process()
     {
