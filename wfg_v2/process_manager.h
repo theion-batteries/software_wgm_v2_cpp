@@ -27,8 +27,7 @@ namespace wgm_processes
     class Iprocesses_managment
     {
     public:
-        Iprocesses_managment() {
-        }
+        Iprocesses_managment(){}
         virtual void start_process() = 0;
         virtual void stop_process() = 0;
         virtual void add_process_to_scheduler(Iprocesses_managment* process){};
@@ -37,10 +36,7 @@ namespace wgm_processes
         virtual void start_all() {};
         virtual std::string get_name() =0 ;
         virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback()=0;
-
-
-        virtual ~Iprocesses_managment() {
-        }
+        virtual ~Iprocesses_managment(){}
     };
     /************* processes interface and implementation**********/
     /**

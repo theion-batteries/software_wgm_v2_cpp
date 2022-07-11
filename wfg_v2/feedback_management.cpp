@@ -11,3 +11,4 @@
 #include "feedback_management.h"
 
 wgm_feedbacks::enum_proc_feedback wgm_feedbacks::proc_feedback::proc_feedback_value;
+

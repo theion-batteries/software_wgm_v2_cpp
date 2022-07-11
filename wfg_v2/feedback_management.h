@@ -10,7 +10,7 @@
  */
 #pragma once
 #include <iostream>
-#include "process_manager.h"
+#include "process_manager.cpp"
 
 namespace wgm_feedbacks
 {
@@ -49,6 +49,7 @@ namespace wgm_feedbacks
     class hw_feedback
     {
     private:
+        wgm_processes::aligning_process a;
         hw_communication hw_com_handler;
         enum_hw_feedback hw_feedback_value = enum_hw_feedback::hw_success;
     public:
@@ -139,9 +140,8 @@ namespace wgm_feedbacks
     class proc_feedback
     {
     public:
-            wgm_processes::Iprocesses_managment* process;
-            sys_feedback low_level_feedback;
-    public:
+        wgm_processes::Iprocesses_managment* process;
+        sys_feedback low_level_feedback;
         static enum_proc_feedback proc_feedback_value;
         proc_feedback(wgm_processes::Iprocesses_managment* ptr_to_process) {
             process = ptr_to_process;
@@ -165,7 +165,7 @@ namespace wgm_feedbacks
     {
         if (process->get_sys_feedback() == enum_sys_feedback::sys_success)
         {
-            report_success();
+            //report_success();
             return true;
         }
         report_error();
