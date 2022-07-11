@@ -90,7 +90,7 @@ namespace wgm_processes
         }
         virtual void start_process();
         virtual void stop_process();
-        virtual std::string get_name();
+        virtual std::string get_name(){return process_name;}
         virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback(){return process_feedback.get_feedback();}
     };
     void heating_process::start_process()
@@ -157,7 +157,7 @@ namespace wgm_processes
         }
         virtual void start_process();
         virtual void stop_process();
-        virtual std::string get_name();
+        virtual std::string get_name(){return process_name;}
         virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback(){return process_feedback.get_feedback();}
     };
     void sinking_process::start_process()
@@ -219,7 +219,7 @@ namespace wgm_processes
         }
         virtual void start_process();
         virtual void stop_process();
-        virtual std::string get_name();
+        virtual std::string get_name(){return process_name;}
         virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback(){return process_feedback.get_feedback();}
     };
     void aligning_process::start_process()
@@ -277,7 +277,7 @@ namespace wgm_processes
         }
         virtual void start_process();
         virtual void stop_process();
-        virtual std::string get_name();
+        virtual std::string get_name(){return process_name;}
         virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback(){return process_feedback.get_feedback();}
     };
     void cooling_process::start_process()
@@ -333,7 +333,7 @@ namespace wgm_processes
         }
         virtual void start_process();
         virtual void stop_process();
-        virtual std::string get_name();
+        virtual std::string get_name(){return process_name;}
         virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback(){return process_feedback.get_feedback();}
     };
     void extracting_process::start_process()
@@ -395,7 +395,7 @@ namespace wgm_processes
         }
         // clean up destruction
         virtual ~process_management() {
-            std::cout << "deleting process manager" << std::endl;
+            std::cout << "deleting process scheduler" << std::endl;
             for (auto process : processesvector)
             {
                 if (process != nullptr)
@@ -416,7 +416,7 @@ namespace wgm_processes
         virtual void stop_all();
         virtual void add_process_to_scheduler(Iprocesses_managment* process);
         virtual void delete_last_process_from_scheduler();
-        virtual std::string get_name(){};
+        virtual std::string get_name(){return process_name;};
         virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback(){};
 
     };

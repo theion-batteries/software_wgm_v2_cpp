@@ -140,7 +140,7 @@ namespace wgm_feedbacks
     private:
         std::string process_name;
         sys_feedback low_level_feedback;
-        enum_proc_feedback proc_feedback_value;
+        enum_proc_feedback proc_feedback_value=enum_proc_feedback::proc_success;
     public:
         proc_feedback()=default;
         proc_feedback(std::string& process): process_name(process)
