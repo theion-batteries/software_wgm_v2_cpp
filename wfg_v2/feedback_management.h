@@ -10,7 +10,6 @@
  */
 #pragma once
 #include <iostream>
-#include "process_manager.cpp"
 
 namespace wgm_feedbacks
 {
@@ -49,7 +48,6 @@ namespace wgm_feedbacks
     class hw_feedback
     {
     private:
-        wgm_processes::aligning_process a;
         hw_communication hw_com_handler;
         enum_hw_feedback hw_feedback_value = enum_hw_feedback::hw_success;
     public:
@@ -139,20 +137,28 @@ namespace wgm_feedbacks
     /********** processes feedbacks ************/
     class proc_feedback
     {
-    public:
-        wgm_processes::Iprocesses_managment* process;
+    private:
+        std::string process_name;
         sys_feedback low_level_feedback;
-        static enum_proc_feedback proc_feedback_value;
-        proc_feedback(wgm_processes::Iprocesses_managment* ptr_to_process) {
-            process = ptr_to_process;
+        enum_proc_feedback proc_feedback_value;
+    public:
+        proc_feedback()=default;
+        proc_feedback(std::string& process): process_name(process)
+        {
+            std::cout << "deleting "<<process_name << std::endl;
         }
         virtual ~proc_feedback()
         {
-            std::cout << "deleting "<<process->get_name() << std::endl;
+            std::cout << "deleting "<<process_name << std::endl;
+        }
+        enum_proc_feedback get_this_process_feedback()
+        {
+            return proc_feedback_value;
         }
         bool report_success();
         bool report_error();
-        bool report_feedback();
+        template <typename T>
+        bool report_feedback(T* process);
     };
 
     /**
@@ -161,7 +167,8 @@ namespace wgm_feedbacks
      * @return true 
      * @return false 
      */
-    bool proc_feedback::report_feedback()
+    template <typename T>
+    bool proc_feedback::report_feedback(T* process)
     {
         if (process->get_sys_feedback() == enum_sys_feedback::sys_success)
         {

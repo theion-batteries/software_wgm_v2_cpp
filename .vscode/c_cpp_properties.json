@@ -1,0 +1,14 @@
+{
+    "version": 4,
+    "configurations": [
+        {
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++17",
+            "defines": [
+                "__cplusplus=201703L"
+            ],
+            "compilerPath": "C:/TDM-GCC-64/bin/g++.exe",
+            "intelliSenseMode": "windows-gcc-x64"
+        }
+    ]
+}

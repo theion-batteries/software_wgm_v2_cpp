@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"ros.distro": "noetic",
+		"files.associations": {
+			"chrono": "cpp"
+		}
+	}
+}

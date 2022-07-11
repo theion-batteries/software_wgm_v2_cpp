@@ -15,7 +15,8 @@
 #include "wafer_holder_motion_system.h"
 #include "wafer_cooling_system.h"
 #include "wgm_monitoring.h"
-#include "feedback_management.cpp"
+#include "feedback_management.h"
+
 
 namespace wgm_processes
 {
@@ -359,7 +360,9 @@ namespace wgm_processes
     class process_management : public Iprocesses_managment
     {
     private:
+        const std::string process_name = "process scheduler";
         std::vector<Iprocesses_managment*> processesvector;
+        wgm_feedbacks::proc_feedback process_manager_feedback;
     public:
         process_management() {
             std::cout << "creating process manager" << std::endl;
@@ -433,7 +436,7 @@ namespace wgm_processes
             if (process != nullptr)
             {
                process->start_process();
-               if (wgm_feedbacks::proc_feedback::proc_feedback_value == wgm_feedbacks::enum_proc_feedback::proc_success) continue;
+               if (process_manager_feedback.get_this_process_feedback() == wgm_feedbacks::enum_proc_feedback::proc_success) continue;
                break;
             }
             else std::cout << "empty process scheduler" << std::endl;
