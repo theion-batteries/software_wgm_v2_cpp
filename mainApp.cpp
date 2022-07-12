@@ -1,6 +1,6 @@
-#include "wfg_v2/process_manager.h"
+#include "wfg_v2/wgm_user.h"
 int main() {
-    user app_user;
+    wgm_user::user app_user;
     app_user.run_app();
     app_user.stop_app();
     return 0;

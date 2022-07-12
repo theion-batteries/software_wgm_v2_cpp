@@ -28,16 +28,16 @@ namespace wgm_processes
     class Iprocesses_managment
     {
     public:
-        Iprocesses_managment(){}
+        Iprocesses_managment() {}
         virtual void start_process() = 0;
         virtual void stop_process() = 0;
-        virtual void add_process_to_scheduler(Iprocesses_managment* process){};
-        virtual void delete_last_process_from_scheduler(){};
+        virtual void add_process_to_scheduler(Iprocesses_managment* process) {};
+        virtual void delete_last_process_from_scheduler() {};
         virtual void stop_all() {};
         virtual void start_all() {};
-        virtual std::string get_name() =0 ;
-        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback()=0;
-        virtual ~Iprocesses_managment(){}
+        virtual std::string get_name() = 0;
+        virtual bool is_proc_success() = 0;
+        virtual ~Iprocesses_managment() {};
     };
     /************* processes interface and implementation**********/
     /**
@@ -62,8 +62,8 @@ namespace wgm_processes
         }
         virtual void start_process() = 0;
         virtual void stop_process() = 0;
-        virtual std::string get_name() =0 ;
-        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback()=0;
+        virtual std::string get_name() = 0;
+        virtual bool is_proc_success() = 0;
     };
     /************* implementation heating process ************/
     class heating_process : public Iheating_process
@@ -72,7 +72,7 @@ namespace wgm_processes
         sulfur_heating_system::Isulfur_heating_controller* heating_sys;
         wgm_monitoring::Itime_monitor* process_timer;
         wgm_monitoring::Iheat_monitor* process_temp_monitor;
-        wgm_feedbacks::sys_feedback process_feedback;
+        wgm_feedbacks::proc_feedback process_feedback;
         std::string process_name = "heating process";
     public:
         heating_process() {
@@ -84,24 +84,24 @@ namespace wgm_processes
         virtual ~heating_process()
         {
             std::cout << "deleting heating process " << std::endl;
-            delete heating_sys; 
+            delete heating_sys;
             delete process_timer;
             delete process_temp_monitor;
         }
         virtual void start_process();
         virtual void stop_process();
-        virtual std::string get_name(){return process_name;}
-        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback(){return process_feedback.get_feedback();}
+        virtual std::string get_name() { return process_name; };
+        virtual bool is_proc_success() { return process_feedback.report_feedback(); };
     };
     void heating_process::start_process()
-    {   
-        std::cout << "execute "<<process_name << std::endl; 
+    {
+        std::cout << "execute " << process_name << std::endl;
         // start timer
         process_timer->start_monitoring();
         // start system
         heating_sys->turn_on_heating();
         // report feedback
-        process_feedback.report_feedback();
+        // feedback
         // stop timer
         process_timer->stop_monitoring();
         // start temp monitor
@@ -111,7 +111,7 @@ namespace wgm_processes
     }
     void heating_process::stop_process()
     {
-        std::cout << "finish "<<process_name << std::endl; 
+        std::cout << "finish " << process_name << std::endl;
         heating_sys->turn_off_heating();
         process_temp_monitor->stop_monitoring();
 
@@ -129,14 +129,14 @@ namespace wgm_processes
         }
         virtual void start_process() = 0;
         virtual void stop_process() = 0;
-        virtual std::string get_name() =0 ;
-        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback()=0;
+        virtual std::string get_name() = 0;
+        virtual bool is_proc_success() = 0;
     };
     /**************** implementation wafer insertion process ************/
     class sinking_process : public Isinking_process
     {
     private:
-        wgm_feedbacks::sys_feedback process_feedback;
+        wgm_feedbacks::proc_feedback process_feedback;
         wgm_monitoring::Itime_monitor* process_timer;
         wafer_holder_motion_system::Iwafer_motion_controller* sinking_sys;
         wgm_monitoring::Idistance_monitor* process_dist_monitor;
@@ -157,22 +157,22 @@ namespace wgm_processes
         }
         virtual void start_process();
         virtual void stop_process();
-        virtual std::string get_name(){return process_name;}
-        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback(){return process_feedback.get_feedback();}
+        virtual std::string get_name() { return process_name; };
+        virtual bool is_proc_success() { return process_feedback.report_feedback(); };
     };
     void sinking_process::start_process()
     {
-        std::cout << "execute "<<process_name << std::endl; 
+        std::cout << "execute " << process_name << std::endl;
         process_timer->start_monitoring();
         sinking_sys->set_distance_to_surface_contact(30);
         sinking_sys->insert_wafer_in_ml();
-        process_feedback.report_feedback();
+        // feedback
         process_timer->stop_monitoring();
         process_dist_monitor->start_monitoring();
     }
     void sinking_process::stop_process()
     {
-        std::cout << "finish "<<process_name << std::endl; 
+        std::cout << "finish " << process_name << std::endl;
         process_dist_monitor->stop_monitoring();
     }
     /****************** interface cnt alignment process*******************/
@@ -188,14 +188,14 @@ namespace wgm_processes
         }
         virtual void start_process() = 0;
         virtual void stop_process() = 0;
-        virtual std::string get_name() =0 ;
-        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback()=0;
+        virtual std::string get_name() = 0;
+        virtual bool is_proc_success() = 0;
     };
     /******************* implementation cnt alignment process ***************/
     class aligning_process : public Ialigning_process
     {
     private:
-        wgm_feedbacks::sys_feedback process_feedback;
+        wgm_feedbacks::proc_feedback process_feedback;
         wgm_monitoring::Itime_monitor* process_timer;
         wgm_monitoring::Ivoltage_monitor* process_volt_monitor;
         wgm_monitoring::Icurrent_monitor* process_curr_monitor;
@@ -219,22 +219,24 @@ namespace wgm_processes
         }
         virtual void start_process();
         virtual void stop_process();
-        virtual std::string get_name(){return process_name;}
-        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback(){return process_feedback.get_feedback();}
+        virtual std::string get_name() { return process_name; };
+        virtual bool is_proc_success() { return process_feedback.report_feedback(); };
+
     };
+
     void aligning_process::start_process()
     {
-        std::cout << "execute "<<process_name << std::endl; 
+        std::cout << "execute " << process_name << std::endl;
         process_timer->start_monitoring();
         aligning_sys->start_aligning();
-        process_feedback.report_feedback();
+        // feedback
         process_timer->stop_monitoring();
         process_curr_monitor->start_monitoring();
         process_volt_monitor->start_monitoring();
     }
     void aligning_process::stop_process()
     {
-        std::cout << "finish "<<process_name << std::endl; 
+        std::cout << "finish " << process_name << std::endl;
         aligning_sys->stop_aligning();
         process_curr_monitor->stop_monitoring();
         process_volt_monitor->stop_monitoring();
@@ -252,15 +254,15 @@ namespace wgm_processes
         }
         virtual void start_process() = 0;
         virtual void stop_process() = 0;
-        virtual std::string get_name() =0 ;
-        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback()=0;
+        virtual std::string get_name() = 0;
+        virtual bool is_proc_success() = 0;
     };
     /******************* implementation cooling process ***************/
     class cooling_process : public Icooling_process
     {
     private:
-        wgm_feedbacks::sys_feedback process_feedback;
-        wgm_monitoring::Itime_monitor* process_timer;    
+        wgm_feedbacks::proc_feedback process_feedback;
+        wgm_monitoring::Itime_monitor* process_timer;
         wafer_cooling_system::Icooling_controller* cooling_sys;
         std::string process_name = "cooling process";
 
@@ -277,20 +279,20 @@ namespace wgm_processes
         }
         virtual void start_process();
         virtual void stop_process();
-        virtual std::string get_name(){return process_name;}
-        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback(){return process_feedback.get_feedback();}
+        virtual std::string get_name() { return process_name; };
+        virtual bool is_proc_success() { return process_feedback.report_feedback(); };
     };
     void cooling_process::start_process()
     {
-        std::cout << "execute "<<process_name << std::endl; 
+        std::cout << "execute " << process_name << std::endl;
         process_timer->start_monitoring();
         cooling_sys->start_cooling();
-        process_feedback.report_feedback();
+        // feedback
         process_timer->stop_monitoring();
     }
     void cooling_process::stop_process()
     {
-        std::cout << "finish "<<process_name << std::endl; 
+        std::cout << "finish " << process_name << std::endl;
         cooling_sys->stop_cooling();
 
     }
@@ -307,15 +309,15 @@ namespace wgm_processes
         }
         virtual void start_process() = 0;
         virtual void stop_process() = 0;
-        virtual std::string get_name() =0 ;
-        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback()=0;
+        virtual std::string get_name() = 0;
+        virtual bool is_proc_success() = 0;
     };
     /**************** implementation wafer extraction process ************/
     class extracting_process : public Iextracting_process
     {
     private:
-        wgm_feedbacks::sys_feedback process_feedback;
-        wgm_monitoring::Itime_monitor* process_timer;    
+        wgm_feedbacks::proc_feedback process_feedback;
+        wgm_monitoring::Itime_monitor* process_timer;
         wafer_holder_motion_system::Iwafer_motion_controller* extracting_sys;
         std::string process_name = "extracting process";
 
@@ -333,165 +335,142 @@ namespace wgm_processes
         }
         virtual void start_process();
         virtual void stop_process();
-        virtual std::string get_name(){return process_name;}
-        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback(){return process_feedback.get_feedback();}
+        virtual std::string get_name() { return process_name; };
+        virtual bool is_proc_success() { return process_feedback.report_feedback(); };
+
     };
-    void extracting_process::start_process()
-    {
-        std::cout << "execute "<<process_name << std::endl; 
-        process_timer->start_monitoring();
-        extracting_sys->extract_wafer_from_ml();
-        process_feedback.report_feedback();
-        process_timer->stop_monitoring();
-    }
-    void extracting_process::stop_process()
-    {
-        std::cout << "finish "<<process_name << std::endl; 
-    }
-
-
-    /******************** implementation process management ************/
-    /**
-     * @brief implementation process managemnt
-     * add new process inside constructor
-     * later will be possible to add new processes from interface method
-     * add and delete from delete method
-     */
-    class process_management : public Iprocesses_managment
-    {
-    private:
-        const std::string process_name = "process scheduler";
-        std::vector<Iprocesses_managment*> processesvector;
-        wgm_feedbacks::proc_feedback process_manager_feedback;
-    public:
-        process_management() {
-            std::cout << "creating process manager" << std::endl;
-            //processes_monitor = new wgm_monitoring::monitor_managment();
-            /********************* add new processes *************************/
-            /***** add heating process ***/
-            Iheating_process* heating_proc = new heating_process();
-            processesvector.push_back(heating_proc);
-            std::cout << "added heating process to process scheduler" << std::endl;
-
-            /***** add insertion process ***/
-            Isinking_process* insertion_proc = new sinking_process();
-            processesvector.push_back(insertion_proc);
-            std::cout << "added wafer insertion process to process scheduler" << std::endl;
-
-            /***** add aligning process ***/
-            Ialigning_process* aligning_proc = new aligning_process();
-            processesvector.push_back(aligning_proc);
-            std::cout << "added aligning process to process scheduler" << std::endl;
-
-            /***** add cooling process ***/
-            Icooling_process* cooling_proc = new cooling_process();
-            processesvector.push_back(cooling_proc);
-            std::cout << "added cooling process to process scheduler" << std::endl;
-
-            /***** add insertion process ***/
-            Iextracting_process* extraction_proc = new extracting_process();
-            processesvector.push_back(extraction_proc);
-            std::cout << "added wafer extracting process to process scheduler" << std::endl;
+        void extracting_process::start_process()
+        {
+            std::cout << "execute " << process_name << std::endl;
+            process_timer->start_monitoring();
+            extracting_sys->extract_wafer_from_ml();
+            // feedback
+            process_timer->stop_monitoring();
         }
-        // clean up destruction
-        virtual ~process_management() {
-            std::cout << "deleting process scheduler" << std::endl;
+        void extracting_process::stop_process()
+        {
+            std::cout << "finish " << process_name << std::endl;
+        }
+
+
+        /******************** implementation process management ************/
+        /**
+         * @brief implementation process managemnt
+         * add new process inside constructor
+         * later will be possible to add new processes from interface method
+         * add and delete from delete method
+         */
+        class process_management : public Iprocesses_managment
+        {
+        private:
+            const std::string process_name = "process scheduler";
+            std::vector<Iprocesses_managment*> processesvector;
+            wgm_feedbacks::proc_feedback process_feedback;
+        public:
+            process_management() {
+                std::cout << "creating process manager" << std::endl;
+                //processes_monitor = new wgm_monitoring::monitor_managment();
+                /********************* add new processes *************************/
+                /***** add heating process ***/
+                Iheating_process* heating_proc = new heating_process();
+                processesvector.push_back(heating_proc);
+                std::cout << "added heating process to process scheduler" << std::endl;
+
+                /***** add insertion process ***/
+                Isinking_process* insertion_proc = new sinking_process();
+                processesvector.push_back(insertion_proc);
+                std::cout << "added wafer insertion process to process scheduler" << std::endl;
+
+                /***** add aligning process ***/
+                Ialigning_process* aligning_proc = new aligning_process();
+                processesvector.push_back(aligning_proc);
+                std::cout << "added aligning process to process scheduler" << std::endl;
+
+                /***** add cooling process ***/
+                Icooling_process* cooling_proc = new cooling_process();
+                processesvector.push_back(cooling_proc);
+                std::cout << "added cooling process to process scheduler" << std::endl;
+
+                /***** add insertion process ***/
+                Iextracting_process* extraction_proc = new extracting_process();
+                processesvector.push_back(extraction_proc);
+                std::cout << "added wafer extracting process to process scheduler" << std::endl;
+            }
+            // clean up destruction
+            virtual ~process_management() {
+                std::cout << "deleting process scheduler" << std::endl;
+                for (auto process : processesvector)
+                {
+                    if (process != nullptr)
+                    {
+                        delete process;
+                    }
+                    else
+                    {
+                        std::cout << "can't free memory" << std::endl;
+                        break;
+                    }
+                }
+
+            }
+            virtual void start_process();
+            virtual void stop_process();
+            virtual void start_all();
+            virtual void stop_all();
+            virtual void add_process_to_scheduler(Iprocesses_managment* process);
+            virtual void delete_last_process_from_scheduler();
+            virtual std::string get_name() { return process_name; };
+            virtual bool is_proc_success() { return process_feedback.report_feedback(); };
+
+        };
+
+
+        void process_management::start_process()
+        {
+            std::cout << "process started" << std::endl;
+        }
+        void process_management::stop_process()
+        {
+            std::cout << "process stopped" << std::endl;
+        }
+        void process_management::start_all()
+        {
+            std::cout << "executing all processes" << std::endl;
             for (auto process : processesvector)
             {
                 if (process != nullptr)
                 {
-                    delete process;
-                }
-                else
-                {
-                    std::cout << "can't free memory" << std::endl;
+                    process->start_process();
+                    if (process->is_proc_success()) continue;
                     break;
                 }
+                else std::cout << "empty process scheduler" << std::endl;
             }
-
         }
-        virtual void start_process();
-        virtual void stop_process();
-        virtual void start_all();
-        virtual void stop_all();
-        virtual void add_process_to_scheduler(Iprocesses_managment* process);
-        virtual void delete_last_process_from_scheduler();
-        virtual std::string get_name(){return process_name;};
-        virtual wgm_feedbacks::enum_sys_feedback get_sys_feedback(){};
-
-    };
-    void process_management::start_process()
-    {
-        std::cout << "process started" << std::endl;
-    }
-    void process_management::stop_process()
-    {
-        std::cout << "process stopped" << std::endl;
-    }
-    void process_management::start_all()
-    {
-        std::cout << "executing all processes" << std::endl;
-        for (auto process : processesvector)
+        void process_management::stop_all()
         {
-            if (process != nullptr)
-            {
-               process->start_process();
-               if (process_manager_feedback.get_this_process_feedback() == wgm_feedbacks::enum_proc_feedback::proc_success) continue;
-               break;
-            }
-            else std::cout << "empty process scheduler" << std::endl;
-        }
-    }
-    void process_management::stop_all()
-    {
-        std::cout << "stopping all processes" << std::endl;
+            std::cout << "stopping all processes" << std::endl;
 
-        for (auto process : processesvector)
+            for (auto process : processesvector)
+            {
+                if (process != nullptr)
+                {
+                    process->stop_process();
+                }
+                else std::cout << "empty process scheduler" << std::endl;
+            }
+        }
+        void process_management::add_process_to_scheduler(Iprocesses_managment* process)
         {
-            if (process != nullptr)
-            {
-                process->stop_process();
-            }
-            else std::cout << "empty process scheduler" << std::endl;
+            processesvector.push_back(process);
+
         }
-    }
-    void process_management::add_process_to_scheduler(Iprocesses_managment* process)
-    {
-      processesvector.push_back(process);
+        void process_management::delete_last_process_from_scheduler()
+        {
+            processesvector.pop_back();
 
-    }
-    void process_management::delete_last_process_from_scheduler()
-    {
-      processesvector.pop_back();
+        }
 
     }
 
-}
-
-/****************** user code ********************/
-class user {
-private:
-    wgm_processes::Iprocesses_managment* processInterfaces;
-
-public:
-    user()
-    {
-        std::cout << "user started app" << std::endl;
-
-        processInterfaces = new wgm_processes::process_management();
-    }
-    void run_app()
-    {
-        processInterfaces->start_all();
-    }
-    void stop_app()
-    {
-        processInterfaces->stop_all();
-    }
-    ~user()
-    {
-        std::cout << "user stopped app" << std::endl;
-        delete processInterfaces;
-    }
-};
 

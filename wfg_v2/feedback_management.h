@@ -10,12 +10,14 @@
  */
 #pragma once
 #include <iostream>
+/*
 #include "process_manager.h"
 
 namespace wgm_processes
 {
 class Iprocesses_managment;
 } 
+*/
 namespace wgm_feedbacks
 {
     /********* enumeration classes ***********/
@@ -72,6 +74,12 @@ namespace wgm_feedbacks
         private:
             enum_proc_feedback proc_feed_val;
             sys_feedback* sys_feed;
+        public:
+            bool report_feedback()
+            {
+                if (proc_feed_val == enum_proc_feedback::proc_success) return true;
+                return false;
+            }
     
     };
 
