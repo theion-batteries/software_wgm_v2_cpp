@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.5.1)
 project(wgm_v2)
 
 # creates the variable EXEC and sets it to hello
-set(EXEC wgm)
+set(EXEC mainApp)
 
 # set the C++14 standard
 set(CMAKE_CXX_STANDARD 17)
@@ -17,4 +17,4 @@ include_directories(includes)
 file(GLOB SOURCES src/*.cpp)
 
 # compiles the files defined by SOURCES to generante the executable defined by EXEC
-add_executable(${EXEC} ${SOURCES})
+add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/../src/mainApp.cpp)
