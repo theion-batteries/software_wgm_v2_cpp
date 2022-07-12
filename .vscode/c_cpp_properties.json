@@ -8,7 +8,11 @@
                 "__cplusplus=201703L"
             ],
             "compilerPath": "C:/TDM-GCC-64/bin/g++.exe",
-            "intelliSenseMode": "windows-gcc-x64"
+            "intelliSenseMode": "windows-gcc-x64",
+            "includePath": [
+                "${default}",
+                "${workspaceFolder}/includes"
+            ]
         }
     ]
 }

@@ -1,4 +1,4 @@
-#include "wfg_v2/wgm_user.h"
+#include "wgm_user.h"
 int main() {
     wgm_user::user app_user;
     app_user.run_app();
