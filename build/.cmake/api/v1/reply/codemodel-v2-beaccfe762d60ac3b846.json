@@ -9,7 +9,7 @@
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.5.1"
+						"string" : "3.22.0"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "wgm_v2::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-wgm_v2-Debug-95894fa848945544e085.json",
+					"jsonFile" : "target-wgm_v2-Debug-e757897e1effdc3eb65e.json",
 					"name" : "wgm_v2",
 					"projectIndex" : 0
 				}

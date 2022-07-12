@@ -1,5 +1,5 @@
 # only for cmake --version >= 3.5.1
-cmake_minimum_required(VERSION 3.5.1)
+cmake_minimum_required(VERSION 3.22.0)
 
 # project name
 project(wgm_v2)
@@ -11,7 +11,7 @@ set(EXEC main)
 set(CMAKE_CXX_STANDARD 17)
 
 # I../includes
-include_directories(includes)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../includes/)
 
 # puts all .cpp files inside src to the SOURCES variable
 file(GLOB SOURCES src/*.cpp)
