@@ -5,9 +5,8 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Mon Jul 11 14:28:44 2022
+# Make data base, printed on Tue Jul 12 22:45:26 2022
 
 # Variables
 
@@ -28,8 +27,7 @@ PLATFORMIO_IDE = 2.5.0
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-HOMEDRIVE = C 
-:
+HOMEDRIVE = C:
 # automatic
 @F = $(notdir $@)
 # automatic
@@ -91,7 +89,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_20344_AVCTANCVRFXBJQVX
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_23388_OKHCSKHSBKXQIYOR
 # environment
 COMPUTERNAME = DESKTOP-BRFNNCP
 # environment
@@ -107,9 +105,9 @@ PUBLIC = C:\Users\Public
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\SamiDhiab\AppData\Roaming\Code\CachedData\92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9
+VSCODE_CODE_CACHE_PATH = C:\Users\SamiDhiab\AppData\Roaming\Code\CachedData\b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
 # environment
@@ -157,7 +155,7 @@ PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD
 # environment
 OS = Windows_NT
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\66617ee1df8269f425333cb861d18dbe-1.69.0-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\66617ee1df8269f425333cb861d18dbe-1.69.1-main-sock
 # environment
 PYTHONPATH = C:\Users\SamiDhiab\Theion_Repos;C:\Users\SamiDhiab\Theion_Repos\IR_Thermal_Camera\test\Medium_Imports_Tutorial\utils;C:\Users\SamiDhiab\Theion_Repos\soft_temperature_control_module\lib;
 # environment
@@ -193,8 +191,7 @@ LC_ALL = C
 # automatic
 ^F = $(notdir $^)
 # default
-SUFFIXE 
-S := 
+SUFFIXES := 
 # environment
 SYSTEMDRIVE = C:
 # environment
@@ -210,7 +207,7 @@ LANG = C
 # environment
 PROCESSOR_LEVEL = 23
 # environment
-VSCODE_PID = 20344
+VSCODE_PID = 23388
 # environment
 USERDOMAIN_ROAMINGPROFILE = AzureAD
 # variable set hash-table stats:
@@ -225,7 +222,7 @@ USERDOMAIN_ROAMINGPROFILE = AzureAD
 # : could not be stat'd.
 # C:\WINDOWS\System32\WindowsPowerShell\v1.0\ (key C:/WINDOWS/System32/WindowsPowerShell/v1.0/, mtime 1640088842): 34 files, no impossibilities.
 # C:\Users\SamiDhiab\AppData\Roaming\npm (key C:/Users/SamiDhiab/AppData/Roaming/npm, mtime 1632490459): 2 files, no impossibilities.
-# . (key c:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp, mtime 1657542416): 17 files, no impossibilities.
+# . (key c:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp, mtime 1657644750): 12 files, no impossibilities.
 # C:\Users\SamiDhiab\.platformio\penv\Scripts\ (key C:/Users/SamiDhiab/.platformio/penv/Scripts/, mtime 1656008720): 25 files, no impossibilities.
 # C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\ (key C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/, mtime 1636023288): 7 files, no impossibilities.
 # C:\Program Files (x86)\Common Files\Oracle\Java\javapath (key C:/Program Files (x86)/Common Files/Oracle/Java/javapath, mtime 1652174015): 5 files, no impossibilities.
@@ -239,7 +236,7 @@ USERDOMAIN_ROAMINGPROFILE = AzureAD
 # C:\Program Files\CMake\bin (key C:/Program Files/CMake/bin, mtime 1637523212): 7 files, no impossibilities.
 # C:\WINDOWS (key C:/WINDOWS, mtime 1655714052): 134 files, no impossibilities.
 # C:\Program Files\JetBrains\PyCharm Community Edition 2021.2.2\bin (key C:/Program Files/JetBrains/PyCharm Community Edition 2021.2.2/bin, mtime 1634660577): 28 files, no impossibilities.
-# C:\Users\SamiDhiab\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/SamiDhiab/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1657271671): 4 files, no impossibilities.
+# C:\Users\SamiDhiab\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/SamiDhiab/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1657658166): 4 files, no impossibilities.
 # C:\ProgramData\chocolatey\bin (key C:/ProgramData/chocolatey/bin, mtime 1633200592): 41 files, no impossibilities.
 # C:\Users\SamiDhiab\.dotnet\tools: could not be stat'd.
 # C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\bin (key C:/Program Files/Eclipse Foundation/jdk-8.0.302.8-hotspot/bin, mtime 1637168167): 53 files, no impossibilities.
@@ -248,13 +245,13 @@ USERDOMAIN_ROAMINGPROFILE = AzureAD
 # C:\Program Files\doxygen\bin (key C:/Program Files/doxygen/bin, mtime 1652958329): 7 files, no impossibilities.
 # C:\Program Files\nodejs\ (key C:/Program Files/nodejs/, mtime 1632490465): 11 files, no impossibilities.
 # C:\Users\SamiDhiab\AppData\Local\Programs\MiKTeX\miktex\bin\x64\ (key C:/Users/SamiDhiab/AppData/Local/Programs/MiKTeX/miktex/bin/x64/, mtime 1652959888): 732 files, no impossibilities.
-# C:\WINDOWS\system32 (key C:/WINDOWS/system32, mtime 1657481855): 2991 files, no impossibilities.
+# C:\WINDOWS\system32 (key C:/WINDOWS/system32, mtime 1657553568): 2991 files, no impossibilities.
 # C:\Users\SamiDhiab\AppData\Local\Programs\Python\Python39\ (key C:/Users/SamiDhiab/AppData/Local/Programs/Python/Python39/, mtime 1633938602): 19 files, no impossibilities.
 # C:\Program Files\dotnet\ (key C:/Program Files/dotnet/, mtime 1656060188): 13 files, no impossibilities.
 # C:\Users\SamiDhiab\AppData\Local\Programs\Python\Python39\Scripts\ (key C:/Users/SamiDhiab/AppData/Local/Programs/Python/Python39/Scripts/, mtime 1647271958): 78 files, no impossibilities.
 # C:\Program Files\PuTTY\ (key C:/Program Files/PuTTY/, mtime 1629711085): 12 files, no impossibilities.
 
-# 4621 files, no impossibilities in 31 directories.
+# 4616 files, no impossibilities in 31 directories.
 
 # Implicit Rules
 
@@ -264,10 +261,7 @@ USERDOMAIN_ROAMINGPROFILE = AzureAD
 
 # Not a target:
 all:
-#  Comma 
-make.exe: *** No rule to make target 'all'.  Stop.
-
-nd line target.
+#  Command line target.
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has not been updated.
@@ -313,14 +307,16 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 9 (8) / strings = 4498 / storage = 68518 B / avg = 15 B
-# current buf: size = 8174 B / used = 3162 B / count = 239 / avg = 13 B
-# other used: total = 60344 B / count = 4259 / avg = 14 B
-# other free: total = 36 B / max = 8 B / min = 1 B / avg = 4 B
+# strcache buffers: 9 (6) / strings = 4493 / storage = 68375 B / avg = 15 B
+# current buf: size = 8174 B / used = 3069 B / count = 235 / avg = 13 B
+# other used: total = 60201 B / count = 4258 / avg = 14 B
+# other free: total = 86 B / max = 25 B / min = 1 B / avg = 10 B
 
-# strcache performance: lookups = 4659 / hit rate = 3%
+# strcache performance: lookups = 4654 / hit rate = 3%
 # hash-table stats:
-# Load=4498/8192=55%, Rehash=0, Collisions=2192/4659=47%
-# Finished Make data base on Mon Jul 11 14:28:44 2022
+# Load=4493/8192=55%, Rehash=0, Collisions=2184/4654=47%
+# Finished Make data base on Tue Jul 12 22:45:26 2022
 
  
+make.exe: *** No rule to make target 'all'.  Stop.
+

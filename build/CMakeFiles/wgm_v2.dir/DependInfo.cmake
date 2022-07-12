@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/mainApp.cpp" "CMakeFiles/wgm_v2.dir/C_/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/mainApp.cpp.obj" "gcc" "CMakeFiles/wgm_v2.dir/C_/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/mainApp.cpp.obj.d"
+  "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/main.cpp" "CMakeFiles/wgm_v2.dir/C_/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/main.cpp.obj" "gcc" "CMakeFiles/wgm_v2.dir/C_/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/main.cpp.obj.d"
   )
 
 # Targets to which this target links.
