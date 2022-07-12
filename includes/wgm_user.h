@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2022
  * 
  */
+#pragma once
 #include "process_manager.h"
 /****************** user code ********************/
 namespace wgm_user

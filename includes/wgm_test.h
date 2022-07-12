@@ -27,7 +27,7 @@ namespace wgm_test
     
       wgm_feedbacks::enum_hw_feedback hw_mocking::hw_run ()
     {
-                        
+          return wgm_feedbacks::enum_hw_feedback::hw_success;
     }
     
     
