@@ -1,7 +1,7 @@
 [
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
-  "command": "C:\\TDM-GCC-64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/wgm_v2.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\wgm_v2.dir\\C_\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\main.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\main.cpp",
+  "command": "C:\\TDM-GCC-64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/wgm_v2.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\wgm_v2.dir\\C_\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\main.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\main.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/main.cpp"
 }
 ]
