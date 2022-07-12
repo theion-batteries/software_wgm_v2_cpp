@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.22.0"
@@ -19,7 +19,7 @@
 					]
 				}
 			],
-			"name" : "Release",
+			"name" : "Debug",
 			"projects" : 
 			[
 				{
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "wgm_v2::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-wgm_v2-Release-344141d728b4aead814e.json",
+					"jsonFile" : "target-wgm_v2-Debug-21c0a3dbbed7f1f6f2ad.json",
 					"name" : "wgm_v2",
 					"projectIndex" : 0
 				}
