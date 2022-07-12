@@ -11,7 +11,8 @@
             "intelliSenseMode": "windows-gcc-x64",
             "includePath": [
                 "${default}",
-                "${workspaceFolder}/includes"
+                "${workspaceFolder}/includes/",
+                "${workspaceFolder}"
             ]
         }
     ]
