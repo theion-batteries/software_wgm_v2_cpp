@@ -34,7 +34,6 @@ namespace sulfur_heating_system
   protected:
     virtual void start_heater();
     virtual void shutdown_heater();
-
   };
   void Heater::start_heater()
   {
