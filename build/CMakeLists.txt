@@ -24,3 +24,13 @@ file(GLOB SOURCES src/*.cpp)
 # compiles the files defined by SOURCES to generante the executable defined by EXEC
 add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/../src/main.cpp)
 
+INCLUDE_DIRECTORIES(
+  c:/src/vcpkg/installed/x64-windows/include/
+)
+  
+LINK_DIRECTORIES(
+  c:/src/vcpkg/installed/x64-windows/lib/
+)
+TARGET_LINK_LIBRARIES(TestSQL
+  sqlite3
+)

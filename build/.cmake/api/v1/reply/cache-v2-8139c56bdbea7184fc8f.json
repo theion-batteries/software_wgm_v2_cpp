@@ -1258,6 +1258,18 @@
 			"value" : "FALSE"
 		},
 		{
+			"name" : "unofficial-sqlite3_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for unofficial-sqlite3."
+				}
+			],
+			"type" : "PATH",
+			"value" : "unofficial-sqlite3_DIR-NOTFOUND"
+		},
+		{
 			"name" : "wgm_v2_BINARY_DIR",
 			"properties" : 
 			[
