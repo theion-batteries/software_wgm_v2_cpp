@@ -31,6 +31,4 @@ INCLUDE_DIRECTORIES(
 LINK_DIRECTORIES(
   c:/src/vcpkg/installed/x64-windows/lib/
 )
-TARGET_LINK_LIBRARIES(TestSQL
-  sqlite3
-)
+
