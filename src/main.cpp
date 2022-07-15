@@ -1,5 +1,4 @@
 #include "wgm_user.h"
-#include <sqlite3.h>
 
 int main() {
     wgm_user::user app_user;
