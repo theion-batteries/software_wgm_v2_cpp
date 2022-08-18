@@ -17,7 +17,7 @@
     },
     "editor.fontFamily": "'Cascadia Code PL', Consolas, 'Courier New', monospace",
     "editor.fontLigatures": true,
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "editor.mouseWheelZoom": true,
     "debug.console.fontSize": 12,
     "editor.fontSize": 12,
@@ -26,7 +26,7 @@
     "files.associations": {
         "chrono": "cpp"
     },
-    "cmake.sourceDirectory": "${workspaceFolder}/build",
+    "cmake.sourceDirectory": "${workspaceFolder}/.",
     "cmake.configureSettings": {
         "CMAKE_TOOLCHAIN_FILE": "c:/src/vcpkg/scripts/buildsystems/vcpkg.cmake",
             "cmake.configureOnOpen": true

@@ -1,0 +1,57 @@
+[
+{
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
+  "command": "C:\\TDM-GCC-64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/whs_controller.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\whs_controller.dir\\src\\cnt_alignment_system.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\cnt_alignment_system.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/cnt_alignment_system.cpp"
+},
+{
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
+  "command": "C:\\TDM-GCC-64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/whs_controller.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\whs_controller.dir\\src\\feedback_management.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\feedback_management.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/feedback_management.cpp"
+},
+{
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
+  "command": "C:\\TDM-GCC-64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/whs_controller.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\whs_controller.dir\\src\\heating_system.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\heating_system.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/heating_system.cpp"
+},
+{
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
+  "command": "C:\\TDM-GCC-64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/whs_controller.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\whs_controller.dir\\src\\main.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\main.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/main.cpp"
+},
+{
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
+  "command": "C:\\TDM-GCC-64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/whs_controller.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\whs_controller.dir\\src\\process_manager.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\process_manager.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/process_manager.cpp"
+},
+{
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
+  "command": "C:\\TDM-GCC-64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/whs_controller.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\whs_controller.dir\\src\\wafer_cooling_system.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\wafer_cooling_system.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/wafer_cooling_system.cpp"
+},
+{
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
+  "command": "C:\\TDM-GCC-64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/whs_controller.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\whs_controller.dir\\src\\wafer_holder_motion_system.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\wafer_holder_motion_system.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/wafer_holder_motion_system.cpp"
+},
+{
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
+  "command": "C:\\TDM-GCC-64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/whs_controller.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\whs_controller.dir\\src\\wgm_communication.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\wgm_communication.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/wgm_communication.cpp"
+},
+{
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
+  "command": "C:\\TDM-GCC-64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/whs_controller.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\whs_controller.dir\\src\\wgm_monitoring.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\wgm_monitoring.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/wgm_monitoring.cpp"
+},
+{
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
+  "command": "C:\\TDM-GCC-64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/whs_controller.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\whs_controller.dir\\src\\wgm_test.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\wgm_test.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/wgm_test.cpp"
+},
+{
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
+  "command": "C:\\TDM-GCC-64\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/whs_controller.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\whs_controller.dir\\src\\wgm_user.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\wgm_user.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/wgm_user.cpp"
+}
+]
