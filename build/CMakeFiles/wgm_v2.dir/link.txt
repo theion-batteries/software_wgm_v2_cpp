@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\wgm_v2.dir/objects.a
-C:\TDM-GCC-64\bin\ar.exe qc CMakeFiles\wgm_v2.dir/objects.a @CMakeFiles\wgm_v2.dir\objects1.rsp
-C:\TDM-GCC-64\bin\x86_64-w64-mingw32-g++.exe -Wl,--whole-archive CMakeFiles\wgm_v2.dir/objects.a -Wl,--no-whole-archive -o C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\bin\wgm_v2.exe -Wl,--out-implib,libwgm_v2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\wgm_v2.dir\linklibs.rsp
