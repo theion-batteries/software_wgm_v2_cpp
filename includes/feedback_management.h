@@ -11,14 +11,6 @@
 #include <iostream>
 #pragma once
 
-/*
-#include "process_manager.h"
-
-namespace wgm_processes
-{
-class Iprocesses_managment;
-} 
-*/
 namespace wgm_feedbacks
 {
     /********* enumeration classes ***********/
@@ -52,11 +44,6 @@ namespace wgm_feedbacks
         public:
             void report_feedback (enum_hw_feedback& feedback);
     };
-    void hw_feedback::report_feedback (enum_hw_feedback& feedback)
-    {
-            if (feedback == enum_hw_feedback::hw_success) hw_feed_val = enum_hw_feedback::hw_success;
-            else hw_feed_val = enum_hw_feedback::hw_error ;           
-    }
      class sub_sys_feedback
     {
         private:
@@ -76,12 +63,7 @@ namespace wgm_feedbacks
             enum_proc_feedback proc_feed_val;
             sys_feedback* sys_feed;
         public:
-            bool report_feedback()
-            {
-                if (proc_feed_val == enum_proc_feedback::proc_success) return true;
-                return false;
-            }
-    
+            bool report_feedback();
     };
 
 }
