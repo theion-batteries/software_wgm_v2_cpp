@@ -18,15 +18,8 @@ namespace wafer_cooling_system
     class Icooling_rotation
     {
     public:
-        Icooling_rotation()
-        {
-            std::cout << "creating cooling rotation " << std::endl;
-        }
-
-        virtual ~Icooling_rotation()
-        {
-            std::cout << "deleting cooling rotation " << std::endl;
-        }
+        Icooling_rotation();
+        virtual ~Icooling_rotation();
         virtual void ph_rotate() = 0;
     };
     // implementation  
@@ -35,23 +28,14 @@ namespace wafer_cooling_system
         protected:
         virtual void ph_rotate();
     };
-    void cooling_rotation::ph_rotate()
-    {
-       std::cout << "start rotating " << std::endl; 
-    }
+
     /******* cooling motion *****/
     // interface
     class Icooling_motion
     {
     public:
-        Icooling_motion()
-        {
-            std::cout << "creating cooling motion" << std::endl;
-        }
-        virtual ~Icooling_motion()
-        {
-            std::cout << "deleting cooling motion" << std::endl;
-        }
+        Icooling_motion();
+        virtual ~Icooling_motion();
         virtual void move_down_to_center() = 0;
         virtual void move_up_to_reference() = 0;
     };
@@ -61,30 +45,15 @@ namespace wafer_cooling_system
         virtual void move_down_to_center();
         virtual void move_up_to_reference();
     };
-    void cooling_motion::move_down_to_center()
-    {
-        std::cout << "cooling sys moving down to center" << std::endl;
- 
-    }
-    void cooling_motion::move_up_to_reference()
-    {
-        std::cout << "cooling sys moving back to refernce " << std::endl;
 
-    }
     /****** cooling printing ********/
     // interface
 
     class Icooling_spitting
     {
     public:
-    Icooling_spitting() 
-    {
-      std::cout << "creating cooling printing" << std::endl;
-    }
-    virtual ~Icooling_spitting()
-    {
-      std::cout << "deleting cooling printing" << std::endl;
-    }
+    Icooling_spitting();
+    virtual ~Icooling_spitting();
         virtual void ph_spit() = 0;
     };
     // implementation 
@@ -93,24 +62,13 @@ namespace wafer_cooling_system
         virtual void ph_spit();
     };
 
-    void cooling_spitting::ph_spit()
-    {
-      std::cout << "printhead spitting" << std::endl;
-
-    }
     /****** cooling controller ********/
     // interface
     class Icooling_controller
     {
     public:
-    Icooling_controller() 
-    {
-      std::cout << "creating cooling controller" << std::endl;
-    }
-    virtual ~Icooling_controller()
-    {
-      std::cout << "deleting cooling controller" << std::endl;
-    }
+    Icooling_controller();
+    virtual ~Icooling_controller();
         virtual void start_cooling() = 0;
         virtual void stop_cooling() = 0;
     };
@@ -125,30 +83,11 @@ namespace wafer_cooling_system
         virtual void start_cooling();
         virtual void stop_cooling();
         public:
-        cooling_controller() 
-        {
-        ph_motion = new cooling_motion();
-        ph_rotation = new cooling_rotation();
-        ph_printing = new cooling_spitting();
-        }
-        virtual ~cooling_controller()
-        {
-        delete ph_motion;
-        delete ph_rotation;
-        delete ph_printing;
-        }
+        cooling_controller() ;
+        virtual ~cooling_controller();
 
     };
-    void cooling_controller::start_cooling()
-    {
-        ph_motion->move_down_to_center();
-        ph_rotation->ph_rotate();
-        ph_printing->ph_spit();
-    }
-    void cooling_controller::stop_cooling()
-    {
-        ph_motion->move_up_to_reference();
-    }
+
 
 }
 

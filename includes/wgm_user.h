@@ -20,25 +20,10 @@ namespace wgm_user
         wgm_processes::Iprocesses_managment* processInterfaces;
 
     public:
-        user()
-        {
-            std::cout << "user started app" << std::endl;
-
-            processInterfaces = new wgm_processes::process_management();
-        }
-        void run_app()
-        {
-            processInterfaces->start_all();
-        }
-        void stop_app()
-        {
-            processInterfaces->stop_all();
-        }
-        ~user()
-        {
-            std::cout << "user stopped app" << std::endl;
-            delete processInterfaces;
-        }
+        user();
+        void run_app();
+        void stop_app();
+        ~user();
     };
 
 
