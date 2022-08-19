@@ -43,7 +43,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-Debug-9f6f52f2bfd3fa485b7f.json",
+					"jsonFile" : "target-ALL_BUILD-Debug-3f2e8d775413e519c76c.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -56,9 +56,9 @@
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "wgm::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-wgm-Debug-75beb7c3bfdbf2d557f6.json",
-					"name" : "wgm",
+					"id" : "wgm_app::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wgm_app-Debug-090fb282c7da3185823f.json",
+					"name" : "wgm_app",
 					"projectIndex" : 0
 				}
 			]
@@ -105,7 +105,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-Release-9f6f52f2bfd3fa485b7f.json",
+					"jsonFile" : "target-ALL_BUILD-Release-3f2e8d775413e519c76c.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -118,9 +118,9 @@
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "wgm::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-wgm-Release-5295a499cce69179ba83.json",
-					"name" : "wgm",
+					"id" : "wgm_app::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wgm_app-Release-0f1e915f1bcd34148734.json",
+					"name" : "wgm_app",
 					"projectIndex" : 0
 				}
 			]
@@ -167,7 +167,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-MinSizeRel-9f6f52f2bfd3fa485b7f.json",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-3f2e8d775413e519c76c.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -180,9 +180,9 @@
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "wgm::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-wgm-MinSizeRel-b414551e35a1471910a6.json",
-					"name" : "wgm",
+					"id" : "wgm_app::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wgm_app-MinSizeRel-bcc8a33af321144742db.json",
+					"name" : "wgm_app",
 					"projectIndex" : 0
 				}
 			]
@@ -229,7 +229,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-9f6f52f2bfd3fa485b7f.json",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-3f2e8d775413e519c76c.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -242,9 +242,9 @@
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "wgm::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-wgm-RelWithDebInfo-2476cc55cb557b09af57.json",
-					"name" : "wgm",
+					"id" : "wgm_app::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wgm_app-RelWithDebInfo-1d4a1a15813cfa186287.json",
+					"name" : "wgm_app",
 					"projectIndex" : 0
 				}
 			]

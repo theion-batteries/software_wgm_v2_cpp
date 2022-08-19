@@ -9,8 +9,9 @@
  *
  */
 
-#pragma once
 #include <iostream>
+#pragma once
+
 namespace wafer_holder_motion_system
 {
     /****** delta motion ******/

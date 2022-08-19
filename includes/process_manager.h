@@ -8,10 +8,10 @@
  * @copyright Copyright (c) 2022
  *
  */
-#pragma once
 #include <vector>
 #include "wgm_monitoring.h"
 #include "feedback_management.h"
+#pragma once
 
 
 namespace wgm_processes

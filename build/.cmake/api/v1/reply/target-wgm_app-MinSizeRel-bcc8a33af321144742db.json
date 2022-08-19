@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "RelWithDebInfo/wgm.exe"
+			"path" : "MinSizeRel/wgm_app.exe"
 		},
 		{
-			"path" : "RelWithDebInfo/wgm.pdb"
+			"path" : "MinSizeRel/wgm_app.pdb"
 		}
 	],
 	"backtrace" : 2,
@@ -31,7 +31,7 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 55,
+				"line" : 21,
 				"parent" : 0
 			},
 			{
@@ -43,13 +43,13 @@
 			{
 				"command" : 2,
 				"file" : 1,
-				"line" : 48,
+				"line" : 14,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 58,
+				"line" : 24,
 				"parent" : 0
 			}
 		]
@@ -60,7 +60,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG"
 				}
 			],
 			"includes" : 
@@ -105,17 +105,17 @@
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "wgm::@6890427a1f51a3e7e1df",
+	"id" : "wgm_app::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG",
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:console",
+				"fragment" : "/machine:x64 /INCREMENTAL:NO /subsystem:console",
 				"role" : "flags"
 			},
 			{
@@ -125,8 +125,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "wgm",
-	"nameOnDisk" : "wgm.exe",
+	"name" : "wgm_app",
+	"nameOnDisk" : "wgm_app.exe",
 	"paths" : 
 	{
 		"build" : ".",

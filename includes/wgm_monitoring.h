@@ -8,7 +8,6 @@
  * @copyright Copyright (c) 2022
  *
  */
-#pragma once
 #include <list>
 #include <vector>
 #include <chrono>
@@ -16,6 +15,8 @@
 #include "cnt_alignment_system.h"
 #include "wafer_holder_motion_system.h"
 #include "wafer_cooling_system.h"
+#pragma once
+
 namespace wgm_monitoring
 {
   /************* interface monitor management **********/
