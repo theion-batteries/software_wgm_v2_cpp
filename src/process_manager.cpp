@@ -183,6 +183,8 @@ void wgm_processes::cooling_process::stop_process()
   cooling_sys->stop_cooling();
 
 }
+std::string wgm_processes::cooling_process::get_name() { return process_name; };
+bool wgm_processes::cooling_process::is_proc_success() { return process_feedback.report_feedback(); };
 
 /******************* interface wafer extraction process***************/
 wgm_processes::Iextracting_process::Iextracting_process()

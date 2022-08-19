@@ -47,6 +47,13 @@ void wgm_monitoring::time_monitor::stop_monitoring()
     << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << "ms ≈ " // almost equivalent form of the above, but
     << std::chrono::duration_cast<std::chrono::seconds>(end - start).count() << "s.\n";  // using milliseconds and seconds accordingly
 }
+wgm_monitoring::Idistance_monitor::Idistance_monitor()
+{
+  std::cout << "creating distance monitor " << std::endl;
+}
+wgm_monitoring::Idistance_monitor:: ~Idistance_monitor()
+{
+}
 
 wgm_monitoring::distance_monitor::distance_monitor(wafer_holder_motion_system::Iwafer_motion_controller* ptr_to_system) {
   param_distance = ptr_to_system;
