@@ -11,6 +11,9 @@
 
 #include <iostream>
 #include "whs_controller.h"
+#include "yaml-cpp/yaml.h"
+#include <memory>
+
 #pragma once
 
 namespace wafer_holder_motion_system
@@ -30,9 +33,16 @@ namespace wafer_holder_motion_system
     // implementation
     class delta_motion :public Idelta_motion
     {
+    public:
+        explicit delta_motion(std::shared_ptr<whs_controller> shared_controller);
+
     protected:
+
         virtual void move(int direction);
         virtual void set_speed_to_minimum();
+    private:
+        std::shared_ptr<whs_controller>   wafer_sys_control;
+
     };
 
     /****** distance sensor******/
@@ -47,8 +57,13 @@ namespace wafer_holder_motion_system
     // implementation
     class distance_sensor :public Idistance_sensor
     {
+    public:
+        explicit distance_sensor(std::shared_ptr<whs_controller> shared_controller);
     protected:
         virtual double read_values();
+    private:
+        std::shared_ptr<whs_controller>   wafer_sys_control;
+
     };
 
     /****** wafer motion controller ******/
@@ -71,7 +86,7 @@ namespace wafer_holder_motion_system
     class wafer_motion_controller :public Iwafer_motion_controller
     {
     public:
-        wafer_motion_controller();
+        explicit wafer_motion_controller();
         virtual ~wafer_motion_controller();
     protected:
         virtual void move_down();
@@ -86,9 +101,11 @@ namespace wafer_holder_motion_system
     private:
         Idelta_motion* delta_mover;
         Idistance_sensor* dist_sensor;
+        std::shared_ptr<whs_controller>  wafer_sys_control;
+        YAML::Node config = YAML::LoadFile("./config.yaml");
         double distance_to_surface_contact; // distance where wafer holder extact with ML surface
         double distance_to_slow_down = 30; //30mm=3cm: distance from where the speed of delta motion slow down
     };
- 
+
 }
 
