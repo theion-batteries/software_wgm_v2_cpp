@@ -12,8 +12,26 @@
             "includePath": [
                 "${default}",
                 "${workspaceFolder}/includes/",
-                "C:/Program Files/boost/boost_1_79_0"
+                "C:/Program Files/boost/boost_1_79_0",
+                "${workspaceFolder}/dependencies/soft_wafer_holder_system_controller/includes"
             ]
+        },
+        {
+            "name": "wgm",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${vcpkgRoot}/x64-windows/include",
+                "${vcpkgRoot}/x86-windows/include",
+                "${workspaceFolder}/dependencies/soft_wafer_holder_system_controller/includes"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "intelliSenseMode": "windows-msvc-x64",
+            "cppStandard": "c++17"
         }
     ]
 }

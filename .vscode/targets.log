@@ -5,8 +5,9 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Fri Aug 19 14:48:39 2022
+# Make data base, printed on Mon Aug 29 12:29:21 2022
 
 # Variables
 
@@ -89,7 +90,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_3648_EUPYMTEZJTJYMRBJ
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_21392_DEMHMQTCWECZZGQO
 # environment
 COMPUTERNAME = DESKTOP-BRFNNCP
 # environment
@@ -207,7 +208,7 @@ LANG = C
 # environment
 PROCESSOR_LEVEL = 23
 # environment
-VSCODE_PID = 3648
+VSCODE_PID = 21392
 # environment
 USERDOMAIN_ROAMINGPROFILE = AzureAD
 # variable set hash-table stats:
@@ -222,13 +223,13 @@ USERDOMAIN_ROAMINGPROFILE = AzureAD
 # : could not be stat'd.
 # C:\WINDOWS\System32\WindowsPowerShell\v1.0\ (key C:/WINDOWS/System32/WindowsPowerShell/v1.0/, mtime 1640088842): 34 files, no impossibilities.
 # C:\Users\SamiDhiab\AppData\Roaming\npm (key C:/Users/SamiDhiab/AppData/Roaming/npm, mtime 1632490459): 2 files, no impossibilities.
-# . (key c:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp, mtime 1660913095): 13 files, no impossibilities.
+# . (key c:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp, mtime 1660917914): 13 files, no impossibilities.
 # C:\Users\SamiDhiab\.platformio\penv\Scripts\ (key C:/Users/SamiDhiab/.platformio/penv/Scripts/, mtime 1656008720): 25 files, no impossibilities.
 # C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\ (key C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/, mtime 1636023288): 7 files, no impossibilities.
 # C:\Program Files (x86)\Common Files\Oracle\Java\javapath (key C:/Program Files (x86)/Common Files/Oracle/Java/javapath, mtime 1660515922): 5 files, no impossibilities.
 # C:\Program Files\STEMMER IMAGING\Common Vision Blox\ (key C:/Program Files/STEMMER IMAGING/Common Vision Blox/, mtime 1634050659): 73 files, no impossibilities.
 # C: could not be stat'd.
-# C:\Users\SamiDhiab\AppData\Local\Microsoft\WindowsApps (key C:/Users/SamiDhiab/AppData/Local/Microsoft/WindowsApps, mtime 1659598087): 17 files, no impossibilities.
+# C:\Users\SamiDhiab\AppData\Local\Microsoft\WindowsApps (key C:/Users/SamiDhiab/AppData/Local/Microsoft/WindowsApps, mtime 1661759475): 17 files, no impossibilities.
 # C:\TDM-GCC-64\bin (key C:/TDM-GCC-64/bin, mtime 1658999076): 89 files, no impossibilities.
 # C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1631803578): 8 files, no impossibilities.
 # C:\WINDOWS\System32\OpenSSH\: could not be stat'd.
@@ -316,7 +317,7 @@ GNUmakefile:
 # strcache performance: lookups = 4080 / hit rate = 3%
 # hash-table stats:
 # Load=3934/8192=48%, Rehash=0, Collisions=1604/4080=39%
-# Finished Make data base on Fri Aug 19 14:48:39 2022
+# Finished Make data base on Mon Aug 29 12:29:21 2022
 
  
 make.exe: *** No rule to make target 'all'.  Stop.
