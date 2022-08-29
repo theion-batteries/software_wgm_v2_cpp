@@ -12,7 +12,6 @@ C:/Program Files/CMake/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cm
 C:/Program Files/CMake/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake
 C:/Program Files/CMake/share/cmake-3.22/Modules/Compiler/MSVC-C.cmake
 C:/Program Files/CMake/share/cmake-3.22/Modules/Compiler/MSVC-CXX.cmake
-C:/Program Files/CMake/share/cmake-3.22/Modules/GNUInstallDirs.cmake
 C:/Program Files/CMake/share/cmake-3.22/Modules/Platform/Windows-MSVC-C.cmake
 C:/Program Files/CMake/share/cmake-3.22/Modules/Platform/Windows-MSVC-CXX.cmake
 C:/Program Files/CMake/share/cmake-3.22/Modules/Platform/Windows-MSVC.cmake
@@ -23,5 +22,4 @@ C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/CMakeFiles/3.22.0/CMak
 C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/CMakeFiles/3.22.0/CMakeCXXCompiler.cmake
 C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/CMakeFiles/3.22.0/CMakeRCCompiler.cmake
 C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/CMakeFiles/3.22.0/CMakeSystem.cmake
-C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/CMakeLists.txt
 C:/src/vcpkg/scripts/buildsystems/vcpkg.cmake

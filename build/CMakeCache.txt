@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//The directory containing a CMake configuration file for C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/.
+"C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/_DIR":PATH=C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller.
+"C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller_DIR":PATH=C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller_DIR-NOTFOUND
+
 //Path to a program.
 CMAKE_AR:FILEPATH=C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lib.exe
 
@@ -160,7 +166,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=whs_controller
+CMAKE_PROJECT_NAME:STATIC=wgm
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=1.0

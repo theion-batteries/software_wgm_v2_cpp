@@ -17,8 +17,7 @@
 					[
 						0,
 						1,
-						2,
-						3
+						2
 					]
 				}
 			],
@@ -30,13 +29,12 @@
 					[
 						0
 					],
-					"name" : "whs_controller",
+					"name" : "wgm",
 					"targetIndexes" : 
 					[
 						0,
 						1,
-						2,
-						3
+						2
 					]
 				}
 			],
@@ -45,7 +43,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-Debug-6922079f63c9c51c0202.json",
+					"jsonFile" : "target-ALL_BUILD-Debug-3f2e8d775413e519c76c.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -59,15 +57,8 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "wgm_app::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-wgm_app-Debug-407e48b34677626a2c81.json",
+					"jsonFile" : "target-wgm_app-Debug-fe14074ac0ac58399c24.json",
 					"name" : "wgm_app",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "whs_controller::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-whs_controller-Debug-4a7787230ce40e3495e5.json",
-					"name" : "whs_controller",
 					"projectIndex" : 0
 				}
 			]
@@ -88,8 +79,7 @@
 					[
 						0,
 						1,
-						2,
-						3
+						2
 					]
 				}
 			],
@@ -101,13 +91,12 @@
 					[
 						0
 					],
-					"name" : "whs_controller",
+					"name" : "wgm",
 					"targetIndexes" : 
 					[
 						0,
 						1,
-						2,
-						3
+						2
 					]
 				}
 			],
@@ -116,7 +105,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-Release-6922079f63c9c51c0202.json",
+					"jsonFile" : "target-ALL_BUILD-Release-3f2e8d775413e519c76c.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -130,15 +119,8 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "wgm_app::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-wgm_app-Release-61a0ca0afcaefeccdc50.json",
+					"jsonFile" : "target-wgm_app-Release-18cefca0bd3af3db15c9.json",
 					"name" : "wgm_app",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "whs_controller::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-whs_controller-Release-dd0e6fbfa0e355f5f8e3.json",
-					"name" : "whs_controller",
 					"projectIndex" : 0
 				}
 			]
@@ -159,8 +141,7 @@
 					[
 						0,
 						1,
-						2,
-						3
+						2
 					]
 				}
 			],
@@ -172,13 +153,12 @@
 					[
 						0
 					],
-					"name" : "whs_controller",
+					"name" : "wgm",
 					"targetIndexes" : 
 					[
 						0,
 						1,
-						2,
-						3
+						2
 					]
 				}
 			],
@@ -187,7 +167,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-MinSizeRel-6922079f63c9c51c0202.json",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-3f2e8d775413e519c76c.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -201,15 +181,8 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "wgm_app::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-wgm_app-MinSizeRel-724ebe05cd8a20f1a77a.json",
+					"jsonFile" : "target-wgm_app-MinSizeRel-ef4886fed2e76e5ef2c7.json",
 					"name" : "wgm_app",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "whs_controller::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-whs_controller-MinSizeRel-cec6826a0a52a2e2e623.json",
-					"name" : "whs_controller",
 					"projectIndex" : 0
 				}
 			]
@@ -230,8 +203,7 @@
 					[
 						0,
 						1,
-						2,
-						3
+						2
 					]
 				}
 			],
@@ -243,13 +215,12 @@
 					[
 						0
 					],
-					"name" : "whs_controller",
+					"name" : "wgm",
 					"targetIndexes" : 
 					[
 						0,
 						1,
-						2,
-						3
+						2
 					]
 				}
 			],
@@ -258,7 +229,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-6922079f63c9c51c0202.json",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-3f2e8d775413e519c76c.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -272,15 +243,8 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "wgm_app::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-wgm_app-RelWithDebInfo-40328468217a334aa1b3.json",
+					"jsonFile" : "target-wgm_app-RelWithDebInfo-4a1b76eea506512b7447.json",
 					"name" : "wgm_app",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "whs_controller::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-whs_controller-RelWithDebInfo-2d1c74cd95fcabef79f7.json",
-					"name" : "whs_controller",
 					"projectIndex" : 0
 				}
 			]
