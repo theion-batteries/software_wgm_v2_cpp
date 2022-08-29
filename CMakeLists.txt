@@ -9,7 +9,8 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-
+# include embedded cmake
+include(${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/CMakeLists.txt)
 # include libs
 include_directories(${PROJECT_SOURCE_DIR}/includes/)
 include_directories(${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/includes/)
