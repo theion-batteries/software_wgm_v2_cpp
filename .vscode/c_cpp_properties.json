@@ -2,21 +2,6 @@
     "version": 4,
     "configurations": [
         {
-            "cStandard": "gnu17",
-            "cppStandard": "gnu++17",
-            "defines": [
-                "__cplusplus=201703L"
-            ],
-            "compilerPath": "C:/TDM-GCC-64/bin/g++.exe",
-            "intelliSenseMode": "windows-gcc-x64",
-            "includePath": [
-                "${default}",
-                "${workspaceFolder}/includes/",
-                "C:/Program Files/boost/boost_1_79_0",
-                "${workspaceFolder}/dependencies/soft_wafer_holder_system_controller/includes"
-            ]
-        },
-        {
             "name": "wgm",
             "includePath": [
                 "${workspaceFolder}/**",
