@@ -10,6 +10,7 @@
  */
 
 #include <iostream>
+#include "whs_controller.h"
 #pragma once
 
 namespace wafer_holder_motion_system

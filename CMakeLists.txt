@@ -12,10 +12,12 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 # include libs
 include_directories(${PROJECT_SOURCE_DIR}/includes/)
+include_directories(${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/includes/)
 
 # source *.cpp
 file(GLOB all_SRCS
     "${PROJECT_SOURCE_DIR}/src/*.cpp"
+    "${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/src/whs_controller.cpp"
 )
 # add .exe
 add_executable(wgm_app ${all_SRCS})
