@@ -22,14 +22,14 @@ wafer_holder_motion_system::Idelta_motion:: ~Idelta_motion()
   std::cout << "deleting delta motion" << std::endl;
 }
 // delta
-// idelta
+
 wafer_holder_motion_system::delta_motion::delta_motion(std::shared_ptr<whs_controller> shared_controller)
 {
 	// delta
-  wafer_sys_control = shared_controller; //pass shared pointer
-	wafer_sys_control->run_delta_subprocess();
-	wafer_sys_control->connect_to_delta_server(); // ready
-	wafer_sys_control->move_delta_home(); 
+  wafer_delta_shared_ptr = shared_controller; //pass shared pointer
+	wafer_delta_shared_ptr->run_delta_subprocess();
+	wafer_delta_shared_ptr->connect_to_delta_server(); // ready
+	wafer_delta_shared_ptr->move_delta_home(); 
   
   }
 
@@ -63,9 +63,9 @@ wafer_holder_motion_system::Idistance_sensor:: ~Idistance_sensor()
 wafer_holder_motion_system::distance_sensor::distance_sensor(std::shared_ptr<whs_controller> shared_controller)
 {
 	// keyence
-  wafer_sys_control = shared_controller; //pass shared pointer
-	wafer_sys_control->keyence_client_connect();
-	wafer_sys_control->keyence_client_get_value_all(); //ready
+  wafer_dist_shared_ptr = shared_controller; //pass shared pointer
+	wafer_dist_shared_ptr->keyence_client_connect();
+	wafer_dist_shared_ptr->keyence_client_get_value_all(); //ready
 
 }
 double wafer_holder_motion_system::distance_sensor::read_values()
@@ -84,6 +84,8 @@ wafer_holder_motion_system::Iwafer_motion_controller:: ~Iwafer_motion_controller
 }
 
 wafer_holder_motion_system::wafer_motion_controller::wafer_motion_controller() {
+  wafer_sys_control_shared_ptr = std::make_shared<whs_controller>();
+
 	std::cout << "config file loaded, printing parameters: " << std::endl;
 	std::cout << "mm_steps: " << config["mm_steps"].as<std::string>() << std::endl;
 	std::cout << "delay_to_move_request: " << config["delay_to_move_request"].as<std::string>() << std::endl;
@@ -91,8 +93,8 @@ wafer_holder_motion_system::wafer_motion_controller::wafer_motion_controller() {
 	std::cout << "thickness: " << config["thickness"].as<std::string>() << std::endl;
 	std::cout << "mm_step_res: " << config["mm_step_res"].as<std::string>() << std::endl;
 
-  delta_mover = new delta_motion(wafer_sys_control);
-  dist_sensor = new distance_sensor(wafer_sys_control);
+  delta_mover = new delta_motion(wafer_sys_control_shared_ptr);
+  dist_sensor = new distance_sensor(wafer_sys_control_shared_ptr);
 }
 wafer_holder_motion_system::wafer_motion_controller:: ~wafer_motion_controller()
 {
@@ -107,7 +109,7 @@ void wafer_holder_motion_system:: wafer_motion_controller::move_down()
 }
 void wafer_holder_motion_system:: wafer_motion_controller::calibrate()
 {
-  wafer_sys_control->monitor_and_calibrate();
+  wafer_sys_control_shared_ptr->monitor_and_calibrate();
 }
 void wafer_holder_motion_system:: wafer_motion_controller::move_up()
 {

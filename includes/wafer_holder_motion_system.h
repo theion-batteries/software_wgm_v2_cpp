@@ -41,7 +41,7 @@ namespace wafer_holder_motion_system
         virtual void move(int direction);
         virtual void set_speed_to_minimum();
     private:
-        std::shared_ptr<whs_controller>   wafer_sys_control;
+        std::shared_ptr<whs_controller>   wafer_delta_shared_ptr;
 
     };
 
@@ -62,7 +62,7 @@ namespace wafer_holder_motion_system
     protected:
         virtual double read_values();
     private:
-        std::shared_ptr<whs_controller>   wafer_sys_control;
+        std::shared_ptr<whs_controller>   wafer_dist_shared_ptr;
 
     };
 
@@ -101,7 +101,7 @@ namespace wafer_holder_motion_system
     private:
         Idelta_motion* delta_mover;
         Idistance_sensor* dist_sensor;
-        std::shared_ptr<whs_controller>  wafer_sys_control;
+        std::shared_ptr<whs_controller> wafer_sys_control_shared_ptr;// = std::make_shared<whs_controller>();
         YAML::Node config = YAML::LoadFile("./config.yaml");
         double distance_to_surface_contact; // distance where wafer holder extact with ML surface
         double distance_to_slow_down = 30; //30mm=3cm: distance from where the speed of delta motion slow down

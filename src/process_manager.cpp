@@ -68,6 +68,7 @@ void wgm_processes::heating_process::stop_process()
 // interface sink process
 wgm_processes::Isinking_process::Isinking_process()
 {
+  
   std::cout << "creating sinking process " << std::endl;
 }
 wgm_processes::Isinking_process::~Isinking_process() {}
