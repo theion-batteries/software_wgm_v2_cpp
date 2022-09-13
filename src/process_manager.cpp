@@ -93,7 +93,6 @@ void wgm_processes::sinking_process::start_process()
 {
   std::cout << "execute " << process_name << std::endl;
   process_timer->start_monitoring();
-  sinking_sys->set_distance_to_surface_contact(30);
   sinking_sys->insert_wafer_in_ml();
   // feedback
   process_timer->stop_monitoring();

@@ -66,7 +66,7 @@ wgm_monitoring::distance_monitor:: ~distance_monitor()
 void wgm_monitoring::distance_monitor::start_monitoring()
 {
   std::cout << "process distance monitoring started " << std::endl;
-  param_distance->get_current_value();
+  param_distance->get_current_value(0);
 }
 void wgm_monitoring::distance_monitor::stop_monitoring()
 {

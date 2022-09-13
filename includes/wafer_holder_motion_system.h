@@ -24,7 +24,6 @@ namespace wafer_holder_motion_system
     {
     public:
         virtual void move(int direction) = 0;
-        virtual void set_speed_to_minimum() = 0;
 
         Idelta_motion();
 
@@ -39,7 +38,6 @@ namespace wafer_holder_motion_system
     protected:
 
         virtual void move(int direction);
-        virtual void set_speed_to_minimum();
     private:
         std::shared_ptr<whs_controller>   wafer_delta_shared_ptr;
 
@@ -76,11 +74,10 @@ namespace wafer_holder_motion_system
         virtual void move_down() = 0;
         virtual void calibrate() = 0;
         virtual void move_up() = 0;
-        virtual double get_current_value() = 0;
+        virtual double get_current_value(uint16_t sensor_head) = 0;
         virtual void insert_wafer_in_ml() = 0;
         virtual void extract_wafer_from_ml() = 0;
         virtual void set_distance_to_surface_contact(double distance) = 0;
-        virtual void slow_down() = 0;
     };
     // implementation
     class wafer_motion_controller :public Iwafer_motion_controller
@@ -92,15 +89,14 @@ namespace wafer_holder_motion_system
         virtual void move_down();
         virtual void calibrate();
         virtual void move_up();
-        virtual double get_current_value();
+        virtual double get_current_value(uint16_t sensor_head);
         virtual void insert_wafer_in_ml();
         virtual void extract_wafer_from_ml();
         virtual void set_distance_to_surface_contact(double distance);
-        virtual void slow_down();
 
     private:
-        Idelta_motion* delta_mover;
-        Idistance_sensor* dist_sensor;
+        //Idelta_motion* delta_mover;
+        //Idistance_sensor* dist_sensor;
         std::shared_ptr<whs_controller> wafer_sys_control_shared_ptr;// = std::make_shared<whs_controller>();
         YAML::Node config = YAML::LoadFile("./config.yaml");
         double distance_to_surface_contact; // distance where wafer holder extact with ML surface
