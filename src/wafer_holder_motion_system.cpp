@@ -27,9 +27,9 @@ wafer_holder_motion_system::delta_motion::delta_motion(std::shared_ptr<whs_contr
 {
 	// delta
   wafer_delta_shared_ptr = shared_controller; //pass shared pointer
-	wafer_delta_shared_ptr->run_delta_subprocess();
-	wafer_delta_shared_ptr->connect_to_delta_server(); // ready
-	wafer_delta_shared_ptr->move_delta_home(); 
+	//wafer_delta_shared_ptr->run_delta_subprocess();
+	//wafer_delta_shared_ptr->connect_to_delta_server(); // ready
+	//wafer_delta_shared_ptr->move_delta_home(); 
 }
 
 
@@ -59,8 +59,8 @@ wafer_holder_motion_system::distance_sensor::distance_sensor(std::shared_ptr<whs
 {
 	// keyence
   wafer_dist_shared_ptr = shared_controller; //pass shared pointer
-	wafer_dist_shared_ptr->keyence_client_connect();
-	wafer_dist_shared_ptr->keyence_client_get_value_all(); //ready
+	//wafer_dist_shared_ptr->keyence_client_connect();
+	//wafer_dist_shared_ptr->keyence_client_get_value_all(); //ready
 
 }
 double wafer_holder_motion_system::distance_sensor::read_values()
@@ -88,6 +88,11 @@ wafer_holder_motion_system::wafer_motion_controller::wafer_motion_controller() {
 	std::cout << "thickness: " << config["thickness"].as<std::string>() << std::endl;
 	std::cout << "mm_step_res: " << config["mm_step_res"].as<std::string>() << std::endl;
   distance_to_surface_contact = config["ref_dis"].as<double>();
+	wafer_sys_control_shared_ptr->keyence_client_connect();
+	wafer_sys_control_shared_ptr->keyence_client_get_value_all(); //ready
+	wafer_sys_control_shared_ptr->run_delta_subprocess();
+	wafer_sys_control_shared_ptr->connect_to_delta_server(); // ready
+	wafer_sys_control_shared_ptr->move_delta_home(); 
   //delta_mover = new delta_motion(wafer_sys_control_shared_ptr);
   //dist_sensor = new distance_sensor(wafer_sys_control_shared_ptr);
 }
