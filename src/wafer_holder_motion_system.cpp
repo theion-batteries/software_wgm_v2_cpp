@@ -140,10 +140,10 @@ void wafer_holder_motion_system:: wafer_motion_controller::insert_wafer_in_ml()
 	wafer_sys_control_shared_ptr->connect_to_delta_server(); // ready
   // @implement test 
   
-  //wafer_sys_control_shared_ptr->move_delta_home();
-	//wafer_sys_control_shared_ptr->move_down_until_data_availble(config["mm_steps"].as<double>(), config["delay_to_move_request"].as<DWORD>());
-	//wafer_sys_control_shared_ptr->move_down_to_surface(config["ref_dis"].as<double>());
-	//wafer_sys_control_shared_ptr->deep_wafer_holder_desired_thickness(config["thickness"].as<double>(), config["mm_step_res"].as<double>());
+  wafer_sys_control_shared_ptr->move_delta_home();
+	wafer_sys_control_shared_ptr->move_down_until_data_availble(config["mm_steps"].as<double>(), config["delay_to_move_request"].as<DWORD>());
+	wafer_sys_control_shared_ptr->move_down_to_surface(config["ref_dis"].as<double>());
+	wafer_sys_control_shared_ptr->deep_wafer_holder_desired_thickness(config["thickness"].as<double>(), config["mm_step_res"].as<double>());
   
 }
 void wafer_holder_motion_system:: wafer_motion_controller::extract_wafer_from_ml()
