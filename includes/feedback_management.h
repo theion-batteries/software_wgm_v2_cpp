@@ -26,8 +26,8 @@ namespace wgm_feedbacks
     };
     enum class enum_sub_sys_feedback
     {
-        sys_success = 3,
-        sys_error = -2
+        sub_success = 3,
+        sub_error = -2
     };
     enum class enum_hw_feedback
     {

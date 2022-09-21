@@ -87,6 +87,7 @@ namespace wgm_processes
         virtual void stop_process() = 0;
         virtual std::string get_name() = 0;
         virtual bool is_proc_success() = 0;
+        virtual wafer_holder_motion_system::Iwafer_motion_controller* get_sys_obj() = 0;
     };
     /**************** implementation wafer insertion process ************/
     class sinking_process : public Isinking_process
@@ -94,7 +95,7 @@ namespace wgm_processes
     private:
         wgm_feedbacks::proc_feedback process_feedback;
         wgm_monitoring::Itime_monitor* process_timer;
-        wafer_holder_motion_system::Iwafer_motion_controller* sinking_sys;
+       wafer_holder_motion_system::Iwafer_motion_controller* sinking_sys;
         wgm_monitoring::Idistance_monitor* process_dist_monitor;
         std::string process_name = "sinking process";
 
@@ -105,6 +106,8 @@ namespace wgm_processes
         virtual void stop_process();
         virtual std::string get_name();
         virtual bool is_proc_success(); 
+        virtual wafer_holder_motion_system::Iwafer_motion_controller* get_sys_obj();
+
     };
  
     /****************** interface cnt alignment process*******************/
@@ -189,7 +192,7 @@ namespace wgm_processes
         std::string process_name = "extracting process";
 
     public:
-        extracting_process();
+        extracting_process(wafer_holder_motion_system::Iwafer_motion_controller* ptrTosys);
         virtual ~extracting_process();
         virtual void start_process();
         virtual void stop_process();

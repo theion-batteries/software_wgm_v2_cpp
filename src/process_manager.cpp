@@ -103,6 +103,10 @@ void wgm_processes::sinking_process::stop_process()
   std::cout << "finish " << process_name << std::endl;
   process_dist_monitor->stop_monitoring();
 }
+  wafer_holder_motion_system::Iwafer_motion_controller* wgm_processes::sinking_process::get_sys_obj()
+  {
+    return sinking_sys;
+  }
 
 /****************** interface cnt alignment process*******************/
 wgm_processes::Ialigning_process::Ialigning_process()
@@ -199,15 +203,15 @@ wgm_processes::Iextracting_process::~Iextracting_process()
 std::string wgm_processes::extracting_process::get_name() { return process_name; };
 bool wgm_processes::extracting_process::is_proc_success() { return process_feedback.report_feedback(); };
 
-wgm_processes::extracting_process::extracting_process() {
-  extracting_sys = new wafer_holder_motion_system::wafer_motion_controller();
+wgm_processes::extracting_process::extracting_process(wafer_holder_motion_system::Iwafer_motion_controller* ptrTosys) {
+  extracting_sys = ptrTosys;
   process_timer = new wgm_monitoring::time_monitor();
 
 }
 wgm_processes::extracting_process::~extracting_process()
 {
   std::cout << "deleting extracting process " << std::endl;
-  delete extracting_sys;
+  //if (extracting_sys !=nullptr ) delete extracting_sys;
   delete process_timer;
 }
 void wgm_processes::extracting_process::start_process()
@@ -249,7 +253,7 @@ wgm_processes::process_management::process_management() {
   std::cout << "added cooling process to process scheduler" << std::endl;
 
   /***** add insertion process ***/
-  Iextracting_process* extraction_proc = new extracting_process();
+  Iextracting_process* extraction_proc = new extracting_process(insertion_proc->get_sys_obj());
   processesvector.push_back(extraction_proc);
   std::cout << "added wafer extracting process to process scheduler" << std::endl;
 }
@@ -287,7 +291,7 @@ void wgm_processes::process_management::start_all()
     {
       process->start_process();
       if (process->is_proc_success()) continue;
-      break;
+      //break;
     }
     else std::cout << "empty process scheduler" << std::endl;
   }

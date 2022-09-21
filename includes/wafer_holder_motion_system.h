@@ -16,6 +16,11 @@
 
 #pragma once
 
+enum class enum_sys_feedback
+{
+    sys_success = 2,
+    sys_error = -1
+};
 namespace wafer_holder_motion_system
 {
     /****** delta motion ******/

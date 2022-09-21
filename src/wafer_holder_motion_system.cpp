@@ -71,11 +71,11 @@ double wafer_holder_motion_system::distance_sensor::read_values()
 
 wafer_holder_motion_system::Iwafer_motion_controller::Iwafer_motion_controller()
 {
-  std::cout << "creating wafer motion controller" << std::endl;
+  std::cout << "creating wafer motion Interface " << std::endl;
 }
 wafer_holder_motion_system::Iwafer_motion_controller:: ~Iwafer_motion_controller()
 {
-  std::cout << "deleting wafer motion controller" << std::endl;
+  std::cout << "deleting wafer motion Interface" << std::endl;
 }
 
 wafer_holder_motion_system::wafer_motion_controller::wafer_motion_controller() {
@@ -88,18 +88,11 @@ wafer_holder_motion_system::wafer_motion_controller::wafer_motion_controller() {
 	std::cout << "thickness: " << config["thickness"].as<std::string>() << std::endl;
 	std::cout << "mm_step_res: " << config["mm_step_res"].as<std::string>() << std::endl;
   distance_to_surface_contact = config["ref_dis"].as<double>();
-	wafer_sys_control_shared_ptr->keyence_client_connect();
-	wafer_sys_control_shared_ptr->keyence_client_get_value_all(); //ready
-	wafer_sys_control_shared_ptr->run_delta_subprocess();
-	wafer_sys_control_shared_ptr->connect_to_delta_server(); // ready
-	wafer_sys_control_shared_ptr->move_delta_home(); 
-  //delta_mover = new delta_motion(wafer_sys_control_shared_ptr);
-  //dist_sensor = new distance_sensor(wafer_sys_control_shared_ptr);
+
 }
 wafer_holder_motion_system::wafer_motion_controller:: ~wafer_motion_controller()
 {
-  //delete delta_mover;
-  //delete dist_sensor;
+
 }
 
 void wafer_holder_motion_system:: wafer_motion_controller::move_down()
@@ -134,10 +127,23 @@ double wafer_holder_motion_system:: wafer_motion_controller::get_current_value(u
 void wafer_holder_motion_system:: wafer_motion_controller::insert_wafer_in_ml()
 {
   std::cout << "start sinking" << std::endl;
-
-	wafer_sys_control_shared_ptr->move_down_until_data_availble(config["mm_steps"].as<double>(), config["delay_to_move_request"].as<DWORD>());
-	wafer_sys_control_shared_ptr->move_down_to_surface(config["ref_dis"].as<double>());
-	wafer_sys_control_shared_ptr->deep_wafer_holder_desired_thickness(config["thickness"].as<double>(), config["mm_step_res"].as<double>());
+	enum_sub_sys_feedback Keyence_sub_feedback = wafer_sys_control_shared_ptr->keyence_client_connect();
+ if( Keyence_sub_feedback == enum_sub_sys_feedback::sub_error)
+ {
+      enum_sys_feedback whms_feedback = enum_sys_feedback::sys_error;
+      std::cout<<"error wafer holder motion system due to keyence sub system error"<<std::endl;
+      std::cout<<"aborting process"<<std::endl;
+      return;
+ }
+	wafer_sys_control_shared_ptr->keyence_client_get_value_all(); //ready
+	wafer_sys_control_shared_ptr->run_delta_subprocess();
+	wafer_sys_control_shared_ptr->connect_to_delta_server(); // ready
+  // @implement test 
+  
+  //wafer_sys_control_shared_ptr->move_delta_home();
+	//wafer_sys_control_shared_ptr->move_down_until_data_availble(config["mm_steps"].as<double>(), config["delay_to_move_request"].as<DWORD>());
+	//wafer_sys_control_shared_ptr->move_down_to_surface(config["ref_dis"].as<double>());
+	//wafer_sys_control_shared_ptr->deep_wafer_holder_desired_thickness(config["thickness"].as<double>(), config["mm_step_res"].as<double>());
   
 }
 void wafer_holder_motion_system:: wafer_motion_controller::extract_wafer_from_ml()
