@@ -93,6 +93,8 @@ wafer_holder_motion_system::wafer_motion_controller::wafer_motion_controller() {
   std::wstring tempPath = std::wstring(path.begin(), path.end());
   std::wstring tempScript = std::wstring(script.begin(), script.end());
   wafer_sys_control_shared_ptr = std::make_shared<whs_controller>(tempPath.c_str(), tempScript.c_str());
+  wafer_sys_control_shared_ptr->run_delta_subprocess();
+
 }
 wafer_holder_motion_system::wafer_motion_controller:: ~wafer_motion_controller()
 {
@@ -131,7 +133,6 @@ double wafer_holder_motion_system::wafer_motion_controller::get_current_value(ui
 void wafer_holder_motion_system::wafer_motion_controller::insert_wafer_in_ml()
 {
   std::cout << "start sinking" << std::endl;
-  wafer_sys_control_shared_ptr->run_delta_subprocess();
   wafer_sys_control_shared_ptr->connect_to_delta_server(); // ready
   enum_sub_sys_feedback Keyence_sub_feedback = wafer_sys_control_shared_ptr->keyence_client_connect();
   if (Keyence_sub_feedback == enum_sub_sys_feedback::sub_error)
@@ -141,7 +142,7 @@ void wafer_holder_motion_system::wafer_motion_controller::insert_wafer_in_ml()
     std::cout << "aborting process" << std::endl;
     return;
   }
-  wafer_sys_control_shared_ptr->keyence_client_get_value_all(); //ready
+  //wafer_sys_control_shared_ptr->keyence_client_get_value_all(); //ready
 
   // @implement test 
 
