@@ -7,3 +7,5 @@ ref_dis: 137.0 # parameter calibration sensor : default 158
 ##### third step algorithm parameters ######
 thickness: 0.1 # thickness of wafer holder: default 0.1mm
 mm_step_res: 0.01 # the lowest step resolution for delta mechanism: default 0.01 mm
+##### parameter external execution #######
+python_path: "C:/Users/SamiDhiab/AppData/Local/Programs/Python/Python39/python.exe" # the full path to python.exe
