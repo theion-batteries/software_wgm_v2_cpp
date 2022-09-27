@@ -79,8 +79,6 @@ wafer_holder_motion_system::Iwafer_motion_controller:: ~Iwafer_motion_controller
 }
 
 wafer_holder_motion_system::wafer_motion_controller::wafer_motion_controller() {
-  wafer_sys_control_shared_ptr = std::make_shared<whs_controller>(config["python_path"].as<std::wstring>());
-
   std::cout << "config file loaded, printing parameters: " << std::endl;
   std::cout << "mm_steps: " << config["mm_steps"].as<std::string>() << std::endl;
   std::cout << "delay_to_move_request: " << config["delay_to_move_request"].as<std::string>() << std::endl;
@@ -89,6 +87,10 @@ wafer_holder_motion_system::wafer_motion_controller::wafer_motion_controller() {
   std::cout << "mm_step_res: " << config["mm_step_res"].as<std::string>() << std::endl;
   distance_to_surface_contact = config["ref_dis"].as<double>();
   std::cout << "python path: " << config["python_path"].as<std::string>() << std::endl;
+  // convert std::String to LPCWSTR
+  std::string pyPath = (config["python_path"].as<std::string>());
+  std::wstring temp = std::wstring(pyPath.begin(), pyPath.end());
+  wafer_sys_control_shared_ptr = std::make_shared<whs_controller>(temp.c_str());
 }
 wafer_holder_motion_system::wafer_motion_controller:: ~wafer_motion_controller()
 {
