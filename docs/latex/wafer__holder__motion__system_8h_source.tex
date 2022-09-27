@@ -1,0 +1,108 @@
+\hypertarget{wafer__holder__motion__system_8h_source}{}\doxysection{wafer\+\_\+holder\+\_\+motion\+\_\+system.\+h}
+\label{wafer__holder__motion__system_8h_source}\index{wafer\_holder\_motion\_system.h@{wafer\_holder\_motion\_system.h}}
+\mbox{\hyperlink{wafer__holder__motion__system_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}whs\_controller.h"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}yaml-\/cpp/yaml.h"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{enum class} enum\_sys\_feedback}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     sys\_success = 2,}
+\DoxyCodeLine{22     sys\_error = -\/1}
+\DoxyCodeLine{23 \};}
+\DoxyCodeLine{24 \textcolor{keyword}{namespace }wafer\_holder\_motion\_system}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 \textcolor{comment}{    /****** delta motion ******/}}
+\DoxyCodeLine{27     \textcolor{comment}{// interface}}
+\DoxyCodeLine{28     \textcolor{keyword}{class }\mbox{\hyperlink{classwafer__holder__motion__system_1_1_idelta__motion}{Idelta\_motion}}}
+\DoxyCodeLine{29     \{}
+\DoxyCodeLine{30     \textcolor{keyword}{public}:}
+\DoxyCodeLine{31         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} move(\textcolor{keywordtype}{int} direction) = 0;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         \mbox{\hyperlink{classwafer__holder__motion__system_1_1_idelta__motion}{Idelta\_motion}}();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         \textcolor{keyword}{virtual} \mbox{\hyperlink{classwafer__holder__motion__system_1_1_idelta__motion}{\string~Idelta\_motion}}();}
+\DoxyCodeLine{36     \};}
+\DoxyCodeLine{37     \textcolor{comment}{// implementation}}
+\DoxyCodeLine{38     \textcolor{keyword}{class }\mbox{\hyperlink{classwafer__holder__motion__system_1_1delta__motion}{delta\_motion}} :\textcolor{keyword}{public} \mbox{\hyperlink{classwafer__holder__motion__system_1_1_idelta__motion}{Idelta\_motion}}}
+\DoxyCodeLine{39     \{}
+\DoxyCodeLine{40     \textcolor{keyword}{public}:}
+\DoxyCodeLine{41         \textcolor{keyword}{explicit} \mbox{\hyperlink{classwafer__holder__motion__system_1_1delta__motion}{delta\_motion}}(std::shared\_ptr<whs\_controller> shared\_controller);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} move(\textcolor{keywordtype}{int} direction);}
+\DoxyCodeLine{46     \textcolor{keyword}{private}:}
+\DoxyCodeLine{47         std::shared\_ptr<whs\_controller>   wafer\_delta\_shared\_ptr;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{comment}{    /****** distance sensor******/}}
+\DoxyCodeLine{52     \textcolor{comment}{// interface    }}
+\DoxyCodeLine{53     \textcolor{keyword}{class }\mbox{\hyperlink{classwafer__holder__motion__system_1_1_idistance__sensor}{Idistance\_sensor}}}
+\DoxyCodeLine{54     \{}
+\DoxyCodeLine{55     \textcolor{keyword}{public}:}
+\DoxyCodeLine{56         \mbox{\hyperlink{classwafer__holder__motion__system_1_1_idistance__sensor}{Idistance\_sensor}}();}
+\DoxyCodeLine{57         \textcolor{keyword}{virtual} \mbox{\hyperlink{classwafer__holder__motion__system_1_1_idistance__sensor}{\string~Idistance\_sensor}}();}
+\DoxyCodeLine{58         \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} read\_values() = 0;}
+\DoxyCodeLine{59     \};}
+\DoxyCodeLine{60     \textcolor{comment}{// implementation}}
+\DoxyCodeLine{61     \textcolor{keyword}{class }\mbox{\hyperlink{classwafer__holder__motion__system_1_1distance__sensor}{distance\_sensor}} :\textcolor{keyword}{public} \mbox{\hyperlink{classwafer__holder__motion__system_1_1_idistance__sensor}{Idistance\_sensor}}}
+\DoxyCodeLine{62     \{}
+\DoxyCodeLine{63     \textcolor{keyword}{public}:}
+\DoxyCodeLine{64         \textcolor{keyword}{explicit} \mbox{\hyperlink{classwafer__holder__motion__system_1_1distance__sensor}{distance\_sensor}}(std::shared\_ptr<whs\_controller> shared\_controller);}
+\DoxyCodeLine{65     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{66         \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} read\_values();}
+\DoxyCodeLine{67     \textcolor{keyword}{private}:}
+\DoxyCodeLine{68         std::shared\_ptr<whs\_controller>   wafer\_dist\_shared\_ptr;}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{comment}{    /****** wafer motion controller ******/}}
+\DoxyCodeLine{73     \textcolor{comment}{// interface    }}
+\DoxyCodeLine{74     \textcolor{keyword}{class }\mbox{\hyperlink{classwafer__holder__motion__system_1_1_iwafer__motion__controller}{Iwafer\_motion\_controller}}}
+\DoxyCodeLine{75     \{}
+\DoxyCodeLine{76     \textcolor{keyword}{public}:}
+\DoxyCodeLine{77         \mbox{\hyperlink{classwafer__holder__motion__system_1_1_iwafer__motion__controller}{Iwafer\_motion\_controller}}();}
+\DoxyCodeLine{78         \textcolor{keyword}{virtual} \mbox{\hyperlink{classwafer__holder__motion__system_1_1_iwafer__motion__controller}{\string~Iwafer\_motion\_controller}}();}
+\DoxyCodeLine{79         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} move\_down() = 0;}
+\DoxyCodeLine{80         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} calibrate() = 0;}
+\DoxyCodeLine{81         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} move\_up() = 0;}
+\DoxyCodeLine{82         \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} get\_current\_value(uint16\_t sensor\_head) = 0;}
+\DoxyCodeLine{83         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} insert\_wafer\_in\_ml() = 0;}
+\DoxyCodeLine{84         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} extract\_wafer\_from\_ml() = 0;}
+\DoxyCodeLine{85         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} set\_distance\_to\_surface\_contact(\textcolor{keywordtype}{double} distance) = 0;}
+\DoxyCodeLine{86     \};}
+\DoxyCodeLine{87     \textcolor{comment}{// implementation}}
+\DoxyCodeLine{88     \textcolor{keyword}{class }\mbox{\hyperlink{classwafer__holder__motion__system_1_1wafer__motion__controller}{wafer\_motion\_controller}} :\textcolor{keyword}{public} \mbox{\hyperlink{classwafer__holder__motion__system_1_1_iwafer__motion__controller}{Iwafer\_motion\_controller}}}
+\DoxyCodeLine{89     \{}
+\DoxyCodeLine{90     \textcolor{keyword}{public}:}
+\DoxyCodeLine{91         \textcolor{keyword}{explicit} \mbox{\hyperlink{classwafer__holder__motion__system_1_1wafer__motion__controller}{wafer\_motion\_controller}}();}
+\DoxyCodeLine{92         \textcolor{keyword}{virtual} \mbox{\hyperlink{classwafer__holder__motion__system_1_1wafer__motion__controller}{\string~wafer\_motion\_controller}}();}
+\DoxyCodeLine{93     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{94         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} move\_down();}
+\DoxyCodeLine{95         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} calibrate();}
+\DoxyCodeLine{96         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} move\_up();}
+\DoxyCodeLine{97         \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} get\_current\_value(uint16\_t sensor\_head);}
+\DoxyCodeLine{98         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} insert\_wafer\_in\_ml();}
+\DoxyCodeLine{99         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} extract\_wafer\_from\_ml();}
+\DoxyCodeLine{100         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} set\_distance\_to\_surface\_contact(\textcolor{keywordtype}{double} distance);}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \textcolor{keyword}{private}:}
+\DoxyCodeLine{103         \textcolor{comment}{//Idelta\_motion* delta\_mover;}}
+\DoxyCodeLine{104         \textcolor{comment}{//Idistance\_sensor* dist\_sensor;}}
+\DoxyCodeLine{105         std::shared\_ptr<whs\_controller> wafer\_sys\_control\_shared\_ptr;\textcolor{comment}{// = std::make\_shared<whs\_controller>();}}
+\DoxyCodeLine{106         YAML::Node config = YAML::LoadFile(\textcolor{stringliteral}{"{}./config.yaml"{}});}
+\DoxyCodeLine{107         \textcolor{keywordtype}{double} distance\_to\_surface\_contact; \textcolor{comment}{// distance where wafer holder extact with ML surface}}
+\DoxyCodeLine{108         \textcolor{keywordtype}{double} distance\_to\_slow\_down = 30; \textcolor{comment}{//30mm=3cm: distance from where the speed of delta motion slow down}}
+\DoxyCodeLine{109     \};}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \}}
+\DoxyCodeLine{112 }
+
+\end{DoxyCode}

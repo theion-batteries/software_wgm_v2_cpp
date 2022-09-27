@@ -1,0 +1,58 @@
+\hypertarget{wgm__monitoring_8h}{}\doxysection{wgm\+\_\+monitoring.\+h File Reference}
+\label{wgm__monitoring_8h}\index{wgm\_monitoring.h@{wgm\_monitoring.h}}
+
+
+wgm monitoring package  
+
+
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include \char`\"{}heating\+\_\+system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cnt\+\_\+alignment\+\_\+system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}wafer\+\_\+holder\+\_\+motion\+\_\+system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}wafer\+\_\+cooling\+\_\+system.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classwgm__monitoring_1_1_imonitor__management}{wgm\+\_\+monitoring\+::\+Imonitor\+\_\+management}}
+\begin{DoxyCompactList}\small\item\em interface monitor management do not modify! \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classwgm__monitoring_1_1_itime__monitor}{wgm\+\_\+monitoring\+::\+Itime\+\_\+monitor}}
+\begin{DoxyCompactList}\small\item\em add parameter monitor as following\+: create interface and inherit from Imonitor\+\_\+managment. create abstract methods start\+\_\+monitoring and stop\+\_\+monitoring create the implementation class, redefine these methods create the actual monitor system inside constructor delete it in the destructor (virtual) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classwgm__monitoring_1_1time__monitor}{wgm\+\_\+monitoring\+::time\+\_\+monitor}}
+\begin{DoxyCompactList}\small\item\em process time monitor. track the duration \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classwgm__monitoring_1_1_idistance__monitor}{wgm\+\_\+monitoring\+::\+Idistance\+\_\+monitor}}
+\item 
+class \mbox{\hyperlink{classwgm__monitoring_1_1distance__monitor}{wgm\+\_\+monitoring\+::distance\+\_\+monitor}}
+\item 
+class \mbox{\hyperlink{classwgm__monitoring_1_1_iheat__monitor}{wgm\+\_\+monitoring\+::\+Iheat\+\_\+monitor}}
+\item 
+class \mbox{\hyperlink{classwgm__monitoring_1_1heat__monitor}{wgm\+\_\+monitoring\+::heat\+\_\+monitor}}
+\item 
+class \mbox{\hyperlink{classwgm__monitoring_1_1_ivoltage__monitor}{wgm\+\_\+monitoring\+::\+Ivoltage\+\_\+monitor}}
+\item 
+class \mbox{\hyperlink{classwgm__monitoring_1_1voltage__monitor}{wgm\+\_\+monitoring\+::voltage\+\_\+monitor}}
+\item 
+class \mbox{\hyperlink{classwgm__monitoring_1_1_icurrent__monitor}{wgm\+\_\+monitoring\+::\+Icurrent\+\_\+monitor}}
+\item 
+class \mbox{\hyperlink{classwgm__monitoring_1_1current__monitor}{wgm\+\_\+monitoring\+::current\+\_\+monitor}}
+\item 
+class \mbox{\hyperlink{classwgm__monitoring_1_1monitor__managment}{wgm\+\_\+monitoring\+::monitor\+\_\+managment}}
+\begin{DoxyCompactList}\small\item\em implementation monitor managemnt add new monitor inside constructor later will be possible to add new monitors from interface method add and delete from delete method \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+wgm monitoring package 
+
+\begin{DoxyAuthor}{Author}
+sami dhiab (\href{mailto:sami@theion.de}{\texttt{ sami@theion.\+de}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/07-\/05
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}

@@ -1,0 +1,73 @@
+\hypertarget{heating__system_8h_source}{}\doxysection{heating\+\_\+system.\+h}
+\label{heating__system_8h_source}\index{heating\_system.h@{heating\_system.h}}
+\mbox{\hyperlink{heating__system_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{namespace }sulfur\_heating\_system}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16 \textcolor{comment}{  /*********** heater ***************/}}
+\DoxyCodeLine{17   \textcolor{keyword}{class }\mbox{\hyperlink{classsulfur__heating__system_1_1_iheater}{Iheater}}}
+\DoxyCodeLine{18   \{}
+\DoxyCodeLine{19   \textcolor{keyword}{public}:}
+\DoxyCodeLine{20     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} start\_heater() = 0;}
+\DoxyCodeLine{21     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} shutdown\_heater() = 0;}
+\DoxyCodeLine{22     \mbox{\hyperlink{classsulfur__heating__system_1_1_iheater}{Iheater}}();}
+\DoxyCodeLine{23     \textcolor{keyword}{virtual} \mbox{\hyperlink{classsulfur__heating__system_1_1_iheater}{\string~Iheater}}();}
+\DoxyCodeLine{24   \};}
+\DoxyCodeLine{25   \textcolor{comment}{// implement}}
+\DoxyCodeLine{26   \textcolor{keyword}{class }\mbox{\hyperlink{classsulfur__heating__system_1_1_heater}{Heater}} : \textcolor{keyword}{public} \mbox{\hyperlink{classsulfur__heating__system_1_1_iheater}{Iheater}}}
+\DoxyCodeLine{27   \{}
+\DoxyCodeLine{28   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{29     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} start\_heater();}
+\DoxyCodeLine{30     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} shutdown\_heater();}
+\DoxyCodeLine{31   \};}
+\DoxyCodeLine{32 \textcolor{comment}{  /*********** temp sensor ************/}}
+\DoxyCodeLine{33   \textcolor{keyword}{class }\mbox{\hyperlink{classsulfur__heating__system_1_1_itemperature__sensor}{Itemperature\_sensor}}}
+\DoxyCodeLine{34   \{}
+\DoxyCodeLine{35   \textcolor{keyword}{public}:}
+\DoxyCodeLine{36     \mbox{\hyperlink{classsulfur__heating__system_1_1_itemperature__sensor}{Itemperature\_sensor}}();}
+\DoxyCodeLine{37     \textcolor{keyword}{virtual} \mbox{\hyperlink{classsulfur__heating__system_1_1_itemperature__sensor}{\string~Itemperature\_sensor}}();}
+\DoxyCodeLine{38     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} get\_current\_value() = 0;}
+\DoxyCodeLine{39   \};}
+\DoxyCodeLine{40   \textcolor{comment}{// implement}}
+\DoxyCodeLine{41   \textcolor{keyword}{class }\mbox{\hyperlink{classsulfur__heating__system_1_1temperature__sensor}{temperature\_sensor}} : \textcolor{keyword}{public} \mbox{\hyperlink{classsulfur__heating__system_1_1_itemperature__sensor}{Itemperature\_sensor}} \{}
+\DoxyCodeLine{42   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{43     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} get\_current\_value();}
+\DoxyCodeLine{44     \textcolor{keywordtype}{double} current\_val;}
+\DoxyCodeLine{45   \};}
+\DoxyCodeLine{46 \textcolor{comment}{  /*********** heating controller *************/}}
+\DoxyCodeLine{47   \textcolor{keyword}{class }\mbox{\hyperlink{classsulfur__heating__system_1_1_isulfur__heating__controller}{Isulfur\_heating\_controller}}}
+\DoxyCodeLine{48   \{}
+\DoxyCodeLine{49   \textcolor{keyword}{public}:}
+\DoxyCodeLine{50     \mbox{\hyperlink{classsulfur__heating__system_1_1_isulfur__heating__controller}{Isulfur\_heating\_controller}}() ;}
+\DoxyCodeLine{51     \textcolor{keyword}{virtual} \mbox{\hyperlink{classsulfur__heating__system_1_1_isulfur__heating__controller}{\string~Isulfur\_heating\_controller}}();}
+\DoxyCodeLine{52     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} turn\_off\_heating() = 0;}
+\DoxyCodeLine{53     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} controll\_heating() = 0;}
+\DoxyCodeLine{54     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} turn\_on\_heating() = 0;}
+\DoxyCodeLine{55     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} getSensorReading() = 0;}
+\DoxyCodeLine{56   \};}
+\DoxyCodeLine{57   \textcolor{comment}{// implement}}
+\DoxyCodeLine{58   \textcolor{keyword}{class }\mbox{\hyperlink{classsulfur__heating__system_1_1sulfur__heating__controller}{sulfur\_heating\_controller}} : \textcolor{keyword}{public} \mbox{\hyperlink{classsulfur__heating__system_1_1_isulfur__heating__controller}{Isulfur\_heating\_controller}}}
+\DoxyCodeLine{59   \{}
+\DoxyCodeLine{60   \textcolor{keyword}{private}:}
+\DoxyCodeLine{61     \mbox{\hyperlink{classsulfur__heating__system_1_1_itemperature__sensor}{Itemperature\_sensor}}* tempe\_sensor;}
+\DoxyCodeLine{62     \mbox{\hyperlink{classsulfur__heating__system_1_1_iheater}{Iheater}}* heater;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64   \textcolor{keyword}{public}:}
+\DoxyCodeLine{65     \mbox{\hyperlink{classsulfur__heating__system_1_1sulfur__heating__controller}{sulfur\_heating\_controller}}();}
+\DoxyCodeLine{66     \textcolor{keyword}{virtual} \mbox{\hyperlink{classsulfur__heating__system_1_1sulfur__heating__controller}{\string~sulfur\_heating\_controller}}();}
+\DoxyCodeLine{67     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} getSensorReading();}
+\DoxyCodeLine{68     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} turn\_off\_heating();}
+\DoxyCodeLine{69     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} turn\_on\_heating();}
+\DoxyCodeLine{70     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} controll\_heating();}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72   \};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+
+\end{DoxyCode}

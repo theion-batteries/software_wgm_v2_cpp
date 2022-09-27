@@ -1,0 +1,121 @@
+\hypertarget{cnt__alignment__system_8h_source}{}\doxysection{cnt\+\_\+alignment\+\_\+system.\+h}
+\label{cnt__alignment__system_8h_source}\index{cnt\_alignment\_system.h@{cnt\_alignment\_system.h}}
+\mbox{\hyperlink{cnt__alignment__system_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{namespace }cnt\_alignment\_system}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17 \textcolor{comment}{  /********** cnt dispensing **************/}}
+\DoxyCodeLine{18   \textcolor{keyword}{class }\mbox{\hyperlink{classcnt__alignment__system_1_1_icnt__dispensing}{Icnt\_dispensing}}}
+\DoxyCodeLine{19   \{}
+\DoxyCodeLine{20   \textcolor{keyword}{public}:}
+\DoxyCodeLine{21     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} start\_vibrating() = 0;}
+\DoxyCodeLine{22     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} stop\_vibrating() = 0;}
+\DoxyCodeLine{23     \mbox{\hyperlink{classcnt__alignment__system_1_1_icnt__dispensing}{Icnt\_dispensing}}();}
+\DoxyCodeLine{24     \textcolor{keyword}{virtual} \mbox{\hyperlink{classcnt__alignment__system_1_1_icnt__dispensing}{\string~Icnt\_dispensing}}();}
+\DoxyCodeLine{25   \};}
+\DoxyCodeLine{26   \textcolor{comment}{// implement }}
+\DoxyCodeLine{27   \textcolor{keyword}{class }\mbox{\hyperlink{classcnt__alignment__system_1_1cnt__dispensing}{cnt\_dispensing}} : \textcolor{keyword}{public} \mbox{\hyperlink{classcnt__alignment__system_1_1_icnt__dispensing}{Icnt\_dispensing}}}
+\DoxyCodeLine{28   \{}
+\DoxyCodeLine{29   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{30     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} start\_vibrating();}
+\DoxyCodeLine{31     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} stop\_vibrating();}
+\DoxyCodeLine{32   \};}
+\DoxyCodeLine{33 \textcolor{comment}{  /****************** cnt motion ******************/}}
+\DoxyCodeLine{34   \textcolor{keyword}{class }\mbox{\hyperlink{classcnt__alignment__system_1_1_icnt__motion}{Icnt\_motion}}}
+\DoxyCodeLine{35   \{}
+\DoxyCodeLine{36   \textcolor{keyword}{public}:}
+\DoxyCodeLine{37     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} move\_down\_to\_center() = 0;}
+\DoxyCodeLine{38     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} move\_back\_to\_reference() = 0;}
+\DoxyCodeLine{39     \mbox{\hyperlink{classcnt__alignment__system_1_1_icnt__motion}{Icnt\_motion}}();}
+\DoxyCodeLine{40     \textcolor{keyword}{virtual} \mbox{\hyperlink{classcnt__alignment__system_1_1_icnt__motion}{\string~Icnt\_motion}}();}
+\DoxyCodeLine{41   \};}
+\DoxyCodeLine{42   \textcolor{comment}{//implement}}
+\DoxyCodeLine{43   \textcolor{keyword}{class }\mbox{\hyperlink{classcnt__alignment__system_1_1cnt__motion}{cnt\_motion}} : \textcolor{keyword}{public} \mbox{\hyperlink{classcnt__alignment__system_1_1_icnt__motion}{Icnt\_motion}}}
+\DoxyCodeLine{44   \{}
+\DoxyCodeLine{45   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{46     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} move\_down\_to\_center();}
+\DoxyCodeLine{47     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} move\_back\_to\_reference();}
+\DoxyCodeLine{48   \};}
+\DoxyCodeLine{49 \textcolor{comment}{  /****************** hv controller ******************/}}
+\DoxyCodeLine{50   \textcolor{keyword}{class }\mbox{\hyperlink{classcnt__alignment__system_1_1_ihv__controller}{Ihv\_controller}}}
+\DoxyCodeLine{51   \{}
+\DoxyCodeLine{52   \textcolor{keyword}{public}:}
+\DoxyCodeLine{53     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} start\_hv() = 0;}
+\DoxyCodeLine{54     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} stop\_hv() = 0;}
+\DoxyCodeLine{55     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} get\_input\_voltage() = 0;}
+\DoxyCodeLine{56     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} get\_output\_voltage() = 0;}
+\DoxyCodeLine{57     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} get\_input\_current() = 0;}
+\DoxyCodeLine{58     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} get\_output\_current() = 0;}
+\DoxyCodeLine{59     \mbox{\hyperlink{classcnt__alignment__system_1_1_ihv__controller}{Ihv\_controller}}();}
+\DoxyCodeLine{60     \textcolor{keyword}{virtual} \mbox{\hyperlink{classcnt__alignment__system_1_1_ihv__controller}{\string~Ihv\_controller}}();}
+\DoxyCodeLine{61   \};}
+\DoxyCodeLine{62   \textcolor{comment}{// implement}}
+\DoxyCodeLine{63   \textcolor{keyword}{class }\mbox{\hyperlink{classcnt__alignment__system_1_1hv__controller}{hv\_controller}} : \textcolor{keyword}{public} \mbox{\hyperlink{classcnt__alignment__system_1_1_ihv__controller}{Ihv\_controller}}}
+\DoxyCodeLine{64   \{}
+\DoxyCodeLine{65   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{66     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} start\_hv();}
+\DoxyCodeLine{67     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} stop\_hv();}
+\DoxyCodeLine{68     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} get\_input\_voltage();}
+\DoxyCodeLine{69     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} get\_output\_voltage();}
+\DoxyCodeLine{70     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} get\_input\_current();}
+\DoxyCodeLine{71     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} get\_output\_current();}
+\DoxyCodeLine{72   \textcolor{keyword}{private}:}
+\DoxyCodeLine{73     \textcolor{keywordtype}{double} input\_voltage;}
+\DoxyCodeLine{74     \textcolor{keywordtype}{double} output\_voltage;}
+\DoxyCodeLine{75     \textcolor{keywordtype}{double} input\_current;}
+\DoxyCodeLine{76     \textcolor{keywordtype}{double} output\_current;}
+\DoxyCodeLine{77   \};}
+\DoxyCodeLine{78 \textcolor{comment}{  /*********** voltage struct *************/}}
+\DoxyCodeLine{79   \textcolor{keyword}{struct }\mbox{\hyperlink{structcnt__alignment__system_1_1voltage}{voltage}}}
+\DoxyCodeLine{80   \{}
+\DoxyCodeLine{81     \textcolor{keywordtype}{double} Vin; \textcolor{comment}{//voltage}}
+\DoxyCodeLine{82     \textcolor{keywordtype}{double} Vout;}
+\DoxyCodeLine{83   \};}
+\DoxyCodeLine{84 \textcolor{comment}{  /********** current struct ****************/}}
+\DoxyCodeLine{85   \textcolor{keyword}{struct }\mbox{\hyperlink{structcnt__alignment__system_1_1current}{current}}}
+\DoxyCodeLine{86   \{}
+\DoxyCodeLine{87     \textcolor{keywordtype}{double} Cin; \textcolor{comment}{//current}}
+\DoxyCodeLine{88     \textcolor{keywordtype}{double} Cout;}
+\DoxyCodeLine{89   \};}
+\DoxyCodeLine{90 \textcolor{comment}{  /*********** cnt controller ************/}}
+\DoxyCodeLine{91   \textcolor{keyword}{class }\mbox{\hyperlink{classcnt__alignment__system_1_1_icnt__aligning__controller}{Icnt\_aligning\_controller}}}
+\DoxyCodeLine{92   \{}
+\DoxyCodeLine{93   \textcolor{keyword}{public}:}
+\DoxyCodeLine{94     \mbox{\hyperlink{classcnt__alignment__system_1_1_icnt__aligning__controller}{Icnt\_aligning\_controller}}();}
+\DoxyCodeLine{95     \textcolor{keyword}{virtual} \mbox{\hyperlink{classcnt__alignment__system_1_1_icnt__aligning__controller}{\string~Icnt\_aligning\_controller}}();}
+\DoxyCodeLine{96     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} start\_aligning() = 0;}
+\DoxyCodeLine{97     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} stop\_aligning() = 0;}
+\DoxyCodeLine{98     \textcolor{keyword}{virtual} \mbox{\hyperlink{structcnt__alignment__system_1_1voltage}{voltage}} get\_voltage\_struct() = 0;}
+\DoxyCodeLine{99     \textcolor{keyword}{virtual} \mbox{\hyperlink{structcnt__alignment__system_1_1current}{current}} get\_current\_struct() = 0;}
+\DoxyCodeLine{100   \};}
+\DoxyCodeLine{101   \textcolor{comment}{//implement}}
+\DoxyCodeLine{102   \textcolor{keyword}{class }\mbox{\hyperlink{classcnt__alignment__system_1_1cnt__aligning__controller}{cnt\_aligning\_controller}} : \textcolor{keyword}{public} \mbox{\hyperlink{classcnt__alignment__system_1_1_icnt__aligning__controller}{Icnt\_aligning\_controller}}}
+\DoxyCodeLine{103   \{}
+\DoxyCodeLine{104   \textcolor{keyword}{private}:}
+\DoxyCodeLine{105     \mbox{\hyperlink{classcnt__alignment__system_1_1_icnt__dispensing}{Icnt\_dispensing}}* cnt\_dispenser;}
+\DoxyCodeLine{106     \mbox{\hyperlink{classcnt__alignment__system_1_1_icnt__motion}{Icnt\_motion}}* cnt\_motion\_controller;}
+\DoxyCodeLine{107     \mbox{\hyperlink{classcnt__alignment__system_1_1_ihv__controller}{Ihv\_controller}}* hv\_controll;}
+\DoxyCodeLine{108   \textcolor{keyword}{public}:}
+\DoxyCodeLine{109     \mbox{\hyperlink{classcnt__alignment__system_1_1cnt__aligning__controller}{cnt\_aligning\_controller}}();}
+\DoxyCodeLine{110     \textcolor{keyword}{virtual} \mbox{\hyperlink{classcnt__alignment__system_1_1cnt__aligning__controller}{\string~cnt\_aligning\_controller}}();}
+\DoxyCodeLine{111   \textcolor{keyword}{public}:}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{114     \mbox{\hyperlink{structcnt__alignment__system_1_1voltage}{voltage}} V;}
+\DoxyCodeLine{115     \mbox{\hyperlink{structcnt__alignment__system_1_1current}{current}} C;}
+\DoxyCodeLine{116     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} start\_aligning();}
+\DoxyCodeLine{117     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} stop\_aligning();}
+\DoxyCodeLine{118     \textcolor{keyword}{virtual} \mbox{\hyperlink{structcnt__alignment__system_1_1voltage}{voltage}} get\_voltage\_struct();}
+\DoxyCodeLine{119     \textcolor{keyword}{virtual} \mbox{\hyperlink{structcnt__alignment__system_1_1current}{current}} get\_current\_struct();}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121   \};}
+\DoxyCodeLine{122   }
+\DoxyCodeLine{123 \}}
+\DoxyCodeLine{124 }
+
+\end{DoxyCode}

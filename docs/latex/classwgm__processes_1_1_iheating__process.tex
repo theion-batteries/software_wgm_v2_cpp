@@ -1,0 +1,80 @@
+\hypertarget{classwgm__processes_1_1_iheating__process}{}\doxysection{wgm\+\_\+processes\+::Iheating\+\_\+process Class Reference}
+\label{classwgm__processes_1_1_iheating__process}\index{wgm\_processes::Iheating\_process@{wgm\_processes::Iheating\_process}}
+
+
+add system processes as following\+: create interface and inherit from \mbox{\hyperlink{classwgm__processes_1_1_iprocesses__managment}{Iprocesses\+\_\+managment}}. create abstract methods start\+\_\+process and stop\+\_\+process create the implementation class, redefine these methods create the actual process system inside constructor delete it in the destructor (virtual)  
+
+
+
+
+{\ttfamily \#include $<$process\+\_\+manager.\+h$>$}
+
+Inheritance diagram for wgm\+\_\+processes\+::Iheating\+\_\+process\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classwgm__processes_1_1_iheating__process}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classwgm__processes_1_1_iheating__process_af0bf314989901e7aaa22b8673fd6dc39}{start\+\_\+process}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classwgm__processes_1_1_iheating__process_a422d2faaee6b31101f030a73183a49e9}{stop\+\_\+process}} ()=0
+\item 
+virtual std\+::string \mbox{\hyperlink{classwgm__processes_1_1_iheating__process_adbe9d55a4129e99e0037b902a6633bb4}{get\+\_\+name}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classwgm__processes_1_1_iheating__process_af87539aa0fb363688e9d383ed36f08fc}{is\+\_\+proc\+\_\+success}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+add system processes as following\+: create interface and inherit from \mbox{\hyperlink{classwgm__processes_1_1_iprocesses__managment}{Iprocesses\+\_\+managment}}. create abstract methods start\+\_\+process and stop\+\_\+process create the implementation class, redefine these methods create the actual process system inside constructor delete it in the destructor (virtual) 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classwgm__processes_1_1_iheating__process_adbe9d55a4129e99e0037b902a6633bb4}\label{classwgm__processes_1_1_iheating__process_adbe9d55a4129e99e0037b902a6633bb4}} 
+\index{wgm\_processes::Iheating\_process@{wgm\_processes::Iheating\_process}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!wgm\_processes::Iheating\_process@{wgm\_processes::Iheating\_process}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily virtual std\+::string wgm\+\_\+processes\+::\+Iheating\+\_\+process\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classwgm__processes_1_1_iprocesses__managment}{wgm\+\_\+processes\+::\+Iprocesses\+\_\+managment}}.
+
+\mbox{\Hypertarget{classwgm__processes_1_1_iheating__process_af87539aa0fb363688e9d383ed36f08fc}\label{classwgm__processes_1_1_iheating__process_af87539aa0fb363688e9d383ed36f08fc}} 
+\index{wgm\_processes::Iheating\_process@{wgm\_processes::Iheating\_process}!is\_proc\_success@{is\_proc\_success}}
+\index{is\_proc\_success@{is\_proc\_success}!wgm\_processes::Iheating\_process@{wgm\_processes::Iheating\_process}}
+\doxysubsubsection{\texorpdfstring{is\_proc\_success()}{is\_proc\_success()}}
+{\footnotesize\ttfamily virtual bool wgm\+\_\+processes\+::\+Iheating\+\_\+process\+::is\+\_\+proc\+\_\+success (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classwgm__processes_1_1_iprocesses__managment}{wgm\+\_\+processes\+::\+Iprocesses\+\_\+managment}}.
+
+\mbox{\Hypertarget{classwgm__processes_1_1_iheating__process_af0bf314989901e7aaa22b8673fd6dc39}\label{classwgm__processes_1_1_iheating__process_af0bf314989901e7aaa22b8673fd6dc39}} 
+\index{wgm\_processes::Iheating\_process@{wgm\_processes::Iheating\_process}!start\_process@{start\_process}}
+\index{start\_process@{start\_process}!wgm\_processes::Iheating\_process@{wgm\_processes::Iheating\_process}}
+\doxysubsubsection{\texorpdfstring{start\_process()}{start\_process()}}
+{\footnotesize\ttfamily virtual void wgm\+\_\+processes\+::\+Iheating\+\_\+process\+::start\+\_\+process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classwgm__processes_1_1_iprocesses__managment}{wgm\+\_\+processes\+::\+Iprocesses\+\_\+managment}}.
+
+\mbox{\Hypertarget{classwgm__processes_1_1_iheating__process_a422d2faaee6b31101f030a73183a49e9}\label{classwgm__processes_1_1_iheating__process_a422d2faaee6b31101f030a73183a49e9}} 
+\index{wgm\_processes::Iheating\_process@{wgm\_processes::Iheating\_process}!stop\_process@{stop\_process}}
+\index{stop\_process@{stop\_process}!wgm\_processes::Iheating\_process@{wgm\_processes::Iheating\_process}}
+\doxysubsubsection{\texorpdfstring{stop\_process()}{stop\_process()}}
+{\footnotesize\ttfamily virtual void wgm\+\_\+processes\+::\+Iheating\+\_\+process\+::stop\+\_\+process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classwgm__processes_1_1_iprocesses__managment}{wgm\+\_\+processes\+::\+Iprocesses\+\_\+managment}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{process__manager_8h}{process\+\_\+manager.\+h}}\item 
+\mbox{\hyperlink{process__manager_8cpp}{process\+\_\+manager.\+cpp}}\end{DoxyCompactItemize}
