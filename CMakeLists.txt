@@ -37,13 +37,4 @@ target_link_libraries(wgm_app ${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_hold
 
 )
 
-## include preinstalled lib with vcpkg
-INCLUDE_DIRECTORIES(
-  c:/src/vcpkg/installed/x64-windows/include/
-)
-  
-LINK_DIRECTORIES(
-  c:/src/vcpkg/installed/x64-windows/lib/
-) 
-
 
