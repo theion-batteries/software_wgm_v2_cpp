@@ -8,7 +8,6 @@
                 "${vcpkgRoot}/x64-windows/include",
                 "${vcpkgRoot}/x86-windows/include",
                 "${workspaceFolder}/dependencies/soft_wafer_holder_system_controller/includes",
-                "${workspaceFolder}/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_distance_sensor",
                 "${workspaceFolder}/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
                 "${workspaceFolder}/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
                 "${workspaceFolder}/dependencies/soft_wafer_holder_system_controller/dependencies/software_repetier_rest_api",

@@ -1,0 +1,39 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "keyence_lib_static::@d56f54cee86ba1d4e084"
+		},
+		{
+			"id" : "keyence_sdk::@d56f54cee86ba1d4e084"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "ALL_BUILD::@d56f54cee86ba1d4e084",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"paths" : 
+	{
+		"build" : "dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
+		"source" : "dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

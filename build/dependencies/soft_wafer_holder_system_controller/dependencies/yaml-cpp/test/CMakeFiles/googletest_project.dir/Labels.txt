@@ -1,0 +1,13 @@
+# Target labels
+ googletest_project
+# Source files and their labels
+C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test/CMakeFiles/googletest_project
+C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/CMakeFiles/fb014482e182d8767e74c6fa33523f25/googletest_project.rule
+C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/CMakeFiles/2a7d200d49ef638f315a8a28f6a0a6a2/googletest_project-complete.rule
+C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/CMakeFiles/067c960a4284767555d96d2baa335b58/googletest_project-build.rule
+C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/CMakeFiles/067c960a4284767555d96d2baa335b58/googletest_project-configure.rule
+C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/CMakeFiles/067c960a4284767555d96d2baa335b58/googletest_project-download.rule
+C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/CMakeFiles/067c960a4284767555d96d2baa335b58/googletest_project-install.rule
+C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/CMakeFiles/067c960a4284767555d96d2baa335b58/googletest_project-mkdir.rule
+C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/CMakeFiles/067c960a4284767555d96d2baa335b58/googletest_project-patch.rule
+C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/CMakeFiles/067c960a4284767555d96d2baa335b58/googletest_project-update.rule

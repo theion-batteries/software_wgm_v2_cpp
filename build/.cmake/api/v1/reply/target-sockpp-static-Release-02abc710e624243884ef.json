@@ -1,0 +1,171 @@
+{
+	"archive" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/machine:x64",
+				"role" : "flags"
+			}
+		]
+	},
+	"artifacts" : 
+	[
+		{
+			"path" : "dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/Release/sockpp-static.lib"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"_add_library",
+			"add_library",
+			"install",
+			"target_compile_options",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"C:/src/vcpkg/scripts/buildsystems/vcpkg.cmake",
+			"dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 142,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 613,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 159,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 154,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 147,
+				"parent" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "sockpp-objs::@f0bac4eb3ea7499911c0"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "sockpp-static::@07291b33b292aa6a3e6b",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 3,
+				"path" : "lib"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "C:/Program Files/wgm"
+		}
+	},
+	"name" : "sockpp-static",
+	"nameOnDisk" : "sockpp-static.lib",
+	"paths" : 
+	{
+		"build" : "dependencies/soft_wafer_holder_system_controller/dependencies/sockpp",
+		"source" : "dependencies/soft_wafer_holder_system_controller/dependencies/sockpp"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Object Libraries",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"isGenerated" : true,
+			"path" : "build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src/sockpp-objs.dir/$(Configuration)/acceptor.obj",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"isGenerated" : true,
+			"path" : "build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src/sockpp-objs.dir/$(Configuration)/connector.obj",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"isGenerated" : true,
+			"path" : "build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src/sockpp-objs.dir/$(Configuration)/datagram_socket.obj",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"isGenerated" : true,
+			"path" : "build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src/sockpp-objs.dir/$(Configuration)/exception.obj",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"isGenerated" : true,
+			"path" : "build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src/sockpp-objs.dir/$(Configuration)/inet_address.obj",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"isGenerated" : true,
+			"path" : "build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src/sockpp-objs.dir/$(Configuration)/inet6_address.obj",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"isGenerated" : true,
+			"path" : "build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src/sockpp-objs.dir/$(Configuration)/socket.obj",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"isGenerated" : true,
+			"path" : "build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src/sockpp-objs.dir/$(Configuration)/stream_socket.obj",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

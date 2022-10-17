@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/util",
+		"source" : "dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/util"
+	}
+}

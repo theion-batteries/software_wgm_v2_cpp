@@ -1,0 +1,39 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "sockpp-objs::@f0bac4eb3ea7499911c0"
+		},
+		{
+			"id" : "sockpp-static::@07291b33b292aa6a3e6b"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "ALL_BUILD::@07291b33b292aa6a3e6b",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"paths" : 
+	{
+		"build" : "dependencies/soft_wafer_holder_system_controller/dependencies/sockpp",
+		"source" : "dependencies/soft_wafer_holder_system_controller/dependencies/sockpp"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}
