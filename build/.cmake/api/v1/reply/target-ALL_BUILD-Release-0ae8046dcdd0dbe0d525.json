@@ -5,7 +5,7 @@
 		"commands" : [],
 		"files" : 
 		[
-			"dependencies/soft_wafer_holder_system_controller/CMakeLists.txt"
+			"CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -17,10 +17,19 @@
 	"dependencies" : 
 	[
 		{
+			"id" : "keyence_lib_static::@d56f54cee86ba1d4e084"
+		},
+		{
+			"id" : "wgm_app::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "sockpp-static::@07291b33b292aa6a3e6b"
+		},
+		{
 			"id" : "sockpp-objs::@f0bac4eb3ea7499911c0"
 		},
 		{
-			"id" : "keyence_lib_static::@d56f54cee86ba1d4e084"
+			"id" : "wgm_static::@6890427a1f51a3e7e1df"
 		},
 		{
 			"id" : "whs_static::@29241ccd17be0d8800c3"
@@ -35,34 +44,31 @@
 			"id" : "yaml-cpp::@c8d24d1cf8b0da3a5a1c"
 		},
 		{
-			"id" : "sockpp-static::@07291b33b292aa6a3e6b"
+			"id" : "parse::@c83cbde144ca914f24ab"
 		},
 		{
 			"id" : "googletest_project::@5c86c56d312535081775"
 		},
 		{
-			"id" : "parse::@c83cbde144ca914f24ab"
-		},
-		{
-			"id" : "sandbox::@c83cbde144ca914f24ab"
+			"id" : "read::@c83cbde144ca914f24ab"
 		},
 		{
 			"id" : "run-tests::@5c86c56d312535081775"
 		},
 		{
-			"id" : "read::@c83cbde144ca914f24ab"
+			"id" : "sandbox::@c83cbde144ca914f24ab"
 		},
 		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "ALL_BUILD::@29241ccd17be0d8800c3",
+	"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
 	"isGeneratorProvided" : true,
 	"name" : "ALL_BUILD",
 	"paths" : 
 	{
-		"build" : "dependencies/soft_wafer_holder_system_controller",
-		"source" : "dependencies/soft_wafer_holder_system_controller"
+		"build" : ".",
+		"source" : "."
 	},
 	"sources" : [],
 	"type" : "UTILITY"

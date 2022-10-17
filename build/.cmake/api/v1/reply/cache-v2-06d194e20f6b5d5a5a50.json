@@ -1975,7 +1975,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "general;C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/Debug/whs_static.lib;"
+			"value" : "general;C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/Debug/whs_static.lib;general;C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Debug/keyence_lib_static.lib;general;C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/Libx64/LKIF2.lib;general;C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/Debug/sockpp-static.lib;general;C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/Debug/libyaml-cppmdd.lib;"
 		},
 		{
 			"name" : "whs_controller_BINARY_DIR",

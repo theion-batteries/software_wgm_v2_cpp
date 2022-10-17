@@ -51,8 +51,9 @@ ${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/dep
 ## child static and dynamic linking
 # link againt static lib
 target_link_libraries(wgm_static ${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/Debug/whs_static.lib
-                              #${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/LKIF2.lib
-
-
+${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Debug/keyence_lib_static.lib
+${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/Libx64/LKIF2.lib
+${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/Debug/sockpp-static.lib
+${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/Debug/libyaml-cppmdd.lib
 )
 
