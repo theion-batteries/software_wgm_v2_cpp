@@ -3,3 +3,6 @@
 	path = dependencies/soft_wafer_holder_system_controller
 	url = https://github.com/theionSami/soft_wafer_holder_system_controller.git
 	branch = main
+[submodule "dependencies/soft_cnt_system_submodule_cpp"]
+	path = dependencies/soft_cnt_system_submodule_cpp
+	url = https://github.com/theionSami/soft_cnt_system_submodule_cpp.git
