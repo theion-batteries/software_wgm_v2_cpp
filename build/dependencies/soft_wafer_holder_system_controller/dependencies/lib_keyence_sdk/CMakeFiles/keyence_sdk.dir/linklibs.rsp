@@ -1,0 +1,1 @@
+ ../../../../../dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/Libx64/LKIF2.lib -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

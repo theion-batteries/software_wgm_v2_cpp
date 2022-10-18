@@ -1,5 +1,6 @@
 # CMake generation dependency list for this directory.
 C:/Qt/Tools/CMake_64/share/cmake-3.23/Modules/CheckCSourceCompiles.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.23/Modules/CheckIncludeFile.c.in
 C:/Qt/Tools/CMake_64/share/cmake-3.23/Modules/CheckIncludeFile.cmake
 C:/Qt/Tools/CMake_64/share/cmake-3.23/Modules/CheckLibraryExists.cmake
 C:/Qt/Tools/CMake_64/share/cmake-3.23/Modules/ExternalProject.cmake

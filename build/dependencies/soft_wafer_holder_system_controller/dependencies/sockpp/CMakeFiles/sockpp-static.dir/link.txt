@@ -1,0 +1,2 @@
+C:\Qt\Tools\mingw1120_64\bin\ar.exe qc libsockpp-static.a "src/CMakeFiles/sockpp-objs.dir/acceptor.cpp.obj" "src/CMakeFiles/sockpp-objs.dir/connector.cpp.obj" "src/CMakeFiles/sockpp-objs.dir/datagram_socket.cpp.obj" "src/CMakeFiles/sockpp-objs.dir/exception.cpp.obj" "src/CMakeFiles/sockpp-objs.dir/inet_address.cpp.obj" "src/CMakeFiles/sockpp-objs.dir/inet6_address.cpp.obj" "src/CMakeFiles/sockpp-objs.dir/socket.cpp.obj" "src/CMakeFiles/sockpp-objs.dir/stream_socket.cpp.obj"
+C:\Qt\Tools\mingw1120_64\bin\ranlib.exe libsockpp-static.a

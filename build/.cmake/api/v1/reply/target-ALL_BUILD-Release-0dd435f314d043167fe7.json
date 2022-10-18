@@ -1,0 +1,75 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "wgm_app::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "whs_controller::@29241ccd17be0d8800c3"
+		},
+		{
+			"id" : "sockpp-static::@07291b33b292aa6a3e6b"
+		},
+		{
+			"id" : "sockpp-objs::@f0bac4eb3ea7499911c0"
+		},
+		{
+			"id" : "whs_static::@29241ccd17be0d8800c3"
+		},
+		{
+			"id" : "wgm_static::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "run-tests::@5c86c56d312535081775"
+		},
+		{
+			"id" : "parse::@c83cbde144ca914f24ab"
+		},
+		{
+			"id" : "yaml-cpp::@c8d24d1cf8b0da3a5a1c"
+		},
+		{
+			"id" : "sandbox::@c83cbde144ca914f24ab"
+		},
+		{
+			"id" : "read::@c83cbde144ca914f24ab"
+		},
+		{
+			"id" : "keyence_sdk::@d56f54cee86ba1d4e084"
+		},
+		{
+			"id" : "googletest_project::@5c86c56d312535081775"
+		},
+		{
+			"id" : "keyence_lib_static::@d56f54cee86ba1d4e084"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

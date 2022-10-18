@@ -17,6 +17,9 @@
 //Path to a program.
 CMAKE_AR:FILEPATH=C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.33.31629/bin/Hostx64/x64/lib.exe
 
+//No help, variable specified on the command line.
+CMAKE_BUILD_TYPE:STRING=Debug
+
 //Semicolon separated list of supported configuration types, only
 // supports Debug, Release, MinSizeRel, and RelWithDebInfo, anything
 // else will be ignored.
@@ -113,7 +116,7 @@ CMAKE_INSTALL_MANDIR:PATH=
 CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files/wgm
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files/wgm_core
 
 //Run-time variable data (LOCALSTATEDIR/run)
 CMAKE_INSTALL_RUNSTATEDIR:PATH=
@@ -242,8 +245,8 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 // during RELWITHDEBINFO builds.
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
-//No help, variable specified on the command line.
-CMAKE_TOOLCHAIN_FILE:STRING=c:/src/vcpkg/scripts/buildsystems/vcpkg.cmake
+//The CMake toolchain file
+CMAKE_TOOLCHAIN_FILE:FILEPATH=C:/src/vcpkg/scripts/buildsystems/vcpkg.cmake
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -372,15 +375,6 @@ sockpp_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 sockpp_SOURCE_DIR:STATIC=C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp
-
-//Value Computed by CMake
-wgm_BINARY_DIR:STATIC=C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build
-
-//Value Computed by CMake
-wgm_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-wgm_SOURCE_DIR:STATIC=C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp
 
 //Value Computed by CMake
 wgm_core_BINARY_DIR:STATIC=C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build
@@ -592,5 +586,5 @@ Z_VCPKG_POWERSHELL_PATH:INTERNAL=C:/Windows/System32/WindowsPowerShell/v1.0/powe
 //Vcpkg root directory
 Z_VCPKG_ROOT_DIR:INTERNAL=C:/src/vcpkg
 //CMAKE_INSTALL_PREFIX during last run
-_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files/wgm
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files/wgm_core
 
