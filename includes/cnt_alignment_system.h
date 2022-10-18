@@ -8,9 +8,10 @@
  * @copyright Copyright (c) 2022
  *
  */
-#include <iostream>
-#pragma once
 
+#pragma once
+#include <iostream>
+#include "cnt_controller.h"
 
 namespace cnt_alignment_system
 {
@@ -29,22 +30,25 @@ namespace cnt_alignment_system
   protected:
     virtual void start_vibrating();
     virtual void stop_vibrating();
+    cnt_dispenser dispenser;
   };
   /****************** cnt motion ******************/
-  class Icnt_motion
+  class Icnt_sys_motion
   {
   public:
     virtual void move_down_to_center() = 0;
     virtual void move_back_to_reference() = 0;
-    Icnt_motion();
-    virtual ~Icnt_motion();
+    Icnt_sys_motion();
+    virtual ~Icnt_sys_motion();
   };
   //implement
-  class cnt_motion : public Icnt_motion
+  class cnt_sys_motion : public Icnt_sys_motion
   {
   protected:
     virtual void move_down_to_center();
     virtual void move_back_to_reference();
+  private:
+    cnt_motion motion;
   };
   /****************** hv controller ******************/
   class Ihv_controller
@@ -74,6 +78,8 @@ namespace cnt_alignment_system
     double output_voltage;
     double input_current;
     double output_current;
+
+    cnt_hv hv;
   };
   /*********** voltage struct *************/
   struct voltage
@@ -103,7 +109,7 @@ namespace cnt_alignment_system
   {
   private:
     Icnt_dispensing* cnt_dispenser;
-    Icnt_motion* cnt_motion_controller;
+    Icnt_sys_motion* cnt_motion_controller;
     Ihv_controller* hv_controll;
   public:
     cnt_aligning_controller();
@@ -117,6 +123,7 @@ namespace cnt_alignment_system
     virtual void stop_aligning();
     virtual voltage get_voltage_struct();
     virtual current get_current_struct();
+    cnt_controller controller;
 
   };
   

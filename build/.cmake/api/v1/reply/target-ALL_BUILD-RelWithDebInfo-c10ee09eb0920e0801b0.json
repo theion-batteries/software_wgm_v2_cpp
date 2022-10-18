@@ -1,0 +1,39 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"dependencies/soft_cnt_system_submodule_cpp/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "cnt_system_static::@e93fa933c5deb7b1f811"
+		},
+		{
+			"id" : "cnt_system::@e93fa933c5deb7b1f811"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "ALL_BUILD::@e93fa933c5deb7b1f811",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"paths" : 
+	{
+		"build" : "dependencies/soft_cnt_system_submodule_cpp",
+		"source" : "dependencies/soft_cnt_system_submodule_cpp"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

@@ -35,6 +35,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/cmake_install.cmake")
+  include("C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_cnt_system_submodule_cpp/cmake_install.cmake")
 
 endif()
 

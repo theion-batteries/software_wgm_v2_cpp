@@ -245,8 +245,8 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 // during RELWITHDEBINFO builds.
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
-//The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=C:/src/vcpkg/scripts/buildsystems/vcpkg.cmake
+//No help, variable specified on the command line.
+CMAKE_TOOLCHAIN_FILE:STRING=c:/src/vcpkg/scripts/buildsystems/vcpkg.cmake
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -312,7 +312,7 @@ X_VCPKG_APPLOCAL_DEPS_SERIALIZED:BOOL=OFF
 YAML_BUILD_SHARED_LIBS:BOOL=OFF
 
 //Value Computed by CMake
-YAML_CPP_BINARY_DIR:STATIC=C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp
+YAML_CPP_BINARY_DIR:STATIC=C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_cnt_system_submodule_cpp/dependencies/yaml-cpp
 
 //Enable contrib stuff in library
 YAML_CPP_BUILD_CONTRIB:BOOL=ON
@@ -330,7 +330,7 @@ YAML_CPP_INSTALL:BOOL=ON
 YAML_CPP_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-YAML_CPP_SOURCE_DIR:STATIC=C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp
+YAML_CPP_SOURCE_DIR:STATIC=C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_cnt_system_submodule_cpp/dependencies/yaml-cpp
 
 //MSVC: Build with shared runtime libs (/MD)
 YAML_MSVC_SHARED_RT:BOOL=ON
@@ -352,6 +352,18 @@ _VCPKG_INSTALLED_DIR:PATH=C:/src/vcpkg/installed
 //No help, variable specified on the command line.
 cmake.configureOnOpen:BOOL=TRUE
 
+//Value Computed by CMake
+cnt_system_BINARY_DIR:STATIC=C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_cnt_system_submodule_cpp
+
+//Value Computed by CMake
+cnt_system_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+cnt_system_SOURCE_DIR:STATIC=C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_cnt_system_submodule_cpp
+
+//Dependencies for the target
+cnt_system_static_LIB_DEPENDS:STATIC=general;C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_cnt_system_submodule_cpp/build/dependencies/yaml-cpp/Debug/yaml-cppd.lib;general;C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_cnt_system_submodule_cpp/build/dependencies/sockpp/Debug/sockpp-static.lib;
+
 //Dependencies for the target
 keyence_lib_static_LIB_DEPENDS:STATIC=general;C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/Libx64/LKIF2.lib;
 
@@ -368,13 +380,13 @@ keyence_sdk_SOURCE_DIR:STATIC=C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cp
 sockpp-static_LIB_DEPENDS:STATIC=general;ws2_32;
 
 //Value Computed by CMake
-sockpp_BINARY_DIR:STATIC=C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp
+sockpp_BINARY_DIR:STATIC=C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_cnt_system_submodule_cpp/dependencies/sockpp
 
 //Value Computed by CMake
 sockpp_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-sockpp_SOURCE_DIR:STATIC=C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp
+sockpp_SOURCE_DIR:STATIC=C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_cnt_system_submodule_cpp/dependencies/sockpp
 
 //Value Computed by CMake
 wgm_core_BINARY_DIR:STATIC=C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build
@@ -519,7 +531,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MT
 CMAKE_MT-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
 //Platform information initialized
 CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
 //noop for ranlib

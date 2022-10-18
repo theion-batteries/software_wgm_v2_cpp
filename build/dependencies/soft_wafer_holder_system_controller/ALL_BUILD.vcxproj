@@ -173,12 +173,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\dependencies\yaml-cpp\test\googletest_project.vcxproj">
-      <Project>{00CAE589-B306-3FC4-96E5-049BA2A87FDF}</Project>
-      <Name>googletest_project</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </ProjectReference>
     <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\keyence_lib_static.vcxproj">
       <Project>{A0857D37-045B-3473-B76A-AE51EAABE0B7}</Project>
       <Name>keyence_lib_static</Name>
@@ -187,32 +181,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{E8C6F8CD-5EA2-34D9-A682-AD1259374211}</Project>
       <Name>keyence_sdk</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\dependencies\yaml-cpp\util\parse.vcxproj">
-      <Project>{A5FF56A2-810C-377D-A1C7-2E7E79288D18}</Project>
-      <Name>parse</Name>
-    </ProjectReference>
-    <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\dependencies\yaml-cpp\util\read.vcxproj">
-      <Project>{3677A340-FB43-3A6A-BAE8-F14633C961B0}</Project>
-      <Name>read</Name>
-    </ProjectReference>
-    <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\dependencies\yaml-cpp\test\run-tests.vcxproj">
-      <Project>{745E7EBE-925B-32F4-A48A-A78238915327}</Project>
-      <Name>run-tests</Name>
-    </ProjectReference>
-    <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\dependencies\yaml-cpp\util\sandbox.vcxproj">
-      <Project>{E17EDACE-A70D-3A9C-83AC-A7D31F8D31C5}</Project>
-      <Name>sandbox</Name>
-    </ProjectReference>
-    <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\dependencies\sockpp\src\sockpp-objs.vcxproj">
-      <Project>{0C5240C1-DC01-318C-8714-B2BBF8E19839}</Project>
-      <Name>sockpp-objs</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </ProjectReference>
-    <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\dependencies\sockpp\sockpp-static.vcxproj">
-      <Project>{46C1A443-575A-3EFF-99AA-0BBB4C82A5E3}</Project>
-      <Name>sockpp-static</Name>
-    </ProjectReference>
     <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\whs_controller.vcxproj">
       <Project>{E21A4810-5B8F-39FD-8795-07A8C4FEDCC9}</Project>
       <Name>whs_controller</Name>
@@ -220,10 +188,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\whs_static.vcxproj">
       <Project>{648BC814-6341-31C7-B363-B3A16FFB7F96}</Project>
       <Name>whs_static</Name>
-    </ProjectReference>
-    <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\dependencies\yaml-cpp\yaml-cpp.vcxproj">
-      <Project>{1B928FFA-3837-3543-992B-71C33069DCFC}</Project>
-      <Name>yaml-cpp</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

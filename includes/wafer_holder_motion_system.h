@@ -8,13 +8,13 @@
  * @copyright Copyright (c) 2022
  *
  */
+#pragma once
 
 #include <iostream>
 #include "whs_controller.h"
 #include "yaml-cpp/yaml.h"
 #include <memory>
 
-#pragma once
 
 enum class enum_sys_feedback
 {

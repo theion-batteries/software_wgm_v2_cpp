@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "dependencies/soft_cnt_system_submodule_cpp",
+		"source" : "dependencies/soft_cnt_system_submodule_cpp"
+	}
+}

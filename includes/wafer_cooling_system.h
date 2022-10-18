@@ -8,8 +8,9 @@
  * @copyright Copyright (c) 2022
  *
  */
-#include <iostream>
 #pragma once
+
+#include <iostream>
 
 namespace wafer_cooling_system
 {
