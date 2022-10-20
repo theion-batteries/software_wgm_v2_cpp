@@ -173,9 +173,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_cnt_system_submodule_cpp\cnt_system.vcxproj">
-      <Project>{1D2630A8-F29A-3826-9A59-971BDD629C4F}</Project>
-      <Name>cnt_system</Name>
+    <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_cnt_system_submodule_cpp\cnt_system_exe.vcxproj">
+      <Project>{5D850E9F-8138-3FE3-9639-2A3386206564}</Project>
+      <Name>cnt_system_exe</Name>
     </ProjectReference>
     <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_cnt_system_submodule_cpp\cnt_system_static.vcxproj">
       <Project>{31C6909F-A64E-338D-A670-481CD34B7DC8}</Project>

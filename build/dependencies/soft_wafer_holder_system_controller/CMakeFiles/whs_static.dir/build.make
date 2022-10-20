@@ -68,26 +68,11 @@ include dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.d
 # Include the compile flags for this target's objects.
 include dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/flags.make
 
-dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/main.cpp.obj: dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/flags.make
-dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/main.cpp.obj: dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/includes_CXX.rsp
-dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/main.cpp.obj: ../dependencies/soft_wafer_holder_system_controller/src/main.cpp
-dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/main.cpp.obj: dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/main.cpp.obj"
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller && C:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/main.cpp.obj -MF CMakeFiles\whs_static.dir\src\main.cpp.obj.d -o CMakeFiles\whs_static.dir\src\main.cpp.obj -c C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\dependencies\soft_wafer_holder_system_controller\src\main.cpp
-
-dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/whs_static.dir/src/main.cpp.i"
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller && C:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\dependencies\soft_wafer_holder_system_controller\src\main.cpp > CMakeFiles\whs_static.dir\src\main.cpp.i
-
-dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/whs_static.dir/src/main.cpp.s"
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller && C:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\dependencies\soft_wafer_holder_system_controller\src\main.cpp -o CMakeFiles\whs_static.dir\src\main.cpp.s
-
 dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/whs_controller.cpp.obj: dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/flags.make
 dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/whs_controller.cpp.obj: dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/includes_CXX.rsp
 dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/whs_controller.cpp.obj: ../dependencies/soft_wafer_holder_system_controller/src/whs_controller.cpp
 dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/whs_controller.cpp.obj: dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/whs_controller.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/whs_controller.cpp.obj"
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller && C:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/whs_controller.cpp.obj -MF CMakeFiles\whs_static.dir\src\whs_controller.cpp.obj.d -o CMakeFiles\whs_static.dir\src\whs_controller.cpp.obj -c C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\dependencies\soft_wafer_holder_system_controller\src\whs_controller.cpp
 
 dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/whs_controller.cpp.i: cmake_force
@@ -100,17 +85,15 @@ dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/w
 
 # Object files for target whs_static
 whs_static_OBJECTS = \
-"CMakeFiles/whs_static.dir/src/main.cpp.obj" \
 "CMakeFiles/whs_static.dir/src/whs_controller.cpp.obj"
 
 # External object files for target whs_static
 whs_static_EXTERNAL_OBJECTS =
 
-dependencies/soft_wafer_holder_system_controller/libwhs_static.a: dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/main.cpp.obj
 dependencies/soft_wafer_holder_system_controller/libwhs_static.a: dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/whs_controller.cpp.obj
 dependencies/soft_wafer_holder_system_controller/libwhs_static.a: dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/build.make
 dependencies/soft_wafer_holder_system_controller/libwhs_static.a: dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libwhs_static.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libwhs_static.a"
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller && $(CMAKE_COMMAND) -P CMakeFiles\whs_static.dir\cmake_clean_target.cmake
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\whs_static.dir\link.txt --verbose=$(VERBOSE)
 

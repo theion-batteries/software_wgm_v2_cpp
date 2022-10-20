@@ -80,7 +80,7 @@ namespace wafer_holder_motion_system
         virtual void calibrate() = 0;
         virtual void move_up() = 0;
         virtual double get_current_value(uint16_t sensor_head) = 0;
-        virtual void insert_wafer_in_ml() = 0;
+        virtual enum_sys_feedback insert_wafer_in_ml() = 0;
         virtual void extract_wafer_from_ml() = 0;
         virtual void set_distance_to_surface_contact(double distance) = 0;
     };
@@ -95,7 +95,7 @@ namespace wafer_holder_motion_system
         virtual void calibrate();
         virtual void move_up();
         virtual double get_current_value(uint16_t sensor_head);
-        virtual void insert_wafer_in_ml();
+        virtual enum_sys_feedback insert_wafer_in_ml();
         virtual void extract_wafer_from_ml();
         virtual void set_distance_to_surface_contact(double distance);
 

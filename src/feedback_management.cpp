@@ -16,6 +16,16 @@ void wgm_feedbacks::hw_feedback::report_feedback(enum_hw_feedback& feedback)
 
 bool wgm_feedbacks::proc_feedback::report_feedback()
 {
-  if (proc_feed_val == enum_proc_feedback::proc_success) return true;
+  
+  if (proc_feed_val == enum_proc_feedback::proc_success)
+  {
+    std::cout<< "--------- process success, executing next process ---------- "<< std::endl;
+    return true;
+  } 
+  std::cout<< "process failed "<< std::endl;
   return false;
+}
+void wgm_feedbacks::proc_feedback::setFeedback(enum_proc_feedback feedback)
+{
+      proc_feed_val=feedback;
 }

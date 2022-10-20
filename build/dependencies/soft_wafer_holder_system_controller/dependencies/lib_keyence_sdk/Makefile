@@ -84,51 +84,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"dev\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\CMakeFiles C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\\CMakeFiles\progress.marks
@@ -175,18 +130,18 @@ keyence_lib_static/fast:
 .PHONY : keyence_lib_static/fast
 
 # Convenience name for target.
-dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/rule:
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/rule
-.PHONY : dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/rule
+dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/rule:
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/rule
+.PHONY : dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/rule
 
 # Convenience name for target.
-keyence_sdk: dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/rule
-.PHONY : keyence_sdk
+keyence_exe: dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/rule
+.PHONY : keyence_exe
 
 # fast build rule for target.
-keyence_sdk/fast:
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/build
-.PHONY : keyence_sdk/fast
+keyence_exe/fast:
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/build
+.PHONY : keyence_exe/fast
 
 Samples/VC_Src/DlgGetTab1.obj: Samples/VC_Src/DlgGetTab1.cpp.obj
 .PHONY : Samples/VC_Src/DlgGetTab1.obj
@@ -194,7 +149,7 @@ Samples/VC_Src/DlgGetTab1.obj: Samples/VC_Src/DlgGetTab1.cpp.obj
 # target to build an object file
 Samples/VC_Src/DlgGetTab1.cpp.obj:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgGetTab1.cpp.obj
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgGetTab1.cpp.obj
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgGetTab1.cpp.obj
 .PHONY : Samples/VC_Src/DlgGetTab1.cpp.obj
 
 Samples/VC_Src/DlgGetTab1.i: Samples/VC_Src/DlgGetTab1.cpp.i
@@ -203,7 +158,7 @@ Samples/VC_Src/DlgGetTab1.i: Samples/VC_Src/DlgGetTab1.cpp.i
 # target to preprocess a source file
 Samples/VC_Src/DlgGetTab1.cpp.i:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgGetTab1.cpp.i
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgGetTab1.cpp.i
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgGetTab1.cpp.i
 .PHONY : Samples/VC_Src/DlgGetTab1.cpp.i
 
 Samples/VC_Src/DlgGetTab1.s: Samples/VC_Src/DlgGetTab1.cpp.s
@@ -212,7 +167,7 @@ Samples/VC_Src/DlgGetTab1.s: Samples/VC_Src/DlgGetTab1.cpp.s
 # target to generate assembly for a file
 Samples/VC_Src/DlgGetTab1.cpp.s:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgGetTab1.cpp.s
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgGetTab1.cpp.s
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgGetTab1.cpp.s
 .PHONY : Samples/VC_Src/DlgGetTab1.cpp.s
 
 Samples/VC_Src/DlgGetTab2.obj: Samples/VC_Src/DlgGetTab2.cpp.obj
@@ -221,7 +176,7 @@ Samples/VC_Src/DlgGetTab2.obj: Samples/VC_Src/DlgGetTab2.cpp.obj
 # target to build an object file
 Samples/VC_Src/DlgGetTab2.cpp.obj:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgGetTab2.cpp.obj
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgGetTab2.cpp.obj
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgGetTab2.cpp.obj
 .PHONY : Samples/VC_Src/DlgGetTab2.cpp.obj
 
 Samples/VC_Src/DlgGetTab2.i: Samples/VC_Src/DlgGetTab2.cpp.i
@@ -230,7 +185,7 @@ Samples/VC_Src/DlgGetTab2.i: Samples/VC_Src/DlgGetTab2.cpp.i
 # target to preprocess a source file
 Samples/VC_Src/DlgGetTab2.cpp.i:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgGetTab2.cpp.i
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgGetTab2.cpp.i
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgGetTab2.cpp.i
 .PHONY : Samples/VC_Src/DlgGetTab2.cpp.i
 
 Samples/VC_Src/DlgGetTab2.s: Samples/VC_Src/DlgGetTab2.cpp.s
@@ -239,7 +194,7 @@ Samples/VC_Src/DlgGetTab2.s: Samples/VC_Src/DlgGetTab2.cpp.s
 # target to generate assembly for a file
 Samples/VC_Src/DlgGetTab2.cpp.s:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgGetTab2.cpp.s
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgGetTab2.cpp.s
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgGetTab2.cpp.s
 .PHONY : Samples/VC_Src/DlgGetTab2.cpp.s
 
 Samples/VC_Src/DlgMeasureCtlTab.obj: Samples/VC_Src/DlgMeasureCtlTab.cpp.obj
@@ -248,7 +203,7 @@ Samples/VC_Src/DlgMeasureCtlTab.obj: Samples/VC_Src/DlgMeasureCtlTab.cpp.obj
 # target to build an object file
 Samples/VC_Src/DlgMeasureCtlTab.cpp.obj:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgMeasureCtlTab.cpp.obj
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgMeasureCtlTab.cpp.obj
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgMeasureCtlTab.cpp.obj
 .PHONY : Samples/VC_Src/DlgMeasureCtlTab.cpp.obj
 
 Samples/VC_Src/DlgMeasureCtlTab.i: Samples/VC_Src/DlgMeasureCtlTab.cpp.i
@@ -257,7 +212,7 @@ Samples/VC_Src/DlgMeasureCtlTab.i: Samples/VC_Src/DlgMeasureCtlTab.cpp.i
 # target to preprocess a source file
 Samples/VC_Src/DlgMeasureCtlTab.cpp.i:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgMeasureCtlTab.cpp.i
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgMeasureCtlTab.cpp.i
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgMeasureCtlTab.cpp.i
 .PHONY : Samples/VC_Src/DlgMeasureCtlTab.cpp.i
 
 Samples/VC_Src/DlgMeasureCtlTab.s: Samples/VC_Src/DlgMeasureCtlTab.cpp.s
@@ -266,7 +221,7 @@ Samples/VC_Src/DlgMeasureCtlTab.s: Samples/VC_Src/DlgMeasureCtlTab.cpp.s
 # target to generate assembly for a file
 Samples/VC_Src/DlgMeasureCtlTab.cpp.s:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgMeasureCtlTab.cpp.s
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgMeasureCtlTab.cpp.s
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgMeasureCtlTab.cpp.s
 .PHONY : Samples/VC_Src/DlgMeasureCtlTab.cpp.s
 
 Samples/VC_Src/DlgModeTab.obj: Samples/VC_Src/DlgModeTab.cpp.obj
@@ -275,7 +230,7 @@ Samples/VC_Src/DlgModeTab.obj: Samples/VC_Src/DlgModeTab.cpp.obj
 # target to build an object file
 Samples/VC_Src/DlgModeTab.cpp.obj:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgModeTab.cpp.obj
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgModeTab.cpp.obj
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgModeTab.cpp.obj
 .PHONY : Samples/VC_Src/DlgModeTab.cpp.obj
 
 Samples/VC_Src/DlgModeTab.i: Samples/VC_Src/DlgModeTab.cpp.i
@@ -284,7 +239,7 @@ Samples/VC_Src/DlgModeTab.i: Samples/VC_Src/DlgModeTab.cpp.i
 # target to preprocess a source file
 Samples/VC_Src/DlgModeTab.cpp.i:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgModeTab.cpp.i
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgModeTab.cpp.i
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgModeTab.cpp.i
 .PHONY : Samples/VC_Src/DlgModeTab.cpp.i
 
 Samples/VC_Src/DlgModeTab.s: Samples/VC_Src/DlgModeTab.cpp.s
@@ -293,7 +248,7 @@ Samples/VC_Src/DlgModeTab.s: Samples/VC_Src/DlgModeTab.cpp.s
 # target to generate assembly for a file
 Samples/VC_Src/DlgModeTab.cpp.s:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgModeTab.cpp.s
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgModeTab.cpp.s
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgModeTab.cpp.s
 .PHONY : Samples/VC_Src/DlgModeTab.cpp.s
 
 Samples/VC_Src/DlgOtherTab.obj: Samples/VC_Src/DlgOtherTab.cpp.obj
@@ -302,7 +257,7 @@ Samples/VC_Src/DlgOtherTab.obj: Samples/VC_Src/DlgOtherTab.cpp.obj
 # target to build an object file
 Samples/VC_Src/DlgOtherTab.cpp.obj:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgOtherTab.cpp.obj
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgOtherTab.cpp.obj
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgOtherTab.cpp.obj
 .PHONY : Samples/VC_Src/DlgOtherTab.cpp.obj
 
 Samples/VC_Src/DlgOtherTab.i: Samples/VC_Src/DlgOtherTab.cpp.i
@@ -311,7 +266,7 @@ Samples/VC_Src/DlgOtherTab.i: Samples/VC_Src/DlgOtherTab.cpp.i
 # target to preprocess a source file
 Samples/VC_Src/DlgOtherTab.cpp.i:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgOtherTab.cpp.i
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgOtherTab.cpp.i
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgOtherTab.cpp.i
 .PHONY : Samples/VC_Src/DlgOtherTab.cpp.i
 
 Samples/VC_Src/DlgOtherTab.s: Samples/VC_Src/DlgOtherTab.cpp.s
@@ -320,7 +275,7 @@ Samples/VC_Src/DlgOtherTab.s: Samples/VC_Src/DlgOtherTab.cpp.s
 # target to generate assembly for a file
 Samples/VC_Src/DlgOtherTab.cpp.s:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgOtherTab.cpp.s
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgOtherTab.cpp.s
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgOtherTab.cpp.s
 .PHONY : Samples/VC_Src/DlgOtherTab.cpp.s
 
 Samples/VC_Src/DlgSetTab1.obj: Samples/VC_Src/DlgSetTab1.cpp.obj
@@ -329,7 +284,7 @@ Samples/VC_Src/DlgSetTab1.obj: Samples/VC_Src/DlgSetTab1.cpp.obj
 # target to build an object file
 Samples/VC_Src/DlgSetTab1.cpp.obj:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgSetTab1.cpp.obj
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgSetTab1.cpp.obj
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgSetTab1.cpp.obj
 .PHONY : Samples/VC_Src/DlgSetTab1.cpp.obj
 
 Samples/VC_Src/DlgSetTab1.i: Samples/VC_Src/DlgSetTab1.cpp.i
@@ -338,7 +293,7 @@ Samples/VC_Src/DlgSetTab1.i: Samples/VC_Src/DlgSetTab1.cpp.i
 # target to preprocess a source file
 Samples/VC_Src/DlgSetTab1.cpp.i:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgSetTab1.cpp.i
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgSetTab1.cpp.i
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgSetTab1.cpp.i
 .PHONY : Samples/VC_Src/DlgSetTab1.cpp.i
 
 Samples/VC_Src/DlgSetTab1.s: Samples/VC_Src/DlgSetTab1.cpp.s
@@ -347,7 +302,7 @@ Samples/VC_Src/DlgSetTab1.s: Samples/VC_Src/DlgSetTab1.cpp.s
 # target to generate assembly for a file
 Samples/VC_Src/DlgSetTab1.cpp.s:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgSetTab1.cpp.s
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgSetTab1.cpp.s
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgSetTab1.cpp.s
 .PHONY : Samples/VC_Src/DlgSetTab1.cpp.s
 
 Samples/VC_Src/DlgSetTab2.obj: Samples/VC_Src/DlgSetTab2.cpp.obj
@@ -356,7 +311,7 @@ Samples/VC_Src/DlgSetTab2.obj: Samples/VC_Src/DlgSetTab2.cpp.obj
 # target to build an object file
 Samples/VC_Src/DlgSetTab2.cpp.obj:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgSetTab2.cpp.obj
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgSetTab2.cpp.obj
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgSetTab2.cpp.obj
 .PHONY : Samples/VC_Src/DlgSetTab2.cpp.obj
 
 Samples/VC_Src/DlgSetTab2.i: Samples/VC_Src/DlgSetTab2.cpp.i
@@ -365,7 +320,7 @@ Samples/VC_Src/DlgSetTab2.i: Samples/VC_Src/DlgSetTab2.cpp.i
 # target to preprocess a source file
 Samples/VC_Src/DlgSetTab2.cpp.i:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgSetTab2.cpp.i
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgSetTab2.cpp.i
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgSetTab2.cpp.i
 .PHONY : Samples/VC_Src/DlgSetTab2.cpp.i
 
 Samples/VC_Src/DlgSetTab2.s: Samples/VC_Src/DlgSetTab2.cpp.s
@@ -374,7 +329,7 @@ Samples/VC_Src/DlgSetTab2.s: Samples/VC_Src/DlgSetTab2.cpp.s
 # target to generate assembly for a file
 Samples/VC_Src/DlgSetTab2.cpp.s:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgSetTab2.cpp.s
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/DlgSetTab2.cpp.s
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/DlgSetTab2.cpp.s
 .PHONY : Samples/VC_Src/DlgSetTab2.cpp.s
 
 Samples/VC_Src/LKIF2Tools.obj: Samples/VC_Src/LKIF2Tools.cpp.obj
@@ -383,7 +338,7 @@ Samples/VC_Src/LKIF2Tools.obj: Samples/VC_Src/LKIF2Tools.cpp.obj
 # target to build an object file
 Samples/VC_Src/LKIF2Tools.cpp.obj:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/LKIF2Tools.cpp.obj
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/LKIF2Tools.cpp.obj
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/LKIF2Tools.cpp.obj
 .PHONY : Samples/VC_Src/LKIF2Tools.cpp.obj
 
 Samples/VC_Src/LKIF2Tools.i: Samples/VC_Src/LKIF2Tools.cpp.i
@@ -392,7 +347,7 @@ Samples/VC_Src/LKIF2Tools.i: Samples/VC_Src/LKIF2Tools.cpp.i
 # target to preprocess a source file
 Samples/VC_Src/LKIF2Tools.cpp.i:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/LKIF2Tools.cpp.i
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/LKIF2Tools.cpp.i
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/LKIF2Tools.cpp.i
 .PHONY : Samples/VC_Src/LKIF2Tools.cpp.i
 
 Samples/VC_Src/LKIF2Tools.s: Samples/VC_Src/LKIF2Tools.cpp.s
@@ -401,7 +356,7 @@ Samples/VC_Src/LKIF2Tools.s: Samples/VC_Src/LKIF2Tools.cpp.s
 # target to generate assembly for a file
 Samples/VC_Src/LKIF2Tools.cpp.s:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/LKIF2Tools.cpp.s
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/LKIF2Tools.cpp.s
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/LKIF2Tools.cpp.s
 .PHONY : Samples/VC_Src/LKIF2Tools.cpp.s
 
 Samples/VC_Src/LkIF2TestVC.obj: Samples/VC_Src/LkIF2TestVC.cpp.obj
@@ -410,7 +365,7 @@ Samples/VC_Src/LkIF2TestVC.obj: Samples/VC_Src/LkIF2TestVC.cpp.obj
 # target to build an object file
 Samples/VC_Src/LkIF2TestVC.cpp.obj:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/LkIF2TestVC.cpp.obj
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/LkIF2TestVC.cpp.obj
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/LkIF2TestVC.cpp.obj
 .PHONY : Samples/VC_Src/LkIF2TestVC.cpp.obj
 
 Samples/VC_Src/LkIF2TestVC.i: Samples/VC_Src/LkIF2TestVC.cpp.i
@@ -419,7 +374,7 @@ Samples/VC_Src/LkIF2TestVC.i: Samples/VC_Src/LkIF2TestVC.cpp.i
 # target to preprocess a source file
 Samples/VC_Src/LkIF2TestVC.cpp.i:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/LkIF2TestVC.cpp.i
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/LkIF2TestVC.cpp.i
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/LkIF2TestVC.cpp.i
 .PHONY : Samples/VC_Src/LkIF2TestVC.cpp.i
 
 Samples/VC_Src/LkIF2TestVC.s: Samples/VC_Src/LkIF2TestVC.cpp.s
@@ -428,7 +383,7 @@ Samples/VC_Src/LkIF2TestVC.s: Samples/VC_Src/LkIF2TestVC.cpp.s
 # target to generate assembly for a file
 Samples/VC_Src/LkIF2TestVC.cpp.s:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/LkIF2TestVC.cpp.s
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/LkIF2TestVC.cpp.s
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/LkIF2TestVC.cpp.s
 .PHONY : Samples/VC_Src/LkIF2TestVC.cpp.s
 
 Samples/VC_Src/LkIF2TestVCDlg.obj: Samples/VC_Src/LkIF2TestVCDlg.cpp.obj
@@ -437,7 +392,7 @@ Samples/VC_Src/LkIF2TestVCDlg.obj: Samples/VC_Src/LkIF2TestVCDlg.cpp.obj
 # target to build an object file
 Samples/VC_Src/LkIF2TestVCDlg.cpp.obj:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/LkIF2TestVCDlg.cpp.obj
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/LkIF2TestVCDlg.cpp.obj
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/LkIF2TestVCDlg.cpp.obj
 .PHONY : Samples/VC_Src/LkIF2TestVCDlg.cpp.obj
 
 Samples/VC_Src/LkIF2TestVCDlg.i: Samples/VC_Src/LkIF2TestVCDlg.cpp.i
@@ -446,7 +401,7 @@ Samples/VC_Src/LkIF2TestVCDlg.i: Samples/VC_Src/LkIF2TestVCDlg.cpp.i
 # target to preprocess a source file
 Samples/VC_Src/LkIF2TestVCDlg.cpp.i:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/LkIF2TestVCDlg.cpp.i
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/LkIF2TestVCDlg.cpp.i
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/LkIF2TestVCDlg.cpp.i
 .PHONY : Samples/VC_Src/LkIF2TestVCDlg.cpp.i
 
 Samples/VC_Src/LkIF2TestVCDlg.s: Samples/VC_Src/LkIF2TestVCDlg.cpp.s
@@ -455,7 +410,7 @@ Samples/VC_Src/LkIF2TestVCDlg.s: Samples/VC_Src/LkIF2TestVCDlg.cpp.s
 # target to generate assembly for a file
 Samples/VC_Src/LkIF2TestVCDlg.cpp.s:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/LkIF2TestVCDlg.cpp.s
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/LkIF2TestVCDlg.cpp.s
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/LkIF2TestVCDlg.cpp.s
 .PHONY : Samples/VC_Src/LkIF2TestVCDlg.cpp.s
 
 Samples/VC_Src/stdafx.obj: Samples/VC_Src/stdafx.cpp.obj
@@ -464,7 +419,7 @@ Samples/VC_Src/stdafx.obj: Samples/VC_Src/stdafx.cpp.obj
 # target to build an object file
 Samples/VC_Src/stdafx.cpp.obj:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/stdafx.cpp.obj
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/stdafx.cpp.obj
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/stdafx.cpp.obj
 .PHONY : Samples/VC_Src/stdafx.cpp.obj
 
 Samples/VC_Src/stdafx.i: Samples/VC_Src/stdafx.cpp.i
@@ -473,7 +428,7 @@ Samples/VC_Src/stdafx.i: Samples/VC_Src/stdafx.cpp.i
 # target to preprocess a source file
 Samples/VC_Src/stdafx.cpp.i:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/stdafx.cpp.i
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/stdafx.cpp.i
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/stdafx.cpp.i
 .PHONY : Samples/VC_Src/stdafx.cpp.i
 
 Samples/VC_Src/stdafx.s: Samples/VC_Src/stdafx.cpp.s
@@ -482,7 +437,7 @@ Samples/VC_Src/stdafx.s: Samples/VC_Src/stdafx.cpp.s
 # target to generate assembly for a file
 Samples/VC_Src/stdafx.cpp.s:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/stdafx.cpp.s
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/Samples/VC_Src/stdafx.cpp.s
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/Samples/VC_Src/stdafx.cpp.s
 .PHONY : Samples/VC_Src/stdafx.cpp.s
 
 src/keyence_client.obj: src/keyence_client.cpp.obj
@@ -491,7 +446,7 @@ src/keyence_client.obj: src/keyence_client.cpp.obj
 # target to build an object file
 src/keyence_client.cpp.obj:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/src/keyence_client.cpp.obj
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/src/keyence_client.cpp.obj
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/src/keyence_client.cpp.obj
 .PHONY : src/keyence_client.cpp.obj
 
 src/keyence_client.i: src/keyence_client.cpp.i
@@ -500,7 +455,7 @@ src/keyence_client.i: src/keyence_client.cpp.i
 # target to preprocess a source file
 src/keyence_client.cpp.i:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/src/keyence_client.cpp.i
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/src/keyence_client.cpp.i
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/src/keyence_client.cpp.i
 .PHONY : src/keyence_client.cpp.i
 
 src/keyence_client.s: src/keyence_client.cpp.s
@@ -509,7 +464,7 @@ src/keyence_client.s: src/keyence_client.cpp.s
 # target to generate assembly for a file
 src/keyence_client.cpp.s:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/src/keyence_client.cpp.s
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/src/keyence_client.cpp.s
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/src/keyence_client.cpp.s
 .PHONY : src/keyence_client.cpp.s
 
 src/main.obj: src/main.cpp.obj
@@ -517,8 +472,7 @@ src/main.obj: src/main.cpp.obj
 
 # target to build an object file
 src/main.cpp.obj:
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/src/main.cpp.obj
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/src/main.cpp.obj
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/src/main.cpp.obj
 .PHONY : src/main.cpp.obj
 
 src/main.i: src/main.cpp.i
@@ -526,8 +480,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/src/main.cpp.i
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/src/main.cpp.i
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -535,8 +488,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_lib_static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/src/main.cpp.s
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/src/main.cpp.s
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -546,13 +498,9 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
-	@echo ... install
-	@echo ... install/local
-	@echo ... install/strip
-	@echo ... list_install_components
 	@echo ... rebuild_cache
+	@echo ... keyence_exe
 	@echo ... keyence_lib_static
-	@echo ... keyence_sdk
 	@echo ... Samples/VC_Src/DlgGetTab1.obj
 	@echo ... Samples/VC_Src/DlgGetTab1.i
 	@echo ... Samples/VC_Src/DlgGetTab1.s

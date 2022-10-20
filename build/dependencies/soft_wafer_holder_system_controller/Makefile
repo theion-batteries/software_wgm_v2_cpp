@@ -84,51 +84,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"dev\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\CMakeFiles C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\\CMakeFiles\progress.marks
@@ -175,26 +130,25 @@ whs_static/fast:
 .PHONY : whs_static/fast
 
 # Convenience name for target.
-dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_controller.dir/rule:
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_controller.dir/rule
-.PHONY : dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_controller.dir/rule
+dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_exe.dir/rule:
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_exe.dir/rule
+.PHONY : dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_exe.dir/rule
 
 # Convenience name for target.
-whs_controller: dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_controller.dir/rule
-.PHONY : whs_controller
+whs_exe: dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_exe.dir/rule
+.PHONY : whs_exe
 
 # fast build rule for target.
-whs_controller/fast:
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_controller.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_controller.dir/build
-.PHONY : whs_controller/fast
+whs_exe/fast:
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_exe.dir/build
+.PHONY : whs_exe/fast
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
 # target to build an object file
 src/main.cpp.obj:
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_static.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/main.cpp.obj
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_controller.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_controller.dir/src/main.cpp.obj
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_exe.dir/src/main.cpp.obj
 .PHONY : src/main.cpp.obj
 
 src/main.i: src/main.cpp.i
@@ -202,8 +156,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_static.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/main.cpp.i
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_controller.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_controller.dir/src/main.cpp.i
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_exe.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -211,8 +164,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_static.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/main.cpp.s
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_controller.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_controller.dir/src/main.cpp.s
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_exe.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/whs_controller.obj: src/whs_controller.cpp.obj
@@ -221,7 +173,7 @@ src/whs_controller.obj: src/whs_controller.cpp.obj
 # target to build an object file
 src/whs_controller.cpp.obj:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_static.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/whs_controller.cpp.obj
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_controller.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_controller.dir/src/whs_controller.cpp.obj
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_exe.dir/src/whs_controller.cpp.obj
 .PHONY : src/whs_controller.cpp.obj
 
 src/whs_controller.i: src/whs_controller.cpp.i
@@ -230,7 +182,7 @@ src/whs_controller.i: src/whs_controller.cpp.i
 # target to preprocess a source file
 src/whs_controller.cpp.i:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_static.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/whs_controller.cpp.i
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_controller.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_controller.dir/src/whs_controller.cpp.i
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_exe.dir/src/whs_controller.cpp.i
 .PHONY : src/whs_controller.cpp.i
 
 src/whs_controller.s: src/whs_controller.cpp.s
@@ -239,7 +191,7 @@ src/whs_controller.s: src/whs_controller.cpp.s
 # target to generate assembly for a file
 src/whs_controller.cpp.s:
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_static.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_static.dir/src/whs_controller.cpp.s
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_controller.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_controller.dir/src/whs_controller.cpp.s
+	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build && $(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_exe.dir/src/whs_controller.cpp.s
 .PHONY : src/whs_controller.cpp.s
 
 # Help Target
@@ -249,12 +201,8 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
-	@echo ... install
-	@echo ... install/local
-	@echo ... install/strip
-	@echo ... list_install_components
 	@echo ... rebuild_cache
-	@echo ... whs_controller
+	@echo ... whs_exe
 	@echo ... whs_static
 	@echo ... src/main.obj
 	@echo ... src/main.i

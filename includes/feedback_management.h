@@ -35,8 +35,7 @@ namespace wgm_feedbacks
         hw_success = 4,
         hw_error = -3
     };
-    /*********** hardware specific implementation *************/
-        /************** hardware feedback ************/
+    /*********** feedback classes *************/
      class hw_feedback
     {
         private:
@@ -65,6 +64,7 @@ namespace wgm_feedbacks
             sys_feedback* sys_feed;
         public:
             bool report_feedback();
+            void setFeedback(enum_proc_feedback feedback);
     };
 
 }

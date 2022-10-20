@@ -248,21 +248,6 @@ dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CM
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/keyence_lib_static.dir/src/keyence_client.cpp.s"
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk && C:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\src\keyence_client.cpp -o CMakeFiles\keyence_lib_static.dir\src\keyence_client.cpp.s
 
-dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/src/main.cpp.obj: dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/flags.make
-dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/src/main.cpp.obj: dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp
-dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/src/main.cpp.obj: ../dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/src/main.cpp
-dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/src/main.cpp.obj: dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/src/main.cpp.obj"
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk && C:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/src/main.cpp.obj -MF CMakeFiles\keyence_lib_static.dir\src\main.cpp.obj.d -o CMakeFiles\keyence_lib_static.dir\src\main.cpp.obj -c C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\src\main.cpp
-
-dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/keyence_lib_static.dir/src/main.cpp.i"
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk && C:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\src\main.cpp > CMakeFiles\keyence_lib_static.dir\src\main.cpp.i
-
-dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/keyence_lib_static.dir/src/main.cpp.s"
-	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk && C:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\src\main.cpp -o CMakeFiles\keyence_lib_static.dir\src\main.cpp.s
-
 # Object files for target keyence_lib_static
 keyence_lib_static_OBJECTS = \
 "CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/DlgGetTab1.cpp.obj" \
@@ -276,8 +261,7 @@ keyence_lib_static_OBJECTS = \
 "CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/LkIF2TestVC.cpp.obj" \
 "CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/LkIF2TestVCDlg.cpp.obj" \
 "CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/stdafx.cpp.obj" \
-"CMakeFiles/keyence_lib_static.dir/src/keyence_client.cpp.obj" \
-"CMakeFiles/keyence_lib_static.dir/src/main.cpp.obj"
+"CMakeFiles/keyence_lib_static.dir/src/keyence_client.cpp.obj"
 
 # External object files for target keyence_lib_static
 keyence_lib_static_EXTERNAL_OBJECTS =
@@ -294,10 +278,9 @@ dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/li
 dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/libkeyence_lib_static.a: dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/LkIF2TestVCDlg.cpp.obj
 dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/libkeyence_lib_static.a: dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/stdafx.cpp.obj
 dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/libkeyence_lib_static.a: dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/src/keyence_client.cpp.obj
-dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/libkeyence_lib_static.a: dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/src/main.cpp.obj
 dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/libkeyence_lib_static.a: dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/build.make
 dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/libkeyence_lib_static.a: dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_lib_static.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX static library libkeyence_lib_static.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX static library libkeyence_lib_static.a"
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk && $(CMAKE_COMMAND) -P CMakeFiles\keyence_lib_static.dir\cmake_clean_target.cmake
 	cd /d C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\keyence_lib_static.dir\link.txt --verbose=$(VERBOSE)
 

@@ -52,11 +52,19 @@ void wgm_processes::heating_process::start_process()
   // start system
   heating_sys->turn_on_heating();
   // report feedback
-
-  // stop timer
-  process_timer->stop_monitoring();
-  // start temp monitor
+  auto heating_feedback = enum_sys_feedback::sys_error;
+  // feedback
+  if (heating_feedback == enum_sys_feedback::sys_error)
+  {
+    process_timer->stop_monitoring();
+    process_feedback.setFeedback(wgm_feedbacks::enum_proc_feedback::proc_error);
+  }
+  else if (heating_feedback == enum_sys_feedback::sys_success)
+  {
+    process_feedback.setFeedback(wgm_feedbacks::enum_proc_feedback::proc_success);
   process_temp_monitor->start_monitoring();
+  }
+
 }
 void wgm_processes::heating_process::stop_process()
 {
@@ -68,7 +76,7 @@ void wgm_processes::heating_process::stop_process()
 // interface sink process
 wgm_processes::Isinking_process::Isinking_process()
 {
-  
+
   std::cout << "creating sinking process " << std::endl;
 }
 wgm_processes::Isinking_process::~Isinking_process() {}
@@ -93,20 +101,31 @@ void wgm_processes::sinking_process::start_process()
 {
   std::cout << "execute " << process_name << std::endl;
   process_timer->start_monitoring();
-  sinking_sys->insert_wafer_in_ml();
+  auto sinking_feedback = sinking_sys->insert_wafer_in_ml();
+  //auto sinking_feedback = enum_sys_feedback::sys_error;
   // feedback
-  process_timer->stop_monitoring();
-  process_dist_monitor->start_monitoring();
+  if (sinking_feedback == enum_sys_feedback::sys_error)
+  {
+    process_timer->stop_monitoring();
+    process_feedback.setFeedback(wgm_feedbacks::enum_proc_feedback::proc_error);
+  }
+  else if (sinking_feedback == enum_sys_feedback::sys_success)
+  {
+    process_feedback.setFeedback(wgm_feedbacks::enum_proc_feedback::proc_success);
+    process_dist_monitor->start_monitoring();
+  }
+  // 
+
 }
 void wgm_processes::sinking_process::stop_process()
 {
   std::cout << "finish " << process_name << std::endl;
   process_dist_monitor->stop_monitoring();
 }
-  wafer_holder_motion_system::Iwafer_motion_controller* wgm_processes::sinking_process::get_sys_obj()
-  {
-    return sinking_sys;
-  }
+wafer_holder_motion_system::Iwafer_motion_controller* wgm_processes::sinking_process::get_sys_obj()
+{
+  return sinking_sys;
+}
 
 /****************** interface cnt alignment process*******************/
 wgm_processes::Ialigning_process::Ialigning_process()
@@ -291,7 +310,7 @@ void wgm_processes::process_management::start_all()
     {
       process->start_process();
       if (process->is_proc_success()) continue;
-      //break;
+      break;
     }
     else std::cout << "empty process scheduler" << std::endl;
   }

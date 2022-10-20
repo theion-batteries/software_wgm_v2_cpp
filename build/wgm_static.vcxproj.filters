@@ -10,9 +10,6 @@
     <ClCompile Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\src\heating_system.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\src\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\src\process_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

@@ -130,17 +130,24 @@ double wafer_holder_motion_system::wafer_motion_controller::get_current_value(ui
     break;
   }
 }
-void wafer_holder_motion_system::wafer_motion_controller::insert_wafer_in_ml()
+enum_sys_feedback wafer_holder_motion_system::wafer_motion_controller::insert_wafer_in_ml()
 {
   std::cout << "start sinking" << std::endl;
-  wafer_sys_control_shared_ptr->connect_to_delta_server(); // ready
+  enum_sub_sys_feedback delta_sub_feedback = wafer_sys_control_shared_ptr->connect_to_delta_server(); // ready
+  if (delta_sub_feedback == enum_sub_sys_feedback::sub_error)
+  {
+    enum_sys_feedback whms_feedback = enum_sys_feedback::sys_error;
+    std::cout << "error wafer holder motion system due to delta sub system connection error" << std::endl;
+    std::cout << "aborting process" << std::endl;
+    return whms_feedback;
+  }
   enum_sub_sys_feedback Keyence_sub_feedback = wafer_sys_control_shared_ptr->keyence_client_connect();
   if (Keyence_sub_feedback == enum_sub_sys_feedback::sub_error)
   {
     enum_sys_feedback whms_feedback = enum_sys_feedback::sys_error;
-    std::cout << "error wafer holder motion system due to keyence sub system error" << std::endl;
+    std::cout << "error wafer holder motion system due to keyence sub system connection error" << std::endl;
     std::cout << "aborting process" << std::endl;
-    return;
+    return whms_feedback;
   }
   //wafer_sys_control_shared_ptr->keyence_client_get_value_all(); //ready
 

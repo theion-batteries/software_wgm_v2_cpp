@@ -173,33 +173,33 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_cnt_system_submodule_cpp\cnt_system.vcxproj">
-      <Project>{1D2630A8-F29A-3826-9A59-971BDD629C4F}</Project>
-      <Name>cnt_system</Name>
+    <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_cnt_system_submodule_cpp\cnt_system_exe.vcxproj">
+      <Project>{5D850E9F-8138-3FE3-9639-2A3386206564}</Project>
+      <Name>cnt_system_exe</Name>
     </ProjectReference>
     <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_cnt_system_submodule_cpp\cnt_system_static.vcxproj">
       <Project>{31C6909F-A64E-338D-A670-481CD34B7DC8}</Project>
       <Name>cnt_system_static</Name>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\keyence_exe.vcxproj">
+      <Project>{DEA3DABD-2492-3744-87A1-A83365CB84A1}</Project>
+      <Name>keyence_exe</Name>
+    </ProjectReference>
     <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\keyence_lib_static.vcxproj">
       <Project>{A0857D37-045B-3473-B76A-AE51EAABE0B7}</Project>
       <Name>keyence_lib_static</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\keyence_sdk.vcxproj">
-      <Project>{E8C6F8CD-5EA2-34D9-A682-AD1259374211}</Project>
-      <Name>keyence_sdk</Name>
-    </ProjectReference>
-    <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\wgm_app.vcxproj">
-      <Project>{C77F0750-3895-3AED-B746-1CFBD8ED8A51}</Project>
-      <Name>wgm_app</Name>
+    <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\wgm_app_exe.vcxproj">
+      <Project>{5B23243F-3916-35AB-B765-C4BC18CDEA96}</Project>
+      <Name>wgm_app_exe</Name>
     </ProjectReference>
     <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\wgm_static.vcxproj">
       <Project>{EA6BD3DF-F14F-3A89-ABA2-439545150EFB}</Project>
       <Name>wgm_static</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\whs_controller.vcxproj">
-      <Project>{E21A4810-5B8F-39FD-8795-07A8C4FEDCC9}</Project>
-      <Name>whs_controller</Name>
+    <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\whs_exe.vcxproj">
+      <Project>{7BF6A059-BA65-35EF-9DC6-866990BCBE16}</Project>
+      <Name>whs_exe</Name>
     </ProjectReference>
     <ProjectReference Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\dependencies\soft_wafer_holder_system_controller\whs_static.vcxproj">
       <Project>{648BC814-6341-31C7-B363-B3A16FFB7F96}</Project>

@@ -16,11 +16,6 @@
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_static.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_static.dir\\src\\main.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\main.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/main.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
   "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_static.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_static.dir\\src\\process_manager.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\process_manager.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/process_manager.cpp"
 },
@@ -56,63 +51,58 @@
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app.dir\\src\\cnt_alignment_system.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\cnt_alignment_system.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app_exe.dir\\src\\cnt_alignment_system.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\cnt_alignment_system.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/cnt_alignment_system.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app.dir\\src\\feedback_management.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\feedback_management.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app_exe.dir\\src\\feedback_management.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\feedback_management.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/feedback_management.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app.dir\\src\\heating_system.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\heating_system.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app_exe.dir\\src\\heating_system.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\heating_system.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/heating_system.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app.dir\\src\\main.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\main.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app_exe.dir\\src\\main.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\main.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/main.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app.dir\\src\\process_manager.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\process_manager.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app_exe.dir\\src\\process_manager.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\process_manager.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/process_manager.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app.dir\\src\\wafer_cooling_system.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\wafer_cooling_system.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app_exe.dir\\src\\wafer_cooling_system.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\wafer_cooling_system.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/wafer_cooling_system.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app.dir\\src\\wafer_holder_motion_system.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\wafer_holder_motion_system.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app_exe.dir\\src\\wafer_holder_motion_system.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\wafer_holder_motion_system.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/wafer_holder_motion_system.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app.dir\\src\\wgm_communication.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\wgm_communication.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app_exe.dir\\src\\wgm_communication.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\wgm_communication.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/wgm_communication.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app.dir\\src\\wgm_monitoring.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\wgm_monitoring.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app_exe.dir\\src\\wgm_monitoring.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\wgm_monitoring.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/wgm_monitoring.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app.dir\\src\\wgm_test.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\wgm_test.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app_exe.dir\\src\\wgm_test.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\wgm_test.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/wgm_test.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app.dir\\src\\wgm_user.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\wgm_user.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/wgm_app_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\wgm_app_exe.dir\\src\\wgm_user.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\src\\wgm_user.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/src/wgm_user.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/whs_static.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\whs_static.dir\\src\\main.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\src\\main.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/src/main.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller",
@@ -121,407 +111,182 @@
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/whs_controller.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\whs_controller.dir\\src\\main.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\src\\main.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/whs_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\whs_exe.dir\\src\\main.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\src\\main.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/src/main.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/whs_controller.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\whs_controller.dir\\src\\whs_controller.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\src\\whs_controller.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/whs_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\whs_exe.dir\\src\\whs_controller.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\src\\whs_controller.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/src/whs_controller.cpp"
 },
 {
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/sockpp-objs.dir/includes_CXX.rsp -Wall -Wextra -pedantic -std=c++14 -o CMakeFiles\\sockpp-objs.dir\\acceptor.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\sockpp\\src\\acceptor.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src/acceptor.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/sockpp-objs.dir/includes_CXX.rsp -Wall -Wextra -pedantic -std=c++14 -o CMakeFiles\\sockpp-objs.dir\\connector.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\sockpp\\src\\connector.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src/connector.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/sockpp-objs.dir/includes_CXX.rsp -Wall -Wextra -pedantic -std=c++14 -o CMakeFiles\\sockpp-objs.dir\\datagram_socket.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\sockpp\\src\\datagram_socket.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src/datagram_socket.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/sockpp-objs.dir/includes_CXX.rsp -Wall -Wextra -pedantic -std=c++14 -o CMakeFiles\\sockpp-objs.dir\\exception.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\sockpp\\src\\exception.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src/exception.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/sockpp-objs.dir/includes_CXX.rsp -Wall -Wextra -pedantic -std=c++14 -o CMakeFiles\\sockpp-objs.dir\\inet_address.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\sockpp\\src\\inet_address.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src/inet_address.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/sockpp-objs.dir/includes_CXX.rsp -Wall -Wextra -pedantic -std=c++14 -o CMakeFiles\\sockpp-objs.dir\\inet6_address.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\sockpp\\src\\inet6_address.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src/inet6_address.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/sockpp-objs.dir/includes_CXX.rsp -Wall -Wextra -pedantic -std=c++14 -o CMakeFiles\\sockpp-objs.dir\\socket.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\sockpp\\src\\socket.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src/socket.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/sockpp-objs.dir/includes_CXX.rsp -Wall -Wextra -pedantic -std=c++14 -o CMakeFiles\\sockpp-objs.dir\\stream_socket.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\sockpp\\src\\stream_socket.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src/stream_socket.cpp"
-},
-{
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\DlgGetTab1.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgGetTab1.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\DlgGetTab1.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgGetTab1.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/DlgGetTab1.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\DlgGetTab2.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgGetTab2.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\DlgGetTab2.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgGetTab2.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/DlgGetTab2.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\DlgMeasureCtlTab.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgMeasureCtlTab.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\DlgMeasureCtlTab.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgMeasureCtlTab.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/DlgMeasureCtlTab.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\DlgModeTab.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgModeTab.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\DlgModeTab.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgModeTab.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/DlgModeTab.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\DlgOtherTab.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgOtherTab.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\DlgOtherTab.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgOtherTab.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/DlgOtherTab.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\DlgSetTab1.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgSetTab1.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\DlgSetTab1.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgSetTab1.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/DlgSetTab1.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\DlgSetTab2.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgSetTab2.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\DlgSetTab2.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgSetTab2.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/DlgSetTab2.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\LKIF2Tools.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\LKIF2Tools.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\LKIF2Tools.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\LKIF2Tools.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/LKIF2Tools.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\LkIF2TestVC.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\LkIF2TestVC.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\LkIF2TestVC.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\LkIF2TestVC.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/LkIF2TestVC.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\LkIF2TestVCDlg.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\LkIF2TestVCDlg.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\LkIF2TestVCDlg.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\LkIF2TestVCDlg.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/LkIF2TestVCDlg.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\stdafx.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\stdafx.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_lib_static.dir\\Samples\\VC_Src\\stdafx.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\stdafx.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/stdafx.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_lib_static.dir\\src\\keyence_client.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\src\\keyence_client.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_lib_static.dir\\src\\keyence_client.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\src\\keyence_client.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/src/keyence_client.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_lib_static.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_lib_static.dir\\src\\main.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\src\\main.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/src/main.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_sdk.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_sdk.dir\\Samples\\VC_Src\\DlgGetTab1.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgGetTab1.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_exe.dir\\Samples\\VC_Src\\DlgGetTab1.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgGetTab1.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/DlgGetTab1.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_sdk.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_sdk.dir\\Samples\\VC_Src\\DlgGetTab2.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgGetTab2.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_exe.dir\\Samples\\VC_Src\\DlgGetTab2.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgGetTab2.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/DlgGetTab2.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_sdk.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_sdk.dir\\Samples\\VC_Src\\DlgMeasureCtlTab.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgMeasureCtlTab.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_exe.dir\\Samples\\VC_Src\\DlgMeasureCtlTab.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgMeasureCtlTab.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/DlgMeasureCtlTab.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_sdk.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_sdk.dir\\Samples\\VC_Src\\DlgModeTab.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgModeTab.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_exe.dir\\Samples\\VC_Src\\DlgModeTab.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgModeTab.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/DlgModeTab.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_sdk.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_sdk.dir\\Samples\\VC_Src\\DlgOtherTab.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgOtherTab.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_exe.dir\\Samples\\VC_Src\\DlgOtherTab.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgOtherTab.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/DlgOtherTab.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_sdk.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_sdk.dir\\Samples\\VC_Src\\DlgSetTab1.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgSetTab1.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_exe.dir\\Samples\\VC_Src\\DlgSetTab1.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgSetTab1.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/DlgSetTab1.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_sdk.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_sdk.dir\\Samples\\VC_Src\\DlgSetTab2.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgSetTab2.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_exe.dir\\Samples\\VC_Src\\DlgSetTab2.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\DlgSetTab2.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/DlgSetTab2.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_sdk.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_sdk.dir\\Samples\\VC_Src\\LKIF2Tools.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\LKIF2Tools.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_exe.dir\\Samples\\VC_Src\\LKIF2Tools.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\LKIF2Tools.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/LKIF2Tools.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_sdk.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_sdk.dir\\Samples\\VC_Src\\LkIF2TestVC.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\LkIF2TestVC.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_exe.dir\\Samples\\VC_Src\\LkIF2TestVC.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\LkIF2TestVC.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/LkIF2TestVC.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_sdk.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_sdk.dir\\Samples\\VC_Src\\LkIF2TestVCDlg.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\LkIF2TestVCDlg.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_exe.dir\\Samples\\VC_Src\\LkIF2TestVCDlg.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\LkIF2TestVCDlg.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/LkIF2TestVCDlg.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_sdk.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_sdk.dir\\Samples\\VC_Src\\stdafx.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\stdafx.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_exe.dir\\Samples\\VC_Src\\stdafx.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\Samples\\VC_Src\\stdafx.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/stdafx.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_sdk.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_sdk.dir\\src\\keyence_client.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\src\\keyence_client.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_exe.dir\\src\\keyence_client.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\src\\keyence_client.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/src/keyence_client.cpp"
 },
 {
   "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_sdk.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles\\keyence_sdk.dir\\src\\main.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\src\\main.cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/keyence_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\keyence_exe.dir\\src\\main.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\lib_keyence_sdk\\src\\main.cpp",
   "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/src/main.cpp"
 },
 {
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\binary.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\binary.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/binary.cpp"
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_cnt_system_submodule_cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/cnt_system_static.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\cnt_system_static.dir\\src\\cnt_controller.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_cnt_system_submodule_cpp\\src\\cnt_controller.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_cnt_system_submodule_cpp/src/cnt_controller.cpp"
 },
 {
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\convert.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\convert.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/convert.cpp"
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_cnt_system_submodule_cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/cnt_system_static.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\cnt_system_static.dir\\src\\cnt_dispenser.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_cnt_system_submodule_cpp\\src\\cnt_dispenser.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_cnt_system_submodule_cpp/src/cnt_dispenser.cpp"
 },
 {
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\directives.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\directives.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/directives.cpp"
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_cnt_system_submodule_cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/cnt_system_static.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\cnt_system_static.dir\\src\\cnt_high_voltage.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_cnt_system_submodule_cpp\\src\\cnt_high_voltage.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_cnt_system_submodule_cpp/src/cnt_high_voltage.cpp"
 },
 {
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\emit.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\emit.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/emit.cpp"
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_cnt_system_submodule_cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/cnt_system_static.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\cnt_system_static.dir\\src\\cnt_motion.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_cnt_system_submodule_cpp\\src\\cnt_motion.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_cnt_system_submodule_cpp/src/cnt_motion.cpp"
 },
 {
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\emitfromevents.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\emitfromevents.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/emitfromevents.cpp"
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_cnt_system_submodule_cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/cnt_system_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\cnt_system_exe.dir\\src\\cnt_controller.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_cnt_system_submodule_cpp\\src\\cnt_controller.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_cnt_system_submodule_cpp/src/cnt_controller.cpp"
 },
 {
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\emitter.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\emitter.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/emitter.cpp"
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_cnt_system_submodule_cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/cnt_system_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\cnt_system_exe.dir\\src\\cnt_dispenser.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_cnt_system_submodule_cpp\\src\\cnt_dispenser.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_cnt_system_submodule_cpp/src/cnt_dispenser.cpp"
 },
 {
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\emitterstate.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\emitterstate.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/emitterstate.cpp"
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_cnt_system_submodule_cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/cnt_system_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\cnt_system_exe.dir\\src\\cnt_high_voltage.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_cnt_system_submodule_cpp\\src\\cnt_high_voltage.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_cnt_system_submodule_cpp/src/cnt_high_voltage.cpp"
 },
 {
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\emitterutils.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\emitterutils.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/emitterutils.cpp"
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_cnt_system_submodule_cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/cnt_system_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\cnt_system_exe.dir\\src\\cnt_motion.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_cnt_system_submodule_cpp\\src\\cnt_motion.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_cnt_system_submodule_cpp/src/cnt_motion.cpp"
 },
 {
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\exceptions.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\exceptions.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/exceptions.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\exp.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\exp.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/exp.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\memory.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\memory.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/memory.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\node.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\node.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/node.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\node_data.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\node_data.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/node_data.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\nodebuilder.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\nodebuilder.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/nodebuilder.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\nodeevents.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\nodeevents.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/nodeevents.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\null.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\null.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/null.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\ostream_wrapper.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\ostream_wrapper.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/ostream_wrapper.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\parse.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\parse.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/parse.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\parser.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\parser.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/parser.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\regex_yaml.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\regex_yaml.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/regex_yaml.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\scanner.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\scanner.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/scanner.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\scanscalar.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\scanscalar.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/scanscalar.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\scantag.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\scantag.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/scantag.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\scantoken.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\scantoken.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/scantoken.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\simplekey.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\simplekey.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/simplekey.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\singledocparser.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\singledocparser.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/singledocparser.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\stream.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\stream.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/stream.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\tag.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\tag.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/tag.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\contrib\\graphbuilder.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\contrib\\graphbuilder.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/contrib/graphbuilder.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/yaml-cpp.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -std=c++11 -o CMakeFiles\\yaml-cpp.dir\\src\\contrib\\graphbuilderadapter.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\src\\contrib\\graphbuilderadapter.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/contrib/graphbuilderadapter.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/run-tests.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -Wno-variadic-macros -Wno-sign-compare -std=c++11 -o CMakeFiles\\run-tests.dir\\integration\\emitter_test.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\test\\integration\\emitter_test.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test/integration/emitter_test.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/run-tests.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -Wno-variadic-macros -Wno-sign-compare -std=c++11 -o CMakeFiles\\run-tests.dir\\integration\\encoding_test.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\test\\integration\\encoding_test.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test/integration/encoding_test.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/run-tests.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -Wno-variadic-macros -Wno-sign-compare -std=c++11 -o CMakeFiles\\run-tests.dir\\integration\\error_messages_test.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\test\\integration\\error_messages_test.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test/integration/error_messages_test.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/run-tests.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -Wno-variadic-macros -Wno-sign-compare -std=c++11 -o CMakeFiles\\run-tests.dir\\integration\\gen_emitter_test.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\test\\integration\\gen_emitter_test.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test/integration/gen_emitter_test.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/run-tests.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -Wno-variadic-macros -Wno-sign-compare -std=c++11 -o CMakeFiles\\run-tests.dir\\integration\\handler_spec_test.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\test\\integration\\handler_spec_test.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test/integration/handler_spec_test.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/run-tests.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -Wno-variadic-macros -Wno-sign-compare -std=c++11 -o CMakeFiles\\run-tests.dir\\integration\\handler_test.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\test\\integration\\handler_test.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test/integration/handler_test.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/run-tests.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -Wno-variadic-macros -Wno-sign-compare -std=c++11 -o CMakeFiles\\run-tests.dir\\integration\\load_node_test.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\test\\integration\\load_node_test.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test/integration/load_node_test.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/run-tests.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -Wno-variadic-macros -Wno-sign-compare -std=c++11 -o CMakeFiles\\run-tests.dir\\integration\\node_spec_test.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\test\\integration\\node_spec_test.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test/integration/node_spec_test.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/run-tests.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -Wno-variadic-macros -Wno-sign-compare -std=c++11 -o CMakeFiles\\run-tests.dir\\main.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\test\\main.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test/main.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/run-tests.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -Wno-variadic-macros -Wno-sign-compare -std=c++11 -o CMakeFiles\\run-tests.dir\\node\\node_test.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\test\\node\\node_test.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test/node/node_test.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/run-tests.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -Wno-variadic-macros -Wno-sign-compare -std=c++11 -o CMakeFiles\\run-tests.dir\\ostream_wrapper_test.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\test\\ostream_wrapper_test.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test/ostream_wrapper_test.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/run-tests.dir/includes_CXX.rsp -O3 -DNDEBUG  -Wall  -Wextra -Wshadow -Weffc++ -pedantic -pedantic-errors -pedantic -Wno-long-long  -Wno-variadic-macros -Wno-sign-compare -std=c++11 -o CMakeFiles\\run-tests.dir\\regex_test.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\test\\regex_test.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test/regex_test.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/util",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/parse.dir/includes_CXX.rsp -O3 -DNDEBUG -std=c++11 -o CMakeFiles\\parse.dir\\parse.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\util\\parse.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/util/parse.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/util",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/sandbox.dir/includes_CXX.rsp -O3 -DNDEBUG -std=c++11 -o CMakeFiles\\sandbox.dir\\sandbox.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\util\\sandbox.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/util/sandbox.cpp"
-},
-{
-  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/util",
-  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/read.dir/includes_CXX.rsp -O3 -DNDEBUG -std=c++11 -o CMakeFiles\\read.dir\\read.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_wafer_holder_system_controller\\dependencies\\yaml-cpp\\util\\read.cpp",
-  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/util/read.cpp"
+  "directory": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/build/dependencies/soft_cnt_system_submodule_cpp",
+  "command": "C:\\Qt\\Tools\\mingw1120_64\\bin\\g++.exe  @CMakeFiles/cnt_system_exe.dir/includes_CXX.rsp -std=c++20 -o CMakeFiles\\cnt_system_exe.dir\\src\\main.cpp.obj -c C:\\Users\\SamiDhiab\\Theion_Repos\\software_wgm_v2_cpp\\dependencies\\soft_cnt_system_submodule_cpp\\src\\main.cpp",
+  "file": "C:/Users/SamiDhiab/Theion_Repos/software_wgm_v2_cpp/dependencies/soft_cnt_system_submodule_cpp/src/main.cpp"
 }
 ]

@@ -273,7 +273,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\src\cnt_alignment_system.cpp" />
     <ClCompile Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\src\feedback_management.cpp" />
     <ClCompile Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\src\heating_system.cpp" />
-    <ClCompile Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\src\main.cpp" />
     <ClCompile Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\src\process_manager.cpp" />
     <ClCompile Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\src\wafer_cooling_system.cpp" />
     <ClCompile Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\src\wafer_holder_motion_system.cpp" />

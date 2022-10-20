@@ -19,8 +19,8 @@ if (MSVC)
     set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 endif()
 # add dependencies cmake
-add_subdirectory(dependencies/soft_wafer_holder_system_controller)
-add_subdirectory(dependencies/soft_cnt_system_submodule_cpp)
+add_subdirectory(${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller )
+add_subdirectory(${PROJECT_SOURCE_DIR}/dependencies/soft_cnt_system_submodule_cpp)
 
 
 # parent deps headers
@@ -31,34 +31,49 @@ include_directories(${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_
 include_directories(${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/include)
 # cnt system header tree
 include_directories(${PROJECT_SOURCE_DIR}/dependencies/soft_cnt_system_submodule_cpp/includes/)
+
 ## common dependencies headers 
 include_directories(${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/includes)
 include_directories(${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/include/)
 
 # source *.cpp
-file(GLOB all_SRCS
+file(GLOB exe_SRCS
     "${PROJECT_SOURCE_DIR}/src/*.cpp"
-    #"${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/src/whs_controller.cpp"
-## child includes
-    #"${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_distance_sensor/dependencies/sockpp/src/*.cpp"
-    #"${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/src/*.cpp"
-    #"${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/src/*.cpp"
     )
+# lib src
+file(GLOB lib_SRCS
+"${PROJECT_SOURCE_DIR}/src/wgm_communication.cpp"
+"${PROJECT_SOURCE_DIR}/src/wgm_monitoring.cpp"
+"${PROJECT_SOURCE_DIR}/src/wgm_test.cpp"
+"${PROJECT_SOURCE_DIR}/src/wgm_user.cpp"
+"${PROJECT_SOURCE_DIR}/src/wafer_cooling_system.cpp"
+"${PROJECT_SOURCE_DIR}/src/wafer_holder_motion_system.cpp"
+"${PROJECT_SOURCE_DIR}/src/heating_system.cpp"
+"${PROJECT_SOURCE_DIR}/src/cnt_alignment_system.cpp"
+"${PROJECT_SOURCE_DIR}/src/feedback_management.cpp"
+"${PROJECT_SOURCE_DIR}/src/process_manager.cpp"
+)
 # add .exe
-add_library(wgm_static STATIC ${all_SRCS})
+add_library(wgm_static STATIC ${lib_SRCS})
 
 # add .exe
-add_executable(wgm_app ${all_SRCS})
+add_executable(wgm_app_exe ${exe_SRCS})
 
 ## child static and dynamic linking
 # link againt static lib
-target_link_libraries(wgm_app 
+target_link_libraries(wgm_app_exe 
 # wafer holder system static
 ${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/Debug/whs_static.lib
 # wrapper keyence static 
 ${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Debug/keyence_lib_static.lib
 # keyence sdk static
 ${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/Libx64/LKIF2.lib
+# cnt lib
+${PROJECT_SOURCE_DIR}/build/dependencies/soft_cnt_system_submodule_cpp/Debug/cnt_system_static.lib
+
+
+
+
 # common dependencies::
 # sockpp static
 ${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/Debug/sockpp-static.lib
@@ -75,6 +90,15 @@ ${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/Deb
 ${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Debug/keyence_lib_static.lib
 # keyence sdk static
 ${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/Libx64/LKIF2.lib
+# cnt lib
+${PROJECT_SOURCE_DIR}/build/dependencies/soft_cnt_system_submodule_cpp/Debug/cnt_system_static.lib
+
+
+
+
+
+
+
 # common dependencies::
 # sockpp static
 ${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/Debug/sockpp-static.lib

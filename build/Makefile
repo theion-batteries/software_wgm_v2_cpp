@@ -84,51 +84,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"dev\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\CMakeFiles C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\build\\CMakeFiles\progress.marks
@@ -174,17 +129,17 @@ wgm_static/fast:
 .PHONY : wgm_static/fast
 
 #=============================================================================
-# Target rules for targets named wgm_app
+# Target rules for targets named wgm_app_exe
 
 # Build rule for target.
-wgm_app: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 wgm_app
-.PHONY : wgm_app
+wgm_app_exe: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 wgm_app_exe
+.PHONY : wgm_app_exe
 
 # fast build rule for target.
-wgm_app/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/build
-.PHONY : wgm_app/fast
+wgm_app_exe/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/build
+.PHONY : wgm_app_exe/fast
 
 #=============================================================================
 # Target rules for targets named whs_static
@@ -200,43 +155,17 @@ whs_static/fast:
 .PHONY : whs_static/fast
 
 #=============================================================================
-# Target rules for targets named whs_controller
+# Target rules for targets named whs_exe
 
 # Build rule for target.
-whs_controller: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 whs_controller
-.PHONY : whs_controller
+whs_exe: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 whs_exe
+.PHONY : whs_exe
 
 # fast build rule for target.
-whs_controller/fast:
-	$(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_controller.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_controller.dir/build
-.PHONY : whs_controller/fast
-
-#=============================================================================
-# Target rules for targets named sockpp-static
-
-# Build rule for target.
-sockpp-static: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 sockpp-static
-.PHONY : sockpp-static
-
-# fast build rule for target.
-sockpp-static/fast:
-	$(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\sockpp\CMakeFiles\sockpp-static.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/CMakeFiles/sockpp-static.dir/build
-.PHONY : sockpp-static/fast
-
-#=============================================================================
-# Target rules for targets named sockpp-objs
-
-# Build rule for target.
-sockpp-objs: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 sockpp-objs
-.PHONY : sockpp-objs
-
-# fast build rule for target.
-sockpp-objs/fast:
-	$(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\sockpp\src\CMakeFiles\sockpp-objs.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/src/CMakeFiles/sockpp-objs.dir/build
-.PHONY : sockpp-objs/fast
+whs_exe/fast:
+	$(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\CMakeFiles\whs_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/CMakeFiles/whs_exe.dir/build
+.PHONY : whs_exe/fast
 
 #=============================================================================
 # Target rules for targets named keyence_lib_static
@@ -252,134 +181,43 @@ keyence_lib_static/fast:
 .PHONY : keyence_lib_static/fast
 
 #=============================================================================
-# Target rules for targets named keyence_sdk
+# Target rules for targets named keyence_exe
 
 # Build rule for target.
-keyence_sdk: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 keyence_sdk
-.PHONY : keyence_sdk
+keyence_exe: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 keyence_exe
+.PHONY : keyence_exe
 
 # fast build rule for target.
-keyence_sdk/fast:
-	$(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_sdk.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_sdk.dir/build
-.PHONY : keyence_sdk/fast
+keyence_exe/fast:
+	$(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\lib_keyence_sdk\CMakeFiles\keyence_exe.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/CMakeFiles/keyence_exe.dir/build
+.PHONY : keyence_exe/fast
 
 #=============================================================================
-# Target rules for targets named debuggable
+# Target rules for targets named cnt_system_static
 
 # Build rule for target.
-debuggable: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 debuggable
-.PHONY : debuggable
+cnt_system_static: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cnt_system_static
+.PHONY : cnt_system_static
 
 # fast build rule for target.
-debuggable/fast:
-	$(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\yaml-cpp\CMakeFiles\debuggable.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/CMakeFiles/debuggable.dir/build
-.PHONY : debuggable/fast
+cnt_system_static/fast:
+	$(MAKE) $(MAKESILENT) -f dependencies\soft_cnt_system_submodule_cpp\CMakeFiles\cnt_system_static.dir\build.make dependencies/soft_cnt_system_submodule_cpp/CMakeFiles/cnt_system_static.dir/build
+.PHONY : cnt_system_static/fast
 
 #=============================================================================
-# Target rules for targets named releasable
+# Target rules for targets named cnt_system_exe
 
 # Build rule for target.
-releasable: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 releasable
-.PHONY : releasable
+cnt_system_exe: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cnt_system_exe
+.PHONY : cnt_system_exe
 
 # fast build rule for target.
-releasable/fast:
-	$(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\yaml-cpp\CMakeFiles\releasable.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/CMakeFiles/releasable.dir/build
-.PHONY : releasable/fast
-
-#=============================================================================
-# Target rules for targets named yaml-cpp
-
-# Build rule for target.
-yaml-cpp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 yaml-cpp
-.PHONY : yaml-cpp
-
-# fast build rule for target.
-yaml-cpp/fast:
-	$(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\yaml-cpp\CMakeFiles\yaml-cpp.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/CMakeFiles/yaml-cpp.dir/build
-.PHONY : yaml-cpp/fast
-
-#=============================================================================
-# Target rules for targets named format
-
-# Build rule for target.
-format: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 format
-.PHONY : format
-
-# fast build rule for target.
-format/fast:
-	$(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\yaml-cpp\CMakeFiles\format.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/CMakeFiles/format.dir/build
-.PHONY : format/fast
-
-#=============================================================================
-# Target rules for targets named googletest_project
-
-# Build rule for target.
-googletest_project: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 googletest_project
-.PHONY : googletest_project
-
-# fast build rule for target.
-googletest_project/fast:
-	$(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\yaml-cpp\test\CMakeFiles\googletest_project.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test/CMakeFiles/googletest_project.dir/build
-.PHONY : googletest_project/fast
-
-#=============================================================================
-# Target rules for targets named run-tests
-
-# Build rule for target.
-run-tests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 run-tests
-.PHONY : run-tests
-
-# fast build rule for target.
-run-tests/fast:
-	$(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\yaml-cpp\test\CMakeFiles\run-tests.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/test/CMakeFiles/run-tests.dir/build
-.PHONY : run-tests/fast
-
-#=============================================================================
-# Target rules for targets named parse
-
-# Build rule for target.
-parse: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 parse
-.PHONY : parse
-
-# fast build rule for target.
-parse/fast:
-	$(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\yaml-cpp\util\CMakeFiles\parse.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/util/CMakeFiles/parse.dir/build
-.PHONY : parse/fast
-
-#=============================================================================
-# Target rules for targets named sandbox
-
-# Build rule for target.
-sandbox: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 sandbox
-.PHONY : sandbox
-
-# fast build rule for target.
-sandbox/fast:
-	$(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\yaml-cpp\util\CMakeFiles\sandbox.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/util/CMakeFiles/sandbox.dir/build
-.PHONY : sandbox/fast
-
-#=============================================================================
-# Target rules for targets named read
-
-# Build rule for target.
-read: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 read
-.PHONY : read
-
-# fast build rule for target.
-read/fast:
-	$(MAKE) $(MAKESILENT) -f dependencies\soft_wafer_holder_system_controller\dependencies\yaml-cpp\util\CMakeFiles\read.dir\build.make dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/util/CMakeFiles/read.dir/build
-.PHONY : read/fast
+cnt_system_exe/fast:
+	$(MAKE) $(MAKESILENT) -f dependencies\soft_cnt_system_submodule_cpp\CMakeFiles\cnt_system_exe.dir\build.make dependencies/soft_cnt_system_submodule_cpp/CMakeFiles/cnt_system_exe.dir/build
+.PHONY : cnt_system_exe/fast
 
 src/cnt_alignment_system.obj: src/cnt_alignment_system.cpp.obj
 .PHONY : src/cnt_alignment_system.obj
@@ -387,7 +225,7 @@ src/cnt_alignment_system.obj: src/cnt_alignment_system.cpp.obj
 # target to build an object file
 src/cnt_alignment_system.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/cnt_alignment_system.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/cnt_alignment_system.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/cnt_alignment_system.cpp.obj
 .PHONY : src/cnt_alignment_system.cpp.obj
 
 src/cnt_alignment_system.i: src/cnt_alignment_system.cpp.i
@@ -396,7 +234,7 @@ src/cnt_alignment_system.i: src/cnt_alignment_system.cpp.i
 # target to preprocess a source file
 src/cnt_alignment_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/cnt_alignment_system.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/cnt_alignment_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/cnt_alignment_system.cpp.i
 .PHONY : src/cnt_alignment_system.cpp.i
 
 src/cnt_alignment_system.s: src/cnt_alignment_system.cpp.s
@@ -405,7 +243,7 @@ src/cnt_alignment_system.s: src/cnt_alignment_system.cpp.s
 # target to generate assembly for a file
 src/cnt_alignment_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/cnt_alignment_system.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/cnt_alignment_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/cnt_alignment_system.cpp.s
 .PHONY : src/cnt_alignment_system.cpp.s
 
 src/feedback_management.obj: src/feedback_management.cpp.obj
@@ -414,7 +252,7 @@ src/feedback_management.obj: src/feedback_management.cpp.obj
 # target to build an object file
 src/feedback_management.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/feedback_management.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/feedback_management.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/feedback_management.cpp.obj
 .PHONY : src/feedback_management.cpp.obj
 
 src/feedback_management.i: src/feedback_management.cpp.i
@@ -423,7 +261,7 @@ src/feedback_management.i: src/feedback_management.cpp.i
 # target to preprocess a source file
 src/feedback_management.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/feedback_management.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/feedback_management.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/feedback_management.cpp.i
 .PHONY : src/feedback_management.cpp.i
 
 src/feedback_management.s: src/feedback_management.cpp.s
@@ -432,7 +270,7 @@ src/feedback_management.s: src/feedback_management.cpp.s
 # target to generate assembly for a file
 src/feedback_management.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/feedback_management.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/feedback_management.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/feedback_management.cpp.s
 .PHONY : src/feedback_management.cpp.s
 
 src/heating_system.obj: src/heating_system.cpp.obj
@@ -441,7 +279,7 @@ src/heating_system.obj: src/heating_system.cpp.obj
 # target to build an object file
 src/heating_system.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/heating_system.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/heating_system.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/heating_system.cpp.obj
 .PHONY : src/heating_system.cpp.obj
 
 src/heating_system.i: src/heating_system.cpp.i
@@ -450,7 +288,7 @@ src/heating_system.i: src/heating_system.cpp.i
 # target to preprocess a source file
 src/heating_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/heating_system.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/heating_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/heating_system.cpp.i
 .PHONY : src/heating_system.cpp.i
 
 src/heating_system.s: src/heating_system.cpp.s
@@ -459,7 +297,7 @@ src/heating_system.s: src/heating_system.cpp.s
 # target to generate assembly for a file
 src/heating_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/heating_system.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/heating_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/heating_system.cpp.s
 .PHONY : src/heating_system.cpp.s
 
 src/main.obj: src/main.cpp.obj
@@ -467,8 +305,7 @@ src/main.obj: src/main.cpp.obj
 
 # target to build an object file
 src/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/main.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/main.cpp.obj
 .PHONY : src/main.cpp.obj
 
 src/main.i: src/main.cpp.i
@@ -476,8 +313,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/main.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -485,8 +321,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/main.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/process_manager.obj: src/process_manager.cpp.obj
@@ -495,7 +330,7 @@ src/process_manager.obj: src/process_manager.cpp.obj
 # target to build an object file
 src/process_manager.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/process_manager.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/process_manager.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/process_manager.cpp.obj
 .PHONY : src/process_manager.cpp.obj
 
 src/process_manager.i: src/process_manager.cpp.i
@@ -504,7 +339,7 @@ src/process_manager.i: src/process_manager.cpp.i
 # target to preprocess a source file
 src/process_manager.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/process_manager.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/process_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/process_manager.cpp.i
 .PHONY : src/process_manager.cpp.i
 
 src/process_manager.s: src/process_manager.cpp.s
@@ -513,7 +348,7 @@ src/process_manager.s: src/process_manager.cpp.s
 # target to generate assembly for a file
 src/process_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/process_manager.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/process_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/process_manager.cpp.s
 .PHONY : src/process_manager.cpp.s
 
 src/wafer_cooling_system.obj: src/wafer_cooling_system.cpp.obj
@@ -522,7 +357,7 @@ src/wafer_cooling_system.obj: src/wafer_cooling_system.cpp.obj
 # target to build an object file
 src/wafer_cooling_system.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/wafer_cooling_system.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/wafer_cooling_system.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/wafer_cooling_system.cpp.obj
 .PHONY : src/wafer_cooling_system.cpp.obj
 
 src/wafer_cooling_system.i: src/wafer_cooling_system.cpp.i
@@ -531,7 +366,7 @@ src/wafer_cooling_system.i: src/wafer_cooling_system.cpp.i
 # target to preprocess a source file
 src/wafer_cooling_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/wafer_cooling_system.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/wafer_cooling_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/wafer_cooling_system.cpp.i
 .PHONY : src/wafer_cooling_system.cpp.i
 
 src/wafer_cooling_system.s: src/wafer_cooling_system.cpp.s
@@ -540,7 +375,7 @@ src/wafer_cooling_system.s: src/wafer_cooling_system.cpp.s
 # target to generate assembly for a file
 src/wafer_cooling_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/wafer_cooling_system.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/wafer_cooling_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/wafer_cooling_system.cpp.s
 .PHONY : src/wafer_cooling_system.cpp.s
 
 src/wafer_holder_motion_system.obj: src/wafer_holder_motion_system.cpp.obj
@@ -549,7 +384,7 @@ src/wafer_holder_motion_system.obj: src/wafer_holder_motion_system.cpp.obj
 # target to build an object file
 src/wafer_holder_motion_system.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/wafer_holder_motion_system.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/wafer_holder_motion_system.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/wafer_holder_motion_system.cpp.obj
 .PHONY : src/wafer_holder_motion_system.cpp.obj
 
 src/wafer_holder_motion_system.i: src/wafer_holder_motion_system.cpp.i
@@ -558,7 +393,7 @@ src/wafer_holder_motion_system.i: src/wafer_holder_motion_system.cpp.i
 # target to preprocess a source file
 src/wafer_holder_motion_system.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/wafer_holder_motion_system.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/wafer_holder_motion_system.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/wafer_holder_motion_system.cpp.i
 .PHONY : src/wafer_holder_motion_system.cpp.i
 
 src/wafer_holder_motion_system.s: src/wafer_holder_motion_system.cpp.s
@@ -567,7 +402,7 @@ src/wafer_holder_motion_system.s: src/wafer_holder_motion_system.cpp.s
 # target to generate assembly for a file
 src/wafer_holder_motion_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/wafer_holder_motion_system.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/wafer_holder_motion_system.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/wafer_holder_motion_system.cpp.s
 .PHONY : src/wafer_holder_motion_system.cpp.s
 
 src/wgm_communication.obj: src/wgm_communication.cpp.obj
@@ -576,7 +411,7 @@ src/wgm_communication.obj: src/wgm_communication.cpp.obj
 # target to build an object file
 src/wgm_communication.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/wgm_communication.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/wgm_communication.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/wgm_communication.cpp.obj
 .PHONY : src/wgm_communication.cpp.obj
 
 src/wgm_communication.i: src/wgm_communication.cpp.i
@@ -585,7 +420,7 @@ src/wgm_communication.i: src/wgm_communication.cpp.i
 # target to preprocess a source file
 src/wgm_communication.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/wgm_communication.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/wgm_communication.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/wgm_communication.cpp.i
 .PHONY : src/wgm_communication.cpp.i
 
 src/wgm_communication.s: src/wgm_communication.cpp.s
@@ -594,7 +429,7 @@ src/wgm_communication.s: src/wgm_communication.cpp.s
 # target to generate assembly for a file
 src/wgm_communication.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/wgm_communication.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/wgm_communication.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/wgm_communication.cpp.s
 .PHONY : src/wgm_communication.cpp.s
 
 src/wgm_monitoring.obj: src/wgm_monitoring.cpp.obj
@@ -603,7 +438,7 @@ src/wgm_monitoring.obj: src/wgm_monitoring.cpp.obj
 # target to build an object file
 src/wgm_monitoring.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/wgm_monitoring.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/wgm_monitoring.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/wgm_monitoring.cpp.obj
 .PHONY : src/wgm_monitoring.cpp.obj
 
 src/wgm_monitoring.i: src/wgm_monitoring.cpp.i
@@ -612,7 +447,7 @@ src/wgm_monitoring.i: src/wgm_monitoring.cpp.i
 # target to preprocess a source file
 src/wgm_monitoring.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/wgm_monitoring.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/wgm_monitoring.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/wgm_monitoring.cpp.i
 .PHONY : src/wgm_monitoring.cpp.i
 
 src/wgm_monitoring.s: src/wgm_monitoring.cpp.s
@@ -621,7 +456,7 @@ src/wgm_monitoring.s: src/wgm_monitoring.cpp.s
 # target to generate assembly for a file
 src/wgm_monitoring.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/wgm_monitoring.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/wgm_monitoring.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/wgm_monitoring.cpp.s
 .PHONY : src/wgm_monitoring.cpp.s
 
 src/wgm_test.obj: src/wgm_test.cpp.obj
@@ -630,7 +465,7 @@ src/wgm_test.obj: src/wgm_test.cpp.obj
 # target to build an object file
 src/wgm_test.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/wgm_test.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/wgm_test.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/wgm_test.cpp.obj
 .PHONY : src/wgm_test.cpp.obj
 
 src/wgm_test.i: src/wgm_test.cpp.i
@@ -639,7 +474,7 @@ src/wgm_test.i: src/wgm_test.cpp.i
 # target to preprocess a source file
 src/wgm_test.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/wgm_test.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/wgm_test.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/wgm_test.cpp.i
 .PHONY : src/wgm_test.cpp.i
 
 src/wgm_test.s: src/wgm_test.cpp.s
@@ -648,7 +483,7 @@ src/wgm_test.s: src/wgm_test.cpp.s
 # target to generate assembly for a file
 src/wgm_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/wgm_test.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/wgm_test.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/wgm_test.cpp.s
 .PHONY : src/wgm_test.cpp.s
 
 src/wgm_user.obj: src/wgm_user.cpp.obj
@@ -657,7 +492,7 @@ src/wgm_user.obj: src/wgm_user.cpp.obj
 # target to build an object file
 src/wgm_user.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/wgm_user.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/wgm_user.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/wgm_user.cpp.obj
 .PHONY : src/wgm_user.cpp.obj
 
 src/wgm_user.i: src/wgm_user.cpp.i
@@ -666,7 +501,7 @@ src/wgm_user.i: src/wgm_user.cpp.i
 # target to preprocess a source file
 src/wgm_user.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/wgm_user.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/wgm_user.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/wgm_user.cpp.i
 .PHONY : src/wgm_user.cpp.i
 
 src/wgm_user.s: src/wgm_user.cpp.s
@@ -675,7 +510,7 @@ src/wgm_user.s: src/wgm_user.cpp.s
 # target to generate assembly for a file
 src/wgm_user.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_static.dir\build.make CMakeFiles/wgm_static.dir/src/wgm_user.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app.dir\build.make CMakeFiles/wgm_app.dir/src/wgm_user.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\wgm_app_exe.dir\build.make CMakeFiles/wgm_app_exe.dir/src/wgm_user.cpp.s
 .PHONY : src/wgm_user.cpp.s
 
 # Help Target
@@ -685,28 +520,15 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
-	@echo ... install
-	@echo ... install/local
-	@echo ... install/strip
-	@echo ... list_install_components
 	@echo ... rebuild_cache
-	@echo ... debuggable
-	@echo ... format
-	@echo ... googletest_project
-	@echo ... releasable
+	@echo ... cnt_system_exe
+	@echo ... cnt_system_static
+	@echo ... keyence_exe
 	@echo ... keyence_lib_static
-	@echo ... keyence_sdk
-	@echo ... parse
-	@echo ... read
-	@echo ... run-tests
-	@echo ... sandbox
-	@echo ... sockpp-objs
-	@echo ... sockpp-static
-	@echo ... wgm_app
+	@echo ... wgm_app_exe
 	@echo ... wgm_static
-	@echo ... whs_controller
+	@echo ... whs_exe
 	@echo ... whs_static
-	@echo ... yaml-cpp
 	@echo ... src/cnt_alignment_system.obj
 	@echo ... src/cnt_alignment_system.i
 	@echo ... src/cnt_alignment_system.s

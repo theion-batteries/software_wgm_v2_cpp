@@ -370,7 +370,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\dependencies\soft_cnt_system_submodule_cpp\src\cnt_dispenser.cpp" />
     <ClCompile Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\dependencies\soft_cnt_system_submodule_cpp\src\cnt_high_voltage.cpp" />
     <ClCompile Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\dependencies\soft_cnt_system_submodule_cpp\src\cnt_motion.cpp" />
-    <ClCompile Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\dependencies\soft_cnt_system_submodule_cpp\src\cnt_system.cpp" />
     <ClCompile Include="C:\Users\SamiDhiab\Theion_Repos\software_wgm_v2_cpp\dependencies\soft_cnt_system_submodule_cpp\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>

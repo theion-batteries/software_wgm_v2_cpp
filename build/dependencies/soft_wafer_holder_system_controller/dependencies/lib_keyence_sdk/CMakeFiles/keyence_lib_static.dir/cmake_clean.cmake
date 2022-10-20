@@ -23,8 +23,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/keyence_lib_static.dir/Samples/VC_Src/stdafx.cpp.obj.d"
   "CMakeFiles/keyence_lib_static.dir/src/keyence_client.cpp.obj"
   "CMakeFiles/keyence_lib_static.dir/src/keyence_client.cpp.obj.d"
-  "CMakeFiles/keyence_lib_static.dir/src/main.cpp.obj"
-  "CMakeFiles/keyence_lib_static.dir/src/main.cpp.obj.d"
   "libkeyence_lib_static.a"
   "libkeyence_lib_static.pdb"
 )
