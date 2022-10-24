@@ -17,6 +17,15 @@
 	"dependencies" : 
 	[
 		{
+			"id" : "wgm_app_exe::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "whs_static::@29241ccd17be0d8800c3"
+		},
+		{
+			"id" : "wgm_static::@6890427a1f51a3e7e1df"
+		},
+		{
 			"id" : "whs_exe::@29241ccd17be0d8800c3"
 		},
 		{
@@ -26,19 +35,10 @@
 			"id" : "keyence_exe::@d56f54cee86ba1d4e084"
 		},
 		{
-			"id" : "cnt_system_static::@e93fa933c5deb7b1f811"
-		},
-		{
 			"id" : "cnt_system_exe::@e93fa933c5deb7b1f811"
 		},
 		{
-			"id" : "wgm_static::@6890427a1f51a3e7e1df"
-		},
-		{
-			"id" : "wgm_app_exe::@6890427a1f51a3e7e1df"
-		},
-		{
-			"id" : "whs_static::@29241ccd17be0d8800c3"
+			"id" : "cnt_system_static::@e93fa933c5deb7b1f811"
 		},
 		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"

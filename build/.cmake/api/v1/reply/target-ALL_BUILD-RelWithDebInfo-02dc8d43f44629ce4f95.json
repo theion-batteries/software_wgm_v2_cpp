@@ -17,10 +17,10 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "cnt_system_static::@e93fa933c5deb7b1f811"
+			"id" : "cnt_system_exe::@e93fa933c5deb7b1f811"
 		},
 		{
-			"id" : "cnt_system_exe::@e93fa933c5deb7b1f811"
+			"id" : "cnt_system_static::@e93fa933c5deb7b1f811"
 		},
 		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"

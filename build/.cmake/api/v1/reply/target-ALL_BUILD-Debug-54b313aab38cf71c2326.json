@@ -17,6 +17,9 @@
 	"dependencies" : 
 	[
 		{
+			"id" : "whs_static::@29241ccd17be0d8800c3"
+		},
+		{
 			"id" : "whs_exe::@29241ccd17be0d8800c3"
 		},
 		{
@@ -24,9 +27,6 @@
 		},
 		{
 			"id" : "keyence_exe::@d56f54cee86ba1d4e084"
-		},
-		{
-			"id" : "whs_static::@29241ccd17be0d8800c3"
 		},
 		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
