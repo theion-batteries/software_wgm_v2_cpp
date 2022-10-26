@@ -1,3 +1,0 @@
-C:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\run-tests.dir/objects.a
-C:\Qt\Tools\mingw1120_64\bin\ar.exe qc CMakeFiles\run-tests.dir/objects.a @CMakeFiles\run-tests.dir\objects1.rsp
-C:\Qt\Tools\mingw1120_64\bin\g++.exe -O3 -DNDEBUG -Wl,--whole-archive CMakeFiles\run-tests.dir/objects.a -Wl,--no-whole-archive -o run-tests.exe -Wl,--out-implib,run-tests.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\run-tests.dir\linklibs.rsp

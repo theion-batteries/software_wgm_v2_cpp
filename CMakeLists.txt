@@ -18,28 +18,13 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 if (MSVC)
     set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 endif()
+
 # add dependencies cmake
-add_subdirectory(${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller )
-add_subdirectory(${PROJECT_SOURCE_DIR}/dependencies/soft_cnt_system_submodule_cpp)
+add_subdirectory(dependencies/soft_wafer_holder_system_controller)
+add_subdirectory(dependencies/soft_cnt_system_submodule_cpp)
 
+###################### Build Library ############################
 
-# parent deps headers
-include_directories(${PROJECT_SOURCE_DIR}/includes/)
-# wafer holder motion system header tree
-include_directories(${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/includes/)
-## wafer holder motion system headers sub-tree
-include_directories(${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/include)
-# cnt system header tree
-include_directories(${PROJECT_SOURCE_DIR}/dependencies/soft_cnt_system_submodule_cpp/includes/)
-
-## common dependencies headers 
-include_directories(${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/includes)
-include_directories(${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/include/)
-
-# source *.cpp
-file(GLOB exe_SRCS
-    "${PROJECT_SOURCE_DIR}/src/*.cpp"
-    )
 # lib src
 file(GLOB lib_SRCS
 "${PROJECT_SOURCE_DIR}/src/wgm_communication.cpp"
@@ -56,53 +41,51 @@ file(GLOB lib_SRCS
 # add .exe
 add_library(wgm_static STATIC ${lib_SRCS})
 
-# add .exe
-add_executable(wgm_app_exe ${exe_SRCS})
-
-## child static and dynamic linking
 # link againt static lib
-target_link_libraries(wgm_app_exe 
+target_link_libraries(wgm_static
 # wafer holder system static
-${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/Debug/whs_static.lib
-# wrapper keyence static 
-${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Debug/keyence_lib_static.lib
-# keyence sdk static
-${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/Libx64/LKIF2.lib
+PUBLIC whs_static
 # cnt lib
-${PROJECT_SOURCE_DIR}/build/dependencies/soft_cnt_system_submodule_cpp/Debug/cnt_system_static.lib
-
-
-
-
-# common dependencies::
-# sockpp static
-${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/Debug/sockpp-static.lib
-# yaml-cpp static
-${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/Debug/libyaml-cppmdd.lib
+PUBLIC cnt_system_static
 )
 
-## child static and dynamic linking
-# link againt static lib
-target_link_libraries(wgm_static 
-# wafer holder system static
-${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/Debug/whs_static.lib
-# wrapper keyence static 
-${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Debug/keyence_lib_static.lib
-# keyence sdk static
-${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/Libx64/LKIF2.lib
-# cnt lib
-${PROJECT_SOURCE_DIR}/build/dependencies/soft_cnt_system_submodule_cpp/Debug/cnt_system_static.lib
-
-
-
-
-
-
-
-# common dependencies::
-# sockpp static
-${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/Debug/sockpp-static.lib
-# yaml-cpp static
-${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/Debug/libyaml-cppmdd.lib
+target_include_directories(wgm_static 
+# parent deps headers
+PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes
+# wafer holder motion system header tree
+PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/includes
+# cnt system header tree
+PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_cnt_system_submodule_cpp/includes
 )
+
+############################# build executable  ###################################
+
+## source *.cpp
+#file(GLOB exe_SRCS
+#    "${PROJECT_SOURCE_DIR}/src/*.cpp"
+#    )
+## add .exe
+#add_executable(wgm_app_exe ${exe_SRCS})
+#
+### child static and dynamic linking
+## link againt static lib
+#target_link_libraries(wgm_app_exe 
+## wafer holder system static
+#PUBLIC ${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/Debug/whs_static.lib
+## wrapper keyence static 
+#PUBLIC ${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Debug/keyence_lib_static.lib
+## keyence sdk static
+#PUBLIC ${PROJECT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/dependencies/lib_keyence_sdk/Samples/VC_Src/Libx64/LKIF2.lib
+## cnt lib
+#PUBLIC ${PROJECT_SOURCE_DIR}/build/dependencies/soft_cnt_system_submodule_cpp/Debug/cnt_system_static.lib
+## common dependencies::
+## sockpp static
+#PUBLIC ${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/dependencies/sockpp/Debug/sockpp-static.lib
+## yaml-cpp static
+#PUBLIC ${PROJECT_SOURCE_DIR}/build/dependencies/soft_wafer_holder_system_controller/dependencies/yaml-cpp/Debug/libyaml-cppmdd.lib
+#)
+#
+#
+#
+#
 
