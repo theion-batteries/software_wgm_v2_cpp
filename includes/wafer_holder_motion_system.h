@@ -103,7 +103,6 @@ namespace wafer_holder_motion_system
         //Idelta_motion* delta_mover;
         //Idistance_sensor* dist_sensor;
         std::shared_ptr<whs_controller> wafer_sys_control_shared_ptr;// = std::make_shared<whs_controller>();
-        YAML::Node config = YAML::LoadFile("C:/Users/SamiDhiab/Theion_Repos/soft_wgm_user_interface_qt_cpp/dependencies/software_wgm_v2_cpp/config/config.yaml");
         double distance_to_surface_contact; // distance where wafer holder extact with ML surface
         double distance_to_slow_down = 30; //30mm=3cm: distance from where the speed of delta motion slow down
     };
