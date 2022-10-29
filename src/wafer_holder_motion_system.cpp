@@ -74,13 +74,15 @@ wafer_holder_motion_system::Iwafer_motion_controller:: ~Iwafer_motion_controller
 
 wafer_holder_motion_system::wafer_motion_controller::wafer_motion_controller() {
   wafer_sys_control_shared_ptr = std::make_shared<whs_controller>();
-  wafer_sys_control_shared_ptr->run_delta_subprocess();
 
 }
 wafer_holder_motion_system::wafer_motion_controller:: ~wafer_motion_controller()
 {
 }
-
+void wafer_holder_motion_system::wafer_motion_controller::execute_delta_sub()
+{
+  wafer_sys_control_shared_ptr->run_delta_subprocess();
+}
 void wafer_holder_motion_system::wafer_motion_controller::move_down()
 {
 

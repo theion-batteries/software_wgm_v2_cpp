@@ -83,6 +83,8 @@ namespace wafer_holder_motion_system
         virtual enum_sys_feedback insert_wafer_in_ml() = 0;
         virtual void extract_wafer_from_ml() = 0;
         virtual void set_distance_to_surface_contact(double distance) = 0;
+        virtual void execute_delta_sub()=0;
+
     };
     // implementation
     class wafer_motion_controller :public Iwafer_motion_controller
@@ -98,6 +100,7 @@ namespace wafer_holder_motion_system
         virtual enum_sys_feedback insert_wafer_in_ml();
         virtual void extract_wafer_from_ml();
         virtual void set_distance_to_surface_contact(double distance);
+        virtual void execute_delta_sub();
 
     private:
         //Idelta_motion* delta_mover;
