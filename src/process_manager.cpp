@@ -106,7 +106,7 @@ void wgm_processes::sinking_process::start_process()
   // feedback
   if (sinking_feedback == enum_sys_feedback::sys_error)
   {
-    process_timer->stop_monitoring();
+    stop_process();
     process_feedback.setFeedback(wgm_feedbacks::enum_proc_feedback::proc_error);
   }
   else if (sinking_feedback == enum_sys_feedback::sys_success)
@@ -121,11 +121,18 @@ void wgm_processes::sinking_process::stop_process()
 {
   std::cout << "finish " << process_name << std::endl;
   process_dist_monitor->stop_monitoring();
+  process_timer->stop_monitoring();
 }
 wafer_holder_motion_system::Iwafer_motion_controller* wgm_processes::sinking_process::get_sys_obj()
 {
   return sinking_sys;
 }
+
+ long wgm_processes::sinking_process::get_elapsed_time()
+ {
+    return process_timer->get_elapsed_time();
+ }
+
 
 /****************** interface cnt alignment process*******************/
 wgm_processes::Ialigning_process::Ialigning_process()

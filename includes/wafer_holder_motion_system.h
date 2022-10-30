@@ -14,7 +14,6 @@
 #include <whs_controller.h>
 #include <yaml-cpp/yaml.h>
 #include <memory>
-#define _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING
 
 enum class enum_sys_feedback
 {

@@ -40,13 +40,19 @@ void wgm_monitoring::time_monitor::start_monitoring()
 }
 void wgm_monitoring::time_monitor::stop_monitoring()
 {
+
   end = std::chrono::steady_clock::now();
-  std::cout
-    << "process ended: took "
-    << std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() << " microseconds "
-    << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << " milliseconds " // almost equivalent form of the above, but
-    << std::chrono::duration_cast<std::chrono::seconds>(end - start).count() << " seconds.\n";  // using milliseconds and seconds accordingly
+  elapsed_time=std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
+  std::cout << "process time ended: took "
+    //<< std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() << " microseconds "
+    //<< std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << " milliseconds " // almost equivalent form of the above, but
+    << elapsed_time<< " seconds"<<std::endl;  // using milliseconds and seconds accordingly
 }
+
+ long wgm_monitoring::time_monitor::get_elapsed_time()
+ {
+  return elapsed_time;
+ }
 wgm_monitoring::Idistance_monitor::Idistance_monitor()
 {
   std::cout << "creating distance monitor " << std::endl;
