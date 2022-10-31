@@ -83,6 +83,10 @@ void wafer_holder_motion_system::wafer_motion_controller::execute_delta_sub()
 {
   wafer_sys_control_shared_ptr->run_delta_subprocess();
 }
+void wafer_holder_motion_system::wafer_motion_controller::connect_keyence()
+{
+  wafer_sys_control_shared_ptr->keyence_client_connect();
+}
 void wafer_holder_motion_system::wafer_motion_controller::move_down()
 {
 
@@ -146,3 +150,17 @@ void wafer_holder_motion_system::wafer_motion_controller::set_distance_to_surfac
 {
   distance_to_surface_contact = distance;
 }
+
+
+ bool wafer_holder_motion_system::wafer_motion_controller::getSubSysStatus(std::string Subsystem)
+ {
+    if(Subsystem == "delta") return wafer_sys_control_shared_ptr->get_delta_status();
+    if(Subsystem == "keyence") return wafer_sys_control_shared_ptr->get_keyence_status();
+    if(Subsystem == "controller") return wafer_sys_control_shared_ptr->get_whs_controller_status();
+    
+ }
+
+ std::shared_ptr<whs_controller> wafer_holder_motion_system::wafer_motion_controller::getSubSysController()
+ {
+    return wafer_sys_control_shared_ptr;
+ }

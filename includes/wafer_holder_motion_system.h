@@ -83,6 +83,10 @@ namespace wafer_holder_motion_system
         virtual void extract_wafer_from_ml() = 0;
         virtual void set_distance_to_surface_contact(double distance) = 0;
         virtual void execute_delta_sub()=0;
+        virtual void connect_keyence()=0;
+        virtual std::shared_ptr<whs_controller> getSubSysController()=0;
+        virtual bool getSubSysStatus(std::string Subsystem)=0;
+        
 
     };
     // implementation
@@ -100,6 +104,9 @@ namespace wafer_holder_motion_system
         virtual void extract_wafer_from_ml();
         virtual void set_distance_to_surface_contact(double distance);
         virtual void execute_delta_sub();
+        virtual void connect_keyence();
+        virtual bool getSubSysStatus(std::string Subsystem);
+        virtual std::shared_ptr<whs_controller> getSubSysController();
 
     private:
         //Idelta_motion* delta_mover;
