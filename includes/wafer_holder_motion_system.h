@@ -14,12 +14,13 @@
 #include <whs_controller.h>
 #include <yaml-cpp/yaml.h>
 #include <memory>
-
-enum class enum_sys_feedback
+#include "feedback_management.h"
+/*
+enum class wgm_feedbacks::enum_sys_feedback
 {
     sys_success = 2,
     sys_error = -1
-};
+};*/
 namespace wafer_holder_motion_system
 {
  
@@ -105,11 +106,10 @@ namespace wafer_holder_motion_system
         virtual void calibrate() = 0;
         virtual void move_up() = 0;
         virtual double get_current_value(uint16_t sensor_head) = 0;
-        virtual enum_sys_feedback insert_wafer_in_ml() = 0;
+        virtual wgm_feedbacks::enum_sys_feedback insert_wafer_in_ml() = 0;
         virtual void extract_wafer_from_ml() = 0;
         virtual void set_distance_to_surface_contact(double distance) = 0;
-        virtual void execute_delta_sub()=0;
-        virtual void connect_keyence()=0;
+        virtual void connect_sensor()=0;
         virtual std::shared_ptr<whs_controller> getSubSysController()=0;
         virtual bool getSubSysStatus(std::string Subsystem)=0;
         
@@ -126,11 +126,10 @@ namespace wafer_holder_motion_system
         virtual void calibrate();
         virtual void move_up();
         virtual double get_current_value(uint16_t sensor_head);
-        virtual enum_sys_feedback insert_wafer_in_ml();
+        virtual wgm_feedbacks::enum_sys_feedback insert_wafer_in_ml();
         virtual void extract_wafer_from_ml();
         virtual void set_distance_to_surface_contact(double distance);
-        virtual void execute_delta_sub();
-        virtual void connect_keyence();
+        virtual void connect_sensor();
         virtual bool getSubSysStatus(std::string Subsystem);
         virtual std::shared_ptr<whs_controller> getSubSysController();
 

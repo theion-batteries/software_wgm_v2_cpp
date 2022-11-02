@@ -52,14 +52,14 @@ void wgm_processes::heating_process::start_process()
   // start system
   heating_sys->turn_on_heating();
   // report feedback
-  auto heating_feedback = enum_sys_feedback::sys_error;
+  auto heating_feedback = wgm_feedbacks::enum_sys_feedback::sys_error;
   // feedback
-  if (heating_feedback == enum_sys_feedback::sys_error)
+  if (heating_feedback == wgm_feedbacks::enum_sys_feedback::sys_error)
   {
     process_timer->stop_monitoring();
     process_feedback.setFeedback(wgm_feedbacks::enum_proc_feedback::proc_error);
   }
-  else if (heating_feedback == enum_sys_feedback::sys_success)
+  else if (heating_feedback == wgm_feedbacks::enum_sys_feedback::sys_success)
   {
     process_feedback.setFeedback(wgm_feedbacks::enum_proc_feedback::proc_success);
   process_temp_monitor->start_monitoring();
@@ -102,14 +102,14 @@ void wgm_processes::sinking_process::start_process()
   std::cout << "execute " << process_name << std::endl;
   process_timer->start_monitoring();
   auto sinking_feedback = sinking_sys->insert_wafer_in_ml();
-  //auto sinking_feedback = enum_sys_feedback::sys_error;
+  //auto sinking_feedback = wgm_feedbacks::enum_sys_feedback::sys_error;
   // feedback
-  if (sinking_feedback == enum_sys_feedback::sys_error)
+  if (sinking_feedback == wgm_feedbacks::enum_sys_feedback::sys_error)
   {
     stop_process();
     process_feedback.setFeedback(wgm_feedbacks::enum_proc_feedback::proc_error);
   }
-  else if (sinking_feedback == enum_sys_feedback::sys_success)
+  else if (sinking_feedback == wgm_feedbacks::enum_sys_feedback::sys_success)
   {
     process_feedback.setFeedback(wgm_feedbacks::enum_proc_feedback::proc_success);
     process_dist_monitor->start_monitoring();
@@ -123,7 +123,7 @@ void wgm_processes::sinking_process::stop_process()
   process_dist_monitor->stop_monitoring();
   process_timer->stop_monitoring();
 }
-wafer_holder_motion_system::Iwafer_motion_controller* wgm_processes::sinking_process::get_sys_obj()
+wafer_holder_motion_system::Iwafer_motion_controller* wgm_processes::sinking_process::get_sys_ptr()
 {
   return sinking_sys;
 }
@@ -279,7 +279,7 @@ wgm_processes::process_management::process_management() {
   std::cout << "added cooling process to process scheduler" << std::endl;
 
   /***** add insertion process ***/
-  Iextracting_process* extraction_proc = new extracting_process(insertion_proc->get_sys_obj());
+  Iextracting_process* extraction_proc = new extracting_process(insertion_proc->get_sys_ptr());
   processesvector.push_back(extraction_proc);
   std::cout << "added wafer extracting process to process scheduler" << std::endl;
 }

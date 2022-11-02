@@ -89,7 +89,7 @@ namespace wgm_processes
         virtual void stop_process() = 0;
         virtual std::string get_name() = 0;
         virtual bool is_proc_success() = 0;
-        virtual wafer_holder_motion_system::Iwafer_motion_controller* get_sys_obj() = 0;
+        virtual wafer_holder_motion_system::Iwafer_motion_controller* get_sys_ptr() = 0;
         virtual long get_elapsed_time()=0;
     };
     /**************** implementation wafer insertion process ************/
@@ -109,7 +109,7 @@ namespace wgm_processes
         virtual void stop_process();
         virtual std::string get_name();
         virtual bool is_proc_success(); 
-        virtual wafer_holder_motion_system::Iwafer_motion_controller* get_sys_obj();
+        virtual wafer_holder_motion_system::Iwafer_motion_controller* get_sys_ptr();
         virtual long get_elapsed_time();
     };
  

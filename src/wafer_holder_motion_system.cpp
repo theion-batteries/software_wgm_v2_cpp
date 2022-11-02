@@ -96,7 +96,7 @@ wafer_holder_motion_system::distance_sensor::distance_sensor(std::shared_ptr<whs
 double wafer_holder_motion_system::distance_sensor::read_values()
 {
   std::cout << "reading value distance sensor" << std::endl;
-  return wafer_dist_shared_ptr->keyence_client_get_value_output0(); //ready
+  return wafer_dist_shared_ptr->get_sensor_values(); //ready
 }
 
 wafer_holder_motion_system::Iwafer_motion_controller::Iwafer_motion_controller()
@@ -120,13 +120,10 @@ wafer_holder_motion_system::wafer_motion_controller:: ~wafer_motion_controller()
   delete axis_mover;
   delete dist_sensor;
 }
-void wafer_holder_motion_system::wafer_motion_controller::execute_delta_sub()
+
+void wafer_holder_motion_system::wafer_motion_controller::connect_sensor()
 {
-  wafer_sys_control_shared_ptr->run_delta_subprocess();
-}
-void wafer_holder_motion_system::wafer_motion_controller::connect_keyence()
-{
-  wafer_sys_control_shared_ptr->keyence_client_connect();
+  wafer_sys_control_shared_ptr->get_dist_ptr()->connect();
 }
 void wafer_holder_motion_system::wafer_motion_controller::move_down()
 {
@@ -138,50 +135,38 @@ void wafer_holder_motion_system::wafer_motion_controller::calibrate()
 }
 void wafer_holder_motion_system::wafer_motion_controller::move_up()
 {
-  wafer_sys_control_shared_ptr->move_delta_home();
+  wafer_sys_control_shared_ptr->get_axis_ptr()->move_home();
 }
 double wafer_holder_motion_system::wafer_motion_controller::get_current_value(uint16_t sensor_head)
 {
-  switch (sensor_head)
-  {
-  case 0:
-    return wafer_sys_control_shared_ptr->keyence_client_get_value_output0();
-    break;
-  case 1:
-    return wafer_sys_control_shared_ptr->keyence_client_get_value_output1();
-    break;
-  case 2:
-    return wafer_sys_control_shared_ptr->keyence_client_get_value_output2();
-    break;
-  default:
-    break;
-  }
+  return      wafer_sys_control_shared_ptr->get_dist_ptr()->getMesuredValue();
 }
-enum_sys_feedback wafer_holder_motion_system::wafer_motion_controller::insert_wafer_in_ml()
+wgm_feedbacks::enum_sys_feedback wafer_holder_motion_system::wafer_motion_controller::insert_wafer_in_ml()
 {
   std::cout << "start sinking" << std::endl;
-  enum_sub_sys_feedback delta_sub_feedback = wafer_sys_control_shared_ptr->connect_to_delta_server(); // ready
+  enum_sub_sys_feedback delta_sub_feedback = wafer_sys_control_shared_ptr->get_axis_ptr()->connect(); // ready
   if (delta_sub_feedback == enum_sub_sys_feedback::sub_error)
   {
-    enum_sys_feedback whms_feedback = enum_sys_feedback::sys_error;
+    wgm_feedbacks::enum_sys_feedback whms_feedback = wgm_feedbacks::enum_sys_feedback::sys_error;
     std::cout << "error wafer holder motion system due to delta sub system connection error" << std::endl;
     std::cout << "aborting process" << std::endl;
     return whms_feedback;
   }
-  enum_sub_sys_feedback Keyence_sub_feedback = wafer_sys_control_shared_ptr->keyence_client_connect();
+  enum_sub_sys_feedback Keyence_sub_feedback = wafer_sys_control_shared_ptr->get_dist_ptr()->connect();
   if (Keyence_sub_feedback == enum_sub_sys_feedback::sub_error)
   {
-    enum_sys_feedback whms_feedback = enum_sys_feedback::sys_error;
+    wgm_feedbacks::enum_sys_feedback whms_feedback = wgm_feedbacks::enum_sys_feedback::sys_error;
     std::cout << "error wafer holder motion system due to keyence sub system connection error" << std::endl;
     std::cout << "aborting process" << std::endl;
     return whms_feedback;
   }
-  wafer_sys_control_shared_ptr->move_delta_home();
+  wafer_sys_control_shared_ptr->get_axis_ptr()->move_home();
   wafer_sys_control_shared_ptr->move_down_until_data_availble();
   wafer_sys_control_shared_ptr->move_down_to_surface();
   wafer_sys_control_shared_ptr->deep_wafer_holder_desired_thickness();
-
-}
+  return wgm_feedbacks::enum_sys_feedback::sys_success;
+  
+  }
 void wafer_holder_motion_system::wafer_motion_controller::extract_wafer_from_ml()
 {
   std::cout << "extracting wafer" << std::endl;
@@ -195,10 +180,9 @@ void wafer_holder_motion_system::wafer_motion_controller::set_distance_to_surfac
 
 bool wafer_holder_motion_system::wafer_motion_controller::getSubSysStatus(std::string Subsystem)
 {
-  if (Subsystem == "delta") return wafer_sys_control_shared_ptr->get_delta_status();
-  if (Subsystem == "keyence") return wafer_sys_control_shared_ptr->get_keyence_status();
-  if (Subsystem == "controller") return wafer_sys_control_shared_ptr->get_whs_controller_status();
-
+  if (Subsystem == "axis_motion") return wafer_sys_control_shared_ptr->get_axis_ptr()->getStatus();
+  else if (Subsystem == "distance_sensor") return wafer_sys_control_shared_ptr->get_dist_ptr()->getStatus();
+  else if (Subsystem == "controller") return wafer_sys_control_shared_ptr->get_whs_controller_status();
 }
 
 std::shared_ptr<whs_controller> wafer_holder_motion_system::wafer_motion_controller::getSubSysController()

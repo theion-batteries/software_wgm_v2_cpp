@@ -68,7 +68,7 @@ namespace wgm_monitoring
   protected:
     std::chrono::time_point<std::chrono::steady_clock> start;
     std::chrono::time_point<std::chrono::steady_clock> end;
-    long elapsed_time = 0;
+    double elapsed_time = 0;
   protected:
     virtual void start_monitoring();
     virtual void stop_monitoring();
