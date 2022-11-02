@@ -11,6 +11,7 @@
 
 #include "wafer_holder_motion_system.h"
 
+
  // idelta
 wafer_holder_motion_system::Idelta_motion::Idelta_motion()
 {
@@ -41,10 +42,45 @@ void wafer_holder_motion_system::delta_motion::move(int direction)
 
   else std::cout << "direction unkown" << std::endl;
 }
+
+// axis motion
+
+ // Iaxis
+wafer_holder_motion_system::Iaxis_motion::Iaxis_motion()
+{
+  std::cout << "creating system Iaxis motion" << std::endl;
+}
+
+wafer_holder_motion_system::Iaxis_motion:: ~Iaxis_motion()
+{
+  std::cout << "deleting Iaxis motion" << std::endl;
+}
+// axis
+
+wafer_holder_motion_system::axis_motion::axis_motion(std::shared_ptr<whs_controller> shared_controller)
+{
+  // axis
+  wafer_motion_shared_ptr = shared_controller; //pass shared pointer
+}
+
+
+void wafer_holder_motion_system::axis_motion::move(int direction)
+{
+  if (direction == 1) // up
+    std::cout << "move axis up" << std::endl;
+
+
+  else if (direction == 0) //down
+    std::cout << "move axis down" << std::endl;
+
+  else std::cout << "direction unkown" << std::endl;
+}
+
+
 // idistance
 wafer_holder_motion_system::Idistance_sensor::Idistance_sensor()
 {
-  std::cout << "creating Idistance sensor" << std::endl;
+  std::cout << "creating system Idistance sensor" << std::endl;
 }
 wafer_holder_motion_system::Idistance_sensor:: ~Idistance_sensor()
 {
@@ -65,19 +101,24 @@ double wafer_holder_motion_system::distance_sensor::read_values()
 
 wafer_holder_motion_system::Iwafer_motion_controller::Iwafer_motion_controller()
 {
-  std::cout << "creating wafer Imotion Interface " << std::endl;
+  std::cout << "creating system wafer Imotion Interface " << std::endl;
 }
 wafer_holder_motion_system::Iwafer_motion_controller:: ~Iwafer_motion_controller()
 {
   std::cout << "deleting wafer Imotion Interface" << std::endl;
+
 }
 
 wafer_holder_motion_system::wafer_motion_controller::wafer_motion_controller() {
   wafer_sys_control_shared_ptr = std::make_shared<whs_controller>();
+  axis_mover = new axis_motion(wafer_sys_control_shared_ptr);
+  dist_sensor = new distance_sensor(wafer_sys_control_shared_ptr);
 
 }
 wafer_holder_motion_system::wafer_motion_controller:: ~wafer_motion_controller()
 {
+  delete axis_mover;
+  delete dist_sensor;
 }
 void wafer_holder_motion_system::wafer_motion_controller::execute_delta_sub()
 {
@@ -152,15 +193,15 @@ void wafer_holder_motion_system::wafer_motion_controller::set_distance_to_surfac
 }
 
 
- bool wafer_holder_motion_system::wafer_motion_controller::getSubSysStatus(std::string Subsystem)
- {
-    if(Subsystem == "delta") return wafer_sys_control_shared_ptr->get_delta_status();
-    if(Subsystem == "keyence") return wafer_sys_control_shared_ptr->get_keyence_status();
-    if(Subsystem == "controller") return wafer_sys_control_shared_ptr->get_whs_controller_status();
-    
- }
+bool wafer_holder_motion_system::wafer_motion_controller::getSubSysStatus(std::string Subsystem)
+{
+  if (Subsystem == "delta") return wafer_sys_control_shared_ptr->get_delta_status();
+  if (Subsystem == "keyence") return wafer_sys_control_shared_ptr->get_keyence_status();
+  if (Subsystem == "controller") return wafer_sys_control_shared_ptr->get_whs_controller_status();
 
- std::shared_ptr<whs_controller> wafer_holder_motion_system::wafer_motion_controller::getSubSysController()
- {
-    return wafer_sys_control_shared_ptr;
- }
+}
+
+std::shared_ptr<whs_controller> wafer_holder_motion_system::wafer_motion_controller::getSubSysController()
+{
+  return wafer_sys_control_shared_ptr;
+}

@@ -22,6 +22,7 @@ enum class enum_sys_feedback
 };
 namespace wafer_holder_motion_system
 {
+ 
     /****** delta motion ******/
     // interface
     class Idelta_motion
@@ -44,6 +45,31 @@ namespace wafer_holder_motion_system
         virtual void move(int direction);
     private:
         std::shared_ptr<whs_controller>   wafer_delta_shared_ptr;
+
+    };
+
+// axis motion
+
+    class Iaxis_motion
+    {
+    public:
+        virtual void move(int direction) = 0;
+
+        Iaxis_motion();
+
+        virtual ~Iaxis_motion();
+    };
+    // implementation
+    class axis_motion :public Iaxis_motion
+    {
+    public:
+        explicit axis_motion(std::shared_ptr<whs_controller> shared_controller);
+
+    protected:
+
+        virtual void move(int direction);
+    private:
+        std::shared_ptr<whs_controller>   wafer_motion_shared_ptr;
 
     };
 
@@ -109,8 +135,8 @@ namespace wafer_holder_motion_system
         virtual std::shared_ptr<whs_controller> getSubSysController();
 
     private:
-        //Idelta_motion* delta_mover;
-        //Idistance_sensor* dist_sensor;
+        Iaxis_motion* axis_mover;
+        Idistance_sensor* dist_sensor;
         std::shared_ptr<whs_controller> wafer_sys_control_shared_ptr;// = std::make_shared<whs_controller>();
         double distance_to_surface_contact; // distance where wafer holder extact with ML surface
         double distance_to_slow_down = 30; //30mm=3cm: distance from where the speed of delta motion slow down
