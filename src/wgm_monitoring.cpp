@@ -49,7 +49,7 @@ void wgm_monitoring::time_monitor::stop_monitoring()
     << elapsed_time<< " seconds"<<std::endl;  // using milliseconds and seconds accordingly
 }
 
- long wgm_monitoring::time_monitor::get_elapsed_time()
+ double wgm_monitoring::time_monitor::get_elapsed_time()
  {
   return elapsed_time;
  }

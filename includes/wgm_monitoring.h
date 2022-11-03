@@ -53,7 +53,7 @@ namespace wgm_monitoring
     virtual ~Itime_monitor();
     virtual void start_monitoring() = 0;
     virtual void stop_monitoring() = 0;
-    virtual long get_elapsed_time() =0;
+    virtual double get_elapsed_time() =0;
   };
   /************* implementation time monitor************/
   class time_monitor : public Itime_monitor
@@ -72,7 +72,7 @@ namespace wgm_monitoring
   protected:
     virtual void start_monitoring();
     virtual void stop_monitoring();
-virtual long get_elapsed_time();
+virtual double get_elapsed_time();
   };
 
   /****************** interface distance monitor *****************/
