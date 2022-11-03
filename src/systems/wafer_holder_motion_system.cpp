@@ -110,16 +110,16 @@ double wafer_holder_motion_system::wafer_motion_controller::get_current_value(ui
 wgm_feedbacks::enum_sys_feedback wafer_holder_motion_system::wafer_motion_controller::insert_wafer_in_ml()
 {
   std::cout << "start sinking" << std::endl;
-  enum_sub_sys_feedback delta_sub_feedback = wafer_sys_control_shared_ptr->get_axis_ptr()->connect(); 
-  if (delta_sub_feedback == enum_sub_sys_feedback::sub_error)
+  wgm_feedbacks::enum_sub_sys_feedback delta_sub_feedback = wafer_sys_control_shared_ptr->get_axis_ptr()->connect(); 
+  if (delta_sub_feedback == wgm_feedbacks::enum_sub_sys_feedback::sub_error)
   {
     wgm_feedbacks::enum_sys_feedback whms_feedback = wgm_feedbacks::enum_sys_feedback::sys_error;
     std::cout << "error wafer holder motion system due to axis motion sub system connection error" << std::endl;
     std::cout << "aborting process" << std::endl;
     return whms_feedback;
   }
-  enum_sub_sys_feedback Keyence_sub_feedback = wafer_sys_control_shared_ptr->get_dist_ptr()->connect();
-  if (Keyence_sub_feedback == enum_sub_sys_feedback::sub_error)
+  wgm_feedbacks::enum_sub_sys_feedback Keyence_sub_feedback = wafer_sys_control_shared_ptr->get_dist_ptr()->connect();
+  if (Keyence_sub_feedback == wgm_feedbacks::enum_sub_sys_feedback::sub_error)
   {
     wgm_feedbacks::enum_sys_feedback whms_feedback = wgm_feedbacks::enum_sys_feedback::sys_error;
     std::cout << "error wafer holder motion system due to sensor distance sub system connection error" << std::endl;
