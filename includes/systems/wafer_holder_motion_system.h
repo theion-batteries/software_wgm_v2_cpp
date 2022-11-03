@@ -14,13 +14,7 @@
 #include <whs_controller.h>
 #include <yaml-cpp/yaml.h>
 #include <memory>
-#include "feedback_management.h"
- /*
- enum class wgm_feedbacks::enum_sys_feedback
- {
-     sys_success = 2,
-     sys_error = -1
- };*/
+#include "system_feedback.h"
 namespace wafer_holder_motion_system
 {
     // axis motion

@@ -33,7 +33,6 @@ file(GLOB lib_SRCS
 "${PROJECT_SOURCE_DIR}/src/wgm_monitoring.cpp"
 "${PROJECT_SOURCE_DIR}/src/wgm_test.cpp"
 "${PROJECT_SOURCE_DIR}/src/wgm_user.cpp"
-"${PROJECT_SOURCE_DIR}/src/feedback_management.cpp"
 "${PROJECT_SOURCE_DIR}/src/processes/*.cpp"
 "${PROJECT_SOURCE_DIR}/src/systems/*.cpp"
 

@@ -11,6 +11,7 @@
 #pragma once
 
 #include <iostream>
+#include "system_feedback.h"
 
 namespace wafer_cooling_system
 {

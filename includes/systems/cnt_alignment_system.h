@@ -12,7 +12,7 @@
 #pragma once
 #include <iostream>
 #include <cnt_controller.h>
-#define _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS
+#include "system_feedback.h"
 
 namespace cnt_alignment_system
 {

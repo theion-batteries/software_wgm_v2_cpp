@@ -13,7 +13,7 @@
 
 #include <vector>
 #include "wgm_monitoring.h"
-#include "feedback_management.h"
+#include "process_feedback.h"
 
 
 namespace wgm_processes
