@@ -11,38 +11,6 @@
 
 #include "wafer_holder_motion_system.h"
 
-
- // idelta
-wafer_holder_motion_system::Idelta_motion::Idelta_motion()
-{
-  std::cout << "creating Idelta motion" << std::endl;
-}
-
-wafer_holder_motion_system::Idelta_motion:: ~Idelta_motion()
-{
-  std::cout << "deleting Idelta motion" << std::endl;
-}
-// delta
-
-wafer_holder_motion_system::delta_motion::delta_motion(std::shared_ptr<whs_controller> shared_controller)
-{
-  // delta
-  wafer_delta_shared_ptr = shared_controller; //pass shared pointer
-}
-
-
-void wafer_holder_motion_system::delta_motion::move(int direction)
-{
-  if (direction == 1) // up
-    std::cout << "move delta up" << std::endl;
-
-
-  else if (direction == 0) //down
-    std::cout << "move delta down" << std::endl;
-
-  else std::cout << "direction unkown" << std::endl;
-}
-
 // axis motion
 
  // Iaxis
@@ -111,14 +79,12 @@ wafer_holder_motion_system::Iwafer_motion_controller:: ~Iwafer_motion_controller
 
 wafer_holder_motion_system::wafer_motion_controller::wafer_motion_controller() {
   wafer_sys_control_shared_ptr = std::make_shared<whs_controller>();
-  axis_mover = new axis_motion(wafer_sys_control_shared_ptr);
-  dist_sensor = new distance_sensor(wafer_sys_control_shared_ptr);
+  axis_mover = std::make_unique< axis_motion>(wafer_sys_control_shared_ptr);
+  dist_sensor = std::make_unique< distance_sensor>(wafer_sys_control_shared_ptr);
 
 }
 wafer_holder_motion_system::wafer_motion_controller:: ~wafer_motion_controller()
 {
-  delete axis_mover;
-  delete dist_sensor;
 }
 
 void wafer_holder_motion_system::wafer_motion_controller::connect_sensor()

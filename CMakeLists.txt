@@ -33,12 +33,10 @@ file(GLOB lib_SRCS
 "${PROJECT_SOURCE_DIR}/src/wgm_monitoring.cpp"
 "${PROJECT_SOURCE_DIR}/src/wgm_test.cpp"
 "${PROJECT_SOURCE_DIR}/src/wgm_user.cpp"
-"${PROJECT_SOURCE_DIR}/src/wafer_cooling_system.cpp"
-"${PROJECT_SOURCE_DIR}/src/wafer_holder_motion_system.cpp"
-"${PROJECT_SOURCE_DIR}/src/heating_system.cpp"
-"${PROJECT_SOURCE_DIR}/src/cnt_alignment_system.cpp"
 "${PROJECT_SOURCE_DIR}/src/feedback_management.cpp"
-"${PROJECT_SOURCE_DIR}/src/process_manager.cpp"
+"${PROJECT_SOURCE_DIR}/src/processes/*.cpp"
+"${PROJECT_SOURCE_DIR}/src/systems/*.cpp"
+
 )
 # add .exe
 add_library(wgm_static STATIC ${lib_SRCS})
@@ -53,7 +51,10 @@ PUBLIC cnt_system_static
 
 target_include_directories(wgm_static 
 # parent deps headers
-PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes
+PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/
+PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/processes/
+PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/systems/
+
 # wafer holder motion system header tree
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/includes
 # cnt system header tree
@@ -65,6 +66,8 @@ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_cnt_system_submodule_cpp/in
 # source *.cpp
 file(GLOB exe_SRCS
     "${PROJECT_SOURCE_DIR}/src/*.cpp"
+    "${PROJECT_SOURCE_DIR}/src/processes/*.cpp"
+    "${PROJECT_SOURCE_DIR}/src/systems/*.cpp"
     )
 # add .exe
 add_executable(wgm_app_exe ${exe_SRCS})
@@ -78,7 +81,9 @@ PUBLIC cnt_system_static
 
 target_include_directories(wgm_app_exe 
 # parent deps headers
-PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes
+PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/
+PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/processes/
+PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/systems/
 # wafer holder motion system header tree
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/includes
 # cnt system header tree

@@ -15,41 +15,15 @@
 #include <yaml-cpp/yaml.h>
 #include <memory>
 #include "feedback_management.h"
-/*
-enum class wgm_feedbacks::enum_sys_feedback
-{
-    sys_success = 2,
-    sys_error = -1
-};*/
+ /*
+ enum class wgm_feedbacks::enum_sys_feedback
+ {
+     sys_success = 2,
+     sys_error = -1
+ };*/
 namespace wafer_holder_motion_system
 {
- 
-    /****** delta motion ******/
-    // interface
-    class Idelta_motion
-    {
-    public:
-        virtual void move(int direction) = 0;
-
-        Idelta_motion();
-
-        virtual ~Idelta_motion();
-    };
-    // implementation
-    class delta_motion :public Idelta_motion
-    {
-    public:
-        explicit delta_motion(std::shared_ptr<whs_controller> shared_controller);
-
-    protected:
-
-        virtual void move(int direction);
-    private:
-        std::shared_ptr<whs_controller>   wafer_delta_shared_ptr;
-
-    };
-
-// axis motion
+    // axis motion
 
     class Iaxis_motion
     {
@@ -109,10 +83,10 @@ namespace wafer_holder_motion_system
         virtual wgm_feedbacks::enum_sys_feedback insert_wafer_in_ml() = 0;
         virtual void extract_wafer_from_ml() = 0;
         virtual void set_distance_to_surface_contact(double distance) = 0;
-        virtual void connect_sensor()=0;
-        virtual std::shared_ptr<whs_controller> getSubSysController()=0;
-        virtual bool getSubSysStatus(std::string Subsystem)=0;
-        
+        virtual void connect_sensor() = 0;
+        virtual std::shared_ptr<whs_controller> getSubSysController() = 0;
+        virtual bool getSubSysStatus(std::string Subsystem) = 0;
+
 
     };
     // implementation
@@ -134,8 +108,8 @@ namespace wafer_holder_motion_system
         virtual std::shared_ptr<whs_controller> getSubSysController();
 
     private:
-        Iaxis_motion* axis_mover;
-        Idistance_sensor* dist_sensor;
+        std::unique_ptr< Iaxis_motion> axis_mover;
+        std::unique_ptr<Idistance_sensor> dist_sensor;
         std::shared_ptr<whs_controller> wafer_sys_control_shared_ptr;// = std::make_shared<whs_controller>();
         double distance_to_surface_contact; // distance where wafer holder extact with ML surface
         double distance_to_slow_down = 30; //30mm=3cm: distance from where the speed of delta motion slow down
