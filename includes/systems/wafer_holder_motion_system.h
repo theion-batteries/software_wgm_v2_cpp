@@ -78,6 +78,7 @@ namespace wafer_holder_motion_system
         virtual void extract_wafer_from_ml() = 0;
         virtual void set_distance_to_surface_contact(double distance) = 0;
         virtual void connect_sensor() = 0;
+        virtual void connect_motion_axis() = 0;
         virtual std::shared_ptr<whs_controller> getSubSysController() = 0;
         virtual bool getSubSysStatus(std::string Subsystem) = 0;
 
@@ -98,6 +99,7 @@ namespace wafer_holder_motion_system
         virtual void extract_wafer_from_ml();
         virtual void set_distance_to_surface_contact(double distance);
         virtual void connect_sensor();
+        virtual void connect_motion_axis();
         virtual bool getSubSysStatus(std::string Subsystem);
         virtual std::shared_ptr<whs_controller> getSubSysController();
 

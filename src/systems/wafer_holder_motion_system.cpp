@@ -11,9 +11,9 @@
 
 #include "wafer_holder_motion_system.h"
 
-// axis motion
+ // axis motion
 
- // Iaxis
+  // Iaxis
 wafer_holder_motion_system::Iaxis_motion::Iaxis_motion()
 {
   std::cout << "creating system Iaxis motion" << std::endl;
@@ -91,6 +91,12 @@ void wafer_holder_motion_system::wafer_motion_controller::connect_sensor()
 {
   wafer_sys_control_shared_ptr->get_dist_ptr()->connect();
 }
+
+void wafer_holder_motion_system::wafer_motion_controller::connect_motion_axis()
+{
+  wafer_sys_control_shared_ptr->get_axis_ptr()->connect();
+}
+
 void wafer_holder_motion_system::wafer_motion_controller::move_down()
 {
 
@@ -110,7 +116,7 @@ double wafer_holder_motion_system::wafer_motion_controller::get_current_value(ui
 wgm_feedbacks::enum_sys_feedback wafer_holder_motion_system::wafer_motion_controller::insert_wafer_in_ml()
 {
   std::cout << "start sinking" << std::endl;
-  wgm_feedbacks::enum_sub_sys_feedback delta_sub_feedback = wafer_sys_control_shared_ptr->get_axis_ptr()->connect(); 
+  wgm_feedbacks::enum_sub_sys_feedback delta_sub_feedback = wafer_sys_control_shared_ptr->get_axis_ptr()->connect();
   if (delta_sub_feedback == wgm_feedbacks::enum_sub_sys_feedback::sub_error)
   {
     wgm_feedbacks::enum_sys_feedback whms_feedback = wgm_feedbacks::enum_sys_feedback::sys_error;
@@ -131,8 +137,8 @@ wgm_feedbacks::enum_sys_feedback wafer_holder_motion_system::wafer_motion_contro
   wafer_sys_control_shared_ptr->move_down_to_surface();
   wafer_sys_control_shared_ptr->deep_wafer_holder_desired_thickness();
   return wgm_feedbacks::enum_sys_feedback::sys_success;
-  
-  }
+
+}
 void wafer_holder_motion_system::wafer_motion_controller::extract_wafer_from_ml()
 {
   std::cout << "extracting wafer" << std::endl;
@@ -155,3 +161,4 @@ std::shared_ptr<whs_controller> wafer_holder_motion_system::wafer_motion_control
 {
   return wafer_sys_control_shared_ptr;
 }
+
