@@ -42,7 +42,7 @@ void wgm_processes::sinking_process::start_process()
     process_feedback.setFeedback(wgm_feedbacks::enum_proc_feedback::proc_success);
     process_dist_monitor->start_monitoring();
   }
-  // 
+  process_timer->stop_monitoring();
 
 }
 void wgm_processes::sinking_process::stop_process()

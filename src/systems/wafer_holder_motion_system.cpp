@@ -67,6 +67,13 @@ double wafer_holder_motion_system::distance_sensor::read_values()
   return wafer_dist_shared_ptr->get_sensor_values(); //ready
 }
 
+
+
+/*************************************************************************************************
+ * ***********************************************************************************************
+ * ************************************ wafer motion controller **********************************
+ * ***********************************************************************************************
+ * ***********************************************************************************************/
 wafer_holder_motion_system::Iwafer_motion_controller::Iwafer_motion_controller()
 {
   std::cout << "creating system wafer Imotion Interface " << std::endl;
