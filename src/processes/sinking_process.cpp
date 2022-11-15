@@ -36,6 +36,7 @@ void wgm_processes::sinking_process::start_process()
   {
     stop_process();
     process_feedback.setFeedback(wgm_feedbacks::enum_proc_feedback::proc_error);
+
   }
   else if (sinking_feedback == wgm_feedbacks::enum_sys_feedback::sys_success)
   {
@@ -47,7 +48,7 @@ void wgm_processes::sinking_process::start_process()
 }
 void wgm_processes::sinking_process::stop_process()
 {
-  std::cout << "finish " << process_name << std::endl;
+  std::cout << "stopping " << process_name << std::endl;
   process_dist_monitor->stop_monitoring();
   process_timer->stop_monitoring();
 }

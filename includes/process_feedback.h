@@ -38,10 +38,9 @@ namespace wgm_feedbacks
 
 bool wgm_feedbacks::proc_feedback::report_feedback()
 {
-  
   if (proc_feed_val == enum_proc_feedback::proc_success)
   {
-    std::cout<< "--------- process success, executing next process ---------- "<< std::endl;
+    std::cout<< "--------- process succeded ---------- "<< std::endl;
     return true;
   } 
   std::cout<< "process failed "<< std::endl;
@@ -49,5 +48,5 @@ bool wgm_feedbacks::proc_feedback::report_feedback()
 }
 void wgm_feedbacks::proc_feedback::setFeedback(enum_proc_feedback feedback)
 {
-      proc_feed_val=feedback;
+  proc_feed_val=feedback;
 }
