@@ -11,7 +11,7 @@
 
 #pragma once
 #include <iostream>
-#include <cnt_controller.h>
+#include "cnt_controller.h"
 #include "system_feedback.h"
 
 namespace cnt_alignment_system
@@ -28,10 +28,14 @@ namespace cnt_alignment_system
   // implement 
   class cnt_dispensing : public Icnt_dispensing
   {
+  public:
+    cnt_dispensing();
+    virtual ~cnt_dispensing();
   protected:
     virtual void start_vibrating();
     virtual void stop_vibrating();
-    cnt_dispenser dispenser;
+
+    Icnt_dispenser* dispenser;
   };
   /****************** cnt motion ******************/
   class Icnt_sys_motion
@@ -45,11 +49,15 @@ namespace cnt_alignment_system
   //implement
   class cnt_sys_motion : public Icnt_sys_motion
   {
+  public:
+    cnt_sys_motion();
+    virtual ~cnt_sys_motion();
+
   protected:
     virtual void move_down_to_center();
     virtual void move_back_to_reference();
   private:
-    cnt_motion motion;
+    Icnt_axis_motion* motion;
   };
   /****************** hv controller ******************/
   class Ihv_controller
@@ -67,6 +75,10 @@ namespace cnt_alignment_system
   // implement
   class hv_controller : public Ihv_controller
   {
+  public:
+    hv_controller();
+    virtual ~hv_controller();
+
   protected:
     virtual void start_hv();
     virtual void stop_hv();
@@ -80,7 +92,7 @@ namespace cnt_alignment_system
     double input_current;
     double output_current;
 
-    cnt_hv hv;
+    Icnt_high_voltage* hv;
   };
   /*********** voltage struct *************/
   struct voltage
@@ -104,6 +116,11 @@ namespace cnt_alignment_system
     virtual void stop_aligning() = 0;
     virtual voltage get_voltage_struct() = 0;
     virtual current get_current_struct() = 0;
+    virtual void connect_dispenser() = 0;
+    virtual void connect_motion_axis() = 0;
+    virtual void connect_hv() = 0;
+    virtual cnt_controller getSubSysController() = 0;
+    virtual bool getSubSysStatus(std::string Subsystem) = 0;
   };
   //implement
   class cnt_aligning_controller : public Icnt_aligning_controller
@@ -116,7 +133,11 @@ namespace cnt_alignment_system
     cnt_aligning_controller();
     virtual ~cnt_aligning_controller();
   public:
-
+   void connect_dispenser() override;
+   void connect_motion_axis() override;
+   void connect_hv() override;
+   cnt_controller getSubSysController() override;
+   bool getSubSysStatus(std::string Subsystem) override;
   protected:
     voltage V;
     current C;
@@ -127,6 +148,6 @@ namespace cnt_alignment_system
     cnt_controller controller;
 
   };
-  
+
 }
 

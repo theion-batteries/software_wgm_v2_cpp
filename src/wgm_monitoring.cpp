@@ -1,6 +1,6 @@
 /**
  * @file wgm_monitoring.cpp
- * @author your name (you@domain.com)
+ * @author sami dhiab sami@theion.de
  * @brief
  * @version 0.1
  * @date 2022-07-12

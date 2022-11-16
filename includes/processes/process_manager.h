@@ -60,7 +60,6 @@ namespace wgm_processes
         process_management() ;
         // clean up destruction
         virtual ~process_management() ;
-        
         virtual void start_process();
         virtual void stop_process();
         virtual void start_all();
@@ -69,9 +68,7 @@ namespace wgm_processes
         virtual void delete_last_process_from_scheduler();
         virtual std::string get_name() ;
         virtual bool is_proc_success() ;
-
     };
-
 }
 
 

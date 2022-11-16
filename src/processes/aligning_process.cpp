@@ -51,8 +51,19 @@ void wgm_processes::aligning_process::start_process()
 }
 void wgm_processes::aligning_process::stop_process()
 {
-  std::cout << "finish " << process_name << std::endl;
+  std::cout << "stopping " << process_name << std::endl;
   aligning_sys->stop_aligning();
+  process_timer->start_monitoring();
   process_curr_monitor->stop_monitoring();
   process_volt_monitor->stop_monitoring();
 }
+
+cnt_alignment_system::Icnt_aligning_controller * wgm_processes::aligning_process::get_sys_ptr()
+{
+  return aligning_sys;
+}
+
+ long wgm_processes::aligning_process::get_elapsed_time()
+ {
+    return process_timer->get_elapsed_time();
+ }
