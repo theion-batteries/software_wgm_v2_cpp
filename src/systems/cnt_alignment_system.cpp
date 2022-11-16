@@ -96,14 +96,6 @@ double cnt_alignment_system::hv_controller::get_output_current()
 }
 
 /*********** cnt controller ************/
-cnt_alignment_system::Icnt_aligning_controller::Icnt_aligning_controller()
-{
-  std::cout << "creating cnt_aligning_controller" << std::endl;
-}
-cnt_alignment_system::Icnt_aligning_controller:: ~Icnt_aligning_controller()
-{
-  std::cout << "deleting cnt_aligning_controller" << std::endl;
-}
 //implement
 cnt_alignment_system::cnt_aligning_controller::cnt_aligning_controller()
 {
