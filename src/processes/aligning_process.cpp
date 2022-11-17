@@ -63,7 +63,7 @@ cnt_alignment_system::Icnt_aligning_controller * wgm_processes::aligning_process
   return aligning_sys;
 }
 
- long wgm_processes::aligning_process::get_elapsed_time()
+ long long wgm_processes::aligning_process::get_elapsed_time()
  {
     return process_timer->get_elapsed_time();
  }

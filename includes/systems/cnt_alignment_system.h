@@ -22,8 +22,9 @@ namespace cnt_alignment_system
   public:
     virtual void start_vibrating() = 0;
     virtual void stop_vibrating() = 0;
-    virtual ~Icnt_dispensing()=0;
+    virtual ~Icnt_dispensing(){};
   };
+
   // implement 
   class cnt_dispensing : public Icnt_dispensing
   {
@@ -42,8 +43,9 @@ namespace cnt_alignment_system
   public:
     virtual void move_down_to_center() = 0;
     virtual void move_back_to_reference() = 0;
-    virtual ~Icnt_sys_motion()=0;
+    virtual ~Icnt_sys_motion(){};
   };
+
   //implement
   class cnt_sys_motion : public Icnt_sys_motion
   {
@@ -67,8 +69,9 @@ namespace cnt_alignment_system
     virtual double get_output_voltage() = 0;
     virtual double get_input_current() = 0;
     virtual double get_output_current() = 0;
-    virtual ~Ihv_controller()=0;
+    virtual ~Ihv_controller(){};
   };
+
   // implement
   class hv_controller : public Ihv_controller
   {
@@ -107,8 +110,7 @@ namespace cnt_alignment_system
   class Icnt_aligning_controller
   {
   public:
-    Icnt_aligning_controller();
-    virtual ~Icnt_aligning_controller();
+    virtual ~Icnt_aligning_controller(){};
     virtual void start_aligning() = 0;
     virtual void stop_aligning() = 0;
     virtual voltage get_voltage_struct() = 0;

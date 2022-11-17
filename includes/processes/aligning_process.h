@@ -26,7 +26,7 @@ namespace wgm_processes
         virtual void stop_process() = 0;
         virtual std::string get_name() = 0;
         virtual bool is_proc_success() = 0;
-        virtual long get_elapsed_time()=0;
+        virtual long long get_elapsed_time()=0;
         virtual cnt_alignment_system::Icnt_aligning_controller * get_sys_ptr() = 0;
 
     };
@@ -48,7 +48,7 @@ namespace wgm_processes
         virtual void stop_process();
         virtual std::string get_name();
         virtual bool is_proc_success();
-        virtual long get_elapsed_time();
+        virtual long long get_elapsed_time();
         virtual cnt_alignment_system::Icnt_aligning_controller * get_sys_ptr();
 
     };

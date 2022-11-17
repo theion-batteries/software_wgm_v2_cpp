@@ -53,7 +53,7 @@ namespace wgm_monitoring
     virtual ~Itime_monitor();
     virtual void start_monitoring() = 0;
     virtual void stop_monitoring() = 0;
-    virtual double get_elapsed_time() =0;
+    virtual long long get_elapsed_time() =0;
   };
   /************* implementation time monitor************/
   class time_monitor : public Itime_monitor
@@ -68,11 +68,11 @@ namespace wgm_monitoring
   protected:
     std::chrono::time_point<std::chrono::steady_clock> start;
     std::chrono::time_point<std::chrono::steady_clock> end;
-    double elapsed_time = 0;
+    long long elapsed_time = 0;
   protected:
     virtual void start_monitoring();
     virtual void stop_monitoring();
-virtual double get_elapsed_time();
+virtual long long get_elapsed_time();
   };
 
   /****************** interface distance monitor *****************/

@@ -162,6 +162,8 @@ bool wafer_holder_motion_system::wafer_motion_controller::getSubSysStatus(std::s
   if (Subsystem == "axis_motion") return wafer_sys_control_shared_ptr->get_axis_ptr()->getStatus();
   else if (Subsystem == "distance_sensor") return wafer_sys_control_shared_ptr->get_dist_ptr()->getStatus();
   else if (Subsystem == "controller") return wafer_sys_control_shared_ptr->get_whs_controller_status();
+  else return false;
+
 }
 
 std::shared_ptr<whs_controller> wafer_holder_motion_system::wafer_motion_controller::getSubSysController()

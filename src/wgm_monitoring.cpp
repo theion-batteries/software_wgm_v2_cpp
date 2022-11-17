@@ -42,14 +42,15 @@ void wgm_monitoring::time_monitor::stop_monitoring()
 {
 
   end = std::chrono::steady_clock::now();
-  elapsed_time=std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
+  auto duration=std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
   std::cout << "process time ended: took "
     //<< std::chrono::duration_cast<std::chrono::microseconds>(end - start).count() << " microseconds "
     //<< std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << " milliseconds " // almost equivalent form of the above, but
-    << elapsed_time<< " seconds"<<std::endl;  // using milliseconds and seconds accordingly
+    << duration<< " seconds"<<std::endl;  // using milliseconds and seconds accordingly
+  elapsed_time = duration;
 }
 
- double wgm_monitoring::time_monitor::get_elapsed_time()
+ long long wgm_monitoring::time_monitor::get_elapsed_time()
  {
   return elapsed_time;
  }

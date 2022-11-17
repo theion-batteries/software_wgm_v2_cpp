@@ -57,7 +57,7 @@ wafer_holder_motion_system::Iwafer_motion_controller* wgm_processes::sinking_pro
   return sinking_sys;
 }
 
- long wgm_processes::sinking_process::get_elapsed_time()
+ long long wgm_processes::sinking_process::get_elapsed_time()
  {
     return process_timer->get_elapsed_time();
  }

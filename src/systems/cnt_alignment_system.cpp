@@ -159,4 +159,5 @@ bool cnt_alignment_system::cnt_aligning_controller::getSubSysStatus(std::string 
   else if (Subsystem == "dispenser") return controller.get_dispenser_status();
   else if (Subsystem == "hv") return controller.get_hv_status();
   else if (Subsystem == "controller") return controller.get_cnt_controller_status();
+  else return false;
 }
