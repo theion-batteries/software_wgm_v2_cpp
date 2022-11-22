@@ -10,11 +10,15 @@
  */
 #include "wgm_user.h"
 #define _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS
-
 wgm_user::user::user()
 {
-  std::cout << "user started app" << std::endl;
-
+    
+}
+wgm_user::user::user(std::string name, std::string password)
+{
+  std::cout << "user" << name <<"created" << std::endl;
+    user_name=name;
+    user_passowrd=password;
   processInterfaces = new wgm_processes::process_management();
 }
 void wgm_user::user::run_app()

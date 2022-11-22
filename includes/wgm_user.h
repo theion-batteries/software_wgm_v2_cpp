@@ -12,7 +12,7 @@
 #define _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS
 
 #include "process_manager.h"
-
+#include "wgm_experiment.h"
 /****************** user code ********************/
 namespace wgm_user
 {
@@ -24,7 +24,8 @@ namespace wgm_user
         std::string user_passowrd;
 
     public:
-        user();
+    user();
+        user(std::string name, std::string password);
         void run_app();
         void stop_app();
         std::string getUserName();

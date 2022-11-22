@@ -33,6 +33,7 @@ file(GLOB lib_SRCS
 "${PROJECT_SOURCE_DIR}/src/wgm_monitoring.cpp"
 "${PROJECT_SOURCE_DIR}/src/wgm_test.cpp"
 "${PROJECT_SOURCE_DIR}/src/wgm_user.cpp"
+"${PROJECT_SOURCE_DIR}/src/wgm_experiment.cpp"
 "${PROJECT_SOURCE_DIR}/src/processes/*.cpp"
 "${PROJECT_SOURCE_DIR}/src/systems/*.cpp"
 
@@ -46,6 +47,9 @@ target_link_libraries(wgm_static
 PUBLIC whs_static
 # cnt lib
 PUBLIC cnt_system_static
+
+# link DB
+PUBLIC database
 )
 
 target_include_directories(wgm_static 
@@ -53,6 +57,7 @@ target_include_directories(wgm_static
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/processes/
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/systems/
+PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../database/
 
 # wafer holder motion system header tree
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/includes
