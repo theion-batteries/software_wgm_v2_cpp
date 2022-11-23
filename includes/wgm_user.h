@@ -19,15 +19,14 @@ namespace wgm_user
 
     class user {
     private:
-        wgm_processes::Iprocesses_managment* processInterfaces;
         std::string user_name;
         std::string user_passowrd;
+        static inline u_int id=0;
+        Idatabase* userData=new userDB("userTable");
 
     public:
     user();
         user(std::string name, std::string password);
-        void run_app();
-        void stop_app();
         std::string getUserName();
         std::string getUserPassowrd();
         void setUserName(std::string name);

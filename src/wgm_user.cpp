@@ -12,27 +12,27 @@
 #define _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS
 wgm_user::user::user()
 {
-    
+
 }
 wgm_user::user::user(std::string name, std::string password)
 {
-  std::cout << "user" << name <<"created" << std::endl;
-    user_name=name;
-    user_passowrd=password;
-  processInterfaces = new wgm_processes::process_management();
+  std::cout << "user " << name << " created" << std::endl;
+  user_name = name;
+  user_passowrd = password;
+  std::string rowValues = "(, '" + name +"','" + password + "');";
+  auto ID = std::to_string(id);
+  rowValues.insert(1,ID.c_str()) ;
+  std::cout << "inserting row values " << rowValues << " in users database" << std::endl;
+  userData->insertDBTableRow(userData->getTableHandle().Table_name, rowValues);
+  // debug db: query
+  userData->queryDBTable(userData->getTableHandle().Table_name);
+  id++;
 }
-void wgm_user::user::run_app()
-{
-  processInterfaces->start_all();
-}
-void wgm_user::user::stop_app()
-{
-  processInterfaces->stop_all();
-}
+
 wgm_user::user::~user()
 {
-  std::cout << "user stopped app" << std::endl;
-  delete processInterfaces;
+  std::cout << "user destructed" << std::endl;
+  //delete userData;
 }
 std::string wgm_user::user::getUserName()
 {
@@ -52,7 +52,7 @@ void wgm_user::user::setUserPassowrd(std::string password)
   user_passowrd = password;
 }
 
-void wgm_user::user::login() 
+void wgm_user::user::login()
 {
   // enter user_name and passsword
 }
