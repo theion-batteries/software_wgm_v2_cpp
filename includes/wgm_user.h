@@ -21,8 +21,8 @@ namespace wgm_user
     private:
         std::string user_name;
         std::string user_passowrd;
-        static inline u_int id=0;
-        Idatabase* userData=new userDB("userTable");
+        static inline int id=0;
+        static inline Idatabase* userData=new userDB("userTable");
 
     public:
     user();
@@ -31,8 +31,8 @@ namespace wgm_user
         std::string getUserPassowrd();
         void setUserName(std::string name);
         void setUserPassowrd(std::string password);
-        void login();
-        void logout();
+        static bool login(std::string username, std::string password);
+        static void logout();
         ~user();
     };
 
