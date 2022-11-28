@@ -9,7 +9,6 @@
  *
  */
 #include "wgm_user.h"
-#define _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS
 wgm_user::user::user()
 {
 

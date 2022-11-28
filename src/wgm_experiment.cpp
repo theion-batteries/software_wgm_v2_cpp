@@ -9,7 +9,6 @@
  *
  */
 #include "wgm_experiment.h"
-#define _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS
 
 wgm_experiment::experiment::experiment(std::string name, int id)
 

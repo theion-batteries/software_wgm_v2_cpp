@@ -9,8 +9,6 @@
  *
  */
 #pragma once
-#define _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS
-
 #include <vector>
 #include "wgm_monitoring.h"
 #include "process_feedback.h"

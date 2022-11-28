@@ -11,7 +11,6 @@
 #pragma once
 #include <iostream>
 #include "dbIncludeAll.h"
-#define _SILENCE_ALL_CXX17_DEPRECATION_WARNINGS
 
 
 /****************** experiment code ********************/
