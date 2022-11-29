@@ -47,7 +47,6 @@ target_link_libraries(wgm_static
 PUBLIC whs_static
 # cnt lib
 PUBLIC cnt_system_static
-
 # link DB
 PUBLIC database
 )
@@ -65,6 +64,13 @@ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_control
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_cnt_system_submodule_cpp/includes
 )
 
+############################# install target lib ########################################
+install(TARGETS wgm_static DESTINATION lib)
+FILE(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/includes/*.h" 
+ "${CMAKE_CURRENT_SOURCE_DIR}/includes/processes/*.h"
+ "${CMAKE_CURRENT_SOURCE_DIR}/includes/systems/*.h"
+)
+INSTALL(FILES ${files} DESTINATION include)
 ############################# build executable  ###################################
 
 # source *.cpp
@@ -74,20 +80,24 @@ file(GLOB exe_SRCS
     "${PROJECT_SOURCE_DIR}/src/systems/*.cpp"
     )
 # add .exe
-add_executable(wgm_app_exe ${exe_SRCS})
+add_executable(wgm_core_exe ${exe_SRCS})
 # link againt static lib
-target_link_libraries(wgm_app_exe
+target_link_libraries(wgm_core_exe
 # wafer holder system static
 PUBLIC whs_static
 # cnt lib
 PUBLIC cnt_system_static
+# link DB
+PUBLIC database
 )
 
-target_include_directories(wgm_app_exe 
+target_include_directories(wgm_core_exe 
 # parent deps headers
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/processes/
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/systems/
+PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../database/
+
 # wafer holder motion system header tree
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/includes
 # cnt system header tree
