@@ -4,7 +4,7 @@
 
 # author: sami dhiab
 # email: sami@theion.de
-cmake_minimum_required(VERSION 3.5.0)
+cmake_minimum_required(VERSION 3.1.0)
 
 # project name
 project(wgm_core VERSION "1.0")
@@ -70,7 +70,7 @@ FILE(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/includes/*.h"
  "${CMAKE_CURRENT_SOURCE_DIR}/includes/processes/*.h"
  "${CMAKE_CURRENT_SOURCE_DIR}/includes/systems/*.h"
 )
-INSTALL(FILES ${files} DESTINATION include)
+INSTALL(FILES ${files} DESTINATION include/wgm_static/)
 ############################# build executable  ###################################
 
 # source *.cpp
