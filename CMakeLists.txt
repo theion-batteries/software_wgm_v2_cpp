@@ -22,6 +22,7 @@ endif()
 # add dependencies cmake
 add_subdirectory(dependencies/soft_wafer_holder_system_controller)
 add_subdirectory(dependencies/soft_cnt_system_submodule_cpp)
+add_subdirectory(dependencies/soft_cooling_system_submodule_cpp)
 
 #add_definitions(-D_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING)  
 
@@ -47,6 +48,8 @@ target_link_libraries(wgm_static
 PUBLIC whs_static
 # cnt lib
 PUBLIC cnt_system_static
+# cooling ph lib
+PUBLIC ph_cooling_static
 # link DB
 PUBLIC database
 )
@@ -62,6 +65,8 @@ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../database/
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/includes
 # cnt system header tree
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_cnt_system_submodule_cpp/includes
+# cooling ph system header tree
+PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_cooling_system_submodule_cpp/includes
 )
 
 ############################# install target lib ########################################
@@ -87,6 +92,8 @@ target_link_libraries(wgm_core_exe
 PUBLIC whs_static
 # cnt lib
 PUBLIC cnt_system_static
+# cooling ph lib
+PUBLIC ph_cooling_static
 # link DB
 PUBLIC database
 )
@@ -102,4 +109,6 @@ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../database/
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/includes
 # cnt system header tree
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_cnt_system_submodule_cpp/includes
+# cooling ph system header tree
+PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_cooling_system_submodule_cpp/includes
 )
