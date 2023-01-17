@@ -7,3 +7,6 @@
 	path = dependencies/soft_cnt_system_submodule_cpp
 	url = https://github.com/theionSami/soft_cnt_system_submodule_cpp.git
 	branch = dev_win_api
+[submodule "dependencies/soft_cooling_system_submodule_cpp"]
+	path = dependencies/soft_cooling_system_submodule_cpp
+	url = https://github.com/theionSami/soft_cooling_system_submodule_cpp.git
