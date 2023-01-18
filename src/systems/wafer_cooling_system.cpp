@@ -93,3 +93,29 @@ void wafer_cooling_system::cooling_controller::stop_cooling()
 {
   ph_motion->move_up_to_reference();
 }
+
+
+void wafer_cooling_system::cooling_controller::connect_rotation_axis()
+{
+  ph_sys_control_shared_ptr->get_rotary_axis_ptr()->connect();
+}
+void wafer_cooling_system::cooling_controller::connect_motion_axis()
+{
+  ph_sys_control_shared_ptr->get_axis_ptr()->connect();
+}
+void wafer_cooling_system::cooling_controller::connect_ph()
+{
+  ph_sys_control_shared_ptr->get_ph_ptr()->connect();
+}
+std::shared_ptr<ph_cooling_controller> wafer_cooling_system::cooling_controller::getSubSysController()
+{
+  return ph_sys_control_shared_ptr;
+}
+bool wafer_cooling_system::cooling_controller::getSubSysStatus(std::string Subsystem)
+{
+  if (Subsystem == "axis_motion") return ph_sys_control_shared_ptr->get_linear_mover_status();
+  else if (Subsystem == "rotation_motion") return ph_sys_control_shared_ptr->get_linear_mover_status();
+  else if (Subsystem == "ph") return ph_sys_control_shared_ptr->get_ph_status();
+  else if (Subsystem == "controller") return ph_sys_control_shared_ptr->get_ph_cooling_controller_status();
+  else return false;
+}

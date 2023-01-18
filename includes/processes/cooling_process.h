@@ -15,9 +15,9 @@
 
 namespace wgm_processes
 {
-  
+
     /****************** interface cooling process *******************/
-    class Icooling_process : public Iprocesses_managment
+    class Icooling_process: public Iprocesses_managment
     {
     public:
         Icooling_process();
@@ -26,9 +26,11 @@ namespace wgm_processes
         virtual void stop_process() = 0;
         virtual std::string get_name() = 0;
         virtual bool is_proc_success() = 0;
+        virtual wafer_cooling_system::Icooling_controller* get_sys_ptr() = 0;
+        virtual long long get_elapsed_time() = 0;
     };
     /******************* implementation cooling process ***************/
-    class cooling_process : public Icooling_process
+    class cooling_process: public Icooling_process
     {
     private:
         wgm_feedbacks::proc_feedback process_feedback;
@@ -37,14 +39,18 @@ namespace wgm_processes
         std::string process_name = "cooling process";
 
     public:
-        cooling_process() ;
+        cooling_process();
         virtual ~cooling_process();
         virtual void start_process();
         virtual void stop_process();
-        virtual std::string get_name() ;
-        virtual bool is_proc_success() ;
+        virtual std::string get_name();
+        virtual bool is_proc_success();
+        virtual wafer_cooling_system::Icooling_controller* get_sys_ptr();
+        virtual long long get_elapsed_time();
+
+
     };
- 
+
 }
 
 

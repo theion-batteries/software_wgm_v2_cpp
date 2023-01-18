@@ -16,9 +16,8 @@ wgm_processes::Icooling_process::Icooling_process()
 {
   std::cout << "creating cooling process " << std::endl;
 }
-wgm_processes::Icooling_process::~Icooling_process()
-{
-}
+wgm_processes::Icooling_process::~Icooling_process(){}
+
 /******************* implementation cooling process ***************/
 wgm_processes::cooling_process::cooling_process() {
   cooling_sys = new wafer_cooling_system::cooling_controller();
@@ -44,5 +43,17 @@ void wgm_processes::cooling_process::stop_process()
   cooling_sys->stop_cooling();
 
 }
+
+wafer_cooling_system::Icooling_controller* wgm_processes::cooling_process::get_sys_ptr()
+{
+  return cooling_sys;
+}
+
+ long long wgm_processes::cooling_process::get_elapsed_time()
+ {
+    return process_timer->get_elapsed_time();
+ }
+
+
 std::string wgm_processes::cooling_process::get_name() { return process_name; };
 bool wgm_processes::cooling_process::is_proc_success() { return process_feedback.report_feedback(); };

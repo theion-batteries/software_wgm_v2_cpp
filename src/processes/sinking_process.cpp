@@ -9,9 +9,7 @@ wgm_processes::Isinking_process::Isinking_process()
 }
 wgm_processes::Isinking_process::~Isinking_process() {}
 
-// sink process implemnt
-std::string wgm_processes::sinking_process::get_name() { return process_name; };
-bool wgm_processes::sinking_process::is_proc_success() { return process_feedback.report_feedback(); };
+/******************* implementation sinking process ***************/
 
 wgm_processes::sinking_process::sinking_process() {
   sinking_sys = new wafer_holder_motion_system::wafer_motion_controller();
@@ -61,3 +59,8 @@ wafer_holder_motion_system::Iwafer_motion_controller* wgm_processes::sinking_pro
  {
     return process_timer->get_elapsed_time();
  }
+
+
+// sink process implemnt
+std::string wgm_processes::sinking_process::get_name() { return process_name; };
+bool wgm_processes::sinking_process::is_proc_success() { return process_feedback.report_feedback(); };
