@@ -71,6 +71,7 @@ wafer_cooling_system::Icooling_controller::  ~Icooling_controller()
 
 wafer_cooling_system::cooling_controller::cooling_controller()
 {
+  ph_sys_control_shared_ptr = std::make_shared<ph_cooling_controller>();
   ph_motion = new cooling_motion();
   ph_rotation = new cooling_rotation();
   ph_printing = new cooling_spitting();

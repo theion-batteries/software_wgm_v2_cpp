@@ -89,7 +89,6 @@ namespace wafer_cooling_system
         Icooling_rotation* ph_rotation;
         Icooling_spitting* ph_printing;
         std::shared_ptr<ph_cooling_controller> ph_sys_control_shared_ptr;
-
     public:
         void connect_rotation_axis() override;
         void connect_motion_axis() override;
