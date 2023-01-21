@@ -68,16 +68,7 @@ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_cnt_system_submodule_cpp/in
 # cooling ph system header tree
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_cooling_system_submodule_cpp/includes
 )
-
-############################# install target lib ########################################
-install(TARGETS wgm_static DESTINATION lib)
-FILE(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/includes/*.h" 
- "${CMAKE_CURRENT_SOURCE_DIR}/includes/processes/*.h"
- "${CMAKE_CURRENT_SOURCE_DIR}/includes/systems/*.h"
-)
-INSTALL(FILES ${files} DESTINATION include/wgm_static/)
 ############################# build executable  ###################################
-
 # source *.cpp
 file(GLOB exe_SRCS
     "${PROJECT_SOURCE_DIR}/src/*.cpp"
@@ -115,3 +106,14 @@ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_cooling_system_submodule_cp
 
 copy_dlls_keyence_target_destination(wgm_core_exe)
 copy_dlls_meteor_target_destination(wgm_core_exe)
+
+############################# install target lib ########################################
+install(TARGETS wgm_static wgm_core_exe 
+CONFIGURATIONS Debug
+RUNTIME DESTINATION bin/Debug
+LIBRARY DESTINATION lib)
+FILE(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/includes/*.h" 
+ "${CMAKE_CURRENT_SOURCE_DIR}/includes/processes/*.h"
+ "${CMAKE_CURRENT_SOURCE_DIR}/includes/systems/*.h"
+)
+INSTALL(FILES ${files} DESTINATION include/wgm_static/)
