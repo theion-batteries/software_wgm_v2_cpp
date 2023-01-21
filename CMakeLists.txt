@@ -106,6 +106,7 @@ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_cooling_system_submodule_cp
 
 copy_dlls_keyence_target_destination(wgm_core_exe)
 copy_dlls_meteor_target_destination(wgm_core_exe)
+copy_dlls_yaml_target_destination(wgm_core_exe)
 
 ############################# install target lib ########################################
 install(TARGETS wgm_static wgm_core_exe 
