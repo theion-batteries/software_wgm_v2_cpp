@@ -112,3 +112,6 @@ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_cnt_system_submodule_cpp/in
 # cooling ph system header tree
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_cooling_system_submodule_cpp/includes
 )
+
+copy_dlls_keyence_target_destination(wgm_core_exe)
+copy_dlls_meteor_target_destination(wgm_core_exe)
