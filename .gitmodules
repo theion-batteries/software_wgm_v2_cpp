@@ -12,3 +12,6 @@
 	url = https://github.com/theionSami/soft_cooling_system_submodule_cpp.git
 	branch = dev_win_api
 
+[submodule "dependencies/soft_heating_system_submodule"]
+	path = dependencies/soft_heating_system_submodule
+	url = https://github.com/theionSami/soft_heating_system_submodule.git
