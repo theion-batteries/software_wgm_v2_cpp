@@ -26,6 +26,9 @@ namespace wgm_processes
         virtual void stop_process() = 0;
         virtual std::string get_name() = 0;
         virtual bool is_proc_success() = 0;
+        virtual long long get_elapsed_time()=0;
+        virtual sulfur_heating_system::Isulfur_heating_controller* get_sys_ptr() = 0;
+
     };
     /************* implementation heating process ************/
     class heating_process : public Iheating_process
@@ -39,10 +42,13 @@ namespace wgm_processes
     public:
         heating_process();
         virtual ~heating_process();
-        virtual void start_process();
-        virtual void stop_process();
-        virtual std::string get_name();
-        virtual bool is_proc_success();
+         void start_process() override;
+         void stop_process() override;
+         std::string get_name() override;
+         bool is_proc_success() override;
+         long long get_elapsed_time() override;
+         sulfur_heating_system::Isulfur_heating_controller* get_sys_ptr() override;
+
     };
     
 

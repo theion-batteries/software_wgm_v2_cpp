@@ -64,3 +64,14 @@ void wgm_processes::heating_process::stop_process()
   heating_sys->turn_off_heating();
   process_temp_monitor->stop_monitoring();
 }
+
+
+sulfur_heating_system::Isulfur_heating_controller* wgm_processes::heating_process::get_sys_ptr()
+{
+  return heating_sys;
+}
+
+ long long wgm_processes::heating_process::get_elapsed_time()
+ {
+    return process_timer->get_elapsed_time();
+ }
