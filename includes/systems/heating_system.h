@@ -4,14 +4,15 @@
  * @brief heating system package
  * @version 0.1
  * @date 2022-07-04
- * 
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 #pragma once
 
 #include <iostream>
 #include "system_feedback.h"
+#include "heating_controller.h"
 
 namespace sulfur_heating_system
 {
@@ -25,7 +26,7 @@ namespace sulfur_heating_system
     virtual ~Iheater();
   };
   // implement
-  class Heater : public Iheater
+  class Heater: public Iheater
   {
   protected:
     virtual void start_heater();
@@ -40,7 +41,7 @@ namespace sulfur_heating_system
     virtual double get_current_value() = 0;
   };
   // implement
-  class temperature_sensor : public Itemperature_sensor {
+  class temperature_sensor: public Itemperature_sensor {
   protected:
     virtual double get_current_value();
     double current_val;
@@ -49,28 +50,34 @@ namespace sulfur_heating_system
   class Isulfur_heating_controller
   {
   public:
-    Isulfur_heating_controller() ;
+    Isulfur_heating_controller();
     virtual ~Isulfur_heating_controller();
     virtual void turn_off_heating() = 0;
     virtual void controll_heating() = 0;
     virtual void turn_on_heating() = 0;
-    virtual double getSensorReading() = 0;
+    virtual double getSulfurTemperatur() = 0;
+    virtual void setSulfurTemperatur(double targetTemp) = 0;
+    virtual heating_controller getSubSysController() = 0;
+    virtual bool getSubSysStatus(std::string Subsystem) = 0;
   };
   // implement
-  class sulfur_heating_controller : public Isulfur_heating_controller
+  class sulfur_heating_controller: public Isulfur_heating_controller
   {
   private:
     Itemperature_sensor* tempe_sensor;
     Iheater* heater;
+    heating_controller heatControl;
 
   public:
     sulfur_heating_controller();
     virtual ~sulfur_heating_controller();
-    virtual double getSensorReading();
-    virtual void turn_off_heating();
-    virtual void turn_on_heating();
-    virtual void controll_heating();
-
+    double getSulfurTemperatur() override;
+    void turn_off_heating() override;
+    void turn_on_heating() override;
+    void controll_heating() override;
+    void setSulfurTemperatur(double targetTemp) override;
+    heating_controller getSubSysController() override;
+    bool getSubSysStatus(std::string Subsystem) override;
   };
 
 }

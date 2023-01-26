@@ -51,6 +51,8 @@ PUBLIC whs_static
 PUBLIC cnt_system_static
 # cooling ph lib
 PUBLIC ph_cooling_static
+# heating lib
+PUBLIC heatingSystemLib
 # link DB
 PUBLIC database
 )
@@ -68,6 +70,8 @@ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_control
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_cnt_system_submodule_cpp/includes
 # cooling ph system header tree
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_cooling_system_submodule_cpp/includes
+# heating system 
+PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_heating_system_submodule/includes
 )
 ############################# build executable  ###################################
 # source *.cpp
@@ -86,6 +90,8 @@ PUBLIC whs_static
 PUBLIC cnt_system_static
 # cooling ph lib
 PUBLIC ph_cooling_static
+# heating lib
+PUBLIC heatingSystemLib
 # link DB
 PUBLIC database
 )
@@ -103,6 +109,10 @@ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_control
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_cnt_system_submodule_cpp/includes
 # cooling ph system header tree
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_cooling_system_submodule_cpp/includes
+# heating system 
+PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_heating_system_submodule/includes
+
+
 )
 
 copy_dlls_keyence_target_destination(wgm_core_exe)

@@ -100,7 +100,7 @@ wgm_monitoring::heat_monitor:: ~heat_monitor()
 void wgm_monitoring::heat_monitor::start_monitoring()
 {
   std::cout << "process temperature monitoring started " << std::endl;
-  param_temp->getSensorReading();
+  param_temp->getSulfurTemperatur();
 }
 void wgm_monitoring::heat_monitor::stop_monitoring()
 {
