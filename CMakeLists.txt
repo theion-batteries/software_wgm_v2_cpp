@@ -129,3 +129,5 @@ FILE(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/includes/*.h"
  "${CMAKE_CURRENT_SOURCE_DIR}/includes/systems/*.h"
 )
 INSTALL(FILES ${files} DESTINATION include/wgm_static/)
+
+add_subdirectory(tests)

@@ -17,7 +17,7 @@ namespace wgm_processes
 {
   
     /******************* interface wafer insertion process***************/
-    class Isinking_process : public Iprocesses_managment
+    class Isinking_process : public Iprocess_manager
     {
     public:
         Isinking_process();

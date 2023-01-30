@@ -17,15 +17,15 @@
 #include "extracting_process.h"
 
  // process managment interface
-wgm_processes::Iprocesses_managment::Iprocesses_managment() {}
-void wgm_processes::Iprocesses_managment::add_process_to_scheduler(Iprocesses_managment* process) {};
-void wgm_processes::Iprocesses_managment::delete_last_process_from_scheduler() {};
-void wgm_processes::Iprocesses_managment::stop_all() {};
-void wgm_processes::Iprocesses_managment::start_all() {};
-wgm_processes::Iprocesses_managment::~Iprocesses_managment() {};
+wgm_processes::Iprocess_manager::Iprocess_manager() {}
+void wgm_processes::Iprocess_manager::add_process_to_scheduler(Iprocess_manager* process) {};
+void wgm_processes::Iprocess_manager::delete_last_process_from_scheduler() {};
+void wgm_processes::Iprocess_manager::stop_all() {};
+void wgm_processes::Iprocess_manager::start_all() {};
+wgm_processes::Iprocess_manager::~Iprocess_manager() {};
 
 /******************** implementation process management ************/
-wgm_processes::process_management::process_management() {
+wgm_processes::process_manager::process_manager() {
   std::cout << "creating process manager" << std::endl;
   //processes_monitor = new wgm_monitoring::monitor_managment();
   /********************* add new processes *************************/
@@ -55,7 +55,7 @@ wgm_processes::process_management::process_management() {
   std::cout << "added wafer extracting process to process scheduler" << std::endl;
 }
 
-wgm_processes::process_management:: ~process_management() {
+wgm_processes::process_manager:: ~process_manager() {
   std::cout << "deleting process scheduler" << std::endl;
   for (auto process : processesvector)
   {
@@ -71,15 +71,26 @@ wgm_processes::process_management:: ~process_management() {
   }
 }
 
-void wgm_processes::process_management::start_process()
+void wgm_processes::process_manager::start_process()
 {
   std::cout << "process started" << std::endl;
 }
-void wgm_processes::process_management::stop_process()
+void wgm_processes::process_manager::stop_process()
 {
   std::cout << "process stopped" << std::endl;
 }
-void wgm_processes::process_management::start_all()
+void wgm_processes::process_manager::start_process(Iprocess_manager* process)
+{
+  std::cout << "process "<< process->get_name()<< " started" << std::endl;
+  process->start_process();
+}
+void wgm_processes::process_manager::stop_process(Iprocess_manager* process)
+{
+  std::cout << "process "<< process->get_name()<<" stopped" << std::endl;
+  process->stop_process();
+
+}
+void wgm_processes::process_manager::start_all()
 {
   std::cout << "executing all processes" << std::endl;
   for (auto process : processesvector)
@@ -93,7 +104,7 @@ void wgm_processes::process_management::start_all()
     else std::cout << "empty process scheduler" << std::endl;
   }
 }
-void wgm_processes::process_management::stop_all()
+void wgm_processes::process_manager::stop_all()
 {
   std::cout << "stopping all processes" << std::endl;
 
@@ -106,15 +117,15 @@ void wgm_processes::process_management::stop_all()
     else std::cout << "empty process scheduler" << std::endl;
   }
 }
-void wgm_processes::process_management::add_process_to_scheduler(Iprocesses_managment* process)
+void wgm_processes::process_manager::add_process_to_scheduler(Iprocess_manager* process)
 {
   processesvector.push_back(process);
 
 }
-void wgm_processes::process_management::delete_last_process_from_scheduler()
+void wgm_processes::process_manager::delete_last_process_from_scheduler()
 {
   processesvector.pop_back();
 
 }
-std::string wgm_processes::process_management::get_name() { return process_name; };
-bool wgm_processes::process_management::is_proc_success() { return process_feedback.report_feedback(); };
+std::string wgm_processes::process_manager::get_name() { return process_name; };
+bool wgm_processes::process_manager::is_proc_success() { return process_feedback.report_feedback(); };

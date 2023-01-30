@@ -21,23 +21,23 @@ namespace wgm_processes
      * @brief interface process managemnt for user
      * do not modify!
      */
-    class Iprocesses_managment
+    class Iprocess_manager
     {
     public:
-        Iprocesses_managment();
+        Iprocess_manager();
         virtual void start_process() = 0;
         virtual void stop_process() = 0;
-        virtual void add_process_to_scheduler(Iprocesses_managment* process);
+        virtual void start_process(Iprocess_manager* process){};
+        virtual void stop_process(Iprocess_manager* process){};
+        virtual void add_process_to_scheduler(Iprocess_manager* process);
 
         virtual void delete_last_process_from_scheduler();
-
         virtual void stop_all();
-
         virtual void start_all();
 
-        virtual std::string get_name() = 0;
+        virtual std::string get_name() = 0; // or id
         virtual bool is_proc_success() = 0;
-        virtual ~Iprocesses_managment();
+        virtual ~Iprocess_manager();
 
     };
 
@@ -48,21 +48,23 @@ namespace wgm_processes
      * later will be possible to add new processes from interface method
      * add and delete from delete method
      */
-    class process_management : public Iprocesses_managment
+    class process_manager : public Iprocess_manager
     {
     private:
         const std::string process_name = "process scheduler";
-        std::vector<Iprocesses_managment*> processesvector;
+        std::vector<Iprocess_manager*> processesvector;
         wgm_feedbacks::proc_feedback process_feedback;
     public:
-        process_management() ;
+        process_manager() ;
         // clean up destruction
-        virtual ~process_management() ;
+        virtual ~process_manager() ;
         virtual void start_process();
         virtual void stop_process();
+        virtual void start_process(Iprocess_manager* process) ;
+        virtual void stop_process(Iprocess_manager* process) ;
         virtual void start_all();
         virtual void stop_all();
-        virtual void add_process_to_scheduler(Iprocesses_managment* process);
+        virtual void add_process_to_scheduler(Iprocess_manager* process);
         virtual void delete_last_process_from_scheduler();
         virtual std::string get_name() ;
         virtual bool is_proc_success() ;

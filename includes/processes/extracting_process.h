@@ -17,7 +17,7 @@ namespace wgm_processes
 {
   
     /******************* interface wafer extraction process***************/
-    class Iextracting_process : public Iprocesses_managment
+    class Iextracting_process : public Iprocess_manager
     {
     public:
         Iextracting_process();
@@ -26,6 +26,8 @@ namespace wgm_processes
         virtual void stop_process() = 0;
         virtual std::string get_name() = 0;
         virtual bool is_proc_success() = 0;
+        virtual wafer_holder_motion_system::Iwafer_motion_controller* get_sys_ptr() = 0;
+        virtual long long get_elapsed_time()=0;
     };
     /**************** implementation wafer extraction process ************/
     class extracting_process : public Iextracting_process
@@ -43,7 +45,8 @@ namespace wgm_processes
         virtual void stop_process();
         virtual std::string get_name() ;
         virtual bool is_proc_success() ;
-
+        virtual wafer_holder_motion_system::Iwafer_motion_controller* get_sys_ptr();
+        virtual long long get_elapsed_time();
     };
     
 

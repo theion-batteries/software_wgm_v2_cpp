@@ -17,7 +17,7 @@ namespace wgm_processes
 {
     
     /****************** interface cnt alignment process*******************/
-    class Ialigning_process : public Iprocesses_managment
+    class Ialigning_process : public Iprocess_manager
     {
     public:
         Ialigning_process();

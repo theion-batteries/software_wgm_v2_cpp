@@ -47,4 +47,16 @@ void wgm_processes::extracting_process::start_process()
 void wgm_processes::extracting_process::stop_process()
 {
   std::cout << "finish " << process_name << std::endl;
+  process_timer->stop_monitoring();
+
+}
+
+ long long wgm_processes::extracting_process::get_elapsed_time()
+ {
+    return process_timer->get_elapsed_time();
+ }
+
+wafer_holder_motion_system::Iwafer_motion_controller* wgm_processes::extracting_process::get_sys_ptr()
+{
+  return extracting_sys;
 }

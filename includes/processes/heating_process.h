@@ -17,7 +17,7 @@ namespace wgm_processes
 {
  
      /****************** interface heating process *****************/
-    class Iheating_process : public Iprocesses_managment
+    class Iheating_process : public Iprocess_manager
     {
     public:
         Iheating_process();
