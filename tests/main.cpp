@@ -1,4 +1,4 @@
-#include "cntMotionTest.h"
+#include "processTest.h"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);

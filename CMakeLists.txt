@@ -24,6 +24,7 @@ add_subdirectory(dependencies/soft_wafer_holder_system_controller)
 add_subdirectory(dependencies/soft_cnt_system_submodule_cpp)
 add_subdirectory(dependencies/soft_cooling_system_submodule_cpp)
 add_subdirectory(dependencies/soft_heating_system_submodule)
+add_subdirectory(tests)
 
 # add_definitions(-D_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING)  
 
@@ -130,4 +131,3 @@ FILE(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/includes/*.h"
 )
 INSTALL(FILES ${files} DESTINATION include/wgm_static/)
 
-add_subdirectory(tests)

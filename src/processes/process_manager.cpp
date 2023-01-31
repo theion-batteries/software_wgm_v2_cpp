@@ -49,7 +49,7 @@ wgm_processes::process_manager::process_manager() {
   processesvector.push_back(cooling_proc);
   std::cout << "added cooling process to process scheduler" << std::endl;
 
-  /***** add insertion process ***/
+  /***** add extract process ***/
   Iextracting_process* extraction_proc = new extracting_process(insertion_proc->get_sys_ptr());
   processesvector.push_back(extraction_proc);
   std::cout << "added wafer extracting process to process scheduler" << std::endl;
