@@ -28,6 +28,8 @@ namespace wgm_processes
         virtual bool is_proc_success() = 0;
         virtual wafer_holder_motion_system::Iwafer_motion_controller* get_sys_ptr() = 0;
         virtual long long get_elapsed_time()=0;
+        virtual int get_id() = 0;
+
     };
     /**************** implementation wafer insertion process ************/
     class sinking_process : public Isinking_process
@@ -37,7 +39,8 @@ namespace wgm_processes
         wgm_monitoring::Itime_monitor* process_timer;
        wafer_holder_motion_system::Iwafer_motion_controller* sinking_sys;
         wgm_monitoring::Idistance_monitor* process_dist_monitor;
-        std::string process_name = "sinking process";
+        std::string process_name = "Sinking";
+        int proc_id = 1;
 
     public:
         sinking_process();
@@ -48,6 +51,8 @@ namespace wgm_processes
         virtual bool is_proc_success(); 
         virtual wafer_holder_motion_system::Iwafer_motion_controller* get_sys_ptr();
         virtual long long get_elapsed_time();
+        virtual int get_id(){return proc_id;};
+
     };
  
   

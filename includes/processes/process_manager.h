@@ -12,7 +12,7 @@
 #include <vector>
 #include "wgm_monitoring.h"
 #include "process_feedback.h"
-
+#include <algorithm> 
 
 namespace wgm_processes
 {
@@ -27,8 +27,16 @@ namespace wgm_processes
         Iprocess_manager();
         virtual void start_process() = 0;
         virtual void stop_process() = 0;
-        virtual void start_process(Iprocess_manager* process){};
-        virtual void stop_process(Iprocess_manager* process){};
+
+        virtual void start_process(Iprocess_manager* process) {};
+        virtual void stop_process(Iprocess_manager* process) {};
+
+        virtual void start_process(std::string processName) {};
+        virtual void stop_process(std::string processName) {};
+
+        virtual void start_process(int processID) {};
+        virtual void stop_process(int processID) {};
+
         virtual void add_process_to_scheduler(Iprocess_manager* process);
 
         virtual void delete_last_process_from_scheduler();
@@ -36,6 +44,10 @@ namespace wgm_processes
         virtual void start_all();
 
         virtual std::string get_name() = 0; // or id
+
+        virtual int get_id() = 0;
+        virtual long long get_elapsed_time()=0;
+
         virtual bool is_proc_success() = 0;
         virtual ~Iprocess_manager();
 
@@ -48,26 +60,37 @@ namespace wgm_processes
      * later will be possible to add new processes from interface method
      * add and delete from delete method
      */
-    class process_manager : public Iprocess_manager
+    class process_manager: public Iprocess_manager
     {
     private:
-        const std::string process_name = "process scheduler";
+        const std::string process_name = "Manager";
         std::vector<Iprocess_manager*> processesvector;
         wgm_feedbacks::proc_feedback process_feedback;
+        int proc_id = 0;
+        long long proc_time;
     public:
-        process_manager() ;
+        process_manager();
         // clean up destruction
-        virtual ~process_manager() ;
+        virtual ~process_manager();
         virtual void start_process();
         virtual void stop_process();
-        virtual void start_process(Iprocess_manager* process) ;
-        virtual void stop_process(Iprocess_manager* process) ;
+
+        virtual void start_process(Iprocess_manager* process);
+        virtual void stop_process(Iprocess_manager* process);
+        virtual void start_process(std::string processName) ;
+        virtual void stop_process(std::string processName);
+
+        virtual void start_process(int processID);
+        virtual void stop_process(int processID);
         virtual void start_all();
         virtual void stop_all();
         virtual void add_process_to_scheduler(Iprocess_manager* process);
         virtual void delete_last_process_from_scheduler();
-        virtual std::string get_name() ;
-        virtual bool is_proc_success() ;
+        virtual std::string get_name();
+        virtual bool is_proc_success();
+        virtual int get_id() { return proc_id; };
+        virtual long long get_elapsed_time();
+
     };
 }
 
