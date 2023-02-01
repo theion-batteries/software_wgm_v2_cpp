@@ -121,7 +121,7 @@ copy_dlls_meteor_target_destination(wgm_core_exe)
 copy_dlls_yaml_target_destination(wgm_core_exe)
 
 ############################# install target lib ########################################
-install(TARGETS wgm_static  
+install(TARGETS wgm_static #wgm_core_exe 
 CONFIGURATIONS Debug
 RUNTIME DESTINATION bin/Debug
 LIBRARY DESTINATION lib)
