@@ -73,7 +73,7 @@ namespace wafer_cooling_system
     public:
         Icooling_controller();
         virtual ~Icooling_controller();
-        virtual void start_cooling() = 0;
+        virtual wgm_feedbacks::enum_sys_feedback start_cooling() = 0;
         virtual void stop_cooling() = 0;
         virtual void connect_rotation_axis() = 0;
         virtual void connect_motion_axis() = 0;
@@ -95,7 +95,7 @@ namespace wafer_cooling_system
         void connect_ph() override;
         std::shared_ptr<ph_cooling_controller> getSubSysController() override;
         bool getSubSysStatus(std::string Subsystem) override;
-         void start_cooling() override;
+         wgm_feedbacks::enum_sys_feedback start_cooling() override;
          void stop_cooling() override;
         cooling_controller();
          ~cooling_controller();

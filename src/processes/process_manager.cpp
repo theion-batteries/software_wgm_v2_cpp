@@ -21,7 +21,7 @@ wgm_processes::Iprocess_manager::Iprocess_manager() {}
 void wgm_processes::Iprocess_manager::add_process_to_scheduler(Iprocess_manager* process) {};
 void wgm_processes::Iprocess_manager::delete_last_process_from_scheduler() {};
 void wgm_processes::Iprocess_manager::stop_all() {};
-void wgm_processes::Iprocess_manager::start_all() {};
+void wgm_processes::Iprocess_manager::start_all(std::function<void( int)> callback) {};
 wgm_processes::Iprocess_manager::~Iprocess_manager() {};
 
 /******************** implementation process management ************/
@@ -71,9 +71,11 @@ wgm_processes::process_manager:: ~process_manager() {
   }
 }
 
-void wgm_processes::process_manager::start_process()
+wgm_feedbacks::enum_proc_feedback wgm_processes::process_manager::start_process()
 {
   std::cout << "process started" << std::endl;
+    return wgm_feedbacks::enum_proc_feedback::proc_success;
+
 }
 void wgm_processes::process_manager::stop_process()
 {
@@ -152,16 +154,17 @@ void wgm_processes::process_manager::stop_process(int processID)
 
 
 
-void wgm_processes::process_manager::start_all()
+void wgm_processes::process_manager::start_all(std::function<void( int)> callback)
 {
+  proc_time = 0;
   std::cout << "executing all processes" << std::endl;
   for (auto process : processesvector)
   {
     if (process != nullptr)
     {
-      process->start_process();
-      if (process->is_proc_success()) continue;
-      break;
+      if (process->start_process() == wgm_feedbacks::enum_proc_feedback::proc_error) break;
+      callback(process->get_id());
+      proc_time += process->get_elapsed_time();
     }
     else std::cout << "empty process scheduler" << std::endl;
   }

@@ -22,7 +22,7 @@ namespace wgm_processes
     public:
         Ialigning_process();
         virtual ~Ialigning_process();
-        virtual void start_process() = 0;
+        virtual wgm_feedbacks::enum_proc_feedback start_process() = 0;
         virtual void stop_process() = 0;
         virtual std::string get_name() = 0;
         virtual int get_id() = 0;
@@ -46,7 +46,7 @@ namespace wgm_processes
     public:
         aligning_process();
         virtual ~aligning_process();
-        virtual void start_process();
+        virtual wgm_feedbacks::enum_proc_feedback start_process();
         virtual void stop_process();
         virtual std::string get_name();
         virtual bool is_proc_success();

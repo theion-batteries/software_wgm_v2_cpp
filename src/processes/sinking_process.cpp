@@ -23,25 +23,29 @@ wgm_processes::sinking_process::~sinking_process()
   delete process_timer;
   delete process_dist_monitor;
 }
-void wgm_processes::sinking_process::start_process()
+wgm_feedbacks::enum_proc_feedback wgm_processes::sinking_process::start_process()
 {
   std::cout << "execute " << process_name << std::endl;
   process_timer->start_monitoring();
-  auto sinking_feedback = sinking_sys->insert_wafer_in_ml();
-  //auto sinking_feedback = wgm_feedbacks::enum_sys_feedback::sys_error;
-  // feedback
-  if (sinking_feedback == wgm_feedbacks::enum_sys_feedback::sys_error)
-  {
-    stop_process();
-    process_feedback.setFeedback(wgm_feedbacks::enum_proc_feedback::proc_error);
+  //auto sinking_feedback = sinking_sys->insert_wafer_in_ml();
+  ////auto sinking_feedback = wgm_feedbacks::enum_sys_feedback::sys_error;
+  //// feedback
+  //if (sinking_feedback == wgm_feedbacks::enum_sys_feedback::sys_error)
+  //{
+  //  stop_process();
+  //  process_feedback.setFeedback(wgm_feedbacks::enum_proc_feedback::proc_error);
+//
+  //}
+  //else if (sinking_feedback == wgm_feedbacks::enum_sys_feedback::sys_success)
+  //{
+  //  process_feedback.setFeedback(wgm_feedbacks::enum_proc_feedback::proc_success);
+  //  process_dist_monitor->start_monitoring();
+  //}
+    std::this_thread::sleep_for(std::chrono::milliseconds(3000));
 
-  }
-  else if (sinking_feedback == wgm_feedbacks::enum_sys_feedback::sys_success)
-  {
-    process_feedback.setFeedback(wgm_feedbacks::enum_proc_feedback::proc_success);
-    process_dist_monitor->start_monitoring();
-  }
   process_timer->stop_monitoring();
+
+  return wgm_feedbacks::enum_proc_feedback::proc_success;
 
 }
 void wgm_processes::sinking_process::stop_process()

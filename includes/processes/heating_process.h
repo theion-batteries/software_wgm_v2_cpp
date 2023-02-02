@@ -22,7 +22,7 @@ namespace wgm_processes
     public:
         Iheating_process();
         virtual ~Iheating_process();
-        virtual void start_process() = 0;
+        virtual wgm_feedbacks::enum_proc_feedback start_process() = 0;
         virtual void stop_process() = 0;
         virtual std::string get_name() = 0;
         virtual bool is_proc_success() = 0;
@@ -45,7 +45,7 @@ namespace wgm_processes
     public:
         heating_process();
         virtual ~heating_process();
-         void start_process() override;
+         wgm_feedbacks::enum_proc_feedback start_process() override;
          void stop_process() override;
          std::string get_name() override;
          bool is_proc_success() override;

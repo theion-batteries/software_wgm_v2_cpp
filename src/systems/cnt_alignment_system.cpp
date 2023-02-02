@@ -26,6 +26,7 @@ cnt_alignment_system::cnt_dispensing::~cnt_dispensing()
 void cnt_alignment_system::cnt_dispensing::start_vibrating()
 {
   std::cout << "starting vibration" << std::endl;
+  dispenser->connect();
   dispenser->vibrate();
 }
 void cnt_alignment_system::cnt_dispensing::stop_vibrating()
@@ -48,6 +49,7 @@ cnt_alignment_system::cnt_sys_motion::~cnt_sys_motion()
 void cnt_alignment_system::cnt_sys_motion::move_down_to_center()
 {
   std::cout << "cnt moving down to centre" << std::endl;
+  motion->connect();
   motion->move_center();
 }
 void cnt_alignment_system::cnt_sys_motion::move_back_to_reference()
@@ -70,6 +72,7 @@ cnt_alignment_system::hv_controller:: ~hv_controller()
 void cnt_alignment_system::hv_controller::start_hv()
 {
   std::cout << "starting hv controller" << std::endl;
+  hv->connect();
   hv->start();
 }
 void cnt_alignment_system::hv_controller::stop_hv()
@@ -112,16 +115,18 @@ cnt_alignment_system::cnt_aligning_controller:: ~cnt_aligning_controller()
 // methods implmenetation
 void cnt_alignment_system::cnt_aligning_controller::start_aligning()
 {
-  hv_controll->start_hv();
   cnt_motion_controller->move_down_to_center();
   cnt_dispenser->start_vibrating();
+  hv_controll->start_hv();
+
 }
 
 void cnt_alignment_system::cnt_aligning_controller::stop_aligning()
 {
   cnt_dispenser->stop_vibrating();
-  cnt_motion_controller->move_back_to_reference();
   hv_controll->stop_hv();
+  cnt_motion_controller->move_back_to_reference();
+
 }
 cnt_alignment_system::voltage cnt_alignment_system::cnt_aligning_controller::get_voltage_struct()
 {

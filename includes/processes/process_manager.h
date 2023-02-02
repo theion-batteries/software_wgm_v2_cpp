@@ -13,6 +13,7 @@
 #include "wgm_monitoring.h"
 #include "process_feedback.h"
 #include <algorithm> 
+#include <functional>
 
 namespace wgm_processes
 {
@@ -25,7 +26,7 @@ namespace wgm_processes
     {
     public:
         Iprocess_manager();
-        virtual void start_process() = 0;
+        virtual wgm_feedbacks::enum_proc_feedback start_process() = 0;
         virtual void stop_process() = 0;
 
         virtual void start_process(Iprocess_manager* process) {};
@@ -41,7 +42,7 @@ namespace wgm_processes
 
         virtual void delete_last_process_from_scheduler();
         virtual void stop_all();
-        virtual void start_all();
+        virtual void start_all(std::function<void( int)> callback);
 
         virtual std::string get_name() = 0; // or id
 
@@ -72,7 +73,7 @@ namespace wgm_processes
         process_manager();
         // clean up destruction
         virtual ~process_manager();
-        virtual void start_process();
+        virtual wgm_feedbacks::enum_proc_feedback start_process();
         virtual void stop_process();
 
         virtual void start_process(Iprocess_manager* process);
@@ -82,7 +83,7 @@ namespace wgm_processes
 
         virtual void start_process(int processID);
         virtual void stop_process(int processID);
-        virtual void start_all();
+        virtual void start_all(std::function<void( int)> callback);
         virtual void stop_all();
         virtual void add_process_to_scheduler(Iprocess_manager* process);
         virtual void delete_last_process_from_scheduler();

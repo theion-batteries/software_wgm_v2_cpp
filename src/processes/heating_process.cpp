@@ -36,27 +36,31 @@ wgm_processes::heating_process::~heating_process()
   delete process_timer;
   delete process_temp_monitor;
 }
-void wgm_processes::heating_process::start_process()
+wgm_feedbacks::enum_proc_feedback wgm_processes::heating_process::start_process()
 {
   std::cout << "execute " << process_name << std::endl;
   // start timer
   process_timer->start_monitoring();
   // start system
-  heating_sys->turn_on_heating();
-  // report feedback
-  auto heating_feedback = wgm_feedbacks::enum_sys_feedback::sys_error;
-  // feedback
-  if (heating_feedback == wgm_feedbacks::enum_sys_feedback::sys_error)
-  {
-    process_timer->stop_monitoring();
-    process_feedback.setFeedback(wgm_feedbacks::enum_proc_feedback::proc_error);
-  }
-  else if (heating_feedback == wgm_feedbacks::enum_sys_feedback::sys_success)
-  {
-    process_feedback.setFeedback(wgm_feedbacks::enum_proc_feedback::proc_success);
-  process_temp_monitor->start_monitoring();
-  }
+  //heating_sys->turn_on_heating();
+  //// report feedback
+  //auto heating_feedback = wgm_feedbacks::enum_sys_feedback::sys_error;
+  //// feedback
+  //if (heating_feedback == wgm_feedbacks::enum_sys_feedback::sys_error)
+  //{
+  //  process_timer->stop_monitoring();
+  //  process_feedback.setFeedback(wgm_feedbacks::enum_proc_feedback::proc_error);
+  //}
+  //else if (heating_feedback == wgm_feedbacks::enum_sys_feedback::sys_success)
+  //{
+  //  process_feedback.setFeedback(wgm_feedbacks::enum_proc_feedback::proc_success);
+  //process_temp_monitor->start_monitoring();
+  //}
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+  process_temp_monitor->stop_monitoring();
+  process_timer->stop_monitoring();
 
+  return wgm_feedbacks::enum_proc_feedback::proc_success;
 }
 void wgm_processes::heating_process::stop_process()
 {

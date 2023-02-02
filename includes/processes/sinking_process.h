@@ -22,7 +22,7 @@ namespace wgm_processes
     public:
         Isinking_process();
         virtual ~Isinking_process();
-        virtual void start_process() = 0;
+        virtual wgm_feedbacks::enum_proc_feedback start_process() = 0;
         virtual void stop_process() = 0;
         virtual std::string get_name() = 0;
         virtual bool is_proc_success() = 0;
@@ -45,7 +45,7 @@ namespace wgm_processes
     public:
         sinking_process();
         virtual ~sinking_process();
-        virtual void start_process();
+        virtual wgm_feedbacks::enum_proc_feedback start_process();
         virtual void stop_process();
         virtual std::string get_name();
         virtual bool is_proc_success(); 

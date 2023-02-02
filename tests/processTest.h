@@ -8,11 +8,11 @@ using ::testing::Return;
 // mocking
 class processMock: public wgm_processes::process_manager {
 public:
-MOCK_METHOD( void, start_process, (), (override));
+//MOCK_METHOD( void, start_process, (), (override));
 MOCK_METHOD( void, stop_process, (), (override));
 MOCK_METHOD( void, start_process, (Iprocess_manager* process), (override));
 MOCK_METHOD( void, stop_process, (Iprocess_manager* process), (override));
-MOCK_METHOD( void, start_all, (), (override));
+//MOCK_METHOD( void, start_all, (), (override));
 MOCK_METHOD( void, stop_all, (), (override));
 
 

@@ -36,13 +36,18 @@ wgm_processes::extracting_process::~extracting_process()
   //if (extracting_sys !=nullptr ) delete extracting_sys;
   delete process_timer;
 }
-void wgm_processes::extracting_process::start_process()
+wgm_feedbacks::enum_proc_feedback wgm_processes::extracting_process::start_process()
 {
   std::cout << "execute " << process_name << std::endl;
   process_timer->start_monitoring();
-  extracting_sys->extract_wafer_from_ml();
+ // extracting_sys->extract_wafer_from_ml();
   // feedback
+    std::this_thread::sleep_for(std::chrono::milliseconds(2500));
+
   process_timer->stop_monitoring();
+
+    return wgm_feedbacks::enum_proc_feedback::proc_success;
+
 }
 void wgm_processes::extracting_process::stop_process()
 {

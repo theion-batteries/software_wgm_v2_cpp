@@ -10,6 +10,8 @@
  */
 
 #include "cooling_process.h"
+using enum wgm_feedbacks::enum_sys_feedback;
+using enum wgm_feedbacks::enum_proc_feedback;
 
 /****************** interface cooling process *******************/
 wgm_processes::Icooling_process::Icooling_process()
@@ -29,13 +31,16 @@ wgm_processes::cooling_process:: ~cooling_process()
   delete cooling_sys;
   delete process_timer;
 }
-void wgm_processes::cooling_process::start_process()
+wgm_feedbacks::enum_proc_feedback wgm_processes::cooling_process::start_process()
 {
   std::cout << "execute " << process_name << std::endl;
   process_timer->start_monitoring();
-  cooling_sys->start_cooling();
+ // if (cooling_sys->start_cooling() == sys_error) return proc_error;
   // feedback
+  std::this_thread::sleep_for(std::chrono::milliseconds(2000));
   process_timer->stop_monitoring();
+
+  return proc_success;
 }
 void wgm_processes::cooling_process::stop_process()
 {

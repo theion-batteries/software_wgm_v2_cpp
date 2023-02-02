@@ -9,6 +9,9 @@
  *
  */
 #include "wafer_cooling_system.h"
+using enum wgm_feedbacks::enum_sys_feedback;
+using enum wgm_feedbacks::enum_sub_sys_feedback;
+
 wafer_cooling_system::Icooling_rotation::Icooling_rotation()
 {
   std::cout << "creating cooling rotation " << std::endl;
@@ -84,11 +87,13 @@ wafer_cooling_system::cooling_controller:: ~cooling_controller()
   delete ph_printing;
 }
 
-void wafer_cooling_system::cooling_controller::start_cooling()
+wgm_feedbacks::enum_sys_feedback wafer_cooling_system::cooling_controller::start_cooling()
 {
-  ph_motion->move_down_to_center();
-  ph_rotation->ph_rotate();
-  ph_printing->ph_spit();
+  //ph_motion->move_down_to_center();
+  //ph_rotation->ph_rotate();
+  //ph_printing->ph_spit();
+  if (ph_sys_control_shared_ptr->ph_controller_connect() == sub_error) return sys_error;
+  return sys_success;
 }
 void wafer_cooling_system::cooling_controller::stop_cooling()
 {

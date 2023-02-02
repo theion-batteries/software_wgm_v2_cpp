@@ -39,15 +39,19 @@ wgm_processes::aligning_process:: ~aligning_process()
   delete process_curr_monitor;
   delete process_volt_monitor;
 }
-void wgm_processes::aligning_process::start_process()
+wgm_feedbacks::enum_proc_feedback wgm_processes::aligning_process::start_process()
 {
   std::cout << "execute " << process_name << std::endl;
   process_timer->start_monitoring();
-  aligning_sys->start_aligning();
+  //aligning_sys->start_aligning();
   // feedback
-  process_timer->stop_monitoring();
   process_curr_monitor->start_monitoring();
   process_volt_monitor->start_monitoring();
+  std::this_thread::sleep_for(std::chrono::milliseconds(1500));
+    process_timer->stop_monitoring();
+
+    return wgm_feedbacks::enum_proc_feedback::proc_success;
+
 }
 void wgm_processes::aligning_process::stop_process()
 {
