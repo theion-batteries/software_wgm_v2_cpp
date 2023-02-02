@@ -10,11 +10,7 @@
  */
 
 #include "process_manager.h"
-#include "heating_process.h"
-#include "sinking_process.h"
-#include "aligning_process.h"
-#include "cooling_process.h"
-#include "extracting_process.h"
+
 
  // process managment interface
 wgm_processes::Iprocess_manager::Iprocess_manager() {}

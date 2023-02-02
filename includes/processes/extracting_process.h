@@ -10,7 +10,7 @@
  */
 #pragma once
 
-#include "process_manager.h"
+#include "Iprocess_manager.h"
 
 
 namespace wgm_processes
