@@ -41,7 +41,6 @@ namespace wafer_holder_motion_system
         virtual void connect_motion_axis() = 0;
         virtual std::shared_ptr<whs_controller> getSubSysController() = 0;
         virtual bool getSubSysStatus(std::string Subsystem) = 0;
-        virtual void registerAlgorithms()=0;
     };
     // implementation
     class wafer_motion_controller:public Iwafer_motion_controller
@@ -59,9 +58,8 @@ namespace wafer_holder_motion_system
         virtual void connect_motion_axis();
         virtual bool getSubSysStatus(std::string Subsystem);
         virtual std::shared_ptr<whs_controller> getSubSysController();
-        virtual void registerAlgorithms();
-
     private:
+         void registerAlgorithms();
         std::shared_ptr<whs_controller> wafer_sys_control_shared_ptr;
         std::vector<std::function<wgm_feedbacks::enum_sub_sys_feedback()>> whsAlgorithms;
     };

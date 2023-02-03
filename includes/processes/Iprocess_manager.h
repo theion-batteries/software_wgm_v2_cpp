@@ -14,6 +14,8 @@
 #include "process_feedback.h"
 #include <algorithm> 
 #include <functional>
+using enum wgm_feedbacks::enum_sub_sys_feedback;
+using enum wgm_feedbacks::enum_proc_feedback;
 
 namespace wgm_processes
 {

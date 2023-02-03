@@ -43,14 +43,14 @@ wgm_feedbacks::enum_proc_feedback wgm_processes::aligning_process::start_process
 {
   std::cout << "execute " << process_name << std::endl;
   process_timer->start_monitoring();
-  //aligning_sys->start_aligning();
-  // feedback
-  process_curr_monitor->start_monitoring();
-  process_volt_monitor->start_monitoring();
-  std::this_thread::sleep_for(std::chrono::milliseconds(1500));
+  if (aligning_sys->start_aligning() == sys_error)
+  {
     process_timer->stop_monitoring();
-
-    return wgm_feedbacks::enum_proc_feedback::proc_success;
+    return proc_error;
+  }
+  std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+  process_timer->stop_monitoring();
+  return proc_success;
 
 }
 void wgm_processes::aligning_process::stop_process()

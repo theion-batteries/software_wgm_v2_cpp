@@ -10,137 +10,35 @@
  */
 #include "cnt_alignment_system.h"
 
-cnt_alignment_system::cnt_dispensing::cnt_dispensing()
-{
-  std::cout << "creating cnt dispenser" << std::endl;
-  dispenser = new cnt_dispenser_vibration();
-}
-
-cnt_alignment_system::cnt_dispensing::~cnt_dispensing()
-{
-  std::cout << "deleting cnt dispenser" << std::endl;
-  delete dispenser;
-}
-// implement 
-
-void cnt_alignment_system::cnt_dispensing::start_vibrating()
-{
-  std::cout << "starting vibration" << std::endl;
-  dispenser->connect();
-  dispenser->vibrate();
-}
-void cnt_alignment_system::cnt_dispensing::stop_vibrating()
-{
-  std::cout << "stopping vibration" << std::endl;
-  dispenser->deactivate();
-}
-/****************** cnt motion ******************/
-cnt_alignment_system::cnt_sys_motion::cnt_sys_motion()
-{
-  std::cout << "creating cnt motion" << std::endl;
-  motion = new cnt_linear_motion();
-}
-cnt_alignment_system::cnt_sys_motion::~cnt_sys_motion()
-{
-  std::cout << "deleting cnt motion" << std::endl;
-  delete motion;
-}
-//implement
-void cnt_alignment_system::cnt_sys_motion::move_down_to_center()
-{
-  std::cout << "cnt moving down to centre" << std::endl;
-  motion->connect();
-  motion->move_center();
-}
-void cnt_alignment_system::cnt_sys_motion::move_back_to_reference()
-{
-  std::cout << "cnt moving back to refrence" << std::endl;
-  motion->move_home();
-}
-/****************** hv controller ******************/
-cnt_alignment_system::hv_controller::hv_controller()
-{
-  std::cout << "creating hv controller" << std::endl;
-  hv = new cnt_high_voltage_gbs();
-}
-cnt_alignment_system::hv_controller:: ~hv_controller()
-{
-  std::cout << "deleting hv controller" << std::endl;
-  delete hv;
-}
-// implement 
-void cnt_alignment_system::hv_controller::start_hv()
-{
-  std::cout << "starting hv controller" << std::endl;
-  hv->connect();
-  hv->start();
-}
-void cnt_alignment_system::hv_controller::stop_hv()
-{
-  std::cout << "stopping hv controller" << std::endl;
-  hv->stop();
-}
-// external system calls
-double cnt_alignment_system::hv_controller::get_input_voltage()
-{
-  return input_voltage;
-}
-double cnt_alignment_system::hv_controller::get_input_current()
-{
-  return input_current;
-}
-double cnt_alignment_system::hv_controller::get_output_voltage()
-{
-  return output_current;
-}
-double cnt_alignment_system::hv_controller::get_output_current()
-{
-  return output_voltage;
-}
-
 /*********** cnt controller ************/
-//implement
 cnt_alignment_system::cnt_aligning_controller::cnt_aligning_controller()
 {
-  cnt_dispenser = new cnt_dispensing();
-  cnt_motion_controller = new cnt_sys_motion();
-  hv_controll = new hv_controller();
+    std::cout << "creating cnt system " << std::endl;
+
+    registerAlgorithms();
+
 }
 cnt_alignment_system::cnt_aligning_controller:: ~cnt_aligning_controller()
 {
-  delete cnt_dispenser;
-  delete cnt_motion_controller;
-  delete hv_controll;
+    std::cout << "deleting cnt system" << std::endl;
+
 }
 // methods implmenetation
-void cnt_alignment_system::cnt_aligning_controller::start_aligning()
+wgm_feedbacks::enum_sys_feedback cnt_alignment_system::cnt_aligning_controller::start_aligning()
 {
-  cnt_motion_controller->move_down_to_center();
-  cnt_dispenser->start_vibrating();
-  hv_controll->start_hv();
-
+  std::cout << "start aligning algorithms" << std::endl;
+  for ( auto & algo: cntAlgorithms)
+  {
+    if (algo() == sub_error) return sys_error;
+  }
+  return sys_success;
 }
 
-void cnt_alignment_system::cnt_aligning_controller::stop_aligning()
+wgm_feedbacks::enum_sys_feedback cnt_alignment_system::cnt_aligning_controller::stop_aligning()
 {
-  cnt_dispenser->stop_vibrating();
-  hv_controll->stop_hv();
-  cnt_motion_controller->move_back_to_reference();
+  return sys_success;
 
 }
-cnt_alignment_system::voltage cnt_alignment_system::cnt_aligning_controller::get_voltage_struct()
-{
-  V.Vin = hv_controll->get_input_voltage();
-  V.Vout = hv_controll->get_output_voltage();
-  return V;
-}
-cnt_alignment_system::current cnt_alignment_system::cnt_aligning_controller::get_current_struct()
-{
-  C.Cin = hv_controll->get_input_voltage();
-  C.Cout = hv_controll->get_output_voltage();
-  return C;
-}
-
 
 void cnt_alignment_system::cnt_aligning_controller::connect_dispenser()
 {
@@ -165,4 +63,17 @@ bool cnt_alignment_system::cnt_aligning_controller::getSubSysStatus(std::string 
   else if (Subsystem == "hv") return controller.get_hv_status();
   else if (Subsystem == "controller") return controller.get_cnt_controller_status();
   else return false;
+}
+
+void cnt_alignment_system::cnt_aligning_controller::registerAlgorithms()
+{
+  cntAlgorithms.push_back(std::bind(&cnt_controller::cnt_controller_connect, &controller));
+  cntAlgorithms.push_back(std::bind(&cnt_controller::cnt_motion_move_home, &controller));
+  cntAlgorithms.push_back(std::bind(&cnt_controller::cnt_motion_move_target_position, &controller));
+  cntAlgorithms.push_back(std::bind(&cnt_controller::cnt_dispenser_activate, &controller));
+  cntAlgorithms.push_back(std::bind(&cnt_controller::hv_activate, &controller));
+  cntAlgorithms.push_back(std::bind(&cnt_controller::hv_deactivate, &controller));
+  cntAlgorithms.push_back(std::bind(&cnt_controller::cnt_dispenser_deactivate, &controller));
+  cntAlgorithms.push_back(std::bind(&cnt_controller::cnt_motion_move_home, &controller));
+// TODO disconnect
 }

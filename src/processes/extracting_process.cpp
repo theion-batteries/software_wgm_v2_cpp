@@ -11,8 +11,8 @@
 
 #include "extracting_process.h"
 
- 
-/******************* interface wafer extraction process***************/
+
+ /******************* interface wafer extraction process***************/
 wgm_processes::Iextracting_process::Iextracting_process()
 {
   std::cout << "creating extracting process " << std::endl;
@@ -40,14 +40,14 @@ wgm_feedbacks::enum_proc_feedback wgm_processes::extracting_process::start_proce
 {
   std::cout << "execute " << process_name << std::endl;
   process_timer->start_monitoring();
- // extracting_sys->extract_wafer_from_ml();
-  // feedback
-    std::this_thread::sleep_for(std::chrono::milliseconds(2500));
-
+ if( extracting_sys->extract_wafer_from_ml() == sys_error )
+ {
   process_timer->stop_monitoring();
-
-    return wgm_feedbacks::enum_proc_feedback::proc_success;
-
+  return proc_error;
+ }
+  std::this_thread::sleep_for(std::chrono::milliseconds(2500));
+  process_timer->stop_monitoring();
+  return proc_success;
 }
 void wgm_processes::extracting_process::stop_process()
 {
@@ -56,10 +56,10 @@ void wgm_processes::extracting_process::stop_process()
 
 }
 
- long long wgm_processes::extracting_process::get_elapsed_time()
- {
-    return process_timer->get_elapsed_time();
- }
+long long wgm_processes::extracting_process::get_elapsed_time()
+{
+  return process_timer->get_elapsed_time();
+}
 
 wafer_holder_motion_system::Iwafer_motion_controller* wgm_processes::extracting_process::get_sys_ptr()
 {

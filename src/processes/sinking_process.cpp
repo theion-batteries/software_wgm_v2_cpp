@@ -27,11 +27,14 @@ wgm_feedbacks::enum_proc_feedback wgm_processes::sinking_process::start_process(
 {
   std::cout << "execute " << process_name << std::endl;
   process_timer->start_monitoring();
-  sinking_sys->insert_wafer_in_ml();
+  if (sinking_sys->insert_wafer_in_ml() == sys_error)
+  {
+    process_timer->stop_monitoring();
+    return proc_error;
+  }
   std::this_thread::sleep_for(std::chrono::milliseconds(3000));
   process_timer->stop_monitoring();
-  return wgm_feedbacks::enum_proc_feedback::proc_success;
-
+  return proc_success;
 }
 void wgm_processes::sinking_process::stop_process()
 {
@@ -44,10 +47,10 @@ wafer_holder_motion_system::Iwafer_motion_controller* wgm_processes::sinking_pro
   return sinking_sys;
 }
 
- long long wgm_processes::sinking_process::get_elapsed_time()
- {
-    return process_timer->get_elapsed_time();
- }
+long long wgm_processes::sinking_process::get_elapsed_time()
+{
+  return process_timer->get_elapsed_time();
+}
 
 
 // sink process implemnt

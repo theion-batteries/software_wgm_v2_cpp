@@ -13,39 +13,9 @@
 #include <iostream>
 #include "system_feedback.h"
 #include "heating_controller.h"
-
+#include <functional>
 namespace sulfur_heating_system
 {
-  /*********** heater ***************/
-  class Iheater
-  {
-  public:
-    virtual void start_heater() = 0;
-    virtual void shutdown_heater() = 0;
-    Iheater();
-    virtual ~Iheater();
-  };
-  // implement
-  class Heater: public Iheater
-  {
-  protected:
-    virtual void start_heater();
-    virtual void shutdown_heater();
-  };
-  /*********** temp sensor ************/
-  class Itemperature_sensor
-  {
-  public:
-    Itemperature_sensor();
-    virtual ~Itemperature_sensor();
-    virtual double get_current_value() = 0;
-  };
-  // implement
-  class temperature_sensor: public Itemperature_sensor {
-  protected:
-    virtual double get_current_value();
-    double current_val;
-  };
   /*********** heating controller *************/
   class Isulfur_heating_controller
   {
@@ -57,6 +27,7 @@ namespace sulfur_heating_system
     virtual void turn_on_heating() = 0;
     virtual double getSulfurTemperatur() = 0;
     virtual void setSulfurTemperatur(double targetTemp) = 0;
+    virtual wgm_feedbacks::enum_sys_feedback start_heating_sys() =0;
     virtual heating_controller getSubSysController() = 0;
     virtual bool getSubSysStatus(std::string Subsystem) = 0;
   };
@@ -64,9 +35,9 @@ namespace sulfur_heating_system
   class sulfur_heating_controller: public Isulfur_heating_controller
   {
   private:
-    Itemperature_sensor* tempe_sensor;
-    Iheater* heater;
     heating_controller heatControl;
+    std::vector<std::function<wgm_feedbacks::enum_sub_sys_feedback()>> heatAlgorithms;
+     void registerAlgorithms();
 
   public:
     sulfur_heating_controller();
@@ -76,6 +47,7 @@ namespace sulfur_heating_system
     void turn_on_heating() override;
     void controll_heating() override;
     void setSulfurTemperatur(double targetTemp) override;
+    virtual wgm_feedbacks::enum_sys_feedback start_heating_sys() ;
     heating_controller getSubSysController() override;
     bool getSubSysStatus(std::string Subsystem) override;
   };

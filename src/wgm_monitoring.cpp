@@ -127,8 +127,6 @@ wgm_monitoring::voltage_monitor:: ~voltage_monitor()
 void wgm_monitoring::voltage_monitor::start_monitoring()
 {
   std::cout << "process voltage monitoring started " << std::endl;
-  auto Voltage_data = param_voltage->get_voltage_struct();
-  std::cout << "input voltage:  " << Voltage_data.Vin << "output voltage: " << Voltage_data.Vout << std::endl;
 }
 void wgm_monitoring::voltage_monitor::stop_monitoring()
 {
@@ -154,8 +152,6 @@ wgm_monitoring::current_monitor:: ~current_monitor()
 void wgm_monitoring::current_monitor::start_monitoring()
 {
   std::cout << "process current monitoring started " << std::endl;
-  auto Current_data = param_current->get_current_struct();
-  std::cout << "input current:  " << Current_data.Cin << "output current: " << Current_data.Cout << std::endl;
 }
 void wgm_monitoring::current_monitor::stop_monitoring()
 {

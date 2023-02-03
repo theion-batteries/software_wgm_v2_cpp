@@ -10,38 +10,6 @@
  */
 #include "heating_system.h"
 
-sulfur_heating_system::Iheater::Iheater()
-{
-  std::cout << "creating heater" << std::endl;
-}
-
-sulfur_heating_system::Iheater::~Iheater()
-{
-  std::cout << "deleting heater" << std::endl;
-}
-
-void sulfur_heating_system::Heater::start_heater()
-{
-  std::cout << "starting heater" << std::endl;
-}
-void sulfur_heating_system::Heater::shutdown_heater()
-{
-  std::cout << "stopping heater" << std::endl;
-}
-
-sulfur_heating_system::Itemperature_sensor::Itemperature_sensor()
-{
-  std::cout << "creating temp sensor" << std::endl;
-}
-sulfur_heating_system::Itemperature_sensor::~Itemperature_sensor()
-{
-  std::cout << "deleting temp sensor" << std::endl;
-}
-double sulfur_heating_system::temperature_sensor::get_current_value()
-{
-  std::cout << "reading value temp sensor" << std::endl;
-  return current_val;
-}
 
 sulfur_heating_system::Isulfur_heating_controller::Isulfur_heating_controller()
 {
@@ -52,13 +20,11 @@ sulfur_heating_system::Isulfur_heating_controller::~Isulfur_heating_controller()
   std::cout << "deleting heating controller" << std::endl;
 }
 sulfur_heating_system::sulfur_heating_controller::sulfur_heating_controller() {
-  tempe_sensor = new temperature_sensor();
-  heater = new Heater();
+
 }
 sulfur_heating_system::sulfur_heating_controller::~sulfur_heating_controller()
 {
-  delete heater;
-  delete tempe_sensor;
+
 }
 double sulfur_heating_system::sulfur_heating_controller::getSulfurTemperatur()
 {
@@ -96,4 +62,19 @@ bool sulfur_heating_system::sulfur_heating_controller::getSubSysStatus(std::stri
 {
  if (Subsystem == "controller") return heatControl.get_heating_controller_status();
   else return false;
+}
+
+wgm_feedbacks::enum_sys_feedback sulfur_heating_system::sulfur_heating_controller::start_heating_sys() 
+{
+
+return wgm_feedbacks::enum_sys_feedback::sys_success;
+}
+
+
+void sulfur_heating_system::sulfur_heating_controller::registerAlgorithms()
+{
+  heatAlgorithms.push_back(std::bind(&heating_controller::heating_controller_connect, &heatControl));
+  heatAlgorithms.push_back(std::bind(&heating_controller::heating_controller_activate, &heatControl));
+  heatAlgorithms.push_back(std::bind(&heating_controller::heating_controller_deactivate, &heatControl));
+// TODO disconnect
 }
