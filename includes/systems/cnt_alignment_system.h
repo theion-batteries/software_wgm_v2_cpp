@@ -14,7 +14,10 @@
 #include "cnt_controller.h"
 #include "system_feedback.h"
 #include <functional>
+#include <memory>
+
 using enum wgm_feedbacks::enum_sys_feedback;
+using enum wgm_feedbacks::enum_sub_sys_feedback;
 
 namespace cnt_alignment_system
 {
@@ -34,6 +37,10 @@ namespace cnt_alignment_system
   //implement
   class cnt_aligning_controller: public Icnt_aligning_controller
   {
+  private:
+     void registerAlgorithms();
+    cnt_controller controller;
+    std::vector<std::function<wgm_feedbacks::enum_sub_sys_feedback()>> cntAlgorithms;
   public:
     cnt_aligning_controller();
     virtual ~cnt_aligning_controller();
@@ -44,11 +51,6 @@ namespace cnt_alignment_system
     bool getSubSysStatus(std::string Subsystem) override;
     virtual wgm_feedbacks::enum_sys_feedback start_aligning();
     virtual wgm_feedbacks::enum_sys_feedback stop_aligning();
-
-  private:
-     void registerAlgorithms();
-    cnt_controller controller;
-    std::vector<std::function<wgm_feedbacks::enum_sub_sys_feedback()>> cntAlgorithms;
 
   };
 

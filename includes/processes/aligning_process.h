@@ -9,9 +9,9 @@
  *
  */
 #pragma once
-
 #include "Iprocess_manager.h"
-
+using enum wgm_feedbacks::enum_sys_feedback;
+using enum wgm_feedbacks::enum_proc_feedback;
 
 namespace wgm_processes
 {
@@ -23,7 +23,7 @@ namespace wgm_processes
         Ialigning_process();
         virtual ~Ialigning_process();
         virtual wgm_feedbacks::enum_proc_feedback start_process() = 0;
-        virtual void stop_process() = 0;
+        virtual wgm_feedbacks::enum_proc_feedback stop_process() = 0;
         virtual std::string get_name() = 0;
         virtual int get_id() = 0;
         virtual bool is_proc_success() = 0;
@@ -37,8 +37,6 @@ namespace wgm_processes
     private:
         wgm_feedbacks::proc_feedback process_feedback;
         wgm_monitoring::Itime_monitor* process_timer;
-        wgm_monitoring::Ivoltage_monitor* process_volt_monitor;
-        wgm_monitoring::Icurrent_monitor* process_curr_monitor;
         cnt_alignment_system::Icnt_aligning_controller* aligning_sys;
         std::string process_name = "Cnt_Alignment";
         int proc_id = 2;
@@ -47,7 +45,7 @@ namespace wgm_processes
         aligning_process();
         virtual ~aligning_process();
         virtual wgm_feedbacks::enum_proc_feedback start_process();
-        virtual void stop_process();
+        virtual wgm_feedbacks::enum_proc_feedback stop_process();
         virtual std::string get_name();
         virtual bool is_proc_success();
         virtual long long get_elapsed_time();

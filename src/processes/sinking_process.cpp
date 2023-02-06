@@ -14,14 +14,12 @@ wgm_processes::Isinking_process::~Isinking_process() {}
 wgm_processes::sinking_process::sinking_process() {
   sinking_sys = new wafer_holder_motion_system::wafer_motion_controller();
   process_timer = new wgm_monitoring::time_monitor();
-  process_dist_monitor = new wgm_monitoring::distance_monitor(sinking_sys);
 }
 wgm_processes::sinking_process::~sinking_process()
 {
   std::cout << "deleting sinking process " << std::endl;
   delete sinking_sys;
   delete process_timer;
-  delete process_dist_monitor;
 }
 wgm_feedbacks::enum_proc_feedback wgm_processes::sinking_process::start_process()
 {
@@ -36,11 +34,11 @@ wgm_feedbacks::enum_proc_feedback wgm_processes::sinking_process::start_process(
   process_timer->stop_monitoring();
   return proc_success;
 }
-void wgm_processes::sinking_process::stop_process()
+wgm_feedbacks::enum_proc_feedback wgm_processes::sinking_process::stop_process()
 {
   std::cout << "stopping " << process_name << std::endl;
-  process_dist_monitor->stop_monitoring();
   process_timer->stop_monitoring();
+  return proc_success;
 }
 wafer_holder_motion_system::Iwafer_motion_controller* wgm_processes::sinking_process::get_sys_ptr()
 {

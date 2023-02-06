@@ -9,9 +9,9 @@
  *
  */
 #pragma once
-
 #include "Iprocess_manager.h"
-
+using enum wgm_feedbacks::enum_sys_feedback;
+using enum wgm_feedbacks::enum_proc_feedback;
 
 namespace wgm_processes
 {
@@ -23,7 +23,7 @@ namespace wgm_processes
         Icooling_process();
         virtual ~Icooling_process();
         virtual wgm_feedbacks::enum_proc_feedback start_process() = 0;
-        virtual void stop_process() = 0;
+        virtual wgm_feedbacks::enum_proc_feedback stop_process() = 0;
         virtual std::string get_name() = 0;
         virtual int get_id() = 0;
         virtual bool is_proc_success() = 0;
@@ -44,7 +44,7 @@ namespace wgm_processes
         cooling_process();
         virtual ~cooling_process();
         virtual wgm_feedbacks::enum_proc_feedback start_process();
-        virtual void stop_process();
+        virtual wgm_feedbacks::enum_proc_feedback stop_process();
         virtual std::string get_name();
         virtual bool is_proc_success();
         virtual wafer_cooling_system::Icooling_controller* get_sys_ptr();

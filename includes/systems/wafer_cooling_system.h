@@ -14,58 +14,13 @@
 #include "ph_cooling_controller.h"
 #include "system_feedback.h"
 #include <memory>
+#include <functional>
 
+using enum wgm_feedbacks::enum_sys_feedback;
+using enum wgm_feedbacks::enum_sub_sys_feedback;
 namespace wafer_cooling_system
 {
-    /****** cooling rotation *******/
-    // interface
-    class Icooling_rotation
-    {
-    public:
-        Icooling_rotation();
-        virtual ~Icooling_rotation();
-        virtual void ph_rotate() = 0;
-    };
-    // implementation  
-    class cooling_rotation: public Icooling_rotation
-    {
-    protected:
-        virtual void ph_rotate();
-    };
-
-    /******* cooling motion *****/
-    // interface
-    class Icooling_motion
-    {
-    public:
-        Icooling_motion();
-        virtual ~Icooling_motion();
-        virtual void move_down_to_center() = 0;
-        virtual void move_up_to_reference() = 0;
-    };
-    // implementation 
-    class cooling_motion: public Icooling_motion
-    {
-        virtual void move_down_to_center();
-        virtual void move_up_to_reference();
-    };
-
-    /****** cooling printing ********/
-    // interface
-
-    class Icooling_spitting
-    {
-    public:
-        Icooling_spitting();
-        virtual ~Icooling_spitting();
-        virtual void ph_spit() = 0;
-    };
-    // implementation 
-    class cooling_spitting: public Icooling_spitting
-    {
-        virtual void ph_spit();
-    };
-
+    
     /****** cooling controller ********/
     // interface
     class Icooling_controller
@@ -74,7 +29,7 @@ namespace wafer_cooling_system
         Icooling_controller();
         virtual ~Icooling_controller();
         virtual wgm_feedbacks::enum_sys_feedback start_cooling() = 0;
-        virtual void stop_cooling() = 0;
+        virtual wgm_feedbacks::enum_sys_feedback stop_cooling() = 0;
         virtual void connect_rotation_axis() = 0;
         virtual void connect_motion_axis() = 0;
         virtual void connect_ph() = 0;
@@ -85,23 +40,21 @@ namespace wafer_cooling_system
     class cooling_controller: public Icooling_controller
     {
     private:
-        Icooling_motion* ph_motion;
-        Icooling_rotation* ph_rotation;
-        Icooling_spitting* ph_printing;
-        std::shared_ptr<ph_cooling_controller> ph_sys_control_shared_ptr;
+    std::shared_ptr<ph_cooling_controller> ph_sys_control_shared_ptr;
+     void registerAlgorithms();
+    std::vector<std::function<wgm_feedbacks::enum_sub_sys_feedback()>> phAlgorithms;
     public:
+        cooling_controller();
+        virtual ~cooling_controller();
         void connect_rotation_axis() override;
         void connect_motion_axis() override;
         void connect_ph() override;
         std::shared_ptr<ph_cooling_controller> getSubSysController() override;
         bool getSubSysStatus(std::string Subsystem) override;
          wgm_feedbacks::enum_sys_feedback start_cooling() override;
-         void stop_cooling() override;
-        cooling_controller();
-         ~cooling_controller();
+         wgm_feedbacks::enum_sys_feedback stop_cooling() override;
+
 
     };
-
-
 }
 

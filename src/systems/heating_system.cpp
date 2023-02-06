@@ -13,17 +13,19 @@
 
 sulfur_heating_system::Isulfur_heating_controller::Isulfur_heating_controller()
 {
-  std::cout << "creating heating controller" << std::endl;
 }
 sulfur_heating_system::Isulfur_heating_controller::~Isulfur_heating_controller()
 {
-  std::cout << "deleting heating controller" << std::endl;
 }
-sulfur_heating_system::sulfur_heating_controller::sulfur_heating_controller() {
+sulfur_heating_system::sulfur_heating_controller::sulfur_heating_controller() 
+{
+  std::cout << "creating heating controller" << std::endl;
+    registerAlgorithms();
 
 }
 sulfur_heating_system::sulfur_heating_controller::~sulfur_heating_controller()
 {
+  std::cout << "deleting heating controller" << std::endl;
 
 }
 double sulfur_heating_system::sulfur_heating_controller::getSulfurTemperatur()
@@ -66,10 +68,18 @@ bool sulfur_heating_system::sulfur_heating_controller::getSubSysStatus(std::stri
 
 wgm_feedbacks::enum_sys_feedback sulfur_heating_system::sulfur_heating_controller::start_heating_sys() 
 {
-
+  std::cout << "start heating algorithms" << std::endl;
+  for ( auto & algo: heatAlgorithms)
+  {
+    if (algo() == sub_error) return sys_error;
+  }
 return wgm_feedbacks::enum_sys_feedback::sys_success;
 }
-
+wgm_feedbacks::enum_sys_feedback sulfur_heating_system::sulfur_heating_controller::stop_heating_sys() 
+{
+heatControl.heating_controller_deactivate();
+return wgm_feedbacks::enum_sys_feedback::sys_success;
+}
 
 void sulfur_heating_system::sulfur_heating_controller::registerAlgorithms()
 {

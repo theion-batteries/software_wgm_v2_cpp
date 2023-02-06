@@ -17,7 +17,7 @@ wgm_processes::Iprocess_manager::Iprocess_manager() {}
 void wgm_processes::Iprocess_manager::add_process_to_scheduler(Iprocess_manager* process) {};
 void wgm_processes::Iprocess_manager::delete_last_process_from_scheduler() {};
 void wgm_processes::Iprocess_manager::stop_all() {};
-void wgm_processes::Iprocess_manager::start_all(std::function<void( int)> callback) {};
+void wgm_processes::Iprocess_manager::start_all(std::function<void(int)> callback) {};
 wgm_processes::Iprocess_manager::~Iprocess_manager() {};
 
 /******************** implementation process management ************/
@@ -70,23 +70,24 @@ wgm_processes::process_manager:: ~process_manager() {
 wgm_feedbacks::enum_proc_feedback wgm_processes::process_manager::start_process()
 {
   std::cout << "process started" << std::endl;
-    return wgm_feedbacks::enum_proc_feedback::proc_success;
+  return wgm_feedbacks::enum_proc_feedback::proc_success;
 
 }
-void wgm_processes::process_manager::stop_process()
+wgm_feedbacks::enum_proc_feedback wgm_processes::process_manager::stop_process()
 {
   std::cout << "process stopped" << std::endl;
+  return wgm_feedbacks::enum_proc_feedback::proc_success;
 }
 void wgm_processes::process_manager::start_process(Iprocess_manager* process)
 {
-  std::cout << "process "<< process->get_name()<< " started" << std::endl;
+  std::cout << "process " << process->get_name() << " started" << std::endl;
   process->start_process();
-    proc_time = process->get_elapsed_time();
+  proc_time = process->get_elapsed_time();
 
 }
 void wgm_processes::process_manager::stop_process(Iprocess_manager* process)
 {
-  std::cout << "process "<< process->get_name()<<" stopped" << std::endl;
+  std::cout << "process " << process->get_name() << " stopped" << std::endl;
   process->stop_process();
   proc_time = process->get_elapsed_time();
 
@@ -95,22 +96,22 @@ void wgm_processes::process_manager::stop_process(Iprocess_manager* process)
 
 void wgm_processes::process_manager::start_process(std::string processName)
 {
-  auto it = std::find_if (processesvector.begin(), processesvector.end(), [processName](Iprocess_manager* proc){return proc->get_name()==processName;});
+  auto it = std::find_if(processesvector.begin(), processesvector.end(), [processName](Iprocess_manager* proc) {return proc->get_name() == processName;});
   if (it != processesvector.end())
   {
- std::cout << (*it)->get_name()<< " started" << std::endl;
-  (*it)->start_process();
+    std::cout << (*it)->get_name() << " started" << std::endl;
+    (*it)->start_process();
     proc_time = (*it)->get_elapsed_time();
 
   }
 }
 void wgm_processes::process_manager::stop_process(std::string processName)
 {
-   auto it = std::find_if (processesvector.begin(), processesvector.end(), [processName](Iprocess_manager* proc){return proc->get_name()==processName;});
+  auto it = std::find_if(processesvector.begin(), processesvector.end(), [processName](Iprocess_manager* proc) {return proc->get_name() == processName;});
   if (it != processesvector.end())
   {
- std::cout << (*it)->get_name()<< " started" << std::endl;
-  (*it)->stop_process();
+    std::cout << (*it)->get_name() << " started" << std::endl;
+    (*it)->stop_process();
     proc_time = (*it)->get_elapsed_time();
 
   }
@@ -118,22 +119,22 @@ void wgm_processes::process_manager::stop_process(std::string processName)
 
 void wgm_processes::process_manager::start_process(int processID)
 {
-   auto it = std::find_if (processesvector.begin(), processesvector.end(), [processID](Iprocess_manager* proc){return proc->get_id()==processID;});
+  auto it = std::find_if(processesvector.begin(), processesvector.end(), [processID](Iprocess_manager* proc) {return proc->get_id() == processID;});
   if (it != processesvector.end())
   {
- std::cout << (*it)->get_name()<< " started" << std::endl;
-  (*it)->start_process();
-  proc_time = (*it)->get_elapsed_time();
+    std::cout << (*it)->get_name() << " started" << std::endl;
+    (*it)->start_process();
+    proc_time = (*it)->get_elapsed_time();
   }
- 
+
 }
 void wgm_processes::process_manager::stop_process(int processID)
 {
-   auto it = std::find_if (processesvector.begin(), processesvector.end(), [processID](Iprocess_manager* proc){return proc->get_id()==processID;});
+  auto it = std::find_if(processesvector.begin(), processesvector.end(), [processID](Iprocess_manager* proc) {return proc->get_id() == processID;});
   if (it != processesvector.end())
   {
- std::cout << (*it)->get_name()<< " started" << std::endl;
-  (*it)->stop_process();
+    std::cout << (*it)->get_name() << " started" << std::endl;
+    (*it)->stop_process();
     proc_time = (*it)->get_elapsed_time();
 
   }
@@ -150,7 +151,7 @@ void wgm_processes::process_manager::stop_process(int processID)
 
 
 
-void wgm_processes::process_manager::start_all(std::function<void( int)> callback)
+void wgm_processes::process_manager::start_all(std::function<void(int)> callback)
 {
   proc_time = 0;
   std::cout << "executing all processes" << std::endl;
@@ -158,7 +159,12 @@ void wgm_processes::process_manager::start_all(std::function<void( int)> callbac
   {
     if (process != nullptr)
     {
-      if (process->start_process() == wgm_feedbacks::enum_proc_feedback::proc_error) break;
+      if (process->start_process() == wgm_feedbacks::enum_proc_feedback::proc_error)
+      {
+        callback(process->get_id());
+        proc_time += process->get_elapsed_time();
+        break;
+      }
       callback(process->get_id());
       proc_time += process->get_elapsed_time();
     }
@@ -193,5 +199,5 @@ bool wgm_processes::process_manager::is_proc_success() { return process_feedback
 
 long long wgm_processes::process_manager::get_elapsed_time()
 {
-return proc_time;
+  return proc_time;
 }

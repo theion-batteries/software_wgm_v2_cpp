@@ -14,6 +14,8 @@
 #include "system_feedback.h"
 #include "heating_controller.h"
 #include <functional>
+using enum wgm_feedbacks::enum_sys_feedback;
+using enum wgm_feedbacks::enum_sub_sys_feedback;
 namespace sulfur_heating_system
 {
   /*********** heating controller *************/
@@ -27,6 +29,7 @@ namespace sulfur_heating_system
     virtual void turn_on_heating() = 0;
     virtual double getSulfurTemperatur() = 0;
     virtual void setSulfurTemperatur(double targetTemp) = 0;
+    virtual wgm_feedbacks::enum_sys_feedback stop_heating_sys() =0;
     virtual wgm_feedbacks::enum_sys_feedback start_heating_sys() =0;
     virtual heating_controller getSubSysController() = 0;
     virtual bool getSubSysStatus(std::string Subsystem) = 0;
@@ -47,6 +50,7 @@ namespace sulfur_heating_system
     void turn_on_heating() override;
     void controll_heating() override;
     void setSulfurTemperatur(double targetTemp) override;
+    virtual wgm_feedbacks::enum_sys_feedback stop_heating_sys() ;
     virtual wgm_feedbacks::enum_sys_feedback start_heating_sys() ;
     heating_controller getSubSysController() override;
     bool getSubSysStatus(std::string Subsystem) override;

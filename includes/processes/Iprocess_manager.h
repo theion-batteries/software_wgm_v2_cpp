@@ -29,7 +29,7 @@ namespace wgm_processes
     public:
         Iprocess_manager();
         virtual wgm_feedbacks::enum_proc_feedback start_process() = 0;
-        virtual void stop_process() = 0;
+        virtual wgm_feedbacks::enum_proc_feedback stop_process() = 0;
 
         virtual void start_process(Iprocess_manager* process) {};
         virtual void stop_process(Iprocess_manager* process) {};

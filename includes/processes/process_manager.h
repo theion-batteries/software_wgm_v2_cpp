@@ -38,7 +38,7 @@ namespace wgm_processes
         // clean up destruction
         virtual ~process_manager();
         virtual wgm_feedbacks::enum_proc_feedback start_process();
-        virtual void stop_process();
+        virtual wgm_feedbacks::enum_proc_feedback stop_process();
 
         virtual void start_process(Iprocess_manager* process);
         virtual void stop_process(Iprocess_manager* process);

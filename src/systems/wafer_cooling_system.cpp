@@ -12,57 +12,6 @@
 using enum wgm_feedbacks::enum_sys_feedback;
 using enum wgm_feedbacks::enum_sub_sys_feedback;
 
-wafer_cooling_system::Icooling_rotation::Icooling_rotation()
-{
-  std::cout << "creating cooling rotation " << std::endl;
-}
-
-wafer_cooling_system::Icooling_rotation::~Icooling_rotation()
-{
-  std::cout << "deleting cooling rotation " << std::endl;
-}
-
-void wafer_cooling_system::cooling_rotation::ph_rotate()
-{
-  std::cout << "start rotating " << std::endl;
-}
-
-wafer_cooling_system::Icooling_motion::Icooling_motion()
-{
-  std::cout << "creating cooling motion" << std::endl;
-}
-wafer_cooling_system::Icooling_motion::~Icooling_motion()
-{
-  std::cout << "deleting cooling motion" << std::endl;
-}
-
-void wafer_cooling_system::cooling_motion::move_down_to_center()
-{
-  std::cout << "cooling sys moving down to center" << std::endl;
-
-}
-void wafer_cooling_system::cooling_motion::move_up_to_reference()
-{
-  std::cout << "cooling sys moving back to refernce " << std::endl;
-
-}
-
-wafer_cooling_system::Icooling_spitting::Icooling_spitting()
-{
-  std::cout << "creating cooling printing" << std::endl;
-}
-wafer_cooling_system::Icooling_spitting::  ~Icooling_spitting()
-{
-  std::cout << "deleting cooling printing" << std::endl;
-}
-
-
-void wafer_cooling_system::cooling_spitting::ph_spit()
-{
-  std::cout << "printhead spitting" << std::endl;
-
-}
-
 wafer_cooling_system::Icooling_controller::Icooling_controller()
 {
   std::cout << "creating cooling controller" << std::endl;
@@ -75,31 +24,29 @@ wafer_cooling_system::Icooling_controller::  ~Icooling_controller()
 wafer_cooling_system::cooling_controller::cooling_controller()
 {
   ph_sys_control_shared_ptr = std::make_shared<ph_cooling_controller>();
-  ph_motion = new cooling_motion();
-  ph_rotation = new cooling_rotation();
-  ph_printing = new cooling_spitting();
+      registerAlgorithms();
+
 }
 
 wafer_cooling_system::cooling_controller:: ~cooling_controller()
 {
-  delete ph_motion;
-  delete ph_rotation;
-  delete ph_printing;
+
 }
 
 wgm_feedbacks::enum_sys_feedback wafer_cooling_system::cooling_controller::start_cooling()
 {
-  //ph_motion->move_down_to_center();
-  //ph_rotation->ph_rotate();
-  //ph_printing->ph_spit();
-  if (ph_sys_control_shared_ptr->ph_controller_connect() == sub_error) return sys_error;
+    std::cout << "start cooling algorithms" << std::endl;
+
+  for ( auto & algo: phAlgorithms)
+  {
+    if (algo() == sub_error) return sys_error;
+  }
   return sys_success;
 }
-void wafer_cooling_system::cooling_controller::stop_cooling()
+wgm_feedbacks::enum_sys_feedback wafer_cooling_system::cooling_controller::stop_cooling()
 {
-  ph_motion->move_up_to_reference();
+  return sys_success;
 }
-
 
 void wafer_cooling_system::cooling_controller::connect_rotation_axis()
 {
@@ -124,4 +71,15 @@ bool wafer_cooling_system::cooling_controller::getSubSysStatus(std::string Subsy
   else if (Subsystem == "ph") return ph_sys_control_shared_ptr->get_ph_status();
   else if (Subsystem == "controller") return ph_sys_control_shared_ptr->get_ph_cooling_controller_status();
   else return false;
+}
+
+void wafer_cooling_system::cooling_controller::registerAlgorithms()
+{
+  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_controller_connect, ph_sys_control_shared_ptr));
+  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_motion_move_home, ph_sys_control_shared_ptr));
+  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_rotate_center, ph_sys_control_shared_ptr));
+  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_move_center, ph_sys_control_shared_ptr));
+  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_rotate_and_print, ph_sys_control_shared_ptr));
+  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_motion_move_home, ph_sys_control_shared_ptr));
+// TODO disconnect
 }

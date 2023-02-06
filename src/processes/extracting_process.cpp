@@ -22,8 +22,6 @@ wgm_processes::Iextracting_process::~Iextracting_process()
 }
 
 /**************** implementation wafer extraction process ************/
-std::string wgm_processes::extracting_process::get_name() { return process_name; };
-bool wgm_processes::extracting_process::is_proc_success() { return process_feedback.report_feedback(); };
 
 wgm_processes::extracting_process::extracting_process(wafer_holder_motion_system::Iwafer_motion_controller* ptrTosys) {
   extracting_sys = ptrTosys;
@@ -33,7 +31,6 @@ wgm_processes::extracting_process::extracting_process(wafer_holder_motion_system
 wgm_processes::extracting_process::~extracting_process()
 {
   std::cout << "deleting extracting process " << std::endl;
-  //if (extracting_sys !=nullptr ) delete extracting_sys;
   delete process_timer;
 }
 wgm_feedbacks::enum_proc_feedback wgm_processes::extracting_process::start_process()
@@ -49,11 +46,11 @@ wgm_feedbacks::enum_proc_feedback wgm_processes::extracting_process::start_proce
   process_timer->stop_monitoring();
   return proc_success;
 }
-void wgm_processes::extracting_process::stop_process()
+wgm_feedbacks::enum_proc_feedback wgm_processes::extracting_process::stop_process()
 {
   std::cout << "finish " << process_name << std::endl;
   process_timer->stop_monitoring();
-
+  return proc_success;
 }
 
 long long wgm_processes::extracting_process::get_elapsed_time()
@@ -65,3 +62,6 @@ wafer_holder_motion_system::Iwafer_motion_controller* wgm_processes::extracting_
 {
   return extracting_sys;
 }
+
+std::string wgm_processes::extracting_process::get_name() { return process_name; };
+bool wgm_processes::extracting_process::is_proc_success() { return process_feedback.report_feedback(); };
