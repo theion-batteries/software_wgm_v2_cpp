@@ -44,10 +44,10 @@ wgm_feedbacks::enum_proc_feedback wgm_processes::cooling_process::start_process(
 }
 wgm_feedbacks::enum_proc_feedback wgm_processes::cooling_process::stop_process()
 {
-  std::cout << "finish " << process_name << std::endl;
+  std::cout << "stopping " << process_name << std::endl;
   cooling_sys->stop_cooling();
   process_timer->stop_monitoring();
-  return proc_success;
+  return proc_error;
 }
 
 wafer_cooling_system::Icooling_controller* wgm_processes::cooling_process::get_sys_ptr()

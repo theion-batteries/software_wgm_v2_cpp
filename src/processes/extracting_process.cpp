@@ -37,7 +37,7 @@ wgm_feedbacks::enum_proc_feedback wgm_processes::extracting_process::start_proce
 {
   std::cout << "execute " << process_name << std::endl;
   process_timer->start_monitoring();
- if( extracting_sys->extract_wafer_from_ml() == sys_error )
+ if( extracting_sys->start_extracting() == sys_error )
  {
   process_timer->stop_monitoring();
   return proc_error;
@@ -49,8 +49,9 @@ wgm_feedbacks::enum_proc_feedback wgm_processes::extracting_process::start_proce
 wgm_feedbacks::enum_proc_feedback wgm_processes::extracting_process::stop_process()
 {
   std::cout << "finish " << process_name << std::endl;
+extracting_sys->stop_extracting();
   process_timer->stop_monitoring();
-  return proc_success;
+  return proc_error;
 }
 
 long long wgm_processes::extracting_process::get_elapsed_time()

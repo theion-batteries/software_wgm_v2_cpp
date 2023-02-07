@@ -43,6 +43,8 @@ namespace wafer_cooling_system
     std::shared_ptr<ph_cooling_controller> ph_sys_control_shared_ptr;
      void registerAlgorithms();
     std::vector<std::function<wgm_feedbacks::enum_sub_sys_feedback()>> phAlgorithms;
+    bool stopped = false;
+
     public:
         cooling_controller();
         virtual ~cooling_controller();

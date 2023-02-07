@@ -68,23 +68,23 @@ bool sulfur_heating_system::sulfur_heating_controller::getSubSysStatus(std::stri
 
 wgm_feedbacks::enum_sys_feedback sulfur_heating_system::sulfur_heating_controller::start_heating_sys() 
 {
+    stopped = false;
+
   std::cout << "start heating algorithms" << std::endl;
   for ( auto & algo: heatAlgorithms)
   {
-    if (algo() == sub_error) return sys_error;
+    if (algo() == sub_error || stopped) return sys_error;
   }
 return wgm_feedbacks::enum_sys_feedback::sys_success;
 }
 wgm_feedbacks::enum_sys_feedback sulfur_heating_system::sulfur_heating_controller::stop_heating_sys() 
 {
-heatControl.heating_controller_deactivate();
-return wgm_feedbacks::enum_sys_feedback::sys_success;
+  stopped = true;
+  return sys_error;
 }
 
 void sulfur_heating_system::sulfur_heating_controller::registerAlgorithms()
 {
   heatAlgorithms.push_back(std::bind(&heating_controller::heating_controller_connect, &heatControl));
   heatAlgorithms.push_back(std::bind(&heating_controller::heating_controller_activate, &heatControl));
-  heatAlgorithms.push_back(std::bind(&heating_controller::heating_controller_deactivate, &heatControl));
-// TODO disconnect
 }

@@ -26,17 +26,19 @@ cnt_alignment_system::cnt_aligning_controller:: ~cnt_aligning_controller()
 // methods implmenetation
 wgm_feedbacks::enum_sys_feedback cnt_alignment_system::cnt_aligning_controller::start_aligning()
 {
+  stopped = false;
   std::cout << "start aligning algorithms" << std::endl;
   for ( auto & algo: cntAlgorithms)
   {
-    if (algo() == sub_error) return sys_error;
+    if (algo() == sub_error || stopped) return sys_error;
   }
   return sys_success;
 }
 
 wgm_feedbacks::enum_sys_feedback cnt_alignment_system::cnt_aligning_controller::stop_aligning()
 {
-  return sys_success;
+  stopped = true;
+  return sys_error;
 
 }
 

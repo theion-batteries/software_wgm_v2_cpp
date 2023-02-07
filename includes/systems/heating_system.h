@@ -41,6 +41,7 @@ namespace sulfur_heating_system
     heating_controller heatControl;
     std::vector<std::function<wgm_feedbacks::enum_sub_sys_feedback()>> heatAlgorithms;
      void registerAlgorithms();
+    bool stopped = false;
 
   public:
     sulfur_heating_controller();

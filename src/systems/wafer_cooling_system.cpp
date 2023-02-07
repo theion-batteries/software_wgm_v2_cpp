@@ -35,18 +35,19 @@ wafer_cooling_system::cooling_controller:: ~cooling_controller()
 
 wgm_feedbacks::enum_sys_feedback wafer_cooling_system::cooling_controller::start_cooling()
 {
+  stopped = false;
     std::cout << "start cooling algorithms" << std::endl;
 
   for ( auto & algo: phAlgorithms)
   {
-    if (algo() == sub_error) return sys_error;
+    if (algo() == sub_error || stopped) return sys_error;
   }
   return sys_success;
 }
 wgm_feedbacks::enum_sys_feedback wafer_cooling_system::cooling_controller::stop_cooling()
 {
-  return sys_success;
-}
+  stopped = true;
+  return sys_error;}
 
 void wafer_cooling_system::cooling_controller::connect_rotation_axis()
 {

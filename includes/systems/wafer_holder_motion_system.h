@@ -32,6 +32,10 @@ namespace wafer_holder_motion_system
     public:
         Iwafer_motion_controller();
         virtual ~Iwafer_motion_controller();
+        virtual wgm_feedbacks::enum_sys_feedback start_sinking()=0;
+        virtual wgm_feedbacks::enum_sys_feedback stop_sinking()=0;
+        virtual wgm_feedbacks::enum_sys_feedback start_extracting()=0;
+        virtual wgm_feedbacks::enum_sys_feedback stop_extracting()=0;
         virtual wgm_feedbacks::enum_sys_feedback insert_wafer_in_ml() = 0;
         virtual wgm_feedbacks::enum_sys_feedback extract_wafer_from_ml() = 0;
         virtual void calibrate() = 0;
@@ -45,11 +49,19 @@ namespace wafer_holder_motion_system
     // implementation
     class wafer_motion_controller:public Iwafer_motion_controller
     {
+    private:
+        void registerAlgorithms();
+        std::shared_ptr<whs_controller> wafer_sys_control_shared_ptr;
+        std::vector<std::function<wgm_feedbacks::enum_sub_sys_feedback()>> whsAlgorithms;
+        bool stopped = false;
     public:
-        explicit wafer_motion_controller();
+        wafer_motion_controller();
         virtual ~wafer_motion_controller();
-    public:
         virtual wgm_feedbacks::enum_sys_feedback insert_wafer_in_ml();
+        virtual wgm_feedbacks::enum_sys_feedback start_sinking();
+        virtual wgm_feedbacks::enum_sys_feedback stop_sinking();
+        virtual wgm_feedbacks::enum_sys_feedback start_extracting();
+        virtual wgm_feedbacks::enum_sys_feedback stop_extracting();
         virtual wgm_feedbacks::enum_sys_feedback extract_wafer_from_ml();
         virtual void calibrate();
         virtual void move_up();
@@ -58,10 +70,8 @@ namespace wafer_holder_motion_system
         virtual void connect_motion_axis();
         virtual bool getSubSysStatus(std::string Subsystem);
         virtual std::shared_ptr<whs_controller> getSubSysController();
-    private:
-         void registerAlgorithms();
-        std::shared_ptr<whs_controller> wafer_sys_control_shared_ptr;
-        std::vector<std::function<wgm_feedbacks::enum_sub_sys_feedback()>> whsAlgorithms;
+
+
     };
 
 }

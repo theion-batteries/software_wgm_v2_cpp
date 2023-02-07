@@ -29,20 +29,48 @@ wafer_holder_motion_system::wafer_motion_controller::wafer_motion_controller() {
 wafer_holder_motion_system::wafer_motion_controller:: ~wafer_motion_controller()
 {
 }
+wgm_feedbacks::enum_sys_feedback wafer_holder_motion_system::wafer_motion_controller::start_sinking()
+{
+    stopped = false;
 
+  std::cout << "start sinking algorithms" << std::endl;
+  for (auto& algo : whsAlgorithms)
+  {
+    if (algo() == sub_error || stopped) return sys_error;
+  }
+  return sys_success;
+}
+wgm_feedbacks::enum_sys_feedback wafer_holder_motion_system::wafer_motion_controller::stop_sinking()
+{
+  stopped = true;
+  return sys_error;
+}
+wgm_feedbacks::enum_sys_feedback wafer_holder_motion_system::wafer_motion_controller::start_extracting()
+{
+    stopped = false;
+  std::cout << "start extracting algorithms" << std::endl;
+  if (whsAlgorithms[1]() != sub_success || stopped) return sys_error;
+  return sys_success;
+
+}
+wgm_feedbacks::enum_sys_feedback wafer_holder_motion_system::wafer_motion_controller::stop_extracting()
+{
+  stopped = true;
+  return sys_error;
+}
 wgm_feedbacks::enum_sys_feedback wafer_holder_motion_system::wafer_motion_controller::insert_wafer_in_ml()
 {
   std::cout << "start sinking algorithms" << std::endl;
-  for ( auto & algo: whsAlgorithms)
+  for (auto& algo : whsAlgorithms)
   {
-    if (algo() == sub_error) return sys_error;
+    if (algo() == sub_error || stopped) return sys_error;
   }
   return sys_success;
 }
 wgm_feedbacks::enum_sys_feedback wafer_holder_motion_system::wafer_motion_controller::extract_wafer_from_ml()
 {
   std::cout << "extracting wafer" << std::endl;
-  if ( whsAlgorithms[1]() != wgm_feedbacks::enum_sub_sys_feedback::sub_success) return wgm_feedbacks::enum_sys_feedback::sys_error;
+  if (whsAlgorithms[1]() != sub_success) return sys_error;
   return sys_success;
 }
 

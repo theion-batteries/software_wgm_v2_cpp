@@ -45,9 +45,9 @@ wgm_feedbacks::enum_proc_feedback wgm_processes::heating_process::start_process(
 wgm_feedbacks::enum_proc_feedback wgm_processes::heating_process::stop_process()
 {
   std::cout << "finish " << process_name << std::endl;
-  heating_sys->turn_off_heating();
-  process_temp_monitor->stop_monitoring();
-  return wgm_feedbacks::enum_proc_feedback::proc_success;
+  heating_sys->stop_heating_sys();
+  process_timer->stop_monitoring();
+  return proc_error;
 
 }
 

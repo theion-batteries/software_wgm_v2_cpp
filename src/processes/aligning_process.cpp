@@ -47,7 +47,7 @@ wgm_feedbacks::enum_proc_feedback wgm_processes::aligning_process::stop_process(
   std::cout << "stopping " << process_name << std::endl;
   aligning_sys->stop_aligning();
   process_timer->stop_monitoring();
-  return proc_success;
+  return proc_error;
 }
 
 cnt_alignment_system::Icnt_aligning_controller * wgm_processes::aligning_process::get_sys_ptr()

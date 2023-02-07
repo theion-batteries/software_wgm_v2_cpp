@@ -41,6 +41,7 @@ namespace cnt_alignment_system
      void registerAlgorithms();
     cnt_controller controller;
     std::vector<std::function<wgm_feedbacks::enum_sub_sys_feedback()>> cntAlgorithms;
+    bool stopped = false;
   public:
     cnt_aligning_controller();
     virtual ~cnt_aligning_controller();
