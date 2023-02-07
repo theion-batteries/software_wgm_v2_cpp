@@ -42,28 +42,29 @@ file(GLOB lib_SRCS
 
 )
 # add .exe
-add_library(wgm_static STATIC ${lib_SRCS})
+add_library(wgmCoreLib STATIC ${lib_SRCS})
 
 # link againt static lib
-target_link_libraries(wgm_static
+target_link_libraries(wgmCoreLib
 # wafer holder system static
-PUBLIC whs_static
+PUBLIC whsLib
 # cnt lib
-PUBLIC cnt_system_static
+PUBLIC cntLib
 # cooling ph lib
-PUBLIC ph_cooling_static
+PUBLIC coolingLib
 # heating lib
 PUBLIC heatingSystemLib
 # link DB
-PUBLIC database
+PUBLIC databaseLib
 )
 
-target_include_directories(wgm_static 
+target_include_directories(wgmCoreLib 
 # parent deps headers
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/processes/
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/systems/
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../database/
+PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../database/sqlite3-cmake/src
 
 # wafer holder motion system header tree
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/includes
@@ -82,27 +83,28 @@ file(GLOB exe_SRCS
     "${PROJECT_SOURCE_DIR}/src/systems/*.cpp"
     )
 # add .exe
-add_executable(wgm_core_exe ${exe_SRCS})
+add_executable(wgmCoreBin ${exe_SRCS})
 # link againt static lib
-target_link_libraries(wgm_core_exe
+target_link_libraries(wgmCoreBin
 # wafer holder system static
-PUBLIC whs_static
+PUBLIC whsLib
 # cnt lib
-PUBLIC cnt_system_static
+PUBLIC cntLib
 # cooling ph lib
-PUBLIC ph_cooling_static
+PUBLIC coolingLib
 # heating lib
 PUBLIC heatingSystemLib
 # link DB
-PUBLIC database
+PUBLIC databaseLib
 )
 
-target_include_directories(wgm_core_exe 
+target_include_directories(wgmCoreBin 
 # parent deps headers
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/processes/
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes/systems/
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../database/
+PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../database/sqlite3-cmake/src
 
 # wafer holder motion system header tree
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_wafer_holder_system_controller/includes
@@ -116,12 +118,12 @@ PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/soft_heating_system_submodule/in
 
 )
 
-copy_dlls_keyence_target_destination(wgm_core_exe)
-copy_dlls_meteor_target_destination(wgm_core_exe)
-copy_dlls_yaml_target_destination(wgm_core_exe)
+copy_dlls_keyence_target_destination(wgmCoreBin)
+copy_dlls_meteor_target_destination(wgmCoreBin)
+copy_dlls_yaml_target_destination(wgmCoreBin)
 
 ############################# install target lib ########################################
-install(TARGETS wgm_static #wgm_core_exe 
+install(TARGETS wgmCoreLib #wgmCoreBin 
 CONFIGURATIONS Debug
 RUNTIME DESTINATION bin/Debug
 LIBRARY DESTINATION lib)
@@ -129,5 +131,5 @@ FILE(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/includes/*.h"
  "${CMAKE_CURRENT_SOURCE_DIR}/includes/processes/*.h"
  "${CMAKE_CURRENT_SOURCE_DIR}/includes/systems/*.h"
 )
-INSTALL(FILES ${files} DESTINATION include/wgm_static/)
+INSTALL(FILES ${files} DESTINATION include/wgmCoreLib/)
 

@@ -15,7 +15,7 @@ add_executable(processTests
 target_link_libraries(processTests
   GTest::gtest_main
   GTest::gmock_main
-  wgm_static
+  wgmCoreLib
 )
 target_include_directories(processTests
 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../includes/
