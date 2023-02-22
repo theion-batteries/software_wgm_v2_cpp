@@ -31,7 +31,7 @@ namespace sulfur_heating_system
     virtual void setSulfurTemperatur(double targetTemp) = 0;
     virtual wgm_feedbacks::enum_sys_feedback stop_heating_sys() =0;
     virtual wgm_feedbacks::enum_sys_feedback start_heating_sys() =0;
-    virtual heating_controller getSubSysController() = 0;
+    virtual heating_controller& getSubSysController() = 0;
     virtual bool getSubSysStatus(std::string Subsystem) = 0;
   };
   // implement
@@ -53,7 +53,7 @@ namespace sulfur_heating_system
     void setSulfurTemperatur(double targetTemp) override;
     virtual wgm_feedbacks::enum_sys_feedback stop_heating_sys() ;
     virtual wgm_feedbacks::enum_sys_feedback start_heating_sys() ;
-    heating_controller getSubSysController() override;
+    heating_controller& getSubSysController() override;
     bool getSubSysStatus(std::string Subsystem) override;
   };
 

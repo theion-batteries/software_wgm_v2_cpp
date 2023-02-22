@@ -56,14 +56,14 @@ void sulfur_heating_system::sulfur_heating_controller::controll_heating()
   getSulfurTemperatur();
 }
 
-heating_controller sulfur_heating_system::sulfur_heating_controller::getSubSysController()
+heating_controller& sulfur_heating_system::sulfur_heating_controller::getSubSysController()
 {
   return heatControl;
 }
 bool sulfur_heating_system::sulfur_heating_controller::getSubSysStatus(std::string Subsystem)
 {
  if (Subsystem == "controller") return heatControl.get_heating_controller_status();
-  else return false;
+ return false;
 }
 
 wgm_feedbacks::enum_sys_feedback sulfur_heating_system::sulfur_heating_controller::start_heating_sys() 

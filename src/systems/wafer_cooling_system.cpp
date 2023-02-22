@@ -49,13 +49,13 @@ wgm_feedbacks::enum_sys_feedback wafer_cooling_system::cooling_controller::stop_
   stopped = true;
   return sys_error;}
 
-void wafer_cooling_system::cooling_controller::connect_rotation_axis()
+void wafer_cooling_system::cooling_controller::connect_ph_trigger()
 {
-  ph_sys_control_shared_ptr->get_rotary_axis_ptr()->connect();
+  ph_sys_control_shared_ptr->get_trigger_ptr()->connect();
 }
-void wafer_cooling_system::cooling_controller::connect_motion_axis()
+void wafer_cooling_system::cooling_controller::connect_xy_motion_axis()
 {
-  ph_sys_control_shared_ptr->get_axis_ptr()->connect();
+  ph_sys_control_shared_ptr->get_xy_axis_ptr()->connect();
 }
 void wafer_cooling_system::cooling_controller::connect_ph()
 {

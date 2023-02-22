@@ -54,7 +54,7 @@ void cnt_alignment_system::cnt_aligning_controller::connect_hv()
 {
   controller.cnt_hv_connect();
 }
-cnt_controller cnt_alignment_system::cnt_aligning_controller::getSubSysController()
+cnt_controller& cnt_alignment_system::cnt_aligning_controller::getSubSysController()
 {
   return controller;
 }

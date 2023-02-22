@@ -31,7 +31,7 @@ namespace cnt_alignment_system
     virtual void connect_dispenser() = 0;
     virtual void connect_motion_axis() = 0;
     virtual void connect_hv() = 0;
-    virtual cnt_controller getSubSysController() = 0;
+    virtual cnt_controller& getSubSysController() = 0;
     virtual bool getSubSysStatus(std::string Subsystem) = 0;
   };
   //implement
@@ -48,7 +48,7 @@ namespace cnt_alignment_system
     void connect_dispenser() override;
     void connect_motion_axis() override;
     void connect_hv() override;
-    cnt_controller getSubSysController() override;
+    cnt_controller& getSubSysController() override;
     bool getSubSysStatus(std::string Subsystem) override;
     virtual wgm_feedbacks::enum_sys_feedback start_aligning();
     virtual wgm_feedbacks::enum_sys_feedback stop_aligning();
