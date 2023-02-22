@@ -31,15 +31,19 @@ wgm_processes::heating_process::~heating_process()
 }
 wgm_feedbacks::enum_proc_feedback wgm_processes::heating_process::start_process()
 {
-  std::cout << "execute " << process_name << std::endl;
+  std::cout << "execute process" << process_name << std::endl;
   process_timer->start_monitoring();
   if (heating_sys->start_heating_sys() == sys_error)
   {
+  std::cout << "error heat sys, aborting process " << process_name << std::endl;
     process_timer->stop_monitoring();
+
     return proc_error;
   }
-  std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+ // std::this_thread::sleep_for(std::chrono::milliseconds(3000));
   process_timer->stop_monitoring();
+  std::cout << "finish process " << process_name << std::endl;
+
   return proc_success;
 }
 wgm_feedbacks::enum_proc_feedback wgm_processes::heating_process::stop_process()
