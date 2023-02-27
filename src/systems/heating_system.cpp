@@ -17,10 +17,10 @@ sulfur_heating_system::Isulfur_heating_controller::Isulfur_heating_controller()
 sulfur_heating_system::Isulfur_heating_controller::~Isulfur_heating_controller()
 {
 }
-sulfur_heating_system::sulfur_heating_controller::sulfur_heating_controller() 
+sulfur_heating_system::sulfur_heating_controller::sulfur_heating_controller()
 {
   std::cout << "creating heating controller" << std::endl;
-    registerAlgorithms();
+  registerAlgorithms();
 
 }
 sulfur_heating_system::sulfur_heating_controller::~sulfur_heating_controller()
@@ -36,7 +36,7 @@ double sulfur_heating_system::sulfur_heating_controller::getSulfurTemperatur()
 void sulfur_heating_system::sulfur_heating_controller::setSulfurTemperatur(double targetTemp)
 {
   std::cout << "controller get sulfur temp value" << std::endl;
-   heatControl.heating_controller_settemperature( targetTemp);
+  heatControl.heating_controller_settemperature(targetTemp);
 }
 void sulfur_heating_system::sulfur_heating_controller::turn_off_heating()
 {
@@ -56,28 +56,35 @@ void sulfur_heating_system::sulfur_heating_controller::controll_heating()
   getSulfurTemperatur();
 }
 
-heating_controller sulfur_heating_system::sulfur_heating_controller::getSubSysController()
+heating_controller& sulfur_heating_system::sulfur_heating_controller::getSubSysController()
 {
   return heatControl;
 }
 bool sulfur_heating_system::sulfur_heating_controller::getSubSysStatus(std::string Subsystem)
 {
- if (Subsystem == "controller") return heatControl.get_heating_controller_status();
-  else return false;
+  if (Subsystem == "controller") return heatControl.get_heating_controller_status();
+  return false;
 }
 
-wgm_feedbacks::enum_sys_feedback sulfur_heating_system::sulfur_heating_controller::start_heating_sys() 
+wgm_feedbacks::enum_sys_feedback sulfur_heating_system::sulfur_heating_controller::start_heating_sys()
 {
-    stopped = false;
+  stopped = false;
 
   std::cout << "start heating algorithms" << std::endl;
-  for ( auto & algo: heatAlgorithms)
+  for (auto& algo : heatAlgorithms)
   {
-    if (algo() == sub_error || stopped) return sys_error;
+    if (algo() == sub_error)
+    {
+      std::cout << "error heat subsys, aborting" << std::endl;
+
+      return sys_error;
+    }
   }
-return wgm_feedbacks::enum_sys_feedback::sys_success;
+  std::cout << "finish heating algorithms" << std::endl;
+
+  return wgm_feedbacks::enum_sys_feedback::sys_success;
 }
-wgm_feedbacks::enum_sys_feedback sulfur_heating_system::sulfur_heating_controller::stop_heating_sys() 
+wgm_feedbacks::enum_sys_feedback sulfur_heating_system::sulfur_heating_controller::stop_heating_sys()
 {
   stopped = true;
   return sys_error;

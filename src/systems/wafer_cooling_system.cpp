@@ -49,13 +49,13 @@ wgm_feedbacks::enum_sys_feedback wafer_cooling_system::cooling_controller::stop_
   stopped = true;
   return sys_error;}
 
-void wafer_cooling_system::cooling_controller::connect_rotation_axis()
+void wafer_cooling_system::cooling_controller::connect_ph_trigger()
 {
-  ph_sys_control_shared_ptr->get_rotary_axis_ptr()->connect();
+  ph_sys_control_shared_ptr->get_trigger_ptr()->connect();
 }
-void wafer_cooling_system::cooling_controller::connect_motion_axis()
+void wafer_cooling_system::cooling_controller::connect_xy_motion_axis()
 {
-  ph_sys_control_shared_ptr->get_axis_ptr()->connect();
+  ph_sys_control_shared_ptr->get_xy_axis_ptr()->connect();
 }
 void wafer_cooling_system::cooling_controller::connect_ph()
 {
@@ -77,10 +77,11 @@ bool wafer_cooling_system::cooling_controller::getSubSysStatus(std::string Subsy
 void wafer_cooling_system::cooling_controller::registerAlgorithms()
 {
   phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_controller_connect, ph_sys_control_shared_ptr));
-  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_motion_move_home, ph_sys_control_shared_ptr));
+  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_motion_home_all, ph_sys_control_shared_ptr));
+  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_motion_move_offset, ph_sys_control_shared_ptr));
   phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_rotate_center, ph_sys_control_shared_ptr));
   phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_move_center, ph_sys_control_shared_ptr));
   phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_rotate_and_print, ph_sys_control_shared_ptr));
-  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_motion_move_home, ph_sys_control_shared_ptr));
+  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_motion_home_all, ph_sys_control_shared_ptr));
 // TODO disconnect
 }

@@ -52,9 +52,9 @@ void cnt_alignment_system::cnt_aligning_controller::connect_motion_axis()
 }
 void cnt_alignment_system::cnt_aligning_controller::connect_hv()
 {
-  controller.cnt_hv_connect();
+  controller.cnt_hvac_connect();
 }
-cnt_controller cnt_alignment_system::cnt_aligning_controller::getSubSysController()
+cnt_controller& cnt_alignment_system::cnt_aligning_controller::getSubSysController()
 {
   return controller;
 }
@@ -62,7 +62,7 @@ bool cnt_alignment_system::cnt_aligning_controller::getSubSysStatus(std::string 
 {
   if (Subsystem == "axis_motion") return controller.get_motion_status();
   else if (Subsystem == "dispenser") return controller.get_dispenser_status();
-  else if (Subsystem == "hv") return controller.get_hv_status();
+  else if (Subsystem == "hv") return controller.get_hvac_status();
   else if (Subsystem == "controller") return controller.get_cnt_controller_status();
   else return false;
 }
@@ -73,8 +73,8 @@ void cnt_alignment_system::cnt_aligning_controller::registerAlgorithms()
   cntAlgorithms.push_back(std::bind(&cnt_controller::cnt_motion_move_home, &controller));
   cntAlgorithms.push_back(std::bind(&cnt_controller::cnt_motion_move_target_position, &controller));
   cntAlgorithms.push_back(std::bind(&cnt_controller::cnt_dispenser_activate, &controller));
-  cntAlgorithms.push_back(std::bind(&cnt_controller::hv_activate, &controller));
-  cntAlgorithms.push_back(std::bind(&cnt_controller::hv_deactivate, &controller));
+  cntAlgorithms.push_back(std::bind(&cnt_controller::hvac_start, &controller));
+  cntAlgorithms.push_back(std::bind(&cnt_controller::hvac_stop, &controller));
   cntAlgorithms.push_back(std::bind(&cnt_controller::cnt_dispenser_deactivate, &controller));
   cntAlgorithms.push_back(std::bind(&cnt_controller::cnt_motion_move_home, &controller));
 // TODO disconnect
