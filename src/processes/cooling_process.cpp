@@ -19,19 +19,19 @@ wgm_processes::Icooling_process::~Icooling_process(){}
 
 /******************* implementation cooling process ***************/
 wgm_processes::cooling_process::cooling_process() {
-  std::cout << "creating cooling process " << std::endl;
+  std::cout << "creating cooling process " << "\n";
   cooling_sys = new wafer_cooling_system::cooling_controller();
   process_timer = new wgm_monitoring::time_monitor();
 }
 wgm_processes::cooling_process:: ~cooling_process()
 {
-  std::cout << "deleting cooling process " << std::endl;
+  std::cout << "deleting cooling process " << "\n";
   delete cooling_sys;
   delete process_timer;
 }
 wgm_feedbacks::enum_proc_feedback wgm_processes::cooling_process::start_process()
 {
-  std::cout << "execute " << process_name << std::endl;
+  std::cout << "execute " << process_name << "\n";
   process_timer->start_monitoring();
   if (cooling_sys->start_cooling() == sys_error)
   {
@@ -44,7 +44,7 @@ wgm_feedbacks::enum_proc_feedback wgm_processes::cooling_process::start_process(
 }
 wgm_feedbacks::enum_proc_feedback wgm_processes::cooling_process::stop_process()
 {
-  std::cout << "stopping " << process_name << std::endl;
+  std::cout << "stopping " << process_name << "\n";
   cooling_sys->stop_cooling();
   process_timer->stop_monitoring();
   return proc_error;

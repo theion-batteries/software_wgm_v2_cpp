@@ -5,7 +5,7 @@
 wgm_processes::Isinking_process::Isinking_process()
 {
 
-  std::cout << "creating sinking process " << std::endl;
+  std::cout << "creating sinking process " << "\n";
 }
 wgm_processes::Isinking_process::~Isinking_process() {}
 
@@ -17,13 +17,13 @@ wgm_processes::sinking_process::sinking_process() {
 }
 wgm_processes::sinking_process::~sinking_process()
 {
-  std::cout << "deleting sinking process " << std::endl;
+  std::cout << "deleting sinking process " << "\n";
   delete sinking_sys;
   delete process_timer;
 }
 wgm_feedbacks::enum_proc_feedback wgm_processes::sinking_process::start_process()
 {
-  std::cout << "execute " << process_name << std::endl;
+  std::cout << "execute " << process_name << "\n";
   process_timer->start_monitoring();
   if (sinking_sys->start_sinking() == sys_error)
   {
@@ -36,7 +36,7 @@ wgm_feedbacks::enum_proc_feedback wgm_processes::sinking_process::start_process(
 }
 wgm_feedbacks::enum_proc_feedback wgm_processes::sinking_process::stop_process()
 {
-  std::cout << "stopping " << process_name << std::endl;
+  std::cout << "stopping " << process_name << "\n";
 sinking_sys->stop_sinking();
   process_timer->stop_monitoring();
   return proc_error;

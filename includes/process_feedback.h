@@ -40,10 +40,10 @@ bool wgm_feedbacks::proc_feedback::report_feedback()
 {
   if (proc_feed_val == enum_proc_feedback::proc_success)
   {
-    std::cout<< "--------- process succeded ---------- "<< std::endl;
+    std::cout<< "--------- process succeded ---------- "<< "\n";
     return true;
   } 
-  std::cout<< "process failed "<< std::endl;
+  std::cout<< "process failed "<< "\n";
   return false;
 }
 void wgm_feedbacks::proc_feedback::setFeedback(enum_proc_feedback feedback)

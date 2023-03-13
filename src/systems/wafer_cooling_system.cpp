@@ -14,11 +14,11 @@ using enum wgm_feedbacks::enum_sub_sys_feedback;
 
 wafer_cooling_system::Icooling_controller::Icooling_controller()
 {
-  std::cout << "creating cooling controller" << std::endl;
+  std::cout << "creating cooling controller" << "\n";
 }
 wafer_cooling_system::Icooling_controller::  ~Icooling_controller()
 {
-  std::cout << "deleting cooling controller" << std::endl;
+  std::cout << "deleting cooling controller" << "\n";
 }
 
 wafer_cooling_system::cooling_controller::cooling_controller()
@@ -36,7 +36,7 @@ wafer_cooling_system::cooling_controller:: ~cooling_controller()
 wgm_feedbacks::enum_sys_feedback wafer_cooling_system::cooling_controller::start_cooling()
 {
   stopped = false;
-    std::cout << "start cooling algorithms" << std::endl;
+    std::cout << "start cooling algorithms" << "\n";
 
   for ( auto & algo: phAlgorithms)
   {
@@ -74,14 +74,17 @@ bool wafer_cooling_system::cooling_controller::getSubSysStatus(std::string Subsy
   else return false;
 }
 
+
+
 void wafer_cooling_system::cooling_controller::registerAlgorithms()
 {
   phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_controller_connect, ph_sys_control_shared_ptr));
   phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_motion_home_all, ph_sys_control_shared_ptr));
-  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_motion_move_offset, ph_sys_control_shared_ptr));
-  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_rotate_center, ph_sys_control_shared_ptr));
-  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_move_center, ph_sys_control_shared_ptr));
+  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_motion_move_offset,ph_sys_control_shared_ptr, 50));
+  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_rotate_to,ph_sys_control_shared_ptr,90));
+  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_motion_move_offset,ph_sys_control_shared_ptr,135));
   phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_rotate_and_print, ph_sys_control_shared_ptr));
   phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_motion_home_all, ph_sys_control_shared_ptr));
+  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_motion_move_offset, ph_sys_control_shared_ptr,2));
 // TODO disconnect
 }

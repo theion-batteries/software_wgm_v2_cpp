@@ -15,7 +15,7 @@ wgm_user::user::user()
 }
 wgm_user::user::user(std::string name, std::string password)
 {
-  std::cout << "user " << name << " created" << std::endl;
+  std::cout << "user " << name << " created" << "\n";
   user_name = name;
   user_passowrd = password;
   id=userData->getLastRowID();
@@ -23,7 +23,7 @@ wgm_user::user::user(std::string name, std::string password)
   std::string rowValues = "(, '" + name +"','" + password + "');";
   auto ID = std::to_string(id);
   rowValues.insert(1,ID.c_str()) ;
-  std::cout << "inserting row values " << rowValues << " in users database" << std::endl;
+  std::cout << "inserting row values " << rowValues << " in users database" << "\n";
   userData->insertDBTableRow(userData->getTableHandle().Table_name, rowValues);
   // debug db: query
   userData->queryDBTable(userData->getTableHandle().Table_name);
@@ -32,7 +32,7 @@ wgm_user::user::user(std::string name, std::string password)
 
 wgm_user::user::~user()
 {
-  std::cout << "user destructed" << std::endl;
+  std::cout << "user destructed" << "\n";
   //delete userData;
 }
 std::string wgm_user::user::getUserName()

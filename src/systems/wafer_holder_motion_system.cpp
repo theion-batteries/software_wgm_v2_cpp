@@ -14,11 +14,11 @@
 
 wafer_holder_motion_system::Iwafer_motion_controller::Iwafer_motion_controller()
 {
-  std::cout << "creating system wafer Imotion Interface " << std::endl;
+  std::cout << "creating system wafer Imotion Interface " << "\n";
 }
 wafer_holder_motion_system::Iwafer_motion_controller:: ~Iwafer_motion_controller()
 {
-  std::cout << "deleting wafer Imotion Interface" << std::endl;
+  std::cout << "deleting wafer Imotion Interface" << "\n";
 
 }
 
@@ -33,7 +33,7 @@ wgm_feedbacks::enum_sys_feedback wafer_holder_motion_system::wafer_motion_contro
 {
     stopped = false;
 
-  std::cout << "start sinking algorithms" << std::endl;
+  std::cout << "start sinking algorithms" << "\n";
   for (auto& algo : whsAlgorithms)
   {
     if (algo() == sub_error || stopped) return sys_error;
@@ -48,7 +48,7 @@ wgm_feedbacks::enum_sys_feedback wafer_holder_motion_system::wafer_motion_contro
 wgm_feedbacks::enum_sys_feedback wafer_holder_motion_system::wafer_motion_controller::start_extracting()
 {
     stopped = false;
-  std::cout << "start extracting algorithms" << std::endl;
+  std::cout << "start extracting algorithms" << "\n";
   if (whsAlgorithms[1]() != sub_success || stopped) return sys_error;
   return sys_success;
 
@@ -60,7 +60,7 @@ wgm_feedbacks::enum_sys_feedback wafer_holder_motion_system::wafer_motion_contro
 }
 wgm_feedbacks::enum_sys_feedback wafer_holder_motion_system::wafer_motion_controller::insert_wafer_in_ml()
 {
-  std::cout << "start sinking algorithms" << std::endl;
+  std::cout << "start sinking algorithms" << "\n";
   for (auto& algo : whsAlgorithms)
   {
     if (algo() == sub_error || stopped) return sys_error;
@@ -69,7 +69,7 @@ wgm_feedbacks::enum_sys_feedback wafer_holder_motion_system::wafer_motion_contro
 }
 wgm_feedbacks::enum_sys_feedback wafer_holder_motion_system::wafer_motion_controller::extract_wafer_from_ml()
 {
-  std::cout << "extracting wafer" << std::endl;
+  std::cout << "extracting wafer" << "\n";
   if (whsAlgorithms[1]() != sub_success) return sys_error;
   return sys_success;
 }

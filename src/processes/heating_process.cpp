@@ -19,36 +19,36 @@ wgm_processes::Iheating_process:: ~Iheating_process() {}
 
 wgm_processes::heating_process::heating_process()
 {
-  std::cout << "creating heating process " << std::endl;
+  std::cout << "creating heating process " << "\n";
   heating_sys = new sulfur_heating_system::sulfur_heating_controller();
   process_timer = new wgm_monitoring::time_monitor();
 }
 wgm_processes::heating_process::~heating_process()
 {
-  std::cout << "deleting heating process " << std::endl;
+  std::cout << "deleting heating process " << "\n";
   delete heating_sys;
   delete process_timer;
 }
 wgm_feedbacks::enum_proc_feedback wgm_processes::heating_process::start_process()
 {
-  std::cout << "execute process" << process_name << std::endl;
+  std::cout << "execute process" << process_name << "\n";
   process_timer->start_monitoring();
   if (heating_sys->start_heating_sys() == sys_error)
   {
-  std::cout << "error heat sys, aborting process " << process_name << std::endl;
+  std::cout << "error heat sys, aborting process " << process_name << "\n";
     process_timer->stop_monitoring();
 
     return proc_error;
   }
  // std::this_thread::sleep_for(std::chrono::milliseconds(3000));
   process_timer->stop_monitoring();
-  std::cout << "finish process " << process_name << std::endl;
+  std::cout << "finish process " << process_name << "\n";
 
   return proc_success;
 }
 wgm_feedbacks::enum_proc_feedback wgm_processes::heating_process::stop_process()
 {
-  std::cout << "finish " << process_name << std::endl;
+  std::cout << "finish " << process_name << "\n";
   heating_sys->stop_heating_sys();
   process_timer->stop_monitoring();
   return proc_error;

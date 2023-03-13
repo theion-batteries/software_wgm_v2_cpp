@@ -19,40 +19,40 @@ sulfur_heating_system::Isulfur_heating_controller::~Isulfur_heating_controller()
 }
 sulfur_heating_system::sulfur_heating_controller::sulfur_heating_controller()
 {
-  std::cout << "creating heating controller" << std::endl;
+  std::cout << "creating heating controller" << "\n";
   registerAlgorithms();
 
 }
 sulfur_heating_system::sulfur_heating_controller::~sulfur_heating_controller()
 {
-  std::cout << "deleting heating controller" << std::endl;
+  std::cout << "deleting heating controller" << "\n";
 
 }
 double sulfur_heating_system::sulfur_heating_controller::getSulfurTemperatur()
 {
-  std::cout << "controller get sulfur temp value" << std::endl;
+  std::cout << "controller get sulfur temp value" << "\n";
   return heatControl.get_heating_sulfur_temperature();
 }
 void sulfur_heating_system::sulfur_heating_controller::setSulfurTemperatur(double targetTemp)
 {
-  std::cout << "controller get sulfur temp value" << std::endl;
+  std::cout << "controller get sulfur temp value" << "\n";
   heatControl.heating_controller_settemperature(targetTemp);
 }
 void sulfur_heating_system::sulfur_heating_controller::turn_off_heating()
 {
-  std::cout << "controller turn off heater" << std::endl;
+  std::cout << "controller turn off heater" << "\n";
   heatControl.heating_controller_deactivate();
 }
 
 void sulfur_heating_system::sulfur_heating_controller::turn_on_heating()
 {
-  std::cout << "controller turn on heater " << std::endl;
+  std::cout << "controller turn on heater " << "\n";
   heatControl.heating_controller_activate();
 }
 
 void sulfur_heating_system::sulfur_heating_controller::controll_heating()
 {
-  std::cout << "controller regulate" << std::endl;
+  std::cout << "controller regulate" << "\n";
   getSulfurTemperatur();
 }
 
@@ -70,17 +70,17 @@ wgm_feedbacks::enum_sys_feedback sulfur_heating_system::sulfur_heating_controlle
 {
   stopped = false;
 
-  std::cout << "start heating algorithms" << std::endl;
+  std::cout << "start heating algorithms" << "\n";
   for (auto& algo : heatAlgorithms)
   {
     if (algo() == sub_error)
     {
-      std::cout << "error heat subsys, aborting" << std::endl;
+      std::cout << "error heat subsys, aborting" << "\n";
 
       return sys_error;
     }
   }
-  std::cout << "finish heating algorithms" << std::endl;
+  std::cout << "finish heating algorithms" << "\n";
 
   return wgm_feedbacks::enum_sys_feedback::sys_success;
 }
