@@ -13,21 +13,21 @@
 /*********** cnt controller ************/
 cnt_alignment_system::cnt_aligning_controller::cnt_aligning_controller()
 {
-    std::cout << "creating cnt system " << std::endl;
+    std::cout << "creating cnt system " << "\n";
 
     registerAlgorithms();
 
 }
 cnt_alignment_system::cnt_aligning_controller:: ~cnt_aligning_controller()
 {
-    std::cout << "deleting cnt system" << std::endl;
+    std::cout << "deleting cnt system" << "\n";
 
 }
 // methods implmenetation
 wgm_feedbacks::enum_sys_feedback cnt_alignment_system::cnt_aligning_controller::start_aligning()
 {
   stopped = false;
-  std::cout << "start aligning algorithms" << std::endl;
+  std::cout << "start aligning algorithms" << "\n";
   for ( auto & algo: cntAlgorithms)
   {
     if (algo() == sub_error || stopped) return sys_error;

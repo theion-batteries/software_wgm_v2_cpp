@@ -18,20 +18,20 @@ wgm_processes::Ialigning_process:: ~Ialigning_process(){}
 /******************* implementation cnt alignment process ***************/
 
 wgm_processes::aligning_process::aligning_process() {
-  std::cout << "creating aligning process " << std::endl;
+  std::cout << "creating aligning process " << "\n";
   aligning_sys = new cnt_alignment_system::cnt_aligning_controller();
   process_timer = new wgm_monitoring::time_monitor();
 
 }
 wgm_processes::aligning_process:: ~aligning_process()
 {
-  std::cout << "deleting aligning process " << std::endl;
+  std::cout << "deleting aligning process " << "\n";
   delete aligning_sys;
   delete process_timer;
 }
 wgm_feedbacks::enum_proc_feedback wgm_processes::aligning_process::start_process()
 {
-  std::cout << "execute " << process_name << std::endl;
+  std::cout << "execute " << process_name << "\n";
   process_timer->start_monitoring();
   if (aligning_sys->start_aligning() == sys_error)
   {
@@ -44,7 +44,7 @@ wgm_feedbacks::enum_proc_feedback wgm_processes::aligning_process::start_process
 }
 wgm_feedbacks::enum_proc_feedback wgm_processes::aligning_process::stop_process()
 {
-  std::cout << "stopping " << process_name << std::endl;
+  std::cout << "stopping " << process_name << "\n";
   aligning_sys->stop_aligning();
   process_timer->stop_monitoring();
   return proc_error;

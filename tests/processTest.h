@@ -22,8 +22,9 @@ MOCK_METHOD( void, stop_all, (), (override));
 // Demonstrate some basic mocking.
 TEST(cntLinearMotionMock, connectSuccess) {
   processMock mock_obj;
-
 }
+
+
 // Demonstrate some basic assertions.
 TEST(whsLinearMotionPtr, deletePtr) {
   // expect connect

@@ -14,7 +14,7 @@ wgm_experiment::experiment::experiment(std::string name, int id)
 
 {
   experiment_name=name;
-  std::cout << "experiment " << name<<"with id= "<< id<<" started " << std::endl;
+  std::cout << "experiment " << name<<"with id= "<< id<<" started " << "\n";
 
   experiment_id=id;
 
@@ -22,7 +22,7 @@ wgm_experiment::experiment::experiment(std::string name, int id)
 
 wgm_experiment::experiment::~experiment()
 {
-  std::cout << "experiment stopped " << std::endl;
+  std::cout << "experiment stopped " << "\n";
 }
 std::string wgm_experiment::experiment::getexperimentName()
 {

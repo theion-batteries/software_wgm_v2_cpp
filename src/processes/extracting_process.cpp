@@ -15,7 +15,7 @@
  /******************* interface wafer extraction process***************/
 wgm_processes::Iextracting_process::Iextracting_process()
 {
-  std::cout << "creating extracting process " << std::endl;
+  std::cout << "creating extracting process " << "\n";
 }
 wgm_processes::Iextracting_process::~Iextracting_process()
 {
@@ -30,12 +30,12 @@ wgm_processes::extracting_process::extracting_process(wafer_holder_motion_system
 }
 wgm_processes::extracting_process::~extracting_process()
 {
-  std::cout << "deleting extracting process " << std::endl;
+  std::cout << "deleting extracting process " << "\n";
   delete process_timer;
 }
 wgm_feedbacks::enum_proc_feedback wgm_processes::extracting_process::start_process()
 {
-  std::cout << "execute " << process_name << std::endl;
+  std::cout << "execute " << process_name << "\n";
   process_timer->start_monitoring();
  if( extracting_sys->start_extracting() == sys_error )
  {
@@ -48,7 +48,7 @@ wgm_feedbacks::enum_proc_feedback wgm_processes::extracting_process::start_proce
 }
 wgm_feedbacks::enum_proc_feedback wgm_processes::extracting_process::stop_process()
 {
-  std::cout << "finish " << process_name << std::endl;
+  std::cout << "finish " << process_name << "\n";
 extracting_sys->stop_extracting();
   process_timer->stop_monitoring();
   return proc_error;
