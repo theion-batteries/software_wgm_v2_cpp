@@ -80,11 +80,9 @@ void wafer_cooling_system::cooling_controller::registerAlgorithms()
 {
   phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_controller_connect, ph_sys_control_shared_ptr));
   phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_motion_home_all, ph_sys_control_shared_ptr));
-  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_motion_move_offset,ph_sys_control_shared_ptr, 50));
-  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_rotate_to,ph_sys_control_shared_ptr,90));
+  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_rotate_to,ph_sys_control_shared_ptr,180));
   phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_motion_move_offset,ph_sys_control_shared_ptr,135));
   phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_rotate_and_print, ph_sys_control_shared_ptr));
-  phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_motion_home_all, ph_sys_control_shared_ptr));
   phAlgorithms.push_back(std::bind(&ph_cooling_controller::ph_motion_move_offset, ph_sys_control_shared_ptr,2));
 // TODO disconnect
 }

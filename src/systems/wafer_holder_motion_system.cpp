@@ -120,5 +120,4 @@ void wafer_holder_motion_system::wafer_motion_controller::registerAlgorithms()
   whsAlgorithms.push_back(std::bind(&whs_controller::move_down_to_surface, wafer_sys_control_shared_ptr));
   whsAlgorithms.push_back(std::bind(&whs_controller::deep_wafer_holder_desired_thickness, wafer_sys_control_shared_ptr));
   whsAlgorithms.push_back(std::bind(&whs_controller::monitor_and_calibrate, wafer_sys_control_shared_ptr));
-
 }
